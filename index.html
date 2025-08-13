@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PocketVC - The Future of VC-Startup Connections</title>
-    <meta name="description" content="PocketVC is launching soon as the premier platform for venture capital firms to discover, evaluate, and invest in the next generation of innovative startups.">
+    <title>PocketVC - Coming Soon | The Future of VC-Startup Connections</title>
+    <meta name="description" content="Join the PocketVC waiting list for early access to the premier platform connecting venture capital firms with innovative startups. Coming soon!">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,22 +27,17 @@
             --primary-700: #264d73;
             --primary-800: #1a334d;
             --primary-900: #003366;
-            --bolt-blue: #1e40af;
-            --bolt-light-blue: #dbeafe;
-            --bolt-gray: #6b7280;
-            --bolt-light-gray: #f3f4f6;
         }
         
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--primary-50);
         }
         
         .logo-icon {
             position: relative;
             width: 40px;
             height: 40px;
-            background: var(--bolt-blue);
+            background: var(--primary-900);
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -77,61 +72,43 @@
                 4px 18px 0 white;
         }
         
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+        }
+        
         .coming-soon-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(30, 64, 175, 0.1);
-            border: 1px solid var(--bolt-light-blue);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--primary-200);
+            border-radius: 8px;
         }
         
         .feature-card {
             background: white;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(30, 64, 175, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
         
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(30, 64, 175, 0.15);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .step-circle {
-            width: 32px;
-            height: 32px;
-            background: var(--bolt-blue);
+            width: 24px;
+            height: 24px;
+            background: var(--primary-900);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: 600;
-            font-size: 14px;
+            font-weight: 700;
+            font-size: 12px;
         }
         
-        .cta-section {
-            background: var(--bolt-blue);
-        }
-        
-        .btn-primary {
-            background: white;
-            color: var(--bolt-blue);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background: var(--bolt-light-blue);
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: #e6e6e6;
-            color: #666;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-secondary:hover {
-            background: #d9d9d9;
+        .step-circle.green {
+            background: #059669;
         }
         
         .mobile-menu {
@@ -167,9 +144,9 @@
                 <!-- Desktop Navigation -->
                 <div class="desktop-nav">
                     <div class="flex items-baseline space-x-8">
-                        <a href="#" class="text-bolt-blue font-medium">Home</a>
-                        <a href="#about" class="text-gray-600 hover:text-bolt-blue transition-colors">About</a>
-                        <a href="#signup" class="bg-bolt-blue text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">Sign Up</a>
+                        <a href="#" class="text-primary-900 font-medium">Home</a>
+                        <a href="#about" class="text-gray-600 hover:text-primary-900 transition-colors">About</a>
+                        <a href="#signup" class="bg-primary-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-800 transition-colors">Sign Up</a>
                     </div>
                 </div>
                 
@@ -184,59 +161,63 @@
             </div>
         </div>
         
-                        <!-- Mobile Menu -->
-                <div id="mobile-menu" class="hidden bg-white border-t border-gray-100">
-                    <div class="px-4 py-2 space-y-1">
-                        <a href="#" class="block px-3 py-2 text-bolt-blue font-medium bg-bolt-light-blue rounded-md">Home</a>
-                        <a href="#about" class="block px-3 py-2 text-gray-600 hover:text-bolt-blue hover:bg-bolt-light-blue rounded-md">About</a>
-                        <a href="#signup" class="block px-3 py-2 bg-bolt-blue text-white rounded-md font-medium">Sign Up</a>
-                    </div>
-                </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white border-t border-gray-100">
+            <div class="px-4 py-2 space-y-1">
+                <a href="#" class="block px-3 py-2 text-primary-900 font-medium bg-primary-50 rounded-md">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-600 hover:text-primary-900 hover:bg-primary-50 rounded-md">About</a>
+                <a href="#signup" class="block px-3 py-2 bg-primary-900 text-white rounded-md font-medium">Sign Up</a>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="py-20">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6">
-                The Future of VC-Startup
-                <span class="text-bolt-blue">Connections</span>
-            </h1>
-            
-            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-                PocketVC is launching soon as the premier platform for venture capital firms to discover, evaluate, and invest in the next generation of innovative startups.
-            </p>
-            
-            <!-- Coming Soon Card -->
-            <div class="coming-soon-card p-8 mb-8">
-                <div class="flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-bolt-blue mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span class="text-bolt-blue font-bold text-xl">Coming Soon</span>
+    <section class="hero-gradient py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                    The Future of VC-Startup
+                    <span class="text-primary-900"> Connections</span>
+                </h1>
+                
+                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    PocketVC is launching soon as the premier platform for venture capital firms to discover, evaluate, and invest in the next generation of innovative startups.
+                </p>
+                
+                <!-- Coming Soon Card -->
+                <div class="coming-soon-card p-4 mb-8 max-w-md mx-auto">
+                    <div class="flex items-center justify-center space-x-2 mb-2">
+                        <svg class="w-5 h-5 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="font-semibold text-primary-900">Coming Soon</span>
+                    </div>
+                    <p class="text-sm text-gray-700">
+                        Join our waiting list for early access and exclusive launch benefits
+                    </p>
                 </div>
-                <p class="text-gray-600">Join our waiting list for early access and exclusive launch benefits.</p>
-            </div>
-            
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#signup" class="btn-primary px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center">
-                    Join Waiting List
-                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </a>
-                <a href="#features" class="btn-secondary px-8 py-4 rounded-lg font-semibold text-lg">
-                    Learn More
-                </a>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#signup" class="bg-primary-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-primary-800 transition-colors flex items-center justify-center">
+                        Join Waiting List
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                    <a href="#features" class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                        Learn More
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose PocketVC Section -->
-    <section id="features" class="py-20">
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-bolt-blue mb-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                     Why Choose PocketVC?
                 </h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -244,48 +225,48 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Smart Matching -->
-                <div class="feature-card p-8">
-                    <div class="w-12 h-12 bg-bolt-light-blue rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-bolt-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="feature-card p-6">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-bolt-blue mb-3">Smart Matching</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Smart Matching</h3>
                     <p class="text-gray-600">Our AI-powered algorithm connects VCs with startups that align with their investment thesis and sector preferences.</p>
                 </div>
                 
                 <!-- Verified Community -->
-                <div class="feature-card p-8">
-                    <div class="w-12 h-12 bg-bolt-light-blue rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-bolt-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="feature-card p-6">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-bolt-blue mb-3">Verified Community</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Verified Community</h3>
                     <p class="text-gray-600">All users are thoroughly vetted to ensure quality connections and legitimate investment opportunities.</p>
                 </div>
                 
                 <!-- Fast Connections -->
-                <div class="feature-card p-8">
-                    <div class="w-12 h-12 bg-bolt-light-blue rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-bolt-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="feature-card p-6">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-bolt-blue mb-3">Fast Connections</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Fast Connections</h3>
                     <p class="text-gray-600">Streamlined communication tools help you connect, evaluate, and close deals faster than ever before.</p>
                 </div>
                 
                 <!-- Secure Platform -->
-                <div class="feature-card p-8">
-                    <div class="w-12 h-12 bg-bolt-light-blue rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-bolt-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="feature-card p-6">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-bolt-blue mb-3">Secure Platform</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Secure Platform</h3>
                     <p class="text-gray-600">Enterprise-grade security protects your sensitive business information and investment data.</p>
                 </div>
             </div>
@@ -296,37 +277,37 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-bolt-blue mb-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                     How It Works
                 </h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                <p class="text-xl text-gray-600">
                     Simple steps to connect and grow your business
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <!-- For VCs -->
-                <div class="bg-bolt-light-gray p-8 rounded-lg">
-                    <h3 class="text-3xl font-bold text-bolt-blue mb-8">For Venture Capitalists</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="step-circle mr-4 flex-shrink-0">1</div>
+                <div class="bg-primary-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">For Venture Capitalists</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="step-circle flex-shrink-0 mt-1">1</div>
                             <div>
-                                <h4 class="font-semibold text-bolt-blue mb-2">Create Your Profile</h4>
+                                <h4 class="font-semibold text-gray-900">Create Your Profile</h4>
                                 <p class="text-gray-600">Set up your investment preferences, sectors, and deal size.</p>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <div class="step-circle mr-4 flex-shrink-0">2</div>
+                        <div class="flex items-start space-x-3">
+                            <div class="step-circle flex-shrink-0 mt-1">2</div>
                             <div>
-                                <h4 class="font-semibold text-bolt-blue mb-2">Browse Matches</h4>
+                                <h4 class="font-semibold text-gray-900">Browse Matches</h4>
                                 <p class="text-gray-600">Review AI-curated startup matches based on your criteria.</p>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <div class="step-circle mr-4 flex-shrink-0">3</div>
+                        <div class="flex items-start space-x-3">
+                            <div class="step-circle flex-shrink-0 mt-1">3</div>
                             <div>
-                                <h4 class="font-semibold text-bolt-blue mb-2">Connect & Invest</h4>
+                                <h4 class="font-semibold text-gray-900">Connect & Invest</h4>
                                 <p class="text-gray-600">Engage with founders and close deals efficiently.</p>
                             </div>
                         </div>
@@ -334,27 +315,27 @@
                 </div>
                 
                 <!-- For Startups -->
-                <div class="bg-green-50 p-8 rounded-lg">
-                    <h3 class="text-3xl font-bold text-bolt-blue mb-8">For Startups</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="step-circle mr-4 flex-shrink-0" style="background: #10b981;">1</div>
+                <div class="bg-green-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">For Startups</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="step-circle green flex-shrink-0 mt-1">1</div>
                             <div>
-                                <h4 class="font-semibold text-bolt-blue mb-2">Build Your Pitch</h4>
+                                <h4 class="font-semibold text-gray-900">Build Your Pitch</h4>
                                 <p class="text-gray-600">Create a compelling profile with your business plan and metrics.</p>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <div class="step-circle mr-4 flex-shrink-0" style="background: #10b981;">2</div>
+                        <div class="flex items-start space-x-3">
+                            <div class="step-circle green flex-shrink-0 mt-1">2</div>
                             <div>
-                                <h4 class="font-semibold text-bolt-blue mb-2">Get Discovered</h4>
+                                <h4 class="font-semibold text-gray-900">Get Discovered</h4>
                                 <p class="text-gray-600">Our algorithm matches you with relevant VCs actively seeking investments.</p>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <div class="step-circle mr-4 flex-shrink-0" style="background: #10b981;">3</div>
+                        <div class="flex items-start space-x-3">
+                            <div class="step-circle green flex-shrink-0 mt-1">3</div>
                             <div>
-                                <h4 class="font-semibold text-bolt-blue mb-2">Secure Funding</h4>
+                                <h4 class="font-semibold text-gray-900">Secure Funding</h4>
                                 <p class="text-gray-600">Present your vision and secure the capital to scale your business.</p>
                             </div>
                         </div>
@@ -365,15 +346,15 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section py-20">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold text-white mb-6">
+    <section class="py-20 bg-primary-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
                 Ready to Start Your Journey?
             </h2>
-            <p class="text-xl text-white mb-8">
+            <p class="text-xl text-primary-100 mb-8">
                 Join PocketVC today and connect with the right partners for your success.
             </p>
-            <a href="#signup" class="btn-primary px-8 py-4 rounded-lg font-semibold text-lg inline-flex items-center">
+            <a href="#signup" class="bg-white text-primary-900 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors inline-flex items-center">
                 Get Started Now
                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -389,7 +370,7 @@
                 <div class="col-span-2">
                     <div class="flex items-center mb-4">
                         <div class="logo-icon mr-3"></div>
-                        <span class="text-bolt-blue font-bold text-lg">POCKETVC</span>
+                        <span class="text-primary-900 font-bold text-lg">POCKETVC</span>
                     </div>
                     <p class="text-gray-600 mb-4">
                         Connecting venture capital firms with promising startups to accelerate innovation and growth.
@@ -397,18 +378,18 @@
                 </div>
                 
                 <div>
-                    <h3 class="font-semibold text-bolt-blue mb-4">Company</h3>
+                    <h3 class="font-semibold text-primary-900 mb-4">Company</h3>
                     <ul class="space-y-2">
-                        <li><a href="/about" class="text-gray-600 hover:text-bolt-blue transition-colors">About Us</a></li>
-                        <li><a href="#signup" class="text-gray-600 hover:text-bolt-blue transition-colors">Sign Up</a></li>
+                        <li><a href="/about" class="text-gray-600 hover:text-primary-900 transition-colors">About Us</a></li>
+                        <li><a href="#signup" class="text-gray-600 hover:text-primary-900 transition-colors">Sign Up</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="font-semibold text-bolt-blue mb-4">Legal</h3>
+                    <h3 class="font-semibold text-primary-900 mb-4">Legal</h3>
                     <ul class="space-y-2">
-                        <li><a href="/privacy" class="text-gray-600 hover:text-bolt-blue transition-colors">Privacy Policy</a></li>
-                        <li><a href="/terms" class="text-gray-600 hover:text-bolt-blue transition-colors">Terms of Service</a></li>
+                        <li><a href="/privacy" class="text-gray-600 hover:text-primary-900 transition-colors">Privacy Policy</a></li>
+                        <li><a href="/terms" class="text-gray-600 hover:text-primary-900 transition-colors">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
