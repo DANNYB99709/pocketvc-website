@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - PocketVC</title>
+    <meta name="description" content="Learn about PocketVC's mission to revolutionize venture capital connections and meet our team.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-50: #f0f4f8;
+            --primary-100: #d9e6f2;
+            --primary-200: #b3cce5;
+            --primary-300: #8db3d8;
+            --primary-400: #6699cb;
+            --primary-500: #4080be;
+            --primary-600: #336699;
+            --primary-700: #264d73;
+            --primary-800: #1a334d;
+            --primary-900: #003366;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-circle {
+            width: 32px;
+            height: 32px;
+            background: var(--primary-900);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="/">
+                            <img src="logo.png" alt="PocketVC Logo" class="h-10 w-auto">
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="flex items-baseline space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-primary-900 transition-colors">Home</a>
+                    <a href="/about" class="text-primary-900 font-medium">About</a>
+                    <a href="/signup" class="bg-primary-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-800 transition-colors">Sign Up</a>
+                    
+                    <!-- Dropdown Menu -->
+                    <div class="relative">
+                        <button id="dropdown-btn" class="text-gray-600 hover:text-primary-900 transition-colors flex items-center">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                        
+                        <!-- Dropdown Content -->
+                        <div id="dropdown-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                            <a href="/about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">About Us</a>
+                            <a href="/signup" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">Sign Up</a>
+                            <a href="/privacy" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">Privacy Policy</a>
+                            <a href="/terms" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    About PocketVC
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    We're on a mission to revolutionize how venture capital firms and startups connect, making the investment ecosystem more accessible, efficient, and transparent.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        Our Mission
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        We believe that great ideas deserve great funding, and that the best investors should have access to the most promising startups. PocketVC bridges this gap by using advanced technology to create meaningful connections that drive innovation forward.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        Our platform removes traditional barriers, reduces inefficiencies, and creates a more transparent investment ecosystem that benefits everyone involved.
+                    </p>
+                </div>
+                <div class="bg-primary-50 rounded-2xl p-8">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="step-circle flex-shrink-0">1</div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Democratize Access</h3>
+                                <p class="text-gray-600">Make venture capital more accessible to startups globally.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="step-circle flex-shrink-0">2</div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Accelerate Innovation</h3>
+                                <p class="text-gray-600">Speed up the funding process with smart matching technology.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="step-circle flex-shrink-0">3</div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Build Trust</h3>
+                                <p class="text-gray-600">Create a transparent, secure environment for investments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Our Values
+                </h2>
+                <p class="text-xl text-gray-600">
+                    The principles that guide everything we do
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Innovation -->
+                <div class="feature-card p-6 text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Innovation</h3>
+                    <p class="text-gray-600">We believe in the power of innovation to transform industries and create lasting impact.</p>
+                </div>
+                
+                <!-- Connection -->
+                <div class="feature-card p-6 text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Connection</h3>
+                    <p class="text-gray-600">Building meaningful relationships between entrepreneurs and investors is at our core.</p>
+                </div>
+                
+                <!-- Excellence -->
+                <div class="feature-card p-6 text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Excellence</h3>
+                    <p class="text-gray-600">We maintain the highest standards in everything we do, from technology to customer service.</p>
+                </div>
+                
+                <!-- Global Impact -->
+                <div class="feature-card p-6 text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Global Impact</h3>
+                    <p class="text-gray-600">Our platform connects investors and startups across the globe, fostering worldwide innovation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Meet Our Team
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Experienced professionals passionate about connecting great ideas with great investors
+                </p>
+            </div>
+            
+            <div class="flex justify-center">
+                <div class="bg-gray-50 rounded-xl p-8 text-center max-w-sm">
+                    <div class="w-32 h-32 bg-primary-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Daniel Barnard</h3>
+                    <p class="text-primary-900 font-medium mb-4 text-lg">CEO & Co-Founder</p>
+                    <p class="text-gray-600">8+ years in venture capital and startup ecosystem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Join Us in Shaping the Future
+            </h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Be part of the revolution in venture capital and startup funding.
+            </p>
+            <a href="/signup" class="bg-white text-blue-900 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors inline-block">
+                Join Waiting List
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="logo.png" alt="PocketVC Logo" class="h-8 w-auto">
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Connecting venture capital firms with promising startups to accelerate innovation and growth.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-primary-900 mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about" class="text-gray-600 hover:text-primary-900 transition-colors">About Us</a></li>
+                        <li><a href="/signup" class="text-gray-600 hover:text-primary-900 transition-colors">Sign Up</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-primary-900 mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/privacy" class="text-gray-600 hover:text-primary-900 transition-colors">Privacy Policy</a></li>
+                        <li><a href="/terms" class="text-gray-600 hover:text-primary-900 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
+                <p class="text-gray-500">
+                    © 2025 PocketVC. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Dropdown menu toggle
+        document.getElementById('dropdown-btn').addEventListener('click', function() {
+            const dropdown = document.getElementById('dropdown-menu');
+            dropdown.classList.toggle('hidden');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('dropdown-menu');
+            const dropdownBtn = document.getElementById('dropdown-btn');
+            
+            if (!dropdownBtn.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html> 
