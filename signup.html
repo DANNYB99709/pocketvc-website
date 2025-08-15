@@ -1243,18 +1243,23 @@
 
                     const client = window.pvcSupabase || (window.pvcSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
 
+                    console.log('[TechDropdown] Fetching deeptech_subsectors…');
                     const { data, error } = await client
                         .from('deeptech_subsectors')
                         .select('sector, subsector')
                         .order('sector', { ascending: true })
                         .order('subsector', { ascending: true });
-                    if (error) throw error;
+                    if (error) {
+                        console.warn('[TechDropdown] Supabase error:', error);
+                        throw error;
+                    }
 
                     if (!Array.isArray(data) || data.length === 0) {
-                        console.warn('deeptech_subsectors returned 0 rows');
+                        console.warn('[TechDropdown] deeptech_subsectors returned 0 rows');
                         initHierarchicalTechSelect('technologyTypes', 'Technology Type');
                         return;
                     }
+                    console.log('[TechDropdown] rows:', data.length, 'example:', data[0]);
 
                     // Build optgroups
                     selectEl.innerHTML = '';
@@ -1272,9 +1277,10 @@
                         selectEl.appendChild(og);
                     });
 
+                    console.log('[TechDropdown] Built optgroups:', selectEl.querySelectorAll('optgroup').length);
                     initHierarchicalTechSelect('technologyTypes', 'Technology Type');
                 } catch (e) {
-                    console.warn('Could not load Technology Types/Subsectors yet:', e);
+                    console.warn('[TechDropdown] Could not load Technology Types/Subsectors yet:', e);
                     initHierarchicalTechSelect('technologyTypes', 'Technology Type');
                 }
             }
