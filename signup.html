@@ -1134,7 +1134,7 @@
                         return;
                     }
 
-                    const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                    const client = window.pvcSupabase || (window.pvcSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
                     const { data, error } = await client
                         .from('technology_readiness_levels')
                         .select('level_name, sort_rank')
@@ -1173,7 +1173,7 @@
                         return;
                     }
 
-                    const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                    const client = window.pvcSupabase || (window.pvcSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
                     // Adjust table/columns after you confirm names
                     const { data, error } = await client
                         .from('fundraising_stages')
@@ -1207,7 +1207,7 @@
                         return;
                     }
 
-                    const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                    const client = window.pvcSupabase || (window.pvcSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
                     // locations table: select name, order alphabetically
                     const { data, error } = await client
                         .from('locations')
