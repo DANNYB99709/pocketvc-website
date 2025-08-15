@@ -1142,8 +1142,8 @@
                     // Clear existing and populate
                     selectEl.innerHTML = '';
                     data.forEach(row => {
-                        if (row && row.name) {
-                            const label = row.level_name || row.name;
+                        const label = row && (row.level_name || row.name);
+                        if (label) {
                             const opt = new Option(label, label);
                             selectEl.add(opt);
                         }
