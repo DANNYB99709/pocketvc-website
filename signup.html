@@ -916,7 +916,7 @@
                         if (filter && !opt.text.toLowerCase().includes(filter.toLowerCase())) return;
                         const row = document.createElement('label');
                         row.className = 'flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-50 cursor-pointer';
-                        row.innerHTML = `<input type=\"checkbox\" class=\"h-4 w-4\" ${opt.selected ? 'checked' : ''} data-index=\"${idx}\"><span class=\"text-sm text-gray-500\">${opt.text}</span>`;
+                        row.innerHTML = `<input type=\"checkbox\" class=\"h-4 w-4\" ${opt.selected ? 'checked' : ''} data-index=\"${idx}\"><span class=\"text-base text-gray-500\">${opt.text}</span>`;
                         list.appendChild(row);
                     });
                     // Update trigger text
@@ -1029,7 +1029,7 @@
                             <div class="flex items-center justify-between" data-group="${gi}">
                                 <div class="flex items-center gap-2">
                                     <input type="checkbox" class="h-4 w-4" data-role="group-checkbox" ${group.options.every(o => o.selected) ? 'checked' : ''}>
-                                    <span class="text-sm text-gray-500" data-role="sector-label">${group.label}</span>
+                                    <span class="text-base text-gray-500" data-role="sector-label">${group.label}</span>
                                 </div>
                                 <svg class="w-4 h-4 text-gray-500 cursor-pointer" data-role="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                             </div>`;
@@ -1044,7 +1044,7 @@
                             if (filter && !(`${group.label} ${opt.text}`.toLowerCase().includes(filter.toLowerCase()))) return;
                             const row = document.createElement('label');
                             row.className = 'flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-50 cursor-pointer';
-                            row.innerHTML = `<input type="checkbox" class="h-4 w-4" data-gi="${gi}" data-oi="${oi}" ${opt.selected ? 'checked' : ''}><span class="text-sm text-gray-500">${opt.text}</span>`;
+                            row.innerHTML = `<input type="checkbox" class="h-4 w-4" data-gi="${gi}" data-oi="${oi}" ${opt.selected ? 'checked' : ''}><span class="text-base text-gray-500">${opt.text}</span>`;
                             children.appendChild(row);
                         });
                         list.appendChild(children);
@@ -1106,20 +1106,35 @@
                         Array.from(selectEl.options).forEach(o => { if (o.value) o.selected = true; });
                         render(search.value);
                     } else if (action === 'suggest') {
-                        const sector = window.prompt('Suggest a new sector (e.g., "Emerging AI Hardware")');
-                        if (!sector) return;
-                        const subsector = window.prompt('Suggest a new subsector for that sector');
-                        if (!subsector) return;
-                        // Add to select under a matching or new group
-                        let og = Array.from(selectEl.querySelectorAll('optgroup')).find(g => g.label === sector);
-                        if (!og) {
-                            og = document.createElement('optgroup');
-                            og.label = sector;
+                        // Enhanced suggest flow: choose type of suggestion
+                        const mode = (window.prompt('Type S to suggest a new Subsector in an existing Sector, or N to suggest a New Sector (with a subsector).', 'S') || '').trim().toUpperCase();
+                        if (!mode) return;
+                        if (mode === 'S') {
+                            const existingSectors = Array.from(selectEl.querySelectorAll('optgroup')).map(g => g.label);
+                            const sector = window.prompt(`Enter existing sector exactly as shown (one of):\n- ${existingSectors.join('\n- ')}`);
+                            if (!sector) return;
+                            const subsector = window.prompt('Enter the new subsector name');
+                            if (!subsector) return;
+                            // Add subsector under existing sector (create if not found)
+                            let og = Array.from(selectEl.querySelectorAll('optgroup')).find(g => g.label === sector);
+                            if (!og) {
+                                og = document.createElement('optgroup');
+                                og.label = sector;
+                                selectEl.appendChild(og);
+                            }
+                            og.appendChild(new Option(subsector, `${sector}: ${subsector}`));
+                            render(search.value);
+                        } else if (mode === 'N') {
+                            const newSector = window.prompt('Enter the new sector name');
+                            if (!newSector) return;
+                            const newSub = window.prompt('Enter a subsector for this new sector');
+                            if (!newSub) return;
+                            let og = document.createElement('optgroup');
+                            og.label = newSector;
+                            og.appendChild(new Option(newSub, `${newSector}: ${newSub}`));
                             selectEl.appendChild(og);
+                            render(search.value);
                         }
-                        const opt = new Option(subsector, `${sector}: ${subsector}`, true, true);
-                        og.appendChild(opt);
-                        render(search.value);
                     }
                 });
 
