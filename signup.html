@@ -1118,11 +1118,7 @@
             initSimpleMultiSelect('investmentStages', 'Company Stage');
             initSimpleMultiSelect('trlStages', 'TRL Stage');
 
-            // Initialize Startup dropdowns with the same components
-            initHierarchicalTechSelect('technologyTypes', 'Technology Type', '#startup-fields');
-            initSimpleMultiSelect('investmentLocations', 'Geographic Location', '#startup-fields');
-            initSimpleMultiSelect('investmentStages', 'Company Stage', '#startup-fields');
-            initSimpleMultiSelect('trlStages', 'TRL Stage', '#startup-fields');
+            // Startup dropdowns will be initialized after Supabase loads their data
 
             // Optional: dynamically load TRL options from Supabase
             async function loadTRLFromSupabase() {
