@@ -545,7 +545,7 @@
 
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">
-                                Location *
+                                Location (Multi-Select) *
                             </label>
                             <div class="relative">
                                 <svg class="absolute left-3 top-3 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -554,6 +554,8 @@
                                 </svg>
                                 <select
                                     name="location"
+                                    multiple
+                                    size="8"
                                     class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent"
                                     required
                                 >
@@ -575,10 +577,12 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">
-                                    Industry *
+                                    Industry (Multi-Select) *
                                 </label>
                                 <select
                                     name="industry"
+                                    multiple
+                                    size="8"
                                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent"
                                     required
                                 >
@@ -597,10 +601,12 @@
 
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">
-                                    Company Stage *
+                                    Company Stage (Multi-Select) *
                                 </label>
                                 <select
                                     name="stage"
+                                    multiple
+                                    size="6"
                                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent"
                                     required
                                 >
@@ -614,10 +620,12 @@
 
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">
-                                Funding Stage *
+                                Funding Stage (Multi-Select) *
                             </label>
                             <select
                                 name="fundingAmount"
+                                multiple
+                                size="6"
                                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent"
                                 required
                             >
@@ -1435,6 +1443,28 @@
                 close();
             });
         }
+
+        // Initialize Startup simple multi-selects using the same UI
+        (function initStartupDropdowns() {
+            // Location (uses icon input but we can still wrap the select)
+            const startupLocation = document.querySelector('#startup-fields select[name="location"]');
+            if (startupLocation && !startupLocation.getAttribute('data-pvc-init')) {
+                // For startup location we use the same placeholder text
+                initSimpleMultiSelect.bind(null)('location', 'Location');
+            }
+            const startupIndustry = document.querySelector('#startup-fields select[name="industry"]');
+            if (startupIndustry && !startupIndustry.getAttribute('data-pvc-init')) {
+                initSimpleMultiSelect.bind(null)('industry', 'Industry');
+            }
+            const startupStage = document.querySelector('#startup-fields select[name="stage"]');
+            if (startupStage && !startupStage.getAttribute('data-pvc-init')) {
+                initSimpleMultiSelect.bind(null)('stage', 'Company Stage');
+            }
+            const startupFunding = document.querySelector('#startup-fields select[name="fundingAmount"]');
+            if (startupFunding && !startupFunding.getAttribute('data-pvc-init')) {
+                initSimpleMultiSelect.bind(null)('fundingAmount', 'Funding Stage');
+            }
+        })();
     </script>
 </body>
 </html>
