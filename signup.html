@@ -892,6 +892,9 @@
                 const list = document.createElement('div');
                 panel.appendChild(list);
 
+                // Keep panel open when clicking inside it (checkboxes, labels, controls)
+                panel.addEventListener('click', (ev) => ev.stopPropagation());
+
                 function render(filter = '') {
                     list.innerHTML = '';
                     const options = Array.from(selectEl.options);
@@ -965,13 +968,13 @@
                 const controls = document.createElement('div');
                 controls.className = 'flex items-center justify-between mb-2';
                 controls.innerHTML = `
-                    <div class=\"flex items-center gap-3\">
-                        <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"toggle-expand\">Expand All</button>
-                        <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"select-all\">Select All</button>
+                    <div class="flex items-center gap-3">
+                        <button type="button" class="text-sm text-blue-900 hover:underline" data-action="toggle-expand">Expand All</button>
+                        <button type="button" class="text-sm text-blue-900 hover:underline" data-action="select-all">Select All</button>
                     </div>
-                    <div class=\"flex items-center gap-2\">
-                        <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"clear\">Clear All</button>
-                        <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"suggest\">Suggest</button>
+                    <div class="flex items-center gap-2">
+                        <button type="button" class="text-sm text-blue-900 hover:underline" data-action="clear">Clear All</button>
+                        <button type="button" class="text-sm text-blue-900 hover:underline" data-action="suggest">Suggest</button>
                     </div>`;
                 panel.appendChild(controls);
 
@@ -1010,12 +1013,12 @@
                         const groupHeader = document.createElement('div');
                         groupHeader.className = 'px-2 py-1 rounded hover:bg-gray-50';
                         groupHeader.innerHTML = `
-                            <div class=\"flex items-center justify-between cursor-pointer\" data-group=\"${gi}\">
-                                <label class=\"flex items-center gap-2\">
-                                    <input type=\"checkbox\" class=\"h-4 w-4\" data-role=\"group-checkbox\" ${group.options.every(o => o.selected) ? 'checked' : ''}>
-                                    <span class=\"text-sm text-gray-500 font-medium\">${group.label}</span>
-                                </label>
-                                <svg class=\"w-4 h-4 text-gray-500\" data-role=\"chevron\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 9l-7 7-7-7\"/></svg>
+                            <div class="flex items-center justify-between" data-group="${gi}">
+                                <div class="flex items-center gap-2">
+                                    <input type="checkbox" class="h-4 w-4" data-role="group-checkbox" ${group.options.every(o => o.selected) ? 'checked' : ''}>
+                                    <span class="text-sm text-gray-500 font-medium" data-role="sector-label">${group.label}</span>
+                                </div>
+                                <svg class="w-4 h-4 text-gray-500 cursor-pointer" data-role="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                             </div>`;
                         list.appendChild(groupHeader);
 
@@ -1028,7 +1031,7 @@
                             if (filter && !(`${group.label} ${opt.text}`.toLowerCase().includes(filter.toLowerCase()))) return;
                             const row = document.createElement('label');
                             row.className = 'flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-50 cursor-pointer';
-                            row.innerHTML = `<input type=\"checkbox\" class=\"h-4 w-4\" data-gi=\"${gi}\" data-oi=\"${oi}\" ${opt.selected ? 'checked' : ''}><span class=\"text-sm text-gray-500\">${opt.text}</span>`;
+                            row.innerHTML = `<input type="checkbox" class="h-4 w-4" data-gi="${gi}" data-oi="${oi}" ${opt.selected ? 'checked' : ''}><span class="text-sm text-gray-500">${opt.text}</span>`;
                             children.appendChild(row);
                         });
                         list.appendChild(children);
@@ -1037,6 +1040,9 @@
                     syncBackToSelect();
                 }
 
+                // Keep panel open when clicking inside
+                panel.addEventListener('click', (ev) => ev.stopPropagation());
+
                 list.addEventListener('click', (e) => {
                     const header = e.target.closest('[data-group]');
                     if (header) {
@@ -1044,15 +1050,16 @@
                         const groupContainer = header.parentElement;
                         const children = groupContainer.nextSibling;
                         if (e.target.matches('input[data-role="group-checkbox"]')) {
-                            // Toggle entire group
+                            // Toggle entire group using only the checkbox
                             const checked = e.target.checked;
                             const og = selectEl.querySelectorAll('optgroup')[gi];
-                            og.querySelectorAll('option').forEach((o, idx) => { o.selected = checked; });
+                            og.querySelectorAll('option').forEach((o) => { o.selected = checked; });
                             render(search.value);
-                        } else {
-                            // Toggle expand
+                        } else if (e.target.matches('[data-role="sector-label"]') || e.target.closest('[data-role="chevron"]')) {
+                            // Toggle expand/collapse only via label or chevron
                             children.style.display = children.style.display === 'none' ? 'block' : 'none';
                         }
+                        // Clicks on header container do nothing else
                     }
                 });
 
