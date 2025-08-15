@@ -1228,6 +1228,151 @@
                 }
             }
             loadLocationsFromSupabase();
+
+            // Load Technology Type & Subsectors (hierarchical) from Supabase
+            async function loadTechSubsectorsFromSupabase() {
+                try {
+                    const SUPABASE_URL = window.SUPABASE_URL || 'YOUR_SUPABASE_URL';
+                    const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+                    const selectEl = document.querySelector('#vc-fields select[name="technologyTypes"]');
+                    if (!selectEl) return;
+                    if (!SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('YOUR_')) {
+                        // No creds yet; initialize with whatever is in the markup
+                        initHierarchicalTechSelect('technologyTypes', 'Technology Type');
+                        return;
+                    }
+
+                    const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+                    // Strategy 1: single-table with sector/subsector columns (your current schema)
+                    try {
+                        const { data, error } = await client
+                            .from('deeptech_subsectors')
+                            .select('sector, subsector')
+                            .order('sector', { ascending: true })
+                            .order('subsector', { ascending: true });
+                        if (!error && Array.isArray(data) && data.length > 0) {
+                            sectorSubRows = data.map(r => ({
+                                sector: r.sector,
+                                subsector: r.subsector,
+                                sectorSort: 0,
+                                subSort: 0,
+                            }));
+                        }
+                    } catch (_) {
+                        // ignore; fall through to other strategies
+                    }
+
+                    // Strategy 2: a convenient view returning sector/subsector pairs
+                    let sectorSubRows = [];
+                    try {
+                        const { data, error } = await client
+                            .from('technology_types_with_subsectors')
+                            .select('sector_name, subsector_name, sector_sort_rank, subsector_sort_rank')
+                            .order('sector_sort_rank', { ascending: true })
+                            .order('subsector_sort_rank', { ascending: true });
+                        if (!error && Array.isArray(data) && data.length > 0 && sectorSubRows.length === 0) {
+                            sectorSubRows = data.map(r => ({
+                                sector: r.sector_name,
+                                subsector: r.subsector_name,
+                                sectorSort: r.sector_sort_rank,
+                                subSort: r.subsector_sort_rank,
+                            }));
+                        }
+                    } catch (_) {
+                        // ignore; fall back to table pairs
+                    }
+
+                    // Strategy 3: two-table fallback (technology_types + technology_subsectors)
+                    if (sectorSubRows.length === 0) {
+                        const { data: sectors = [] } = await client
+                            .from('technology_types')
+                            .select('id, name, sort_rank')
+                            .order('sort_rank', { ascending: true });
+                        const { data: subs = [] } = await client
+                            .from('technology_subsectors')
+                            .select('name, type_id, sector_id, technology_type_id, sort_rank')
+                            .order('sort_rank', { ascending: true });
+
+                        if (Array.isArray(sectors) && Array.isArray(subs) && (sectors.length + subs.length) > 0) {
+                            const idToSector = new Map(sectors.map(s => [s.id, { name: s.name, sort: s.sort_rank ?? 0 }]));
+                            subs.forEach(sub => {
+                                const parentId = sub.type_id ?? sub.sector_id ?? sub.technology_type_id;
+                                const sector = idToSector.get(parentId);
+                                const sectorName = sector?.name || 'Other';
+                                sectorSubRows.push({
+                                    sector: sectorName,
+                                    subsector: sub.name,
+                                    sectorSort: sector?.sort ?? 0,
+                                    subSort: sub.sort_rank ?? 0,
+                                });
+                            });
+                        }
+                    }
+
+                    // Strategy 4: deeptech_* naming fallback (separate sector+subsector tables)
+                    if (sectorSubRows.length === 0) {
+                        const { data: sectors = [] } = await client
+                            .from('deeptech_sectors')
+                            .select('id, name, sort_rank')
+                            .order('sort_rank', { ascending: true });
+                        const { data: subs = [] } = await client
+                            .from('deeptech_subsectors')
+                            .select('name, sector_id, sort_rank')
+                            .order('sort_rank', { ascending: true });
+
+                        if (Array.isArray(sectors) && Array.isArray(subs) && (sectors.length + subs.length) > 0) {
+                            const idToSector = new Map(sectors.map(s => [s.id, { name: s.name, sort: s.sort_rank ?? 0 }]));
+                            subs.forEach(sub => {
+                                const sector = idToSector.get(sub.sector_id);
+                                const sectorName = sector?.name || 'Other';
+                                sectorSubRows.push({
+                                    sector: sectorName,
+                                    subsector: sub.name,
+                                    sectorSort: sector?.sort ?? 0,
+                                    subSort: sub.sort_rank ?? 0,
+                                });
+                            });
+                        }
+                    }
+
+                    if (sectorSubRows.length === 0) {
+                        console.warn('No technology types/subsectors found from Supabase – keeping existing options.');
+                        initHierarchicalTechSelect('technologyTypes', 'Technology Type');
+                        return;
+                    }
+
+                    // Build optgroups
+                    selectEl.innerHTML = '';
+                    const groups = new Map();
+                    sectorSubRows.forEach(row => {
+                        if (!row.sector || !row.subsector) return;
+                        if (!groups.has(row.sector)) groups.set(row.sector, { sort: row.sectorSort ?? 0, children: [] });
+                        groups.get(row.sector).children.push({ name: row.subsector, sort: row.subSort ?? 0 });
+                    });
+
+                    const sortedSectors = Array.from(groups.entries())
+                        .sort((a, b) => (a[1].sort - b[1].sort) || a[0].localeCompare(b[0]));
+
+                    sortedSectors.forEach(([sectorName, meta]) => {
+                        const og = document.createElement('optgroup');
+                        og.label = sectorName;
+                        meta.children
+                            .sort((a, b) => (a.sort - b.sort) || a.name.localeCompare(b.name))
+                            .forEach(child => {
+                                og.appendChild(new Option(child.name, `${sectorName}: ${child.name}`));
+                            });
+                        selectEl.appendChild(og);
+                    });
+
+                    // Initialize custom hierarchical UI
+                    initHierarchicalTechSelect('technologyTypes', 'Technology Type');
+                } catch (e) {
+                    console.warn('Could not load Technology Types/Subsectors yet:', e);
+                    initHierarchicalTechSelect('technologyTypes', 'Technology Type');
+                }
+            }
+            loadTechSubsectorsFromSupabase();
         })();
     </script>
 </body>
