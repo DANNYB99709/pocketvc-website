@@ -847,6 +847,8 @@
                 const panel = createPanel();
                 wrapper.appendChild(trigger);
                 wrapper.appendChild(panel);
+                // mark as initialized to avoid double-wrapping
+                selectEl.setAttribute('data-pvc-init', '1');
                 return { wrapper, trigger, panel };
             }
 
@@ -865,6 +867,7 @@
             function initSimpleMultiSelect(selectName, placeholder) {
                 const selectEl = document.querySelector(`#vc-fields select[name="${selectName}"]`);
                 if (!selectEl) return;
+                if (selectEl.getAttribute('data-pvc-init') === '1') return; // already initialized
                 const { trigger, panel } = wrapSelect(selectEl, placeholder);
 
                 // Top controls
@@ -955,6 +958,7 @@
             function initHierarchicalTechSelect(selectName, placeholder) {
                 const selectEl = document.querySelector(`#vc-fields select[name="${selectName}"]`);
                 if (!selectEl) return;
+                if (selectEl.getAttribute('data-pvc-init') === '1') return;
                 const { trigger, panel } = wrapSelect(selectEl, placeholder);
 
                 // Controls
@@ -1114,10 +1118,8 @@
                 render();
             }
 
-            // Initialize all VC dropdowns
+            // Initialize VC dropdowns that are static for now
             initHierarchicalTechSelect('technologyTypes', 'Technology Type');
-            initSimpleMultiSelect('investmentLocations', 'Geographic Location');
-            initSimpleMultiSelect('investmentStages', 'Company Stage');
 
             // Optional: dynamically load TRL options from Supabase
             async function loadTRLFromSupabase() {
@@ -1158,6 +1160,74 @@
                 }
             }
             loadTRLFromSupabase();
+
+            // Load Company Stage from Supabase
+            async function loadCompanyStageFromSupabase() {
+                try {
+                    const SUPABASE_URL = window.SUPABASE_URL || 'YOUR_SUPABASE_URL';
+                    const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+                    const selectEl = document.querySelector('#vc-fields select[name="investmentStages"]');
+                    if (!selectEl) return;
+                    if (!SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('YOUR_')) {
+                        initSimpleMultiSelect('investmentStages', 'Company Stage');
+                        return;
+                    }
+
+                    const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                    // Adjust table/columns after you confirm names
+                    const { data, error } = await client
+                        .from('fundraising_stages')
+                        .select('stage_name, sort_rank')
+                        .order('sort_rank', { ascending: true });
+                    if (error) throw error;
+
+                    selectEl.innerHTML = '';
+                    data.forEach(row => {
+                        const label = row && (row.stage_name || row.name);
+                        if (label) selectEl.add(new Option(label, label));
+                    });
+
+                    initSimpleMultiSelect('investmentStages', 'Company Stage');
+                } catch (e) {
+                    console.warn('Could not load Company Stage yet:', e);
+                    initSimpleMultiSelect('investmentStages', 'Company Stage');
+                }
+            }
+            loadCompanyStageFromSupabase();
+
+            // Load Investment Locations from Supabase
+            async function loadLocationsFromSupabase() {
+                try {
+                    const SUPABASE_URL = window.SUPABASE_URL || 'YOUR_SUPABASE_URL';
+                    const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+                    const selectEl = document.querySelector('#vc-fields select[name="investmentLocations"]');
+                    if (!selectEl) return;
+                    if (!SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('YOUR_')) {
+                        initSimpleMultiSelect('investmentLocations', 'Geographic Location');
+                        return;
+                    }
+
+                    const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                    // locations table: select name, order alphabetically
+                    const { data, error } = await client
+                        .from('locations')
+                        .select('name')
+                        .order('name', { ascending: true });
+                    if (error) throw error;
+
+                    selectEl.innerHTML = '';
+                    data.forEach(row => {
+                        const label = row && (row.name);
+                        if (label) selectEl.add(new Option(label, label));
+                    });
+
+                    initSimpleMultiSelect('investmentLocations', 'Geographic Location');
+                } catch (e) {
+                    console.warn('Could not load Locations yet:', e);
+                    initSimpleMultiSelect('investmentLocations', 'Geographic Location');
+                }
+            }
+            loadLocationsFromSupabase();
         })();
     </script>
 </body>
