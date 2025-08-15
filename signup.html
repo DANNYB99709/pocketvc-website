@@ -14,6 +14,15 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Supabase JS (for dynamic dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- Supabase project config (safe: anon key) -->
+    <script>
+        window.SUPABASE_URL = 'https://rchawyidafvsttcoxmle.supabase.co';
+        window.SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjaGF3eWlkYWZ2c3R0Y294bWxlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE2MTYyNTgsImV4cCI6MjA1NzE5MjI1OH0.ppuPk-nU9Rc9Qy9nEqR_TLlAyiJaPzLPUQnkevvmSlU';
+    </script>
+    
     <!-- Custom Styles -->
     <style>
         :root {
@@ -815,7 +824,7 @@
                 const trigger = document.createElement('button');
                 trigger.type = 'button';
                 trigger.className = 'w-full flex items-center justify-between px-3 py-2 border-2 border-gray-300 rounded-2xl bg-white hover:bg-gray-50';
-                trigger.innerHTML = `<span class="text-sm text-gray-700">${labelText}</span><svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>`;
+                trigger.innerHTML = `<span class="text-sm text-gray-500">${labelText}</span><svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>`;
                 return trigger;
             }
 
@@ -888,7 +897,7 @@
                         if (filter && !opt.text.toLowerCase().includes(filter.toLowerCase())) return;
                         const row = document.createElement('label');
                         row.className = 'flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-50 cursor-pointer';
-                        row.innerHTML = `<input type=\"checkbox\" class=\"h-4 w-4\" ${opt.selected ? 'checked' : ''} data-index=\"${idx}\"><span class=\"text-sm text-gray-800\">${opt.text}</span>`;
+                        row.innerHTML = `<input type=\"checkbox\" class=\"h-4 w-4\" ${opt.selected ? 'checked' : ''} data-index=\"${idx}\"><span class=\"text-sm text-gray-500\">${opt.text}</span>`;
                         list.appendChild(row);
                     });
                     // Update trigger text
@@ -1000,7 +1009,7 @@
                             <div class=\"flex items-center justify-between cursor-pointer\" data-group=\"${gi}\">
                                 <label class=\"flex items-center gap-2\">
                                     <input type=\"checkbox\" class=\"h-4 w-4\" data-role=\"group-checkbox\" ${group.options.every(o => o.selected) ? 'checked' : ''}>
-                                    <span class=\"text-sm text-gray-900 font-medium\">${group.label}</span>
+                                    <span class=\"text-sm text-gray-500 font-medium\">${group.label}</span>
                                 </label>
                                 <svg class=\"w-4 h-4 text-gray-500\" data-role=\"chevron\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 9l-7 7-7-7\"/></svg>
                             </div>`;
@@ -1015,7 +1024,7 @@
                             if (filter && !(`${group.label} ${opt.text}`.toLowerCase().includes(filter.toLowerCase()))) return;
                             const row = document.createElement('label');
                             row.className = 'flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-50 cursor-pointer';
-                            row.innerHTML = `<input type=\"checkbox\" class=\"h-4 w-4\" data-gi=\"${gi}\" data-oi=\"${oi}\" ${opt.selected ? 'checked' : ''}><span class=\"text-sm text-gray-800\">${opt.text}</span>`;
+                            row.innerHTML = `<input type=\"checkbox\" class=\"h-4 w-4\" data-gi=\"${gi}\" data-oi=\"${oi}\" ${opt.selected ? 'checked' : ''}><span class=\"text-sm text-gray-500\">${opt.text}</span>`;
                             children.appendChild(row);
                         });
                         list.appendChild(children);
@@ -1109,7 +1118,46 @@
             initHierarchicalTechSelect('technologyTypes', 'Technology Type');
             initSimpleMultiSelect('investmentLocations', 'Geographic Location');
             initSimpleMultiSelect('investmentStages', 'Company Stage');
-            initSimpleMultiSelect('trlStages', 'TRL Stage');
+
+            // Optional: dynamically load TRL options from Supabase
+            async function loadTRLFromSupabase() {
+                try {
+                    const SUPABASE_URL = window.SUPABASE_URL || 'YOUR_SUPABASE_URL';
+                    const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+                    const selectEl = document.querySelector('#vc-fields select[name="trlStages"]');
+                    if (!selectEl) return;
+                    if (!SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('YOUR_')) {
+                        // No creds yet; initialize UI with existing static options
+                        initSimpleMultiSelect('trlStages', 'TRL Stage');
+                        return;
+                    }
+
+                    const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                    const { data, error } = await client
+                        .from('technology_readiness_levels')
+                        .select('level_name, sort_rank')
+                        .order('sort_rank', { ascending: true });
+                    if (error) throw error;
+
+                    // Clear existing and populate
+                    selectEl.innerHTML = '';
+                    data.forEach(row => {
+                        if (row && row.name) {
+                            const label = row.level_name || row.name;
+                            const opt = new Option(label, label);
+                            selectEl.add(opt);
+                        }
+                    });
+
+                    // Initialize custom UI after data ready
+                    initSimpleMultiSelect('trlStages', 'TRL Stage');
+                } catch (e) {
+                    console.warn('Could not load TRL from Supabase yet:', e);
+                    // Fallback to existing static UI
+                    initSimpleMultiSelect('trlStages', 'TRL Stage');
+                }
+            }
+            loadTRLFromSupabase();
         })();
     </script>
 </body>
