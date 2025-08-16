@@ -636,7 +636,7 @@
         }
 
         // Form submission
-        document.getElementById('signup-form').addEventListener('submit', function(e) {
+        document.getElementById('signup-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const submitBtn = document.getElementById('submit-btn');
@@ -650,35 +650,6 @@
             const formData = new FormData(e.target);
             const data = Object.fromEntries(formData);
 
-            // Collect multi-select fields for VC users
-            if (currentUserType === 'vc') {
-                const getMultiValues = (selectName) => {
-                    const selectEl = document.querySelector(`#vc-fields select[name="${selectName}"]`);
-                    if (!selectEl) return [];
-                    return Array.from(selectEl.options)
-                        .filter(opt => opt.selected)
-                        .map(opt => opt.value);
-                };
-
-                data.technologyTypes = getMultiValues('technologyTypes');
-                data.investmentLocations = getMultiValues('investmentLocations');
-                data.investmentStages = getMultiValues('investmentStages');
-                data.trlStages = getMultiValues('trlStages');
-
-                // Validate VC multi-selects
-                if (
-                    data.technologyTypes.length === 0 ||
-                    data.investmentLocations.length === 0 ||
-                    data.investmentStages.length === 0 ||
-                    data.trlStages.length === 0
-                ) {
-                    showMessage('error', 'Please select at least one option in each VC field.');
-                    submitBtn.textContent = 'Join Waiting List';
-                    submitBtn.disabled = false;
-                    return;
-                }
-            }
-            
             // Validate passwords match
             if (data.password !== data.confirmPassword) {
                 showMessage('error', 'Passwords do not match');
@@ -686,14 +657,122 @@
                 submitBtn.disabled = false;
                 return;
             }
-            
-            // Simulate form submission (we'll add Supabase later)
-            setTimeout(() => {
-                showMessage('success', 'Registration successful! Please check your email to verify your account.');
+
+            // Helper: collect multi values from a select inside a container
+            const getMultiValues = (selectName, containerSelector) => {
+                const selectEl = document.querySelector(`${containerSelector} select[name="${selectName}"]`);
+                if (!selectEl) return [];
+                return Array.from(selectEl.options)
+                    .filter(opt => opt.selected && opt.value)
+                    .map(opt => opt.value);
+            };
+
+            // Helper: split technology selections into sectors and subsectors
+            const splitTech = (selections) => {
+                const sectors = new Set();
+                const subsectors = [];
+                selections.forEach(v => {
+                    const parts = v.split(':');
+                    if (parts.length >= 2) {
+                        const sector = parts[0].trim();
+                        const sub = parts.slice(1).join(':').trim();
+                        if (sector) sectors.add(sector);
+                        if (sub) subsectors.push(sub);
+                    } else {
+                        sectors.add(v.trim());
+                    }
+                });
+                return { sectors: Array.from(sectors), subsectors };
+            };
+
+            // Build payload common fields
+            const isVC = currentUserType === 'vc';
+            let techSelections = [];
+            let locations = [];
+            let stages = [];
+            let trls = [];
+
+            if (isVC) {
+                techSelections = getMultiValues('technologyTypes', '#vc-fields');
+                locations = getMultiValues('investmentLocations', '#vc-fields');
+                stages = getMultiValues('investmentStages', '#vc-fields');
+                trls = getMultiValues('trlStages', '#vc-fields');
+                if (
+                    techSelections.length === 0 ||
+                    locations.length === 0 ||
+                    stages.length === 0 ||
+                    trls.length === 0
+                ) {
+                    showMessage('error', 'Please select at least one option in each VC field.');
+                    submitBtn.textContent = 'Join Waiting List';
+                    submitBtn.disabled = false;
+                    return;
+                }
+            } else {
+                techSelections = getMultiValues('technologyTypes', '#startup-fields');
+                locations = getMultiValues('investmentLocations', '#startup-fields');
+                stages = getMultiValues('investmentStages', '#startup-fields');
+                trls = getMultiValues('trlStages', '#startup-fields');
+            }
+
+            const { sectors, subsectors } = splitTech(techSelections);
+
+            const payload = {
+                user_type: isVC ? 'vc' : 'startup',
+                email: data.email,
+                first_name: data.firstName,
+                last_name: data.lastName,
+                phone: data.phone || null,
+                // VC fields
+                firm_name: isVC ? data.firmName : null,
+                position: isVC ? data.position : null,
+                vc_technology_types: isVC ? sectors : null,
+                vc_locations: isVC ? locations : null,
+                vc_company_stages: isVC ? stages : null,
+                vc_trl_stages: isVC ? trls : null,
+                firm_description: isVC ? (data.firmDescription || null) : null,
+                // Startup fields
+                company_name: !isVC ? data.companyName : null,
+                startup_locations: !isVC ? locations : null,
+                startup_technology_types: !isVC ? sectors : null,
+                startup_company_stages: !isVC ? stages : null,
+                startup_trl_stages: !isVC ? trls : null,
+                company_description: !isVC ? (data.description || null) : null,
+                // Shared
+                source: 'landing_page'
+            };
+
+            try {
+                const SUPABASE_URL = window.SUPABASE_URL;
+                const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY;
+                const client = window.pvcSupabase || (window.pvcSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
+
+                // 1) Write to waitlist_submissions
+                const { error: insertErr } = await client.from('waitlist_submissions').insert(payload);
+                if (insertErr) throw insertErr;
+
+                // 2) Kick off auth signUp to send email confirmation
+                const { error: signErr } = await client.auth.signUp({
+                    email: data.email,
+                    password: data.password,
+                    options: {
+                        data: { user_type: payload.user_type },
+                    }
+                });
+                if (signErr && signErr.message && !/already registered/i.test(signErr.message)) {
+                    // Only surface real errors; ignore Already Registered (they might be existing lead)
+                    throw signErr;
+                }
+
+                showMessage('success', 'Thanks! Check your email to verify your account. We\'ll move your details over automatically after confirmation.');
                 e.target.reset();
+            } catch (err) {
+                console.error('Submission error:', err);
+                showMessage('error', 'Sorry, something went wrong. Please try again in a moment.');
+            } finally {
                 submitBtn.textContent = 'Join Waiting List';
                 submitBtn.disabled = false;
-            }, 2000);
+            }
         });
 
         // Show message function
