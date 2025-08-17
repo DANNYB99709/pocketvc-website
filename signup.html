@@ -629,6 +629,10 @@
                 document.getElementById('vc-fields').classList.remove('active');
                 document.getElementById('form-title').textContent = 'Join Startup Waiting List';
                 document.getElementById('connection-type').textContent = 'investors';
+
+                // Disable VC inputs to avoid HTML validation blocking submit
+                document.querySelectorAll('#vc-fields input, #vc-fields select, #vc-fields textarea').forEach(el => { el.disabled = true; });
+                document.querySelectorAll('#startup-fields input, #startup-fields select, #startup-fields textarea').forEach(el => { el.disabled = false; });
             } else {
                 vcBtn.classList.add('selected');
                 startupBtn.classList.remove('selected');
@@ -636,6 +640,10 @@
                 document.getElementById('startup-fields').classList.remove('active');
                 document.getElementById('form-title').textContent = 'Join VC Waiting List';
                 document.getElementById('connection-type').textContent = 'startups';
+
+                // Disable Startup inputs to avoid HTML validation blocking submit
+                document.querySelectorAll('#startup-fields input, #startup-fields select, #startup-fields textarea').forEach(el => { el.disabled = true; });
+                document.querySelectorAll('#vc-fields input, #vc-fields select, #vc-fields textarea').forEach(el => { el.disabled = false; });
             }
         }
 
@@ -799,6 +807,13 @@
             messageDiv.className = `mb-6 p-4 rounded-lg ${type === 'success' ? 'bg-green-50 border border-green-200 text-green-800' : 'bg-red-50 border border-red-200 text-red-800'}`;
             messageDiv.textContent = text;
             messageDiv.classList.remove('hidden');
+            // Scroll to message so user sees feedback
+            const topTarget = document.body;
+            try {
+                messageDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } catch (_) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         }
 
         // Initialize with startup selected
