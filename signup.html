@@ -526,9 +526,13 @@
                         <button
                             type="submit"
                             id="submit-btn"
-                            class="w-full bg-blue-900 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-800 transition-colors"
+                            class="w-full bg-blue-900 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-800 transition-colors flex items-center justify-center gap-2"
                         >
-                            Join Waiting List
+                            <svg id="submit-spinner" class="hidden animate-spin h-5 w-5 text-white" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                            </svg>
+                            <span id="submit-label">Join Waiting List</span>
                         </button>
                         <p class="mt-4 text-center text-sm text-gray-600">
                             By joining our waiting list, you agree to our{' '}
@@ -643,7 +647,12 @@
             const messageDiv = document.getElementById('message');
             
             // Show loading state
-            submitBtn.textContent = 'Joining Waiting List...';
+            const submitLabel = document.getElementById('submit-label');
+            const submitSpinner = document.getElementById('submit-spinner');
+            if (submitLabel && submitSpinner) {
+                submitLabel.textContent = 'Joining Waiting List...';
+                submitSpinner.classList.remove('hidden');
+            }
             submitBtn.disabled = true;
             
             // Get form data
@@ -653,7 +662,10 @@
             // Validate passwords match
             if (data.password !== data.confirmPassword) {
                 showMessage('error', 'Passwords do not match');
-                submitBtn.textContent = 'Join Waiting List';
+                if (submitLabel && submitSpinner) {
+                    submitLabel.textContent = 'Join Waiting List';
+                    submitSpinner.classList.add('hidden');
+                }
                 submitBtn.disabled = false;
                 return;
             }
@@ -704,7 +716,10 @@
                     trls.length === 0
                 ) {
                     showMessage('error', 'Please select at least one option in each VC field.');
-                    submitBtn.textContent = 'Join Waiting List';
+                    if (submitLabel && submitSpinner) {
+                        submitLabel.textContent = 'Join Waiting List';
+                        submitSpinner.classList.add('hidden');
+                    }
                     submitBtn.disabled = false;
                     return;
                 }
@@ -770,7 +785,10 @@
                 console.error('Submission error:', err);
                 showMessage('error', 'Sorry, something went wrong. Please try again in a moment.');
             } finally {
-                submitBtn.textContent = 'Join Waiting List';
+                if (submitLabel && submitSpinner) {
+                    submitLabel.textContent = 'Join Waiting List';
+                    submitSpinner.classList.add('hidden');
+                }
                 submitBtn.disabled = false;
             }
         });
@@ -925,6 +943,14 @@
                 });
 
                 render();
+                // Re-render when options change (e.g., after dynamic Supabase load)
+                if (!selectEl._pvcObserver) {
+                    const observer = new MutationObserver(() => {
+                        render(search.value || '');
+                    });
+                    observer.observe(selectEl, { childList: true, subtree: true });
+                    selectEl._pvcObserver = observer;
+                }
             }
 
             function initHierarchicalTechSelect(selectName, placeholder, containerSelector = '#vc-fields') {
@@ -1189,6 +1215,14 @@
                 });
 
                 render();
+                // Re-render when optgroups/options change after async loads
+                if (!selectEl._pvcObserver) {
+                    const observer = new MutationObserver(() => {
+                        render(search.value || '');
+                    });
+                    observer.observe(selectEl, { childList: true, subtree: true });
+                    selectEl._pvcObserver = observer;
+                }
             }
 
             // Initialize all VC dropdowns
