@@ -6,12 +6,12 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>PocketVC | Connect Venture Capital Firms with Innovative Startups</title>
     <meta name="description" content="PocketVC helps VCs discover, evaluate and connect with innovative startups. Smart matching, deeptech focus and an easy sign‑up to join the waiting list.">
-    <link rel="canonical" href="https://pocketvc.co/landing" />
+    <link rel="canonical" href="https://pocketvc.co/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:title" content="PocketVC | Venture Capital Platform Connecting VCs and Startups" />
     <meta property="og:description" content="Discover innovative startups and connect with the right investors. Join the PocketVC waitlist." />
-    <meta property="og:url" content="https://pocketvc.co/landing" />
+    <meta property="og:url" content="https://pocketvc.co/" />
     <meta property="og:image" content="https://pocketvc.co/logo.png" />
     <meta property="og:image:alt" content="PocketVC logo" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -21,6 +21,8 @@
     <meta property="og:site_name" content="PocketVC" />
     <meta name="theme-color" content="#003366" />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <!-- Search engine verification: replace tokens after claiming in Search Console/Bing Webmaster Tools -->
+    <meta name="google-site-verification" content="VzCoa_xbrKU9iDETmjvtn5wIvGJEAcstpQ0aG1rCmms" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -98,237 +100,43 @@
             background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
         }
         
-        .hero-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
+        .coming-soon-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--primary-200);
+            border-radius: 8px;
         }
         
-
-        
-        .category-chip {
-            background: white;
-            border: 2px solid var(--primary-200);
-            border-radius: 25px;
-            padding: 12px 24px;
-            font-weight: 500;
-            color: var(--primary-700);
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-        
-        .category-chip:hover {
-            border-color: var(--primary-500);
-            color: var(--primary-900);
-            transform: translateY(-2px);
-        }
-        
-        .category-chip.active {
-            background: var(--primary-600);
-            border-color: var(--primary-600);
-            color: white;
-        }
-        
-        .benefit-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border: 1px solid var(--primary-100);
-        }
-        
-        .benefit-card:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transform: translateY(-4px);
-        }
-        
-        .step-card {
+        .feature-card {
             background: white;
             border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
         
-        .step-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        .feature-card:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
-        .solution-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border: 1px solid var(--primary-100);
-        }
-        
-        .solution-card:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transform: translateY(-4px);
-        }
-        
-        .cta-button {
-            background: var(--primary-600);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .cta-button:hover {
-            background: var(--primary-700);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
-        }
-        
-        .cta-button.secondary {
-            background: white;
-            color: var(--primary-600);
-            border: 2px solid var(--primary-600);
-        }
-        
-        .cta-button.secondary:hover {
-            background: var(--primary-50);
-        }
-        
-        .cta-button-transparent {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-        
-        .cta-button-transparent:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-        
-        .cta-button-secondary-transparent {
-            background: transparent;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .cta-button-secondary-transparent:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-2px);
-        }
-        
-        .search-input::placeholder {
-            color: rgba(191, 219, 254, 0.7);
-        }
-        
-        .search-input:focus::placeholder {
-            color: rgba(191, 219, 254, 0.5);
-        }
-        
-        .category-carousel-container {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .category-carousel {
+        .step-circle {
+            width: 24px;
+            height: 24px;
+            background: var(--primary-900);
+            border-radius: 50%;
             display: flex;
-            gap: 1rem;
-            white-space: nowrap;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 12px;
         }
         
-                 .animate-scroll {
-             animation: scroll 15s linear infinite;
-         }
-        
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
+        .step-circle.green {
+            background: #059669;
         }
         
-        .category-carousel:hover {
-            animation-play-state: paused;
-        }
-        
-        /* iPhone Carousel Styles */
-        .phone-carousel-container {
-            overflow: hidden;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-        
-        .phone-frame {
-            width: 280px;
-            height: 560px;
-            background: #1a1a1a;
-            border-radius: 40px;
-            padding: 8px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-        
-        .phone-frame::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: #333;
-            border-radius: 2px;
-        }
-        
-        .phone-screen {
-            width: 100%;
-            height: 100%;
-            border-radius: 32px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-                 .phone-screen img {
-             width: 100% !important;
-             height: 100% !important;
-             object-fit: cover !important;
-             display: block !important;
-             border-radius: 32px;
-         }
-        
-        .phone-carousel {
-            width: 400%;
-        }
-        
-        .phone-slide {
-            width: 25%;
-        }
-        
-        .carousel-dot.active {
-            background-color: var(--primary-600);
-        }
-        
-        .step-item {
-            transition: all 0.3s ease;
-        }
-        
-        .step-item:hover {
-            transform: translateX(8px);
+        .mobile-menu {
+            display: none;
         }
         
         @media (max-width: 768px) {
@@ -341,471 +149,433 @@
             }
         }
     </style>
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PocketVC",
+      "url": "https://pocketvc.co/",
+      "logo": "https://pocketvc.co/logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/danielbarnard1/",
+        "https://www.linkedin.com/company/pocketvc-connect"
+      ],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "info@pocketvc.co"
+      }]
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is PocketVC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PocketVC is a platform that connects venture capital firms with innovative startups using smart matching across deeptech sectors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is PocketVC for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Investors looking to discover and evaluate startups, and founders seeking the right investors to fund and scale their companies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I join the waiting list?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Click the Join Waiting List button and complete the short form as a Startup or as a VC/Investor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When will PocketVC launch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We are preparing for launch soon. Join the waiting list to receive early access updates."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FM5YRS2ZFT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+      gtag('config', 'G-FM5YRS2ZFT');
+    </script>
+
 </head>
-<body class="bg-gray-50">
+<body>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white text-blue-900 px-3 py-2 rounded">Skip to content</a>
     <!-- Navigation -->
-    <nav class="absolute top-0 left-0 right-0 z-50 pt-6">
+    <nav class="bg-white shadow-sm border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
-                <div class="flex items-center space-x-3">
-                    <img src="logo.png" alt="PocketVC Logo" class="h-8 w-auto">
-                    <span class="text-xl font-bold text-blue-200">PocketVC</span>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="desktop-nav hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-blue-200 hover:text-blue-100 transition-colors">Features</a>
-                    <a href="#how-it-works" class="text-blue-200 hover:text-blue-100 transition-colors">How it Works</a>
-                    <a href="#solutions" class="text-blue-200 hover:text-blue-100 transition-colors">Solutions</a>
-                    <a href="about.html" class="text-blue-200 hover:text-blue-100 transition-colors">About</a>
-                    
-                    <!-- Search Bar -->
-                    <div class="relative">
-                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border border-blue-200 border-opacity-30 rounded-lg px-4 py-2 text-blue-200 placeholder-blue-200 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent transition-all duration-200 w-48">
-                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-blue-200 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="index.html">
+                            <img src="logo.png" alt="PocketVC Logo" class="h-10 w-auto" width="160" height="40">
+                        </a>
                     </div>
                 </div>
                 
-                                 <!-- CTA Buttons -->
-                 <div class="hidden md:flex items-center space-x-4">
-                     <a href="signup.html" class="cta-button-secondary-transparent">Join Waitlist</a>
-                     <a href="signup.html" class="cta-button-transparent text-blue-200">Get Started</a>
-                 </div>
-                
-                <!-- Mobile Menu Button -->
-                <div class="mobile-menu md:hidden">
-                    <button class="text-blue-200 hover:text-blue-100">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
+                                <!-- Navigation -->
+                <div class="flex items-baseline space-x-8">
+                    <a href="signup.html" class="bg-primary-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-800 transition-colors">Sign Up</a>
+                    <!-- Founder/Company social links removed from header per request -->
+                    
+                    <!-- Dropdown Menu -->
+                    <div class="relative">
+                        <button id="dropdown-btn" aria-label="Open menu" class="text-gray-600 hover:text-primary-900 transition-colors flex items-center">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                        
+                        <!-- Dropdown Content -->
+                        <div id="dropdown-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">About Us</a>
+                            <a href="faq.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">FAQ</a>
+                            <a href="signup.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">Sign Up</a>
+                            <a href="privacy.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">Privacy Policy</a>
+                            <a href="terms.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">Terms of Service</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
     </nav>
 
-    <!-- Hero Section with Video Background -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <!-- Video Background -->
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="hero video.MP4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        
-        <!-- Content -->
-        <div class="relative z-10 text-center text-blue-200 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6">
-                Connect VCs with <span class="text-blue-100">Innovative Startups</span>
-            </h1>
-                         <p class="text-xl md:text-2xl mb-8 text-blue-200 max-w-3xl mx-auto">
-                 PocketVC is changing the way startups and investors connect. Don't miss your chance to get early access - Beta spots are limited.
-             </p>
-            
-                         <!-- CTA Buttons -->
-             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                 <a href="signup.html" class="cta-button-transparent text-lg px-8 py-4">
-                     Join the Platform
-                 </a>
-                <a href="#how-it-works" class="cta-button secondary text-lg px-8 py-4">
-                    Learn More
-                </a>
+    <!-- Hero Section -->
+    <section id="main-content" class="hero-gradient py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                    The Future of VC-Startup
+                    <span class="text-primary-900"> Connections</span>
+                </h1>
+                
+                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    PocketVC is launching soon as the premier platform for venture capital firms to discover, evaluate, and invest in the next generation of innovative startups. 
+                    <a href="signup.html" class="text-primary-900 hover:underline">Join the PocketVC waiting list</a> to be first in when we launch.
+                </p>
+                
+                <!-- Coming Soon Card -->
+                <div class="coming-soon-card p-4 mb-8 max-w-md mx-auto">
+                    <div class="flex items-center justify-center space-x-2 mb-2">
+                        <svg class="w-5 h-5 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="font-semibold text-primary-900">Coming Soon</span>
+                    </div>
+                    <p class="text-sm text-gray-700">
+                        Join our waiting list for early access and exclusive launch benefits.
+                        <a href="signup.html" class="text-primary-900 hover:underline">Sign up now</a>
+                    </p>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="signup.html" class="bg-blue-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-800 transition-colors flex items-center justify-center">
+                        Join Waiting List
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                    <a href="#features" class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors bg-transparent">
+                        Learn More
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section id="features" class="py-20 bg-white">
+    <!-- Features Section -->
+    <section id="features" class="py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                     Why Choose <span class="text-blue-200">PocketVC</span>
-                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Our platform revolutionizes how VCs discover and connect with innovative startups
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Why Choose PocketVC?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Our platform combines cutting-edge technology with industry expertise to deliver exceptional results for both VCs and startups.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Benefit 1 -->
-                <div class="benefit-card p-8 text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Smart Matching -->
+                <div class="feature-card p-6">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Smart Matching</h3>
-                    <p class="text-gray-600">AI-powered algorithms match VCs with startups based on investment thesis, sector focus, and growth stage.</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Smart Matching</h3>
+                    <p class="text-gray-600">Our AI-powered algorithm connects VCs with startups that align with their investment thesis and sector preferences.</p>
                 </div>
                 
-                <!-- Benefit 2 -->
-                <div class="benefit-card p-8 text-center">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Deep Discovery</h3>
-                    <p class="text-gray-600">Access a curated pipeline of high-quality startups across deeptech, fintech, healthtech, and more.</p>
-                </div>
-                
-                <!-- Benefit 3 -->
-                <div class="benefit-card p-8 text-center">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <!-- Verified Community -->
+                <div class="feature-card p-6">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Network Effects</h3>
-                    <p class="text-gray-600">Join a growing ecosystem of investors and founders building the future of venture capital.</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Verified Community</h3>
+                    <p class="text-gray-600">All users are thoroughly vetted to ensure quality connections and legitimate investment opportunities.</p>
                 </div>
                 
-                <!-- Benefit 4 -->
-                <div class="benefit-card p-8 text-center">
-                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                <!-- Fast Connections -->
+                <div class="feature-card p-6">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Verified Quality</h3>
-                    <p class="text-gray-600">Every startup is vetted and verified, ensuring you only see high-potential investment opportunities.</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Fast Connections</h3>
+                    <p class="text-gray-600">Streamlined communication tools help you connect, evaluate, and close deals faster than ever before.</p>
+                </div>
+                
+                <!-- Secure Platform -->
+                <div class="feature-card p-6">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Secure Platform</h3>
+                    <p class="text-gray-600">Enterprise-grade security protects your sensitive business information and investment data.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Category Chips Carousel -->
-    <section class="py-16 bg-gray-50">
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                         <div class="text-center mb-12">
-                 <h3 class="text-2xl font-bold text-gray-900 mb-4">Explore Startup Categories</h3>
-                 <p class="text-gray-600">These are the categories we are focused on, but we will be adding other categories very soon. Don't see your category? We would still love you to join our waiting list and suggest your technology type!</p>
-             </div>
-            
-            <div class="category-carousel-container overflow-hidden">
-                <div class="category-carousel flex gap-4 pb-4 animate-scroll">
-                    <div class="category-chip">Advanced Computing</div>
-                    <div class="category-chip">Advanced Manufacturing & 3D Printing</div>
-                    <div class="category-chip">Advanced Materials & Nanotechnology</div>
-                    <div class="category-chip">Artificial Intelligence & Machine Learning</div>
-                    <div class="category-chip">Biotechnology & Life Sciences</div>
-                    <div class="category-chip">Cybersecurity & Next-Gen Cryptography</div>
-                    <div class="category-chip">Energy & Climate Technologies</div>
-                    <div class="category-chip">Neurotechnology & Brain–Computer Interfaces</div>
-                    <div class="category-chip">Photonics & Optoelectronics</div>
-                    <div class="category-chip">Robotics & Autonomous Systems</div>
-                    <div class="category-chip">Sensors, IoT & Edge Devices</div>
-                    <div class="category-chip">Space & Satellite Systems</div>
-                    <!-- Duplicate for seamless loop -->
-                    <div class="category-chip">Advanced Computing</div>
-                    <div class="category-chip">Advanced Manufacturing & 3D Printing</div>
-                    <div class="category-chip">Advanced Materials & Nanotechnology</div>
-                    <div class="category-chip">Artificial Intelligence & Machine Learning</div>
-                    <div class="category-chip">Biotechnology & Life Sciences</div>
-                    <div class="category-chip">Cybersecurity & Next-Gen Cryptography</div>
-                    <div class="category-chip">Energy & Climate Technologies</div>
-                    <div class="category-chip">Neurotechnology & Brain–Computer Interfaces</div>
-                    <div class="category-chip">Photonics & Optoelectronics</div>
-                    <div class="category-chip">Robotics & Autonomous Systems</div>
-                    <div class="category-chip">Sensors, IoT & Edge Devices</div>
-                    <div class="category-chip">Space & Satellite Systems</div>
-                </div>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">Answers to common questions about PocketVC</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto divide-y divide-gray-200 bg-white border border-gray-200 rounded-xl">
+                <details class="p-6 group" open>
+                    <summary class="flex cursor-pointer items-center justify-between text-left text-lg font-medium text-gray-900">
+                        <span>What is PocketVC?</span>
+                        <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="mt-3 text-gray-600">PocketVC connects venture capital firms with innovative startups using smart matching, starting with deeptech sectors.</div>
+                </details>
+
+                <details class="p-6 group">
+                    <summary class="flex cursor-pointer items-center justify-between text-left text-lg font-medium text-gray-900">
+                        <span>Who is PocketVC for?</span>
+                        <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="mt-3 text-gray-600">Investors who want to discover and evaluate startups efficiently, and founders seeking the right investors to fund and scale.</div>
+                </details>
+
+                <details class="p-6 group">
+                    <summary class="flex cursor-pointer items-center justify-between text-left text-lg font-medium text-gray-900">
+                        <span>How do I join the waiting list?</span>
+                        <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="mt-3 text-gray-600">Click “Join Waiting List” and complete the short form as a Startup or as a VC/Investor—takes under a minute.</div>
+                </details>
+
+                <details class="p-6 group">
+                    <summary class="flex cursor-pointer items-center justify-between text-left text-lg font-medium text-gray-900">
+                        <span>When will PocketVC launch?</span>
+                        <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="mt-3 text-gray-600">We’re preparing for launch. Join the waiting list for updates and early access.</div>
+                </details>
             </div>
         </div>
     </section>
 
     <!-- How It Works Section -->
-    <section id="how-it-works" class="py-20 bg-white">
+    <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                     How to Use <span class="text-blue-200">PocketVC</span>
-                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Get started in four simple steps
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    How It Works
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Simple steps to connect and grow your business
                 </p>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Steps Content -->
-                <div class="space-y-8">
-                                         <!-- Step 1 -->
-                     <div class="step-item flex items-start space-x-4">
-                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-blue-800 font-bold text-lg flex-shrink-0">1</div>
-                         <div>
-                             <h3 class="text-xl font-semibold text-gray-900 mb-2">Create Profile</h3>
-                             <p class="text-gray-600">Sign up as a VC or startup and complete your profile with investment thesis, sector focus, and growth stage.</p>
-                         </div>
-                     </div>
-                     
-                     <!-- Step 2 -->
-                     <div class="step-item flex items-start space-x-4">
-                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-blue-800 font-bold text-lg flex-shrink-0">2</div>
-                         <div>
-                             <h3 class="text-xl font-semibold text-gray-900 mb-2">Discover Matches</h3>
-                             <p class="text-gray-600">Our AI algorithm presents you with curated matches based on your preferences and investment criteria.</p>
-                         </div>
-                     </div>
-                     
-                     <!-- Step 3 -->
-                     <div class="step-item flex items-start space-x-4">
-                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-blue-800 font-bold text-lg flex-shrink-0">3</div>
-                         <div>
-                             <h3 class="text-xl font-semibold text-gray-900 mb-2">Connect & Evaluate</h3>
-                             <p class="text-gray-600">Initiate conversations, review detailed startup information, and schedule meetings through our platform.</p>
-                         </div>
-                     </div>
-                     
-                     <!-- Step 4 -->
-                     <div class="step-item flex items-start space-x-4">
-                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-blue-800 font-bold text-lg flex-shrink-0">4</div>
-                         <div>
-                             <h3 class="text-xl font-semibold text-gray-900 mb-2">Close Deals</h3>
-                             <p class="text-gray-600">Move forward with due diligence, term sheet negotiations, and investment execution with confidence.</p>
-                         </div>
-                     </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- For VCs -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">For Venture Capitalists</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="step-circle flex-shrink-0 mt-1">1</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Create Your Profile</h4>
+                                <p class="text-gray-600">Set up your investment preferences, sectors, and deal size.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="step-circle flex-shrink-0 mt-1">2</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Browse Matches</h4>
+                                <p class="text-gray-600">Review AI-curated startup matches based on your criteria.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="step-circle flex-shrink-0 mt-1">3</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Connect & Invest</h4>
+                                <p class="text-gray-600">Engage with founders and close deals efficiently.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                                 <!-- iPhone Carousel -->
-                 <div class="relative">
-                     <div class="phone-carousel-container">
-                         <div class="phone-carousel flex transition-transform duration-500 ease-in-out">
-                             <!-- iPhone Frame with Step 1 -->
-                             <div class="phone-slide flex-shrink-0 w-full">
-                                 <div class="phone-frame mx-auto">
-                                     <div class="phone-screen">
-                                         <img src="create.JPG" alt="Create Profile - Step 1" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                                     </div>
-                                 </div>
-                             </div>
-                             
-                             <!-- iPhone Frame with Step 2 -->
-                             <div class="phone-slide flex-shrink-0 w-full">
-                                 <div class="phone-frame mx-auto">
-                                     <div class="phone-screen">
-                                         <img src="discover.JPG" alt="Discover Matches - Step 2" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                                     </div>
-                                 </div>
-                             </div>
-                             
-                             <!-- iPhone Frame with Step 3 -->
-                             <div class="phone-slide flex-shrink-0 w-full">
-                                 <div class="phone-frame mx-auto">
-                                     <div class="phone-screen">
-                                         <img src="connect.JPG" alt="Connect & Evaluate - Step 3" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                                     </div>
-                                 </div>
-                             </div>
-                             
-                             <!-- iPhone Frame with Step 4 -->
-                             <div class="phone-slide flex-shrink-0 w-full">
-                                 <div class="phone-frame mx-auto">
-                                     <div class="phone-screen">
-                                         <img src="close.JPG" alt="Close Deals - Step 4" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     
-                     <!-- Carousel Navigation -->
-                     <div class="flex justify-center mt-6 space-x-2">
-                         <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="0"></button>
-                         <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="1"></button>
-                         <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="2"></button>
-                         <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="3"></button>
-                     </div>
-                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Business Solutions Section -->
-    <section id="solutions" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                     Our <span class="text-blue-200">Solutions</span>
-                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Tailored solutions for different types of investors and startups
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Solution 1 -->
-                <div class="solution-card p-8">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                        </svg>
+                <!-- For Startups -->
+                <div class="bg-green-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">For Startups</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="step-circle green flex-shrink-0 mt-1">1</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Build Your Pitch</h4>
+                                <p class="text-gray-600">Create a compelling profile with your business plan and metrics.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="step-circle green flex-shrink-0 mt-1">2</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Get Discovered</h4>
+                                <p class="text-gray-600">Our algorithm matches you with relevant VCs actively seeking investments.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="step-circle green flex-shrink-0 mt-1">3</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Secure Funding</h4>
+                                <p class="text-gray-600">Present your vision and secure the capital to scale your business.</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">For VCs & Investors</h3>
-                    <p class="text-gray-600 mb-6">Access a curated pipeline of high-quality startups, streamline deal flow, and make data-driven investment decisions.</p>
-                    <ul class="text-sm text-gray-600 space-y-2">
-                        <li>• Smart deal flow management</li>
-                        <li>• AI-powered startup matching</li>
-                        <li>• Due diligence tools</li>
-                        <li>• Portfolio tracking</li>
-                    </ul>
-                </div>
-                
-                <!-- Solution 2 -->
-                <div class="solution-card p-8">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">For Startups</h3>
-                    <p class="text-gray-600 mb-6">Connect with the right investors, showcase your business, and accelerate your fundraising process.</p>
-                    <ul class="text-sm text-gray-600 space-y-2">
-                        <li>• Investor matching algorithm</li>
-                        <li>• Pitch deck optimization</li>
-                        <li>• Fundraising analytics</li>
-                        <li>• Investor relationship management</li>
-                    </ul>
-                </div>
-                
-                <!-- Solution 3 -->
-                <div class="solution-card p-8">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Analytics & Insights</h3>
-                    <p class="text-gray-600 mb-6">Data-driven insights to optimize your investment strategy and startup growth.</p>
-                    <ul class="text-sm text-gray-600 space-y-2">
-                        <li>• Market trend analysis</li>
-                        <li>• Investment performance tracking</li>
-                        <li>• Startup valuation insights</li>
-                        <li>• Sector-specific reports</li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-         <!-- CTA Section -->
-     <section class="py-20 bg-blue-200">
-         <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-             <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-6">
-                 Ready to Transform <span class="text-blue-900">Venture Capital</span>?
-             </h2>
-             <p class="text-xl text-blue-700 mb-8 max-w-2xl mx-auto">
-                 Join thousands of investors and founders already using PocketVC to discover, connect, and build the future.
-             </p>
-             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                 <a href="signup.html" class="cta-button bg-blue-600 text-white hover:bg-blue-700 text-lg px-8 py-4">
-                     Get Started Today
-                 </a>
-                 <a href="about.html" class="cta-button secondary border-blue-600 text-blue-600 hover:bg-blue-50 text-lg px-8 py-4">
-                     Learn More
-                 </a>
-             </div>
-         </div>
-     </section>
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Start Your Journey?
+            </h2>
+            <p class="text-xl text-white mb-8">
+                Join PocketVC today and connect with the right partners for your success.
+            </p>
+            <a href="signup.html" class="bg-white text-blue-900 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors inline-flex items-center">
+                Get Started Now
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
 
-         <!-- Footer -->
-     <footer class="bg-white text-blue-200">
-         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-             <div class="grid md:grid-cols-4 gap-8">
-                 <!-- Company Info -->
-                 <div class="col-span-2">
-                     <div class="flex items-center space-x-3 mb-4">
-                         <img src="logo.png" alt="PocketVC Logo" class="h-8 w-auto">
-                         <span class="text-xl font-bold text-blue-200">PocketVC</span>
-                     </div>
-                     <p class="text-blue-200 mb-4 max-w-md">
-                         Connecting venture capital firms with innovative startups through smart matching and AI-powered insights.
-                     </p>
-                     <a href="https://www.linkedin.com/company/pocketvc-connect" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-200 hover:text-blue-300" aria-label="Follow PocketVC on LinkedIn">
-                         <span class="text-blue-200">Follow us on LinkedIn</span>
-                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                             <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.2 2.3-2.46 4.73-2.46 5.06 0 5.99 3.33 5.99 7.66V24h-5v-7.5c0-1.79-.03-4.09-2.49-4.09-2.49 0-2.88 1.94-2.88 3.96V24h-5V8z"/>
-                         </svg>
-                     </a>
-                 </div>
-                 
-                 <!-- Company Links -->
-                 <div>
-                     <h3 class="text-lg font-semibold mb-4 text-blue-200">Company</h3>
-                     <ul class="space-y-2">
-                         <li><a href="about.html" class="text-blue-200 hover:text-blue-300 transition-colors">About</a></li>
-                         <li><a href="faq.html" class="text-blue-200 hover:text-blue-300 transition-colors">FAQ</a></li>
-                         <li><a href="#features" class="text-blue-200 hover:text-blue-300 transition-colors">Features</a></li>
-                         <li><a href="#solutions" class="text-blue-200 hover:text-blue-300 transition-colors">Solutions</a></li>
-                     </ul>
-                 </div>
-                 
-                 <!-- Legal Links -->
-                 <div>
-                     <h3 class="text-lg font-semibold mb-4 text-blue-200">Legal</h3>
-                     <ul class="space-y-2">
-                         <li><a href="privacy.html" class="text-blue-200 hover:text-blue-300 transition-colors">Privacy Policy</a></li>
-                         <li><a href="terms.html" class="text-blue-200 hover:text-blue-300 transition-colors">Terms & Conditions</a></li>
-                         <li><a href="contact.html" class="text-blue-200 hover:text-blue-300 transition-colors">Contact</a></li>
-                     </ul>
-                 </div>
-             </div>
-             
-             <div class="border-t border-blue-200 mt-8 pt-8 text-center">
-                 <p class="text-blue-200">&copy; 2024 PocketVC. All rights reserved.</p>
-             </div>
-         </div>
-     </footer>
+    <!-- Footer -->
+    <footer class="bg-primary-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <a href="index.html">
+                            <img src="logo.png" alt="PocketVC Logo" class="h-8 w-auto" width="128" height="32">
+                        </a>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Connecting venture capital firms with promising startups to accelerate innovation and growth.
+                    </p>
+                    <a href="https://www.linkedin.com/company/pocketvc-connect" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-700 hover:text-blue-800" aria-label="Follow PocketVC on LinkedIn">
+                        <span class="text-gray-700">Follow us on LinkedIn</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.2 2.3-2.46 4.73-2.46 5.06 0 5.99 3.33 5.99 7.66V24h-5v-7.5c0-1.79-.03-4.09-2.49-4.09-2.49 0-2.88 1.94-2.88 3.96V24h-5V8z"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-primary-900 mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-600 hover:text-primary-900 transition-colors">About Us</a></li>
+                        <li><a href="signup.html" class="text-gray-600 hover:text-primary-900 transition-colors">Sign Up</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-primary-900 mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="privacy.html" class="text-gray-600 hover:text-primary-900 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-gray-600 hover:text-primary-900 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
+                <p class="text-gray-500">
+                    © 2025 PocketVC. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
 
-    <!-- JavaScript for Category Chips and iPhone Carousel -->
+    <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Category chips auto-scroll functionality
-            const carousel = document.querySelector('.category-carousel');
+        // Dropdown menu toggle
+        document.getElementById('dropdown-btn').addEventListener('click', function() {
+            const dropdown = document.getElementById('dropdown-menu');
+            dropdown.classList.toggle('hidden');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('dropdown-menu');
+            const dropdownBtn = document.getElementById('dropdown-btn');
             
-            if (carousel) {
-                carousel.addEventListener('mouseenter', function() {
-                    this.style.animationPlayState = 'paused';
-                });
-                
-                carousel.addEventListener('mouseleave', function() {
-                    this.style.animationPlayState = 'running';
-                });
+            if (!dropdownBtn.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.add('hidden');
             }
-            
-            // iPhone Carousel functionality
-            const phoneCarousel = document.querySelector('.phone-carousel');
-            const dots = document.querySelectorAll('.carousel-dot');
-            let currentSlide = 0;
-            
-            function updateCarousel() {
-                const translateX = -currentSlide * 25;
-                phoneCarousel.style.transform = `translateX(${translateX}%)`;
-                
-                // Update dots
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentSlide);
-                });
-            }
-            
-            // Dot navigation
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentSlide = index;
-                    updateCarousel();
-                });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
-            
-            // Auto-advance carousel every 3 seconds
-            setInterval(() => {
-                currentSlide = (currentSlide + 1) % 4;
-                updateCarousel();
-            }, 3000);
-            
-            // Initialize first dot as active
-            updateCarousel();
         });
     </script>
 </body>
-</html>
+</html> 
