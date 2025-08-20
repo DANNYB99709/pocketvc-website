@@ -231,11 +231,11 @@
         }
         
         .search-input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(191, 219, 254, 0.7);
         }
         
         .search-input:focus::placeholder {
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(191, 219, 254, 0.5);
         }
         
         .category-carousel-container {
@@ -299,9 +299,7 @@
             width: 100%;
             height: 100%;
             border-radius: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
         }
         
         .phone-carousel {
@@ -337,26 +335,26 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-transparent sticky top-0 z-50">
+    <nav class="absolute top-0 left-0 right-0 z-50 pt-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3">
                     <img src="logo.png" alt="PocketVC Logo" class="h-8 w-auto">
-                    <span class="text-xl font-bold text-white">PocketVC</span>
+                    <span class="text-xl font-bold text-blue-200">PocketVC</span>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="desktop-nav hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-white hover:text-blue-200 transition-colors">Features</a>
-                    <a href="#how-it-works" class="text-white hover:text-blue-200 transition-colors">How it Works</a>
-                    <a href="#solutions" class="text-white hover:text-blue-200 transition-colors">Solutions</a>
-                    <a href="about.html" class="text-white hover:text-blue-200 transition-colors">About</a>
+                    <a href="#features" class="text-blue-200 hover:text-blue-100 transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-blue-200 hover:text-blue-100 transition-colors">How it Works</a>
+                    <a href="#solutions" class="text-blue-200 hover:text-blue-100 transition-colors">Solutions</a>
+                    <a href="about.html" class="text-blue-200 hover:text-blue-100 transition-colors">About</a>
                     
                     <!-- Search Bar -->
                     <div class="relative">
-                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg px-4 py-2 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent transition-all duration-200 w-48">
-                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border border-blue-200 border-opacity-30 rounded-lg px-4 py-2 text-blue-200 placeholder-blue-200 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent transition-all duration-200 w-48">
+                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-blue-200 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
                     </div>
@@ -370,7 +368,7 @@
                 
                 <!-- Mobile Menu Button -->
                 <div class="mobile-menu md:hidden">
-                    <button class="text-white hover:text-blue-200">
+                    <button class="text-blue-200 hover:text-blue-100">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -389,11 +387,11 @@
         </video>
         
         <!-- Content -->
-        <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative z-10 text-center text-blue-200 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-5xl md:text-7xl font-bold mb-6">
-                Connect VCs with <span class="text-blue-200">Innovative Startups</span>
+                Connect VCs with <span class="text-blue-100">Innovative Startups</span>
             </h1>
-            <p class="text-xl md:text-2xl mb-8 text-white max-w-3xl mx-auto">
+            <p class="text-xl md:text-2xl mb-8 text-blue-200 max-w-3xl mx-auto">
                 PocketVC is the world's smartest platform for matching venture capital firms with breakthrough startups. 
                 Join thousands of investors and founders already on our platform.
             </p>
