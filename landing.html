@@ -55,24 +55,7 @@
             font-family: 'Inter', sans-serif;
         }
         
-        /* Ensure navigation stays transparent */
-        nav,
-        nav *,
-        .mobile-menu,
-        .mobile-menu * {
-            background: transparent !important;
-        }
-        
-        /* Override any potential browser defaults */
-        nav {
-            background: transparent !important;
-            background-color: transparent !important;
-        }
-        
-        /* Ensure footer stays white */
-        footer {
-            background: white !important;
-        }
+
         
         .logo-icon {
             position: relative;
@@ -327,117 +310,13 @@
             transform: translateX(8px);
         }
         
-        @media (max-width: 768px) {
-            .desktop-nav {
-                display: none;
-            }
-            
-            /* Ensure no background colors on mobile */
-            nav,
-            nav *,
-            .mobile-menu,
-            .mobile-menu *,
-            .mobile-menu-dropdown {
-                background: transparent !important;
-                background-color: transparent !important;
-            }
-            
-            footer {
-                background: white !important;
-            }
-        }
+
         
-        /* Mobile Menu Dropdown Styles */
-        .mobile-menu-dropdown {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            margin-top: 1rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .mobile-menu-dropdown a {
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
-            margin: 0 0.5rem;
-        }
-        
-        .mobile-menu-dropdown a:hover {
-            background: rgba(0, 75, 135, 0.1);
-        }
+
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="absolute top-0 left-0 right-0 z-50 pt-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center">
-                                 <!-- Logo -->
-                 <div class="flex items-center space-x-3">
-                     <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
-                 </div>
-                
-                                 <!-- Desktop Navigation -->
-                 <div class="desktop-nav hidden md:flex items-center space-x-8">
-                     <a href="#features" class="transition-colors" style="color: #004b87;">Features</a>
-                     <a href="#how-it-works" class="transition-colors" style="color: #004b87;">How it Works</a>
-                     <a href="#solutions" class="transition-colors" style="color: #004b87;">Solutions</a>
-                     <a href="about.html" class="transition-colors" style="color: #004b87;">About</a>
-                    
-                                         <!-- Search Bar -->
-                     <div class="relative">
-                         <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border rounded-lg px-4 py-2 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 w-48" style="border-color: #004b87; color: #004b87; border-opacity: 0.3;">
-                         <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
-                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                         </svg>
-                     </div>
-                </div>
-                
-                                 <!-- CTA Buttons -->
-                 <div class="hidden md:flex items-center space-x-4">
-                     <a href="signup.html" class="cta-button-secondary-transparent">Join Waitlist</a>
-                     <a href="signup.html" class="cta-button-transparent" style="color: #004b87;">Get Started</a>
-                 </div>
-                 
-                 <!-- Mobile Menu Button -->
-                 <div class="mobile-menu md:hidden">
-                     <button id="mobile-menu-button" style="color: #004b87;">
-                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                         </svg>
-                     </button>
-                 </div>
-                 
-                 <!-- Mobile Menu Dropdown -->
-                 <div id="mobile-menu-dropdown" class="mobile-menu-dropdown hidden md:hidden">
-                     <div class="py-4 space-y-4">
-                         <a href="#features" class="block transition-colors" style="color: #004b87;">Features</a>
-                         <a href="#how-it-works" class="block transition-colors" style="color: #004b87;">How it Works</a>
-                         <a href="#solutions" class="block transition-colors" style="color: #004b87;">Solutions</a>
-                         <a href="about.html" class="block transition-colors" style="color: #004b87;">About</a>
-                         
-                         <!-- Mobile Search Bar -->
-                         <div class="relative">
-                             <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border rounded-lg px-4 py-2 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 w-full" style="border-color: #004b87; color: #004b87; border-opacity: 0.3;">
-                             <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
-                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                             </svg>
-                         </div>
-                         
-                         <!-- Mobile CTA Buttons -->
-                         <div class="flex flex-col space-y-2 pt-4">
-                             <a href="signup.html" class="cta-button-secondary-transparent text-center">Join Waitlist</a>
-                             <a href="signup.html" class="cta-button-transparent text-center" style="color: #004b87;">Get Started</a>
-                         </div>
-                     </div>
-                 </div>
-            </div>
-            
 
-            </div>
-        </div>
-    </nav>
 
     <!-- Hero Section with Video Background -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
@@ -727,54 +606,7 @@
          </div>
      </section>
 
-         <!-- Footer -->
-     <footer class="bg-white text-blue-200">
-         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-             <div class="grid md:grid-cols-4 gap-8">
-                 <!-- Company Info -->
-                 <div class="col-span-2">
-                                           <div class="flex items-center space-x-3 mb-4">
-                          <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
-                          <span class="text-xl font-bold text-blue-200">PocketVC</span>
-                      </div>
-                     <p class="text-blue-200 mb-4 max-w-md">
-                         Connecting venture capital firms with innovative startups through smart matching and AI-powered insights.
-                     </p>
-                     <a href="https://www.linkedin.com/company/pocketvc-connect" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-200 hover:text-blue-300" aria-label="Follow PocketVC on LinkedIn">
-                         <span class="text-blue-200">Follow us on LinkedIn</span>
-                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                             <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.2 2.3-2.46 4.73-2.46 5.06 0 5.99 3.33 5.99 7.66V24h-5v-7.5c0-1.79-.03-4.09-2.49-4.09-2.49 0-2.88 1.94-2.88 3.96V24h-5V8z"/>
-                         </svg>
-                     </a>
-                 </div>
-                 
-                 <!-- Company Links -->
-                 <div>
-                     <h3 class="text-lg font-semibold mb-4 text-blue-200">Company</h3>
-                     <ul class="space-y-2">
-                         <li><a href="about.html" class="text-blue-200 hover:text-blue-300 transition-colors">About</a></li>
-                         <li><a href="faq.html" class="text-blue-200 hover:text-blue-300 transition-colors">FAQ</a></li>
-                         <li><a href="#features" class="text-blue-200 hover:text-blue-300 transition-colors">Features</a></li>
-                         <li><a href="#solutions" class="text-blue-200 hover:text-blue-300 transition-colors">Solutions</a></li>
-                     </ul>
-                 </div>
-                 
-                 <!-- Legal Links -->
-                 <div>
-                     <h3 class="text-lg font-semibold mb-4 text-blue-200">Legal</h3>
-                     <ul class="space-y-2">
-                         <li><a href="privacy.html" class="text-blue-200 hover:text-blue-300 transition-colors">Privacy Policy</a></li>
-                         <li><a href="terms.html" class="text-blue-200 hover:text-blue-300 transition-colors">Terms & Conditions</a></li>
-                         <li><a href="contact.html" class="text-blue-200 hover:text-blue-300 transition-colors">Contact</a></li>
-                     </ul>
-                 </div>
-             </div>
-             
-             <div class="border-t border-blue-200 mt-8 pt-8 text-center">
-                 <p class="text-blue-200">&copy; 2024 PocketVC. All rights reserved.</p>
-             </div>
-         </div>
-     </footer>
+
 
     <!-- JavaScript for Category Chips and iPhone Carousel -->
     <script>
@@ -824,22 +656,7 @@
                           // Initialize first dot as active
              updateCarousel();
              
-             // Mobile Menu Toggle
-             const mobileMenuButton = document.getElementById('mobile-menu-button');
-             const mobileMenuDropdown = document.getElementById('mobile-menu-dropdown');
-             
-             if (mobileMenuButton && mobileMenuDropdown) {
-                 mobileMenuButton.addEventListener('click', function() {
-                     mobileMenuDropdown.classList.toggle('hidden');
-                 });
-                 
-                 // Close menu when clicking outside
-                 document.addEventListener('click', function(event) {
-                     if (!mobileMenuButton.contains(event.target) && !mobileMenuDropdown.contains(event.target)) {
-                         mobileMenuDropdown.classList.add('hidden');
-                     }
-                 });
-             }
+
          });
      </script>
 </body>
