@@ -266,62 +266,39 @@
             animation-play-state: paused;
         }
         
-        /* iPhone Carousel Styles */
-        .phone-carousel-container {
-            overflow: hidden;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-        
-        .phone-frame {
-            width: 280px;
-            height: 560px;
-            background: #1a1a1a;
-            border-radius: 40px;
-            padding: 8px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-        
-        .phone-frame::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: #333;
-            border-radius: 2px;
-        }
-        
-        .phone-screen {
-            width: 100%;
-            height: 100%;
-            border-radius: 32px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-                 .phone-screen img {
-             width: 100% !important;
-             height: 100% !important;
-             object-fit: cover !important;
-             display: block !important;
-             border-radius: 32px;
+                 /* iPhone Frame Styles */
+         .phone-frame {
+             width: 280px;
+             height: 560px;
+             background: #1a1a1a;
+             border-radius: 40px;
+             padding: 8px;
+             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+             position: relative;
          }
-        
-        .phone-carousel {
-            width: 400%;
-        }
-        
-        .phone-slide {
-            width: 25%;
-        }
-        
-        .carousel-dot.active {
-            background-color: var(--primary-600);
-        }
+         
+         .phone-frame::before {
+             content: '';
+             position: absolute;
+             top: 20px;
+             left: 50%;
+             transform: translateX(-50%);
+             width: 60px;
+             height: 4px;
+             background: #333;
+             border-radius: 2px;
+         }
+         
+         .phone-screen {
+             width: 100%;
+             height: 100%;
+             border-radius: 32px;
+             overflow: hidden;
+         }
+         
+         .carousel-dot.active {
+             background-color: var(--primary-600);
+         }
         
         .step-item {
             transition: all 0.3s ease;
@@ -404,15 +381,15 @@
                  PocketVC is changing the way startups and investors connect. Don't miss your chance to get early access - Beta spots are limited.
              </p>
             
-                         <!-- CTA Buttons -->
+                                      <!-- CTA Buttons -->
              <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                 <a href="signup.html" class="cta-button-transparent text-lg px-8 py-4">
+                 <a href="signup.html" class="cta-button-transparent text-lg px-8 py-4 text-blue-200">
                      Join the Platform
                  </a>
-                <a href="#how-it-works" class="cta-button secondary text-lg px-8 py-4">
-                    Learn More
-                </a>
-            </div>
+                 <a href="#how-it-works" class="cta-button-transparent text-lg px-8 py-4 text-blue-200">
+                     Learn More
+                 </a>
+             </div>
         </div>
     </section>
 
@@ -533,7 +510,7 @@
                 <div class="space-y-8">
                                          <!-- Step 1 -->
                      <div class="step-item flex items-start space-x-4">
-                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-blue-800 font-bold text-lg flex-shrink-0">1</div>
+                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-gray-900 font-bold text-lg flex-shrink-0">1</div>
                          <div>
                              <h3 class="text-xl font-semibold text-gray-900 mb-2">Create Profile</h3>
                              <p class="text-gray-600">Sign up as a VC or startup and complete your profile with investment thesis, sector focus, and growth stage.</p>
@@ -542,7 +519,7 @@
                      
                      <!-- Step 2 -->
                      <div class="step-item flex items-start space-x-4">
-                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-blue-800 font-bold text-lg flex-shrink-0">2</div>
+                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-gray-900 font-bold text-lg flex-shrink-0">2</div>
                          <div>
                              <h3 class="text-xl font-semibold text-gray-900 mb-2">Discover Matches</h3>
                              <p class="text-gray-600">Our AI algorithm presents you with curated matches based on your preferences and investment criteria.</p>
@@ -551,7 +528,7 @@
                      
                      <!-- Step 3 -->
                      <div class="step-item flex items-start space-x-4">
-                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-blue-800 font-bold text-lg flex-shrink-0">3</div>
+                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-gray-900 font-bold text-lg flex-shrink-0">3</div>
                          <div>
                              <h3 class="text-xl font-semibold text-gray-900 mb-2">Connect & Evaluate</h3>
                              <p class="text-gray-600">Initiate conversations, review detailed startup information, and schedule meetings through our platform.</p>
@@ -560,7 +537,7 @@
                      
                      <!-- Step 4 -->
                      <div class="step-item flex items-start space-x-4">
-                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-blue-800 font-bold text-lg flex-shrink-0">4</div>
+                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-gray-900 font-bold text-lg flex-shrink-0">4</div>
                          <div>
                              <h3 class="text-xl font-semibold text-gray-900 mb-2">Close Deals</h3>
                              <p class="text-gray-600">Move forward with due diligence, term sheet negotiations, and investment execution with confidence.</p>
@@ -569,49 +546,15 @@
                 </div>
                 
                                  <!-- iPhone Carousel -->
-                 <div class="relative">
-                     <div class="phone-carousel-container">
-                         <div class="phone-carousel flex transition-transform duration-500 ease-in-out">
-                             <!-- iPhone Frame with Step 1 -->
-                             <div class="phone-slide flex-shrink-0 w-full">
-                                 <div class="phone-frame mx-auto">
-                                     <div class="phone-screen">
-                                         <img src="create.JPG" alt="Create Profile - Step 1" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                                     </div>
-                                 </div>
-                             </div>
-                             
-                             <!-- iPhone Frame with Step 2 -->
-                             <div class="phone-slide flex-shrink-0 w-full">
-                                 <div class="phone-frame mx-auto">
-                                     <div class="phone-screen">
-                                         <img src="discover.JPG" alt="Discover Matches - Step 2" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                                     </div>
-                                 </div>
-                             </div>
-                             
-                             <!-- iPhone Frame with Step 3 -->
-                             <div class="phone-slide flex-shrink-0 w-full">
-                                 <div class="phone-frame mx-auto">
-                                     <div class="phone-screen">
-                                         <img src="connect.JPG" alt="Connect & Evaluate - Step 3" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                                     </div>
-                                 </div>
-                             </div>
-                             
-                             <!-- iPhone Frame with Step 4 -->
-                             <div class="phone-slide flex-shrink-0 w-full">
-                                 <div class="phone-frame mx-auto">
-                                     <div class="phone-screen">
-                                         <img src="close.JPG" alt="Close Deals - Step 4" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                                     </div>
-                                 </div>
-                             </div>
+                 <div class="relative max-w-sm mx-auto">
+                     <div class="phone-frame mx-auto mb-6">
+                         <div class="phone-screen">
+                             <img id="carousel-image" src="create.JPG" alt="Step 1" class="w-full h-full object-cover">
                          </div>
                      </div>
                      
                      <!-- Carousel Navigation -->
-                     <div class="flex justify-center mt-6 space-x-2">
+                     <div class="flex justify-center space-x-2">
                          <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="0"></button>
                          <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="1"></button>
                          <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="2"></button>
@@ -692,20 +635,20 @@
          <!-- CTA Section -->
      <section class="py-20 bg-blue-200">
          <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-             <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-6">
-                 Ready to Transform <span class="text-blue-900">Venture Capital</span>?
-             </h2>
-             <p class="text-xl text-blue-700 mb-8 max-w-2xl mx-auto">
-                 Join thousands of investors and founders already using PocketVC to discover, connect, and build the future.
-             </p>
-             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                 <a href="signup.html" class="cta-button bg-blue-600 text-white hover:bg-blue-700 text-lg px-8 py-4">
-                     Get Started Today
-                 </a>
-                 <a href="about.html" class="cta-button secondary border-blue-600 text-blue-600 hover:bg-blue-50 text-lg px-8 py-4">
-                     Learn More
-                 </a>
-             </div>
+                           <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                  Ready to Transform <span class="text-white">Venture Capital</span>?
+              </h2>
+              <p class="text-xl text-white mb-8 max-w-2xl mx-auto">
+                  Join thousands of investors and founders already using PocketVC to discover, connect, and build the future.
+              </p>
+                           <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a href="signup.html" class="cta-button-transparent text-lg px-8 py-4 text-white">
+                      Get Started Today
+                  </a>
+                  <a href="about.html" class="cta-button-transparent text-lg px-8 py-4 text-white">
+                      Learn More
+                  </a>
+              </div>
          </div>
      </section>
 
@@ -774,37 +717,37 @@
                 });
             }
             
-            // iPhone Carousel functionality
-            const phoneCarousel = document.querySelector('.phone-carousel');
-            const dots = document.querySelectorAll('.carousel-dot');
-            let currentSlide = 0;
-            
-            function updateCarousel() {
-                const translateX = -currentSlide * 25;
-                phoneCarousel.style.transform = `translateX(${translateX}%)`;
-                
-                // Update dots
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentSlide);
-                });
-            }
-            
-            // Dot navigation
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentSlide = index;
-                    updateCarousel();
-                });
-            });
-            
-            // Auto-advance carousel every 3 seconds
-            setInterval(() => {
-                currentSlide = (currentSlide + 1) % 4;
-                updateCarousel();
-            }, 3000);
-            
-            // Initialize first dot as active
-            updateCarousel();
+                         // iPhone Carousel functionality
+             const carouselImage = document.getElementById('carousel-image');
+             const dots = document.querySelectorAll('.carousel-dot');
+             const images = ['create.JPG', 'discover.JPG', 'connect.JPG', 'close.JPG'];
+             let currentSlide = 0;
+             
+             function updateCarousel() {
+                 carouselImage.src = images[currentSlide];
+                 
+                 // Update dots
+                 dots.forEach((dot, index) => {
+                     dot.classList.toggle('active', index === currentSlide);
+                 });
+             }
+             
+             // Dot navigation
+             dots.forEach((dot, index) => {
+                 dot.addEventListener('click', () => {
+                     currentSlide = index;
+                     updateCarousel();
+                 });
+             });
+             
+             // Auto-advance carousel every 3 seconds
+             setInterval(() => {
+                 currentSlide = (currentSlide + 1) % 4;
+                 updateCarousel();
+             }, 3000);
+             
+             // Initialize first dot as active
+             updateCarousel();
         });
     </script>
 </body>
