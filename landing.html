@@ -199,13 +199,90 @@
             background: var(--primary-50);
         }
         
-        .category-carousel {
-            scrollbar-width: none;
-            -ms-overflow-style: none;
+        .category-carousel-container {
+            position: relative;
+            overflow: hidden;
         }
         
-        .category-carousel::-webkit-scrollbar {
-            display: none;
+        .category-carousel {
+            display: flex;
+            gap: 1rem;
+            white-space: nowrap;
+        }
+        
+        .animate-scroll {
+            animation: scroll 30s linear infinite;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .category-carousel:hover {
+            animation-play-state: paused;
+        }
+        
+        /* iPhone Carousel Styles */
+        .phone-carousel-container {
+            overflow: hidden;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        
+        .phone-frame {
+            width: 280px;
+            height: 560px;
+            background: #1a1a1a;
+            border-radius: 40px;
+            padding: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+        }
+        
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .phone-carousel {
+            width: 400%;
+        }
+        
+        .phone-slide {
+            width: 25%;
+        }
+        
+        .carousel-dot.active {
+            background-color: var(--primary-600);
+        }
+        
+        .step-item {
+            transition: all 0.3s ease;
+        }
+        
+        .step-item:hover {
+            transform: translateX(8px);
         }
         
         @media (max-width: 768px) {
@@ -354,22 +431,37 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h3 class="text-2xl font-bold text-gray-900 mb-4">Explore Startup Categories</h3>
-                <p class="text-gray-600">Discover innovative companies across diverse sectors</p>
+                <p class="text-gray-600">Discover innovative companies across diverse deeptech sectors</p>
             </div>
             
-            <div class="category-carousel flex gap-4 overflow-x-auto pb-4">
-                <div class="category-chip active">Deeptech</div>
-                <div class="category-chip">Fintech</div>
-                <div class="category-chip">Healthtech</div>
-                <div class="category-chip">AI/ML</div>
-                <div class="category-chip">SaaS</div>
-                <div class="category-chip">E-commerce</div>
-                <div class="category-chip">Clean Energy</div>
-                <div class="category-chip">Biotech</div>
-                <div class="category-chip">Edtech</div>
-                <div class="category-chip">Cybersecurity</div>
-                <div class="category-chip">Blockchain</div>
-                <div class="category-chip">IoT</div>
+            <div class="category-carousel-container overflow-hidden">
+                <div class="category-carousel flex gap-4 pb-4 animate-scroll">
+                    <div class="category-chip">Advanced Computing</div>
+                    <div class="category-chip">Advanced Manufacturing & 3D Printing</div>
+                    <div class="category-chip">Advanced Materials & Nanotechnology</div>
+                    <div class="category-chip">Artificial Intelligence & Machine Learning</div>
+                    <div class="category-chip">Biotechnology & Life Sciences</div>
+                    <div class="category-chip">Cybersecurity & Next-Gen Cryptography</div>
+                    <div class="category-chip">Energy & Climate Technologies</div>
+                    <div class="category-chip">Neurotechnology & Brain–Computer Interfaces</div>
+                    <div class="category-chip">Photonics & Optoelectronics</div>
+                    <div class="category-chip">Robotics & Autonomous Systems</div>
+                    <div class="category-chip">Sensors, IoT & Edge Devices</div>
+                    <div class="category-chip">Space & Satellite Systems</div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="category-chip">Advanced Computing</div>
+                    <div class="category-chip">Advanced Manufacturing & 3D Printing</div>
+                    <div class="category-chip">Advanced Materials & Nanotechnology</div>
+                    <div class="category-chip">Artificial Intelligence & Machine Learning</div>
+                    <div class="category-chip">Biotechnology & Life Sciences</div>
+                    <div class="category-chip">Cybersecurity & Next-Gen Cryptography</div>
+                    <div class="category-chip">Energy & Climate Technologies</div>
+                    <div class="category-chip">Neurotechnology & Brain–Computer Interfaces</div>
+                    <div class="category-chip">Photonics & Optoelectronics</div>
+                    <div class="category-chip">Robotics & Autonomous Systems</div>
+                    <div class="category-chip">Sensors, IoT & Edge Devices</div>
+                    <div class="category-chip">Space & Satellite Systems</div>
+                </div>
             </div>
         </div>
     </section>
@@ -386,33 +478,111 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Step 1 -->
-                <div class="step-card p-8 text-center">
-                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-lg">1</div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Create Profile</h3>
-                    <p class="text-gray-600">Sign up as a VC or startup and complete your profile with investment thesis, sector focus, and growth stage.</p>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Steps Content -->
+                <div class="space-y-8">
+                    <!-- Step 1 -->
+                    <div class="step-item flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Create Profile</h3>
+                            <p class="text-gray-600">Sign up as a VC or startup and complete your profile with investment thesis, sector focus, and growth stage.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="step-item flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">2</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Discover Matches</h3>
+                            <p class="text-gray-600">Our AI algorithm presents you with curated matches based on your preferences and investment criteria.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="step-item flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">3</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Connect & Evaluate</h3>
+                            <p class="text-gray-600">Initiate conversations, review detailed startup information, and schedule meetings through our platform.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="step-item flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">4</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Close Deals</h3>
+                            <p class="text-gray-600">Move forward with due diligence, term sheet negotiations, and investment execution with confidence.</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <!-- Step 2 -->
-                <div class="step-card p-8 text-center">
-                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-lg">2</div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Discover Matches</h3>
-                    <p class="text-gray-600">Our AI algorithm presents you with curated matches based on your preferences and investment criteria.</p>
-                </div>
-                
-                <!-- Step 3 -->
-                <div class="step-card p-8 text-center">
-                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-lg">3</div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Connect & Evaluate</h3>
-                    <p class="text-gray-600">Initiate conversations, review detailed startup information, and schedule meetings through our platform.</p>
-                </div>
-                
-                <!-- Step 4 -->
-                <div class="step-card p-8 text-center">
-                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-lg">4</div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Close Deals</h3>
-                    <p class="text-gray-600">Move forward with due diligence, term sheet negotiations, and investment execution with confidence.</p>
+                <!-- iPhone Carousel -->
+                <div class="relative">
+                    <div class="phone-carousel-container">
+                        <div class="phone-carousel flex transition-transform duration-500 ease-in-out">
+                            <!-- iPhone Frame with Step 1 -->
+                            <div class="phone-slide flex-shrink-0 w-full">
+                                <div class="phone-frame mx-auto">
+                                    <div class="phone-screen bg-gradient-to-br from-blue-50 to-blue-100 p-6">
+                                        <div class="text-center">
+                                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">1</div>
+                                            <h4 class="text-lg font-semibold text-gray-900 mb-2">Create Profile</h4>
+                                            <p class="text-sm text-gray-600">Set up your investment profile</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- iPhone Frame with Step 2 -->
+                            <div class="phone-slide flex-shrink-0 w-full">
+                                <div class="phone-frame mx-auto">
+                                    <div class="phone-screen bg-gradient-to-br from-green-50 to-green-100 p-6">
+                                        <div class="text-center">
+                                            <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">2</div>
+                                            <h4 class="text-lg font-semibold text-gray-900 mb-2">Discover Matches</h4>
+                                            <p class="text-sm text-gray-600">Find perfect startup matches</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- iPhone Frame with Step 3 -->
+                            <div class="phone-slide flex-shrink-0 w-full">
+                                <div class="phone-frame mx-auto">
+                                    <div class="phone-screen bg-gradient-to-br from-purple-50 to-purple-100 p-6">
+                                        <div class="text-center">
+                                            <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">3</div>
+                                            <h4 class="text-lg font-semibold text-gray-900 mb-2">Connect & Evaluate</h4>
+                                            <p class="text-sm text-gray-600">Start conversations</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- iPhone Frame with Step 4 -->
+                            <div class="phone-slide flex-shrink-0 w-full">
+                                <div class="phone-frame mx-auto">
+                                    <div class="phone-screen bg-gradient-to-br from-orange-50 to-orange-100 p-6">
+                                        <div class="text-center">
+                                            <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">4</div>
+                                            <h4 class="text-lg font-semibold text-gray-900 mb-2">Close Deals</h4>
+                                            <p class="text-sm text-gray-600">Execute investments</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Carousel Navigation -->
+                    <div class="flex justify-center mt-6 space-x-2">
+                        <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="0"></button>
+                        <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="1"></button>
+                        <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="2"></button>
+                        <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="3"></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -554,20 +724,53 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Category Chips -->
+    <!-- JavaScript for Category Chips and iPhone Carousel -->
     <script>
-        // Category chips interaction
         document.addEventListener('DOMContentLoaded', function() {
-            const chips = document.querySelectorAll('.category-chip');
+            // Category chips auto-scroll functionality
+            const carousel = document.querySelector('.category-carousel');
             
-            chips.forEach(chip => {
-                chip.addEventListener('click', function() {
-                    // Remove active class from all chips
-                    chips.forEach(c => c.classList.remove('active'));
-                    // Add active class to clicked chip
-                    this.classList.add('active');
+            if (carousel) {
+                carousel.addEventListener('mouseenter', function() {
+                    this.style.animationPlayState = 'paused';
+                });
+                
+                carousel.addEventListener('mouseleave', function() {
+                    this.style.animationPlayState = 'running';
+                });
+            }
+            
+            // iPhone Carousel functionality
+            const phoneCarousel = document.querySelector('.phone-carousel');
+            const dots = document.querySelectorAll('.carousel-dot');
+            let currentSlide = 0;
+            
+            function updateCarousel() {
+                const translateX = -currentSlide * 25;
+                phoneCarousel.style.transform = `translateX(${translateX}%)`;
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+            
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateCarousel();
                 });
             });
+            
+            // Auto-advance carousel every 3 seconds
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % 4;
+                updateCarousel();
+            }, 3000);
+            
+            // Initialize first dot as active
+            updateCarousel();
         });
     </script>
 </body>
