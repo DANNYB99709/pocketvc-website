@@ -319,10 +319,6 @@
         }
         
         @media (max-width: 768px) {
-            .mobile-menu {
-                display: block;
-            }
-            
             .desktop-nav {
                 display: none;
             }
@@ -336,26 +332,6 @@
                 background: white !important;
             }
         }
-        
-        /* Mobile Menu Dropdown Styles */
-        .mobile-menu-dropdown {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            margin-top: 1rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .mobile-menu-dropdown a {
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
-            margin: 0 0.5rem;
-        }
-        
-        .mobile-menu-dropdown a:hover {
-            background: rgba(0, 75, 135, 0.1);
-        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -366,20 +342,19 @@
                                  <!-- Logo -->
                  <div class="flex items-center space-x-3">
                      <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
-                     <span class="text-xl font-bold text-blue-200">PocketVC</span>
                  </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="desktop-nav hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-blue-200 hover:text-blue-100 transition-colors">Features</a>
-                    <a href="#how-it-works" class="text-blue-200 hover:text-blue-100 transition-colors">How it Works</a>
-                    <a href="#solutions" class="text-blue-200 hover:text-blue-100 transition-colors">Solutions</a>
-                    <a href="about.html" class="text-blue-200 hover:text-blue-100 transition-colors">About</a>
+                    <a href="#features" class="text-blue-800 hover:text-blue-900 transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-blue-800 hover:text-blue-900 transition-colors">How it Works</a>
+                    <a href="#solutions" class="text-blue-800 hover:text-blue-900 transition-colors">Solutions</a>
+                    <a href="about.html" class="text-blue-800 hover:text-blue-900 transition-colors">About</a>
                     
                     <!-- Search Bar -->
                     <div class="relative">
-                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border border-blue-200 border-opacity-30 rounded-lg px-4 py-2 text-blue-200 placeholder-blue-200 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent transition-all duration-200 w-48">
-                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-blue-200 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border border-blue-800 border-opacity-30 rounded-lg px-4 py-2 text-blue-800 placeholder-blue-800 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:border-transparent transition-all duration-200 w-48">
+                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-blue-800 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
                     </div>
@@ -388,42 +363,13 @@
                                  <!-- CTA Buttons -->
                  <div class="hidden md:flex items-center space-x-4">
                      <a href="signup.html" class="cta-button-secondary-transparent">Join Waitlist</a>
-                     <a href="signup.html" class="cta-button-transparent text-blue-200">Get Started</a>
+                     <a href="signup.html" class="cta-button-transparent text-blue-800">Get Started</a>
                  </div>
                 
-                <!-- Mobile Menu Button -->
-                <div class="mobile-menu md:hidden">
-                    <button id="mobile-menu-button" class="text-blue-200 hover:text-blue-100">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
+
             </div>
             
-            <!-- Mobile Menu Dropdown -->
-            <div id="mobile-menu-dropdown" class="mobile-menu-dropdown hidden md:hidden">
-                <div class="py-4 space-y-4">
-                    <a href="#features" class="block text-blue-200 hover:text-blue-100 transition-colors">Features</a>
-                    <a href="#how-it-works" class="block text-blue-200 hover:text-blue-100 transition-colors">How it Works</a>
-                    <a href="#solutions" class="block text-blue-200 hover:text-blue-100 transition-colors">Solutions</a>
-                    <a href="about.html" class="block text-blue-200 hover:text-blue-100 transition-colors">About</a>
-                    
-                    <!-- Mobile Search Bar -->
-                    <div class="relative">
-                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border border-blue-200 border-opacity-30 rounded-lg px-4 py-2 text-blue-200 placeholder-blue-200 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent transition-all duration-200 w-full">
-                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-blue-200 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                    </div>
-                    
-                    <!-- Mobile CTA Buttons -->
-                    <div class="flex flex-col space-y-2 pt-4">
-                        <a href="signup.html" class="cta-button-secondary-transparent text-center">Join Waitlist</a>
-                        <a href="signup.html" class="cta-button-transparent text-center text-blue-200">Get Started</a>
-                    </div>
-                </div>
-            </div>
+
             </div>
         </div>
     </nav>
@@ -438,10 +384,10 @@
         
                  <!-- Content -->
          <div class="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-             <h1 class="text-5xl md:text-7xl font-bold mb-6" style="color: #004b87;">
+             <h1 class="text-5xl md:text-7xl font-bold mb-8" style="color: #004b87; margin-top: -2rem;">
                  Connect VCs with <span style="color: #004b87;">Innovative Startups</span>
              </h1>
-                          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style="color: #004b87;">
+                          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style="color: #004b87; margin-top: 2rem;">
                   PocketVC is changing the way startups and investors connect. Don't miss your chance to get early access - Beta spots are limited.
               </p>
             
@@ -812,23 +758,6 @@
              
                           // Initialize first dot as active
              updateCarousel();
-             
-             // Mobile Menu Toggle
-             const mobileMenuButton = document.getElementById('mobile-menu-button');
-             const mobileMenuDropdown = document.getElementById('mobile-menu-dropdown');
-             
-             if (mobileMenuButton && mobileMenuDropdown) {
-                 mobileMenuButton.addEventListener('click', function() {
-                     mobileMenuDropdown.classList.toggle('hidden');
-                 });
-                 
-                 // Close menu when clicking outside
-                 document.addEventListener('click', function(event) {
-                     if (!mobileMenuButton.contains(event.target) && !mobileMenuDropdown.contains(event.target)) {
-                         mobileMenuDropdown.classList.add('hidden');
-                     }
-                 });
-             }
          });
      </script>
 </body>
