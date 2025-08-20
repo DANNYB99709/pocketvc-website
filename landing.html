@@ -334,14 +334,33 @@
                 display: none;
             }
             
-            /* Ensure no background colors on mobile */
+            /* Force complete transparency on mobile navigation */
             nav,
             nav *,
             .mobile-menu,
             .mobile-menu *,
-            .mobile-menu-dropdown {
+            .mobile-menu-dropdown,
+            nav div,
+            nav div * {
                 background: transparent !important;
                 background-color: transparent !important;
+                background-image: none !important;
+            }
+            
+            /* Specifically target the nav container */
+            nav.absolute {
+                background: transparent !important;
+                background-color: transparent !important;
+                background-image: none !important;
+            }
+            
+            /* Target the inner nav divs */
+            nav .max-w-7xl,
+            nav .flex,
+            nav .flex * {
+                background: transparent !important;
+                background-color: transparent !important;
+                background-image: none !important;
             }
             
             footer {
