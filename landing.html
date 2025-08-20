@@ -108,9 +108,7 @@
             z-index: -1;
         }
         
-        .hero-overlay {
-            background: rgba(0, 51, 102, 0.7);
-        }
+
         
         .category-chip {
             background: white;
@@ -197,6 +195,47 @@
         
         .cta-button.secondary:hover {
             background: var(--primary-50);
+        }
+        
+        .cta-button-transparent {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .cta-button-transparent:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .cta-button-secondary-transparent {
+            background: transparent;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-button-secondary-transparent:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .search-input:focus::placeholder {
+            color: rgba(255, 255, 255, 0.5);
         }
         
         .category-carousel-container {
@@ -298,32 +337,40 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="bg-transparent sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3">
-                    <div class="logo-icon"></div>
-                    <span class="text-xl font-bold text-gray-900">PocketVC</span>
+                    <img src="logo.png" alt="PocketVC Logo" class="h-8 w-auto">
+                    <span class="text-xl font-bold text-white">PocketVC</span>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="desktop-nav hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
-                    <a href="#how-it-works" class="text-gray-600 hover:text-gray-900 transition-colors">How it Works</a>
-                    <a href="#solutions" class="text-gray-600 hover:text-gray-900 transition-colors">Solutions</a>
-                    <a href="about.html" class="text-gray-600 hover:text-gray-900 transition-colors">About</a>
+                    <a href="#features" class="text-white hover:text-blue-200 transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-white hover:text-blue-200 transition-colors">How it Works</a>
+                    <a href="#solutions" class="text-white hover:text-blue-200 transition-colors">Solutions</a>
+                    <a href="about.html" class="text-white hover:text-blue-200 transition-colors">About</a>
+                    
+                    <!-- Search Bar -->
+                    <div class="relative">
+                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg px-4 py-2 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent transition-all duration-200 w-48">
+                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
                 </div>
                 
                 <!-- CTA Buttons -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="signup.html" class="cta-button secondary">Join Waitlist</a>
-                    <a href="signup.html" class="cta-button">Get Started</a>
+                    <a href="signup.html" class="cta-button-secondary-transparent">Join Waitlist</a>
+                    <a href="signup.html" class="cta-button-transparent">Get Started</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
                 <div class="mobile-menu md:hidden">
-                    <button class="text-gray-600 hover:text-gray-900">
+                    <button class="text-white hover:text-blue-200">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -341,15 +388,12 @@
             Your browser does not support the video tag.
         </video>
         
-        <!-- Overlay -->
-        <div class="hero-overlay absolute inset-0"></div>
-        
         <!-- Content -->
         <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-5xl md:text-7xl font-bold mb-6">
                 Connect VCs with <span class="text-blue-200">Innovative Startups</span>
             </h1>
-            <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
+            <p class="text-xl md:text-2xl mb-8 text-white max-w-3xl mx-auto">
                 PocketVC is the world's smartest platform for matching venture capital firms with breakthrough startups. 
                 Join thousands of investors and founders already on our platform.
             </p>
@@ -525,12 +569,8 @@
                             <!-- iPhone Frame with Step 1 -->
                             <div class="phone-slide flex-shrink-0 w-full">
                                 <div class="phone-frame mx-auto">
-                                    <div class="phone-screen bg-gradient-to-br from-blue-50 to-blue-100 p-6">
-                                        <div class="text-center">
-                                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">1</div>
-                                            <h4 class="text-lg font-semibold text-gray-900 mb-2">Create Profile</h4>
-                                            <p class="text-sm text-gray-600">Set up your investment profile</p>
-                                        </div>
+                                    <div class="phone-screen">
+                                        <img src="create.JPG" alt="Create Profile - Step 1" class="w-full h-full object-cover rounded-3xl">
                                     </div>
                                 </div>
                             </div>
@@ -538,12 +578,8 @@
                             <!-- iPhone Frame with Step 2 -->
                             <div class="phone-slide flex-shrink-0 w-full">
                                 <div class="phone-frame mx-auto">
-                                    <div class="phone-screen bg-gradient-to-br from-green-50 to-green-100 p-6">
-                                        <div class="text-center">
-                                            <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">2</div>
-                                            <h4 class="text-lg font-semibold text-gray-900 mb-2">Discover Matches</h4>
-                                            <p class="text-sm text-gray-600">Find perfect startup matches</p>
-                                        </div>
+                                    <div class="phone-screen">
+                                        <img src="discover.JPG" alt="Discover Matches - Step 2" class="w-full h-full object-cover rounded-3xl">
                                     </div>
                                 </div>
                             </div>
@@ -551,12 +587,8 @@
                             <!-- iPhone Frame with Step 3 -->
                             <div class="phone-slide flex-shrink-0 w-full">
                                 <div class="phone-frame mx-auto">
-                                    <div class="phone-screen bg-gradient-to-br from-purple-50 to-purple-100 p-6">
-                                        <div class="text-center">
-                                            <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">3</div>
-                                            <h4 class="text-lg font-semibold text-gray-900 mb-2">Connect & Evaluate</h4>
-                                            <p class="text-sm text-gray-600">Start conversations</p>
-                                        </div>
+                                    <div class="phone-screen">
+                                        <img src="connect.JPG" alt="Connect & Evaluate - Step 3" class="w-full h-full object-cover rounded-3xl">
                                     </div>
                                 </div>
                             </div>
@@ -564,12 +596,8 @@
                             <!-- iPhone Frame with Step 4 -->
                             <div class="phone-slide flex-shrink-0 w-full">
                                 <div class="phone-frame mx-auto">
-                                    <div class="phone-screen bg-gradient-to-br from-orange-50 to-orange-100 p-6">
-                                        <div class="text-center">
-                                            <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">4</div>
-                                            <h4 class="text-lg font-semibold text-gray-900 mb-2">Close Deals</h4>
-                                            <p class="text-sm text-gray-600">Execute investments</p>
-                                        </div>
+                                    <div class="phone-screen">
+                                        <img src="close.JPG" alt="Close Deals - Step 4" class="w-full h-full object-cover rounded-3xl">
                                     </div>
                                 </div>
                             </div>
