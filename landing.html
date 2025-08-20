@@ -19,7 +19,9 @@
     <meta name="twitter:description" content="Discover innovative startups and connect with the right investors. Join the PocketVC waitlist." />
     <meta name="twitter:image" content="https://pocketvc.co/logo.png" />
     <meta property="og:site_name" content="PocketVC" />
-    <meta name="theme-color" content="#003366" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="msapplication-navbutton-color" content="#ffffff">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -363,6 +365,15 @@
                 background-image: none !important;
             }
             
+            /* Mobile hero text positioning */
+            .hero-content h1 {
+                margin-top: -1rem !important;
+            }
+            
+            .hero-content p {
+                margin-top: 1.5rem !important;
+            }
+            
             footer {
                 background: white !important;
             }
@@ -469,8 +480,8 @@
             Your browser does not support the video tag.
         </video>
         
-                 <!-- Content -->
-         <div class="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                          <!-- Content -->
+          <div class="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 hero-content">
              <h1 class="text-5xl md:text-7xl font-bold mb-8" style="color: #004b87; margin-top: -2rem;">
                  Connect VCs with <span style="color: #004b87;">Innovative Startups</span>
              </h1>
