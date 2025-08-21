@@ -385,7 +385,7 @@
 
               <!-- Hero Section with Image and Selection -->
      <section class="hero-gradient min-h-screen flex items-center">
-                   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-6 lg:pt-24 pb-6">
+                   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 pb-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                                    <!-- Left Side - Image -->
                 <div class="text-center lg:text-left hidden lg:block h-full lg:h-[506px]">
@@ -489,7 +489,7 @@
 
                          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                  <!-- Left Side - Form -->
-                 <div class="bg-gray-50 rounded-2xl p-4 shadow-lg overflow-hidden h-full">
+                 <div class="bg-gray-50 rounded-2xl p-4 shadow-lg overflow-hidden">
                 <h2 id="form-title" class="text-3xl font-bold text-gray-900 mb-6 text-center">
                     Join Startup Waiting List
                 </h2>
@@ -828,34 +828,31 @@
                  </form>
                  </div>
                  
-                 <!-- Right Side - Stacked Carousel Images -->
-                 <div class="hidden lg:block h-full">
-                     <div class="bg-white rounded-2xl p-4 shadow-lg h-full">
-                                                   <div class="flex flex-col space-y-4">
-                              <img 
-                                  src="create.JPG" 
-                                  alt="Create - PocketVC App Screenshot" 
-                                  class="w-full object-cover rounded-xl"
-                                  style="height: 25%;"
-                                  onerror="this.style.display='none'"
-                              >
-                              <img 
-                                  src="discover.JPG" 
-                                  alt="Discover - PocketVC App Screenshot" 
-                                  class="w-full object-cover rounded-xl"
-                                  style="height: 25%;"
-                                  onerror="this.style.display='none'"
-                              >
-                              <img 
-                                  src="connect.JPG" 
-                                  alt="Connect - PocketVC App Screenshot" 
-                                  class="w-full object-cover rounded-xl"
-                                  style="height: 25%;"
-                                  onerror="this.style.display='none'"
-                              >
-                          </div>
-                     </div>
-                 </div>
+                                   <!-- Right Side - Stacked Carousel Images -->
+                  <div class="hidden lg:block">
+                      <div class="bg-white rounded-2xl p-4 shadow-lg" id="carousel-container">
+                                                    <div class="flex flex-col space-y-4" id="carousel-images">
+                               <img 
+                                   src="create.JPG" 
+                                   alt="Create - PocketVC App Screenshot" 
+                                   class="w-full object-cover rounded-xl carousel-image"
+                                   onerror="this.style.display='none'"
+                               >
+                               <img 
+                                   src="discover.JPG" 
+                                   alt="Discover - PocketVC App Screenshot" 
+                                   class="w-full object-cover rounded-xl carousel-image"
+                                   onerror="this.style.display='none'"
+                               >
+                               <img 
+                                   src="connect.JPG" 
+                                   alt="Connect - PocketVC App Screenshot" 
+                                   class="w-full object-cover rounded-xl carousel-image"
+                                   onerror="this.style.display='none'"
+                               >
+                           </div>
+                      </div>
+                  </div>
              </div>
         </div>
     </section>
@@ -1154,8 +1151,55 @@
             }
         }
 
-        // Initialize with startup selected
-        selectUserType('startup');
+                 // Initialize with startup selected
+         selectUserType('startup');
+         
+         // Function to adjust carousel height to match form
+         function adjustCarouselHeight() {
+             const formContainer = document.querySelector('.bg-gray-50.rounded-2xl');
+             const carouselContainer = document.getElementById('carousel-container');
+             const carouselImages = document.getElementById('carousel-images');
+             const images = document.querySelectorAll('.carousel-image');
+             
+             if (!formContainer || !carouselContainer || !carouselImages || images.length === 0) {
+                 return;
+             }
+             
+             // Get form height
+             const formHeight = formContainer.offsetHeight;
+             
+             // Set carousel container height to match form
+             carouselContainer.style.height = formHeight + 'px';
+             
+             // Calculate available height for images (subtract padding and spacing)
+             const containerPadding = 32; // p-4 = 16px top + 16px bottom
+             const spacing = 16 * (images.length - 1); // space-y-4 = 16px between each image
+             const availableHeight = formHeight - containerPadding - spacing;
+             
+             // Set each image height to 1/3 of available height
+             const imageHeight = Math.floor(availableHeight / images.length);
+             
+             images.forEach(img => {
+                 img.style.height = imageHeight + 'px';
+             });
+         }
+         
+         // Adjust carousel height when form becomes visible
+         function adjustCarouselOnFormShow() {
+             setTimeout(() => {
+                 adjustCarouselHeight();
+             }, 100); // Small delay to ensure form is rendered
+         }
+         
+         // Adjust carousel height on window resize
+         window.addEventListener('resize', adjustCarouselHeight);
+         
+         // Adjust carousel height when user type changes (form becomes visible)
+         const originalSelectUserType = selectUserType;
+         selectUserType = function(userType) {
+             originalSelectUserType(userType);
+             adjustCarouselOnFormShow();
+         };
 
             // --- Custom multi-select dropdowns that mirror Flutter widgets ---
             (function initVCDropdowns() {
