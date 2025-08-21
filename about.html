@@ -119,18 +119,25 @@
             border-color: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
         }
+        
+        /* Mobile-specific padding adjustments */
+        @media (max-width: 768px) {
+            nav {
+                padding-top: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm border-b border-gray-100">
+    <nav class="bg-white shadow-sm border-b border-gray-100 pt-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
                         <a href="index.html">
-                            <img src="logo.png" alt="PocketVC Logo" class="h-10 w-auto" width="160" height="40">
+                            <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
                         </a>
                     </div>
                 </div>
@@ -169,8 +176,7 @@
             Your browser does not support the video tag.
         </video>
         
-        <!-- Overlay for better text readability -->
-        <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
+        <!-- No overlay - keeping colors vibrant -->
         
         <!-- Content -->
         <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -301,8 +307,9 @@
                 </p>
             </div>
             
-            <div class="flex justify-center">
-                <div class="bg-gray-50 rounded-2xl p-8 text-center max-w-md">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Daniel Barnard -->
+                <div class="bg-gray-50 rounded-2xl p-8 text-center">
                     <img src="daniel-barnard.jpeg" alt="Daniel Barnard - CEO & Co-Founder" class="team-photo mx-auto mb-6">
                     <h3 class="text-2xl font-semibold text-gray-900 mb-2">Daniel Barnard</h3>
                     <p style="color: #004b87;" class="font-medium mb-4 text-lg">CEO & Co-Founder</p>
@@ -313,12 +320,29 @@
                         </svg>
                     </a>
                 </div>
+                
+                <!-- CTO -->
+                <div class="bg-gray-50 rounded-2xl p-8 text-center">
+                    <div class="w-48 h-48 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-24 h-24 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">CTO</h3>
+                    <p style="color: #004b87;" class="font-medium mb-4 text-lg">Chief Technology Officer</p>
+                    <p class="text-gray-600 mb-4">Experienced technology leader passionate about building scalable platforms that connect investors and startups through innovative solutions.</p>
+                    <div class="inline-flex items-center justify-center mt-4 w-10 h-10 rounded-full bg-white border border-gray-200">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20" style="background-color: #004b87;">
+    <section class="py-20" style="background-color: #003366;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
                 Join Us in Shaping the Future
@@ -339,7 +363,9 @@
                 <!-- Company Info -->
                 <div class="col-span-2">
                     <div class="flex items-center space-x-3 mb-4">
-                        <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
+                        <a href="index.html">
+                            <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
+                        </a>
                         <span class="text-xl font-bold text-blue-200">PocketVC</span>
                     </div>
                     <p class="text-blue-200 mb-4 max-w-md">

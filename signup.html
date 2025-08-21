@@ -93,11 +93,28 @@
             box-shadow: 0 8px 25px rgba(0, 75, 135, 0.15);
         }
         
-                 .form-section {
-             max-height: 0;
-             overflow: hidden;
-             transition: max-height 0.5s ease-in-out;
-         }
+                         .form-section {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        .cta-button-transparent {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .cta-button-transparent:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
          
          .form-section.active {
              max-height: none;
@@ -324,7 +341,7 @@
             <div class="flex justify-between items-center">
                                  <!-- Logo -->
                  <div class="flex items-center space-x-3">
-                     <a href="landing.html">
+                     <a href="index.html">
                          <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
                      </a>
                  </div>
@@ -864,7 +881,7 @@
                 <!-- Company Info -->
                 <div class="col-span-2">
                                          <div class="flex items-center space-x-3 mb-4">
-                         <a href="landing.html">
+                         <a href="index.html">
                              <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
                          </a>
                          <span class="text-xl font-bold text-blue-200">PocketVC</span>
@@ -1151,8 +1168,7 @@
             }
         }
 
-                 // Initialize with startup selected
-         selectUserType('startup');
+                 // Don't pre-select any user type - let user choose first
          
          // Function to adjust carousel height to match form
          function adjustCarouselHeight() {
