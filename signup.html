@@ -93,15 +93,29 @@
             box-shadow: 0 8px 25px rgba(0, 75, 135, 0.15);
         }
         
-        .form-section {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
-        }
-        
-        .form-section.active {
-            max-height: 2000px;
-        }
+                 .form-section {
+             max-height: 0;
+             overflow: hidden;
+             transition: max-height 0.5s ease-in-out;
+         }
+         
+         .form-section.active {
+             max-height: none;
+             overflow: visible;
+         }
+         
+         /* Make form scrollable on mobile */
+         @media (max-width: 768px) {
+             #registration-form {
+                 overflow-y: auto;
+                 max-height: 100vh;
+                 padding-bottom: 2rem !important;
+             }
+             
+             #submit-btn {
+                 margin-bottom: 1rem !important;
+             }
+         }
         
         .form-input {
             transition: all 0.3s ease;
@@ -372,13 +386,13 @@
     </nav>
 
          <!-- Hero Section with Image and Selection -->
-     <section class="hero-gradient min-h-screen flex items-center">
+     <section class="hero-gradient min-h-screen flex items-center pt-24">
          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                                                    <!-- Left Side - Image -->
                   <div class="text-center lg:text-left hidden lg:block h-full">
                       <div class="relative h-full w-full">
-                          <div class="bg-white rounded-2xl p-4 shadow-lg h-full">
+                          <div class="bg-white rounded-2xl p-4 shadow-lg h-full mb-8">
                               <img 
                                   src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                                   alt="PocketVC Signup Cover" 
