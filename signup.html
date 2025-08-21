@@ -216,15 +216,38 @@
                  display: none;
              }
              
-             /* Add extra padding for mobile browser UI elements */
-             body {
-                 padding-bottom: env(safe-area-inset-bottom, 20px);
-             }
+                           /* Add extra padding for mobile browser UI elements */
+              body {
+                  padding-bottom: env(safe-area-inset-bottom, 40px);
+              }
+              
+              /* Ensure the page has enough height for mobile browsers */
+              html, body {
+                  min-height: 100vh;
+                  min-height: -webkit-fill-available;
+              }
+              
+              /* Handle mobile viewport issues */
+              @supports (-webkit-touch-callout: none) {
+                  body {
+                      min-height: -webkit-fill-available;
+                  }
+              }
              
-             /* Ensure form has enough bottom spacing on mobile */
-             #registration-form {
-                 padding-bottom: 8rem !important;
-             }
+                           /* Ensure form has enough bottom spacing on mobile */
+              #registration-form {
+                  padding-bottom: 16rem !important;
+              }
+              
+              /* Add extra margin to the submit button on mobile */
+              #submit-btn {
+                  margin-bottom: 4rem !important;
+              }
+              
+              /* Ensure the form container itself has proper spacing */
+              .form-section {
+                  margin-bottom: 8rem !important;
+              }
             
             /* Force complete transparency on mobile navigation */
             nav,
@@ -353,8 +376,8 @@
          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                  <!-- Left Side - Image -->
-                 <div class="text-center lg:text-left hidden lg:block">
-                     <div class="relative h-full">
+                 <div class="text-center lg:text-left hidden lg:block flex items-end">
+                     <div class="relative h-full w-full">
                          <div class="bg-white rounded-2xl p-4 shadow-lg h-full">
                              <img 
                                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
@@ -445,7 +468,7 @@
     </section>
 
          <!-- Registration Form (Hidden initially) -->
-     <section id="registration-form" class="form-section py-20 pb-32 md:pb-40 bg-white">
+     <section id="registration-form" class="form-section py-20 pb-40 md:pb-40 bg-white">
                  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Message Display -->
             <div id="message" class="hidden mb-6 p-4 rounded-lg"></div>
@@ -766,13 +789,13 @@
                         </div>
                     </div>
 
-                    <!-- Submit Button -->
-                    <div class="pt-6">
-                        <button
-                            type="submit"
-                            id="submit-btn"
-                            class="cta-button w-full flex items-center justify-center gap-2"
-                        >
+                                         <!-- Submit Button -->
+                     <div class="pt-6 pb-8">
+                         <button
+                             type="submit"
+                             id="submit-btn"
+                             class="cta-button w-full flex items-center justify-center gap-2"
+                         >
                             <svg id="submit-spinner" class="hidden animate-spin h-5 w-5 text-white" viewBox="0 0 24 24">
                                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
                                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
