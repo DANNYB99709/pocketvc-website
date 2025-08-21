@@ -17,7 +17,7 @@
     <meta property="og:site_name" content="PocketVC" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://pocketvc.co/logo.png" />
-    <meta name="theme-color" content="#003366" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
     <meta name="google-site-verification" content="VzCoa_xbrKU9iDETmjvtn5wIvGJEAcstpQ0aG1rCmms" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
@@ -124,16 +124,15 @@
         
         /* Mobile Menu Dropdown Styles */
         .mobile-menu-dropdown {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: white;
             border-radius: 12px;
             margin-top: 1rem;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
         
         .mobile-menu-dropdown a {
-            padding: 0.75rem 1rem;
+            padding: 1rem 1.5rem;
             border-radius: 8px;
             margin: 0 0.5rem;
         }
@@ -584,17 +583,21 @@
         };
 
         function openModal(faqId) {
+            console.log('Opening modal for:', faqId);
             const modal = document.getElementById('faqModal');
             const modalContent = document.getElementById('modalContent');
             const faq = faqData[faqId];
             
-            if (faq) {
+            if (faq && modal && modalContent) {
                 modalContent.innerHTML = `
                     <h2 class="text-2xl font-bold text-gray-900 mb-6">${faq.title}</h2>
                     ${faq.content}
                 `;
                 modal.style.display = 'block';
                 document.body.style.overflow = 'hidden';
+                console.log('Modal opened successfully');
+            } else {
+                console.error('Modal elements not found or faq data missing:', { faqId, modal, modalContent, faq });
             }
         }
 

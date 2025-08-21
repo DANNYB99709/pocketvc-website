@@ -96,7 +96,9 @@
                          .form-section {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
+            opacity: 0;
+            visibility: hidden;
+            transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
         }
 
         .cta-button-transparent {
@@ -119,6 +121,8 @@
          .form-section.active {
              max-height: none;
              overflow: visible;
+             opacity: 1;
+             visibility: visible;
          }
          
                    /* Remove scroll functionality - use proper padding instead */
@@ -314,16 +318,15 @@
         
         /* Mobile Menu Dropdown Styles */
         .mobile-menu-dropdown {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: white;
             border-radius: 12px;
             margin-top: 1rem;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
         
         .mobile-menu-dropdown a {
-            padding: 0.75rem 1rem;
+            padding: 1rem 1.5rem;
             border-radius: 8px;
             margin: 0 0.5rem;
         }
