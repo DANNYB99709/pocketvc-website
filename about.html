@@ -4,26 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>About PocketVC | Mission, Values and Team</title>
-    <meta name="description" content="Learn about PocketVC's mission, values and team. We connect venture capital firms with innovative startups using smart matching technology.">
-    <link rel="canonical" href="https://pocketvc.co/about.html" />
+    <title>Join the PocketVC Waiting List | Startups and VCs</title>
+    <meta name="description" content="Sign up to the PocketVC waiting list. Startups and VCs can register to be first to connect using our smart matching across deeptech sectors.">
+    <link rel="canonical" href="https://pocketvc.co/signup.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_GB" />
-    <meta property="og:title" content="About PocketVC | Our Mission to Connect VCs and Startups" />
-    <meta property="og:description" content="PocketVC is building the future of venture capital connections. Learn about our mission and values." />
-    <meta property="og:url" content="https://pocketvc.co/about.html" />
+    <meta property="og:title" content="Join PocketVC Waiting List | Connect VCs and Startups" />
+    <meta property="og:description" content="Join the PocketVC waitlist and be first to connect with the right investors or startups." />
+    <meta property="og:url" content="https://pocketvc.co/signup.html" />
     <meta property="og:image" content="https://pocketvc.co/logo.png" />
-    <meta property="og:image:alt" content="PocketVC logo" />
+    <meta name="google-site-verification" content="VzCoa_xbrKU9iDETmjvtn5wIvGJEAcstpQ0aG1rCmms" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="About PocketVC | Our Mission to Connect VCs and Startups" />
-    <meta name="twitter:description" content="PocketVC is building the future of venture capital connections. Learn about our mission and values." />
+    <meta name="twitter:title" content="Join PocketVC Waiting List | Connect VCs and Startups" />
+    <meta name="twitter:description" content="Join the PocketVC waitlist and be first to connect with the right investors or startups." />
     <meta name="twitter:image" content="https://pocketvc.co/logo.png" />
-    <meta property="og:site_name" content="PocketVC" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="msapplication-navbutton-color" content="#ffffff">
-    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-    <meta name="google-site-verification" content="VzCoa_xbrKU9iDETmjvtn5wIvGJEAcstpQ0aG1rCmms" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -36,13 +32,24 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FM5YRS2ZFT"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
       gtag('config', 'G-FM5YRS2ZFT');
+    </script>
+    
+    <!-- Supabase JS (for dynamic dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="preconnect" href="https://rchawyidafvsttcoxmle.supabase.co">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Supabase project config (safe: anon key) -->
+    <script>
+        window.SUPABASE_URL = 'https://rchawyidafvsttcoxmle.supabase.co';
+        window.SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjaGF3eWlkYWZ2c3R0Y294bWxlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE2MTYyNTgsImV4cCI6MjA1NzE5MjI1OH0.ppuPk-nU9Rc9Qy9nEqR_TLlAyiJaPzLPUQnkevvmSlU';
     </script>
     
     <!-- Custom Styles -->
@@ -68,58 +75,67 @@
             background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
         }
         
-        .feature-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        .user-type-card {
             transition: all 0.3s ease;
-            border: 1px solid var(--primary-100);
+            cursor: pointer;
+            border: 2px solid transparent;
         }
         
-        .feature-card:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        .user-type-card:hover {
             transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
         
-        .step-circle {
-            width: 32px;
-            height: 32px;
-            background: var(--primary-900);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 14px;
+        .user-type-card.selected {
+            border-color: #004b87;
+            background-color: #f0f4f8;
+            box-shadow: 0 8px 25px rgba(0, 75, 135, 0.15);
         }
-
-        .team-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid white;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        
+        .form-section {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
         }
-
-        .cta-button-transparent {
-            background: rgba(255, 255, 255, 0.1);
+        
+        .form-section.active {
+            max-height: 2000px;
+        }
+        
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: #004b87;
+            box-shadow: 0 0 0 3px rgba(0, 75, 135, 0.1);
+        }
+        
+        .cta-button {
+            background: #004b87;
             color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 16px 32px;
+            border-radius: 12px;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
+            border: none;
+            cursor: pointer;
         }
         
-        .cta-button-transparent:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.3);
+        .cta-button:hover {
+            background: #003366;
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 75, 135, 0.3);
+        }
+        
+        .cta-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
     </style>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' https: 'unsafe-inline'; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://rchawyidafvsttcoxmle.supabase.co https:; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://rchawyidafvsttcoxmle.supabase.co;">
 </head>
 <body>
     <!-- Navigation -->
@@ -141,7 +157,7 @@
                     
                     <!-- Dropdown Menu -->
                     <div class="relative">
-                        <button id="dropdown-btn" aria-label="Open menu" class="text-gray-600 hover:text-blue-900 transition-colors flex items-center">
+                        <button id="dropdown-btn" class="text-gray-600 hover:text-blue-900 transition-colors flex items-center">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                             </svg>
@@ -150,7 +166,6 @@
                         <!-- Dropdown Content -->
                         <div id="dropdown-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
                             <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-900 transition-colors">About Us</a>
-                            <a href="faq.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-900 transition-colors">FAQ</a>
                             <a href="signup.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-900 transition-colors">Sign Up</a>
                             <a href="privacy.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-900 transition-colors">Privacy Policy</a>
                             <a href="terms.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-900 transition-colors">Terms of Service</a>
@@ -161,164 +176,462 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Image and Selection -->
     <section class="hero-gradient py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    About <span style="color: #004b87;">PocketVC</span>
-                </h1>
-                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                    We're on a mission to revolutionize how venture capital firms and startups connect, making the investment ecosystem more accessible, efficient, and transparent.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                        Our Mission
-                    </h2>
-                    <p class="text-lg text-gray-600 mb-6">
-                        We believe that great ideas deserve great funding, and that the best investors should have access to the most promising startups. PocketVC bridges this gap by using advanced technology to create meaningful connections that drive innovation forward.
+                <!-- Left Side - Image -->
+                <div class="text-center lg:text-left">
+                    <div class="relative">
+                        <!-- Placeholder for hero image -->
+                        <div class="bg-white rounded-2xl p-8 shadow-lg">
+                            <div class="w-full h-64 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center">
+                                <div class="text-center">
+                                    <svg class="w-24 h-24 text-blue-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
+                                    <p class="text-blue-600 font-medium">Hero Image Placeholder</p>
+                                    <p class="text-sm text-blue-500">Add your hero image here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Content and Selection -->
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Join the <span style="color: #004b87;">PocketVC</span> Waiting List
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Be among the first to connect with the right partners for your success. Choose your account type to get started.
                     </p>
-                    <p class="text-lg text-gray-600">
-                        Our platform removes traditional barriers, reduces inefficiencies, and creates a more transparent investment ecosystem that benefits everyone involved. <a href="signup.html" style="color: #004b87;" class="hover:underline">Join the PocketVC waiting list</a> to be first in when we launch.
-                    </p>
-                </div>
-                <div class="bg-blue-50 rounded-2xl p-8">
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="step-circle flex-shrink-0">1</div>
-                            <div>
-                                <h3 class="font-semibold text-gray-900">Democratize Access</h3>
-                                <p class="text-gray-600">Make venture capital more accessible to startups globally.</p>
+                    
+                    <!-- User Type Selection -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div
+                            id="startup-btn"
+                            onclick="selectUserType('startup')"
+                            class="user-type-card p-8 rounded-2xl bg-white shadow-lg text-center"
+                        >
+                            <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                </svg>
                             </div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-2">I'm a Startup</h3>
+                            <p class="text-gray-600">
+                                Get early access to connect with VCs when we launch
+                            </p>
                         </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="step-circle flex-shrink-0">2</div>
-                            <div>
-                                <h3 class="font-semibold text-gray-900">Accelerate Innovation</h3>
-                                <p class="text-gray-600">Speed up the funding process with smart matching technology.</p>
+
+                        <div
+                            id="vc-btn"
+                            onclick="selectUserType('vc')"
+                            class="user-type-card p-8 rounded-2xl bg-white shadow-lg text-center"
+                        >
+                            <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
                             </div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-2">I'm a VC/Investor</h3>
+                            <p class="text-gray-600">
+                                Be first to discover promising startups on our platform
+                            </p>
                         </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="step-circle flex-shrink-0">3</div>
-                            <div>
-                                <h3 class="font-semibold text-gray-900">Build Trust</h3>
-                                <p class="text-gray-600">Create a transparent, secure environment for investments.</p>
-                            </div>
+                    </div>
+                    
+                    <!-- Early Access Benefits -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center justify-center space-x-2 mb-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-lg font-semibold" style="color: #004b87;">Early Access Benefits</span>
                         </div>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-center space-x-2">
+                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Priority access when we launch</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Exclusive beta features and early feedback opportunities</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Direct connection with our founding team</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Special launch pricing and benefits</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Values Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                    Our Values
+    <!-- Registration Form (Hidden initially) -->
+    <section id="registration-form" class="form-section py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Message Display -->
+            <div id="message" class="hidden mb-6 p-4 rounded-lg"></div>
+
+            <!-- Honeypot (anti-bot): real users never see/fill this -->
+            <div class="sr-only" aria-hidden="true">
+                <label>Leave this field empty</label>
+                <input type="text" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
+                <h2 id="form-title" class="text-3xl font-bold text-gray-900 mb-6 text-center">
+                    Join Startup Waiting List
                 </h2>
-                <p class="text-xl text-gray-600">
-                    The principles that guide everything we do
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Innovation -->
-                <div class="feature-card p-6 text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                
+                <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-6 h-6 text-blue-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
+                        <div>
+                            <h3 class="font-semibold text-blue-900 mb-2">Launching Soon</h3>
+                            <p class="text-blue-800">
+                                Complete your profile now to secure your spot. We'll notify you as soon as PocketVC goes live, 
+                                and you'll have immediate access to start connecting with <span id="connection-type">investors</span>.
+                            </p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Innovation</h3>
-                    <p class="text-gray-600">We believe in the power of innovation to transform industries and create lasting impact.</p>
                 </div>
                 
-                <!-- Connection -->
-                <div class="feature-card p-6 text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Connection</h3>
-                    <p class="text-gray-600">Building meaningful relationships between entrepreneurs and investors is at our core.</p>
-                </div>
-                
-                <!-- Excellence -->
-                <div class="feature-card p-6 text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Excellence</h3>
-                    <p class="text-gray-600">We maintain the highest standards in everything we do, from technology to customer service.</p>
-                </div>
-                
-                <!-- Global Impact -->
-                <div class="feature-card p-6 text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Global Impact</h3>
-                    <p class="text-gray-600">Our platform connects investors and startups across the globe, fostering worldwide innovation.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                <form id="signup-form" class="space-y-6">
+                    <!-- Personal Information -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                First Name *
+                            </label>
+                            <input
+                                type="text"
+                                name="firstName"
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                                placeholder="Enter your first name"
+                                required
+                            />
+                        </div>
 
-    <!-- Team Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                    Meet Our Team
-                </h2>
-                <p class="text-xl text-gray-600">
-                    Experienced professionals passionate about connecting great ideas with great investors
-                </p>
-            </div>
-            
-            <div class="flex justify-center">
-                <div class="bg-gray-50 rounded-2xl p-8 text-center max-w-md">
-                    <img src="daniel-barnard.jpeg" alt="Daniel Barnard - CEO & Co-Founder" class="team-photo mx-auto mb-6">
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Daniel Barnard</h3>
-                    <p style="color: #004b87;" class="font-medium mb-4 text-lg">CEO & Co-Founder</p>
-                    <p class="text-gray-600 mb-4">8+ years in venture capital and startup ecosystem. Passionate about connecting innovative startups with the right investors to drive growth and success.</p>
-                    <a href="https://www.linkedin.com/in/danielbarnard1/" target="_blank" rel="noopener" class="inline-flex items-center justify-center mt-4 w-10 h-10 rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition-colors" aria-label="Daniel Barnard on LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-blue-700">
-                            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.2 2.3-2.46 4.73-2.46 5.06 0 5.99 3.33 5.99 7.66V24h-5v-7.5c0-1.79-.03-4.09-2.49-4.09-2.49 0-2.88 1.94-2.88 3.96V24h-5V8z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Last Name *
+                            </label>
+                            <input
+                                type="text"
+                                name="lastName"
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                                placeholder="Enter your last name"
+                                required
+                            />
+                        </div>
+                    </div>
 
-    <!-- CTA Section -->
-    <section class="py-20" style="background-color: #004b87;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                Join Us in Shaping the Future
-            </h2>
-            <p class="text-xl text-blue-100 mb-8">
-                Be part of the revolution in venture capital and startup funding.
-            </p>
-            <a href="signup.html" class="cta-button-transparent text-lg px-8 py-4 text-white">
-                Join Waiting List
-            </a>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Email Address *
+                        </label>
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                            placeholder="Enter your email address"
+                            required
+                        />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Phone Number *
+                        </label>
+                        <input
+                            type="tel"
+                            name="phone"
+                            class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                            placeholder="Enter your phone number"
+                            required
+                        />
+                    </div>
+
+                    <!-- Password Fields -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Password *
+                            </label>
+                            <input
+                                type="password"
+                                name="password"
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                                placeholder="Create a password"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Confirm Password *
+                            </label>
+                            <input
+                                type="password"
+                                name="confirmPassword"
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                                placeholder="Confirm your password"
+                                required
+                            />
+                        </div>
+                    </div>
+
+                    <!-- VC Specific Fields -->
+                    <div id="vc-fields" class="form-section space-y-6 border-t pt-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Firm Information</h3>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Firm Name *
+                            </label>
+                            <input
+                                type="text"
+                                name="firmName"
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                                placeholder="Enter your firm name"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Position *
+                            </label>
+                            <input
+                                type="text"
+                                name="position"
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                                placeholder="e.g., Managing Partner, Principal"
+                                required
+                            />
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Technology Types (Multi-Select) *
+                                </label>
+                                <select
+                                    name="technologyTypes"
+                                    multiple
+                                    size="8"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent"
+                                    required
+                                >
+                                </select>
+                                <p class="text-xs text-gray-500 mt-1">Hold Ctrl (Windows) or Command (Mac) to select multiple.</p>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Investment Locations (Multi-Select) *
+                                </label>
+                                <select
+                                    name="investmentLocations"
+                                    multiple
+                                    size="8"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent"
+                                    required
+                                >
+                                </select>
+                                <p class="text-xs text-gray-500 mt-1">Select all regions where you invest.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Company Stage (Multi-Select) *
+                                </label>
+                                <select
+                                    name="investmentStages"
+                                    multiple
+                                    size="6"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent"
+                                    required
+                                >
+                                </select>
+                                <p class="text-xs text-gray-500 mt-1">Select all company stages you invest in.</p>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    TRL Stage (Multi-Select) *
+                                </label>
+                                <select
+                                    name="trlStages"
+                                    multiple
+                                    size="6"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent"
+                                    required
+                                >
+                                </select>
+                                <p class="text-xs text-gray-500 mt-1">Select all TRL levels you are comfortable investing in.</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Firm Description *
+                            </label>
+                            <textarea
+                                name="firmDescription"
+                                rows="4"
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                                placeholder="Brief description of your firm and what it does..."
+                                required
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Startup Specific Fields -->
+                    <div id="startup-fields" class="form-section space-y-6 border-t pt-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Company Information</h3>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Company Name *
+                            </label>
+                            <input
+                                name="companyName"
+                                type="text"
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                                placeholder="Enter your company name"
+                                required
+                            />
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Technology Types (Multi-Select) *
+                                </label>
+                                <select
+                                    name="technologyTypes"
+                                    multiple
+                                    size="8"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent"
+                                    required
+                                >
+                                </select>
+                                <p class="text-xs text-gray-500 mt-1">Hold Ctrl (Windows) or Command (Mac) to select multiple.</p>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Investment Locations (Multi-Select) *
+                                </label>
+                                <select
+                                    name="investmentLocations"
+                                    multiple
+                                    size="8"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent"
+                                    required
+                                >
+                                </select>
+                                <p class="text-xs text-gray-500 mt-1">Select all regions where you invest.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Company Stage (Multi-Select) *
+                                </label>
+                                <select
+                                    name="investmentStages"
+                                    multiple
+                                    size="6"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent"
+                                    required
+                                >
+                                </select>
+                                <p class="text-xs text-gray-500 mt-1">Select all company stages you invest in.</p>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    TRL Stage (Multi-Select) *
+                                </label>
+                                <select
+                                    name="trlStages"
+                                    multiple
+                                    size="6"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent"
+                                    required
+                                >
+                                </select>
+                                <p class="text-xs text-gray-500 mt-1">Select all TRL levels you are comfortable investing in.</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Company Description *
+                            </label>
+                            <textarea
+                                name="description"
+                                rows="4"
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                                placeholder="Brief description of your company and what it does..."
+                                required
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-6">
+                        <button
+                            type="submit"
+                            id="submit-btn"
+                            class="cta-button w-full flex items-center justify-center gap-2"
+                        >
+                            <svg id="submit-spinner" class="hidden animate-spin h-5 w-5 text-white" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                            </svg>
+                            <span id="submit-label">Join Waiting List</span>
+                        </button>
+                        <p class="mt-4 text-center text-sm text-gray-600">
+                            By joining our waiting list, you agree to our{' '}
+                            <a href="terms.html" style="color: #004b87;" class="hover:underline">
+                                Terms of Service
+                            </a>{' '}
+                            and{' '}
+                            <a href="privacy.html" style="color: #004b87;" class="hover:underline">
+                                Privacy Policy
+                            </a>
+                        </p>
+                        <p class="mt-2 text-center text-xs text-gray-500">
+                            We'll only contact you about PocketVC updates and launch notifications. 
+                            You can unsubscribe at any time.
+                        </p>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -371,6 +684,8 @@
 
     <!-- JavaScript -->
     <script>
+        let currentUserType = 'startup';
+
         // Dropdown menu toggle
         document.getElementById('dropdown-btn').addEventListener('click', function() {
             const dropdown = document.getElementById('dropdown-menu');
@@ -386,6 +701,955 @@
                 dropdown.classList.add('hidden');
             }
         });
-    </script>
-</body>
-</html> 
+
+        // User type selection
+        function selectUserType(userType) {
+            currentUserType = userType;
+            
+            // Update button styles
+            const startupBtn = document.getElementById('startup-btn');
+            const vcBtn = document.getElementById('vc-btn');
+            
+            if (userType === 'startup') {
+                startupBtn.classList.add('selected');
+                vcBtn.classList.remove('selected');
+                document.getElementById('startup-fields').classList.add('active');
+                document.getElementById('vc-fields').classList.remove('active');
+                document.getElementById('form-title').textContent = 'Join Startup Waiting List';
+                document.getElementById('connection-type').textContent = 'investors';
+
+                // Disable VC inputs to avoid HTML validation blocking submit
+                document.querySelectorAll('#vc-fields input, #vc-fields select, #vc-fields textarea').forEach(el => { el.disabled = true; });
+                document.querySelectorAll('#startup-fields input, #startup-fields select, #startup-fields textarea').forEach(el => { el.disabled = false; });
+            } else {
+                vcBtn.classList.add('selected');
+                startupBtn.classList.remove('selected');
+                document.getElementById('vc-fields').classList.add('active');
+                document.getElementById('startup-fields').classList.remove('active');
+                document.getElementById('form-title').textContent = 'Join VC Waiting List';
+                document.getElementById('connection-type').textContent = 'startups';
+
+                // Disable Startup inputs to avoid HTML validation blocking submit
+                document.querySelectorAll('#startup-fields input, #startup-fields select, #startup-fields textarea').forEach(el => { el.disabled = true; });
+                document.querySelectorAll('#vc-fields input, #vc-fields select, #vc-fields textarea').forEach(el => { el.disabled = false; });
+            }
+            
+            // Show the registration form
+            document.getElementById('registration-form').classList.add('active');
+            
+            // Smooth scroll to form
+            setTimeout(() => {
+                document.getElementById('registration-form').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }, 300);
+        }
+
+        // Form submission
+        document.getElementById('signup-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const messageDiv = document.getElementById('message');
+            
+            // Show loading state
+            const submitLabel = document.getElementById('submit-label');
+            const submitSpinner = document.getElementById('submit-spinner');
+            if (submitLabel && submitSpinner) {
+                submitLabel.textContent = 'Joining Waiting List...';
+                submitSpinner.classList.remove('hidden');
+            }
+            submitBtn.disabled = true;
+            
+            // Get form data
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+
+            // Basic bot/honeypot check
+            if (data.website) {
+                // silently ignore or show generic error
+                if (submitLabel && submitSpinner) {
+                    submitLabel.textContent = 'Join Waiting List';
+                    submitSpinner.classList.add('hidden');
+                }
+                submitBtn.disabled = false;
+                return;
+            }
+
+            // Validate passwords match
+            if (data.password !== data.confirmPassword) {
+                showMessage('error', 'Passwords do not match');
+                if (submitLabel && submitSpinner) {
+                    submitLabel.textContent = 'Join Waiting List';
+                    submitSpinner.classList.add('hidden');
+                }
+                submitBtn.disabled = false;
+                return;
+            }
+
+            // Helper: collect multi values from a select inside a container
+            const getMultiValues = (selectName, containerSelector) => {
+                const selectEl = document.querySelector(`${containerSelector} select[name="${selectName}"]`);
+                if (!selectEl) return [];
+                return Array.from(selectEl.options)
+                    .filter(opt => opt.selected && opt.value)
+                    .map(opt => opt.value);
+            };
+
+            // Helper: split technology selections into sectors and subsectors
+            const splitTech = (selections) => {
+                const sectors = new Set();
+                const subsectors = [];
+                selections.forEach(v => {
+                    const parts = v.split(':');
+                    if (parts.length >= 2) {
+                        const sector = parts[0].trim();
+                        const sub = parts.slice(1).join(':').trim();
+                        if (sector) sectors.add(sector);
+                        if (sub) subsectors.push(sub);
+                    } else {
+                        sectors.add(v.trim());
+                    }
+                });
+                return { sectors: Array.from(sectors), subsectors };
+            };
+
+            // Build payload common fields
+            const isVC = currentUserType === 'vc';
+            let techSelections = [];
+            let locations = [];
+            let stages = [];
+            let trls = [];
+
+            if (isVC) {
+                techSelections = getMultiValues('technologyTypes', '#vc-fields');
+                locations = getMultiValues('investmentLocations', '#vc-fields');
+                stages = getMultiValues('investmentStages', '#vc-fields');
+                trls = getMultiValues('trlStages', '#vc-fields');
+                if (
+                    techSelections.length === 0 ||
+                    locations.length === 0 ||
+                    stages.length === 0 ||
+                    trls.length === 0
+                ) {
+                    showMessage('error', 'Please select at least one option in each VC field.');
+                    if (submitLabel && submitSpinner) {
+                        submitLabel.textContent = 'Join Waiting List';
+                        submitSpinner.classList.add('hidden');
+                    }
+                    submitBtn.disabled = false;
+                    return;
+                }
+            } else {
+                techSelections = getMultiValues('technologyTypes', '#startup-fields');
+                locations = getMultiValues('investmentLocations', '#startup-fields');
+                stages = getMultiValues('investmentStages', '#startup-fields');
+                trls = getMultiValues('trlStages', '#startup-fields');
+            }
+
+            const { sectors, subsectors } = splitTech(techSelections);
+
+            const payload = {
+                user_type: isVC ? 'vc' : 'startup',
+                email: data.email,
+                first_name: data.firstName,
+                last_name: data.lastName,
+                phone: data.phone || null,
+                // VC fields
+                firm_name: isVC ? data.firmName : null,
+                position: isVC ? data.position : null,
+                vc_technology_types: isVC ? sectors : null,
+                vc_locations: isVC ? locations : null,
+                vc_company_stages: isVC ? stages : null,
+                vc_trl_stages: isVC ? trls : null,
+                firm_description: isVC ? (data.firmDescription || null) : null,
+                // Startup fields
+                company_name: !isVC ? data.companyName : null,
+                startup_locations: !isVC ? locations : null,
+                startup_technology_types: !isVC ? sectors : null,
+                startup_company_stages: !isVC ? stages : null,
+                startup_trl_stages: !isVC ? trls : null,
+                company_description: !isVC ? (data.description || null) : null,
+                // Shared
+                source: 'landing_page'
+            };
+
+            try {
+                const SUPABASE_URL = window.SUPABASE_URL;
+                const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY;
+                const client = window.pvcSupabase || (window.pvcSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
+
+                // 1) Write to waitlist_submissions
+                const { error: insertErr } = await client.from('waitlist_submissions').insert(payload, { returning: 'minimal' });
+                if (insertErr) throw insertErr;
+
+                // 2) Kick off auth signUp to send email confirmation
+                const { error: signErr } = await client.auth.signUp({
+                    email: data.email,
+                    password: data.password,
+                    options: {
+                        data: { user_type: payload.user_type }
+                    }
+                });
+                if (signErr && signErr.message && !/already registered/i.test(signErr.message)) {
+                    // Only surface real errors; ignore Already Registered (they might be existing lead)
+                    throw signErr;
+                }
+
+                showMessage('success', 'Thanks! Check your email to verify your account. We\'ll move your details over automatically after confirmation.');
+                try { if (typeof gtag === 'function') { gtag('event', 'join_waitlist', { user_type: isVC ? 'vc' : 'startup' }); } } catch(_) {}
+                e.target.reset();
+            } catch (err) {
+                console.error('Submission error:', err);
+                showMessage('error', 'Sorry, something went wrong. Please try again in a moment.');
+            } finally {
+                if (submitLabel && submitSpinner) {
+                    submitLabel.textContent = 'Join Waiting List';
+                    submitSpinner.classList.add('hidden');
+                }
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Show message function
+        function showMessage(type, text) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.className = `mb-6 p-4 rounded-lg ${type === 'success' ? 'bg-green-50 border border-green-200 text-green-800' : 'bg-red-50 border border-red-200 text-red-800'}`;
+            messageDiv.textContent = text;
+            messageDiv.classList.remove('hidden');
+            // Scroll to message so user sees feedback
+            const topTarget = document.body;
+            try {
+                messageDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } catch (_) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Initialize with startup selected
+            selectUserType('startup');
+
+            // --- Custom multi-select dropdowns that mirror Flutter widgets ---
+            (function initVCDropdowns() {
+                function createTrigger(labelText) {
+                    const trigger = document.createElement('button');
+                    trigger.type = 'button';
+                    // Match input styles (like Position field)
+                    trigger.className = 'w-full flex items-center justify-between px-4 py-2 border border-gray-300 rounded-lg bg-white hover:bg-gray-50 focus:ring-2 focus:ring-primary-900 focus:border-transparent text-left';
+                    trigger.innerHTML = `<span class="text-gray-400">${labelText}</span><svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>`;
+                    return trigger;
+                }
+
+                function createPanel() {
+                    const panel = document.createElement('div');
+                    panel.className = 'absolute left-0 right-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-xl z-50 p-3';
+                    panel.style.maxHeight = '320px';
+                    panel.style.overflow = 'auto';
+                    panel.style.display = 'none';
+                    return panel;
+                }
+
+                function wrapSelect(selectEl, placeholderText) {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'relative';
+                    selectEl.classList.add('hidden');
+                    selectEl.parentNode.insertBefore(wrapper, selectEl);
+                    wrapper.appendChild(selectEl);
+                    const trigger = createTrigger(placeholderText);
+                    const panel = createPanel();
+                    wrapper.appendChild(trigger);
+                    wrapper.appendChild(panel);
+                    // mark as initialized to avoid double-wrapping
+                    selectEl.setAttribute('data-pvc-init', '1');
+                    return { wrapper, trigger, panel };
+                }
+
+                function updateTriggerText(trigger, selections, placeholder) {
+                    const span = trigger.querySelector('span');
+                    if (!selections || selections.length === 0) {
+                        span.textContent = placeholder;
+                        span.className = 'text-gray-400';
+                        return;
+                    }
+                    span.textContent = selections.length <= 2 ? selections.join(', ') : `${selections.length} selected`;
+                    span.className = 'text-gray-700';
+                }
+
+                function initSimpleMultiSelect(selectName, placeholder, containerSelector = '#vc-fields') {
+                    const selectEl = document.querySelector(`${containerSelector} select[name="${selectName}"]`);
+                    if (!selectEl) return;
+                    if (selectEl.getAttribute('data-pvc-init') === '1') return; // already initialized
+                    const { trigger, panel } = wrapSelect(selectEl, placeholder);
+
+                    // Top controls
+                    const controls = document.createElement('div');
+                    controls.className = 'flex items-center justify-between mb-2';
+                    controls.innerHTML = `
+                        <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"select-all\">Select All</button>
+                        <div class=\"flex items-center gap-2\">
+                            <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"clear\">Clear All</button>
+                            <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"suggest\">Suggest</button>
+                        </div>`;
+                    panel.appendChild(controls);
+
+                    // Search
+                    const search = document.createElement('input');
+                    search.type = 'text';
+                    search.placeholder = 'Search…';
+                    search.className = 'w-full mb-2 px-3 py-2 border border-gray-300 rounded-lg';
+                    panel.appendChild(search);
+
+                    // List
+                    const list = document.createElement('div');
+                    panel.appendChild(list);
+
+                    // Keep panel open when clicking inside it (checkboxes, labels, controls)
+                    panel.addEventListener('click', (ev) => ev.stopPropagation());
+
+                    function render(filter = '') {
+                        list.innerHTML = '';
+                        const options = Array.from(selectEl.options);
+                        options.forEach((opt, idx) => {
+                            if (!opt.value) return; // skip placeholder
+                            if (filter && !opt.text.toLowerCase().includes(filter.toLowerCase())) return;
+                            const row = document.createElement('label');
+                            row.className = 'flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-50 cursor-pointer';
+                            row.innerHTML = `<input type=\"checkbox\" class=\"h-4 w-4\" ${opt.selected ? 'checked' : ''} data-index=\"${idx}\"><span class=\"text-base text-gray-500\">${opt.text}</span>`;
+                            list.appendChild(row);
+                        });
+                        // Update trigger text
+                        const selected = Array.from(selectEl.options).filter(o => o.selected && o.value).map(o => o.text);
+                        updateTriggerText(trigger, selected, placeholder);
+                    }
+
+                    panel.addEventListener('change', (e) => {
+                        const cb = e.target;
+                        if (cb && cb.matches('input[type="checkbox"][data-index]')) {
+                            const idx = Number(cb.getAttribute('data-index'));
+                            selectEl.options[idx].selected = cb.checked;
+                            const selected = Array.from(selectEl.options).filter(o => o.selected && o.value).map(o => o.text);
+                            updateTriggerText(trigger, selected, placeholder);
+                        }
+                    });
+
+                    search.addEventListener('input', () => render(search.value));
+
+                    controls.addEventListener('click', (e) => {
+                        const btn = e.target.closest('button');
+                        if (!btn) return;
+                        const action = btn.getAttribute('data-action');
+                        if (action === 'clear') {
+                            Array.from(selectEl.options).forEach(o => o.selected = false);
+                            render(search.value);
+                        } else if (action === 'select-all') {
+                            Array.from(selectEl.options).forEach(o => { if (o.value) o.selected = true; });
+                            render(search.value);
+                        } else if (action === 'suggest') {
+                            showSimpleSuggestDialog('New item', 'e.g., Add a new option', (val) => {
+                                const exists = Array.from(selectEl.options).some(o => o.value.toLowerCase() === val.toLowerCase());
+                                if (!exists) {
+                                    selectEl.add(new Option(val, val, true, true));
+                                    render(search.value);
+                                }
+                            });
+                        }
+                    });
+
+                    // Toggle panel
+                    trigger.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+                    });
+
+                    document.addEventListener('click', (e) => {
+                        if (!panel.contains(e.target) && e.target !== trigger) {
+                            panel.style.display = 'none';
+                        }
+                    });
+
+                    render();
+                    // Re-render when options change (e.g., after dynamic Supabase load)
+                    if (!selectEl._pvcObserver) {
+                        const observer = new MutationObserver(() => {
+                            render(search.value || '');
+                        });
+                        observer.observe(selectEl, { childList: true, subtree: true });
+                        selectEl._pvcObserver = observer;
+                    }
+                }
+
+                function initHierarchicalTechSelect(selectName, placeholder, containerSelector = '#vc-fields') {
+                    const selectEl = document.querySelector(`${containerSelector} select[name="${selectName}"]`);
+                    if (!selectEl) return;
+                    if (selectEl.getAttribute('data-pvc-init') === '1') return;
+                    const { trigger, panel } = wrapSelect(selectEl, placeholder);
+
+                    // Controls
+                    const controls = document.createElement('div');
+                    controls.className = 'flex items-center justify-between mb-2';
+                    controls.innerHTML = `
+                        <div class="flex items-center gap-3">
+                            <button type="button" class="text-sm text-blue-900 hover:underline" data-action="toggle-expand">Expand All</button>
+                            <button type="button" class="text-sm text-blue-900 hover:underline" data-action="select-all">Select All</button>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button type="button" class="text-sm text-blue-900 hover:underline" data-action=\"clear\">Clear All</button>
+                            <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"suggest\">Suggest</button>
+                        </div>`;
+                    panel.appendChild(controls);
+
+                    // Search
+                    const search = document.createElement('input');
+                    search.type = 'text';
+                    search.placeholder = 'Search sectors/subsectors…';
+                    search.className = 'w-full mb-2 px-3 py-2 border border-gray-300 rounded-lg';
+                    panel.appendChild(search);
+
+                    // List container
+                    const list = document.createElement('div');
+                    panel.appendChild(list);
+
+                    let expandedAll = false;
+
+                    function getData() {
+                        const groups = Array.from(selectEl.querySelectorAll('optgroup'));
+                        return groups.map(g => ({
+                            label: g.label,
+                            options: Array.from(g.querySelectorAll('option')).map(o => ({ text: o.text, value: o.value, selected: o.selected }))
+                        }));
+                    }
+
+                    function syncBackToSelect() {
+                        // Already manipulated option.selected directly when clicking; nothing extra here.
+                        const selected = Array.from(selectEl.options).filter(o => o.selected && o.value).map(o => o.text);
+                        updateTriggerText(trigger, selected, placeholder);
+                    }
+
+                    function render(filter = '') {
+                        list.innerHTML = '';
+                        const data = getData();
+                        data.forEach((group, gi) => {
+                            // Group header
+                            const groupHeader = document.createElement('div');
+                            groupHeader.className = 'px-2 py-1 rounded hover:bg-gray-50';
+                            groupHeader.innerHTML = `
+                                <div class="flex items-center justify-between" data-group="${gi}">
+                                    <div class="flex items-center gap-2">
+                                        <input type="checkbox" class="h-4 w-4" data-role="group-checkbox" ${group.options.every(o => o.selected) ? 'checked' : ''}>
+                                        <span class="text-base text-gray-500" data-role="sector-label">${group.label}</span>
+                                    </div>
+                                    <svg class="w-4 h-4 text-gray-500 cursor-pointer" data-role="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </div>`;
+                            list.appendChild(groupHeader);
+
+                            // Children list
+                            const children = document.createElement('div');
+                            children.className = 'ml-6 mt-1 mb-2';
+                            children.style.display = expandedAll ? 'block' : 'none';
+
+                            group.options.forEach((opt, oi) => {
+                                if (filter && !(`${group.label} ${opt.text}`.toLowerCase().includes(filter.toLowerCase()))) return;
+                                const row = document.createElement('label');
+                                row.className = 'flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-50 cursor-pointer';
+                                row.innerHTML = `<input type="checkbox" class="h-4 w-4" data-gi="${gi}" data-oi="${oi}" ${opt.selected ? 'checked' : ''}><span class="text-base text-gray-500">${opt.text}</span>`;
+                                children.appendChild(row);
+                            });
+                            list.appendChild(children);
+                        });
+
+                        syncBackToSelect();
+                    }
+
+                    // Keep panel open when clicking inside
+                    panel.addEventListener('click', (ev) => ev.stopPropagation());
+
+                    list.addEventListener('click', (e) => {
+                        const header = e.target.closest('[data-group]');
+                        if (header) {
+                            const gi = Number(header.getAttribute('data-group'));
+                            const groupContainer = header.parentElement;
+                            const children = groupContainer.nextSibling;
+                            if (e.target.matches('input[data-role="group-checkbox"]')) {
+                                // Toggle entire group using only the checkbox
+                                const checked = e.target.checked;
+                                const og = selectEl.querySelectorAll('optgroup')[gi];
+                                og.querySelectorAll('option').forEach((o) => { o.selected = checked; });
+                                render(search.value);
+                            } else if (e.target.matches('[data-role="sector-label"]') || e.target.closest('[data-role="chevron"]')) {
+                                // Toggle expand/collapse only via label or chevron
+                                children.style.display = children.style.display === 'none' ? 'block' : 'none';
+                            }
+                            // Clicks on header container do nothing else
+                        }
+                    });
+
+                    list.addEventListener('change', (e) => {
+                        const cb = e.target;
+                        if (cb && cb.matches('input[type="checkbox"][data-gi]')) {
+                            const gi = Number(cb.getAttribute('data-gi'));
+                            const oi = Number(cb.getAttribute('data-oi'));
+                            const og = selectEl.querySelectorAll('optgroup')[gi];
+                            const option = og.querySelectorAll('option')[oi];
+                            option.selected = cb.checked;
+                            // Update group header checkbox based on all children
+                            render(search.value);
+                        }
+                    });
+
+                    search.addEventListener('input', () => render(search.value));
+
+                    controls.addEventListener('click', (e) => {
+                        const btn = e.target.closest('button');
+                        if (!btn) return;
+                        const action = btn.getAttribute('data-action');
+                        if (action === 'toggle-expand') {
+                            expandedAll = !expandedAll;
+                            btn.textContent = expandedAll ? 'Collapse All' : 'Expand All';
+                            render(search.value);
+                        } else if (action === 'clear') {
+                            Array.from(selectEl.options).forEach(o => o.selected = false);
+                            render(search.value);
+                        } else if (action === 'select-all') {
+                            Array.from(selectEl.options).forEach(o => { if (o.value) o.selected = true; });
+                            render(search.value);
+                        } else if (action === 'suggest') {
+                            showSuggestDialog();
+                        }
+                    });
+
+                    function showSuggestDialog() {
+                        // Build modal elements
+                        const modal = document.createElement('div');
+                        modal.className = 'fixed inset-0 z-[9999] flex items-center justify-center p-4';
+                        modal.innerHTML = `
+                            <div class="absolute inset-0 bg-black/20"></div>
+                            <div class="relative bg-white rounded-xl shadow-xl w-full max-w-md p-5">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-lg font-semibold text-gray-900">Suggest</h3>
+                                    <button type="button" class="text-gray-500 hover:text-gray-700" data-role="close">✕</button>
+                                </div>
+                                <div class="flex gap-2 mb-4">
+                                    <button type="button" data-role="tab-sector" class="px-3 py-1.5 rounded-lg border border-gray-300 text-gray-700 bg-gray-50">Sector</button>
+                                    <button type="button" data-role="tab-sub" class="px-3 py-1.5 rounded-lg border border-gray-200 text-gray-600">Subsector</button>
+                                </div>
+                                <div data-role="content-sector">
+                                    <div class="mb-3">
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">New Sector</label>
+                                        <input type="text" data-role="new-sector" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent placeholder-gray-400" placeholder="e.g., Emerging AI Hardware" />
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">First Subsector</label>
+                                        <input type="text" data-role="new-sector-sub" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent placeholder-gray-400" placeholder="e.g., Neuromorphic DSP Chips" />
+                                    </div>
+                                    <div class="flex justify-end gap-2">
+                                        <button type="button" data-role="close" class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700">Cancel</button>
+                                        <button type="button" data-role="add-sector" class="px-4 py-2 rounded-lg bg-blue-900 text-white">Add</button>
+                                    </div>
+                                </div>
+                                <div data-role="content-sub" class="hidden">
+                                    <div class="mb-3">
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Choose Sector</label>
+                                        <div data-role="sector-list" class="max-h-48 overflow-auto border border-gray-200 rounded-lg">
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">New Subsector</label>
+                                        <input type="text" data-role="new-sub" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent placeholder-gray-400" placeholder="e.g., Photonics co-processors" />
+                                    </div>
+                                    <div class="flex justify-end gap-2">
+                                        <button type="button" data-role="close" class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700">Cancel</button>
+                                        <button type="button" data-role="add-sub" class="px-4 py-2 rounded-lg bg-blue-900 text-white">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+
+                        document.body.appendChild(modal);
+
+                        const close = () => { document.body.removeChild(modal); };
+                        modal.querySelectorAll('[data-role="close"]').forEach(btn => btn.addEventListener('click', close));
+                        modal.firstElementChild.addEventListener('click', close);
+
+                        // Tabs
+                        const tabSector = modal.querySelector('[data-role="tab-sector"]');
+                        const tabSub = modal.querySelector('[data-role="tab-sub"]');
+                        const contentSector = modal.querySelector('[data-role="content-sector"]');
+                        const contentSub = modal.querySelector('[data-role="content-sub"]');
+                        function activate(mode) {
+                            const on = 'px-3 py-1.5 rounded-lg border border-gray-300 text-gray-700 bg-gray-50';
+                            const off = 'px-3 py-1.5 rounded-lg border border-gray-200 text-gray-600';
+                            if (mode === 'sector') {
+                                tabSector.className = on; tabSub.className = off; contentSector.classList.remove('hidden'); contentSub.classList.add('hidden');
+                            } else { tabSub.className = on; tabSector.className = off; contentSub.classList.remove('hidden'); contentSector.classList.add('hidden'); }
+                        }
+                        tabSector.addEventListener('click', () => activate('sector'));
+                        tabSub.addEventListener('click', () => activate('sub'));
+                        activate('sector');
+
+                        // Populate sector list for subsector mode
+                        const sectorList = modal.querySelector('[data-role="sector-list"]');
+                        const sectorNames = Array.from(selectEl.querySelectorAll('optgroup')).map(g => g.label).sort((a,b)=>a.localeCompare(b));
+                        let selectedSector = sectorNames[0] || '';
+                        const renderSectorList = () => {
+                            sectorList.innerHTML = '';
+                            sectorNames.forEach(name => {
+                                const item = document.createElement('button');
+                                item.type = 'button';
+                                item.className = `w-full text-left px-3 py-2 ${selectedSector === name ? 'bg-blue-50 text-blue-900' : 'hover:bg-gray-50'} border-b border-gray-100`;
+                                item.textContent = name;
+                                item.addEventListener('click', () => { selectedSector = name; renderSectorList(); });
+                                sectorList.appendChild(item);
+                            });
+                        };
+                        renderSectorList();
+
+                        // Add actions
+                        modal.querySelector('[data-role="add-sector"]').addEventListener('click', () => {
+                            const sectorVal = modal.querySelector('[data-role="new-sector"]').value.trim();
+                            const subVal = modal.querySelector('[data-role="new-sector-sub"]').value.trim();
+                            if (!sectorVal || !subVal) return;
+                            let og = document.createElement('optgroup');
+                            og.label = sectorVal;
+                            og.appendChild(new Option(subVal, `${sectorVal}: ${subVal}`));
+                            selectEl.appendChild(og);
+                            render(search.value);
+                            close();
+                        });
+
+                        modal.querySelector('[data-role="add-sub"]').addEventListener('click', () => {
+                            const subVal = modal.querySelector('[data-role="new-sub"]').value.trim();
+                            if (!subVal || !selectedSector) return;
+                            let og = Array.from(selectEl.querySelectorAll('optgroup')).find(g => g.label === selectedSector);
+                            if (!og) { og = document.createElement('optgroup'); og.label = selectedSector; selectEl.appendChild(og); }
+                            og.appendChild(new Option(subVal, `${selectedSector}: ${subVal}`));
+                            render(search.value);
+                            close();
+                        });
+                    }
+
+                    // Toggle panel
+                    trigger.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+                    });
+
+                    document.addEventListener('click', (e) => {
+                        if (!panel.contains(e.target) && e.target !== trigger) {
+                            panel.style.display = 'none';
+                        }
+                    });
+
+                    render();
+                    // Re-render when optgroups/options change after async loads
+                    if (!selectEl._pvcObserver) {
+                        const observer = new MutationObserver(() => {
+                            render(search.value || '');
+                        });
+                        observer.observe(selectEl, { childList: true, subtree: true });
+                        selectEl._pvcObserver = observer;
+                    }
+                }
+
+                // Initialize all VC dropdowns
+                initHierarchicalTechSelect('technologyTypes', 'Technology Type');
+                initSimpleMultiSelect('investmentLocations', 'Geographic Location');
+                initSimpleMultiSelect('investmentStages', 'Company Stage');
+                initSimpleMultiSelect('trlStages', 'TRL Stage');
+
+                // Startup dropdowns will be initialized after Supabase loads their data
+
+                // Optional: dynamically load TRL options from Supabase
+                async function loadTRLFromSupabase() {
+                    try {
+                        const SUPABASE_URL = window.SUPABASE_URL || 'YOUR_SUPABASE_URL';
+                        const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+                        const selectEl = document.querySelector('#vc-fields select[name="trlStages"]');
+                        if (!selectEl) return;
+                        if (!SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('YOUR_')) {
+                            // No creds yet; initialize UI with existing static options
+                            initSimpleMultiSelect('trlStages', 'TRL Stage');
+                            return;
+                        }
+
+                        const client = window.pvcSupabase || (window.pvcSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
+                        const { data, error } = await client
+                            .from('technology_readiness_levels')
+                            .select('level_name, sort_rank')
+                            .order('sort_rank', { ascending: true });
+                        if (error) throw error;
+
+                        // Clear existing and populate
+                        selectEl.innerHTML = '';
+                        data.forEach(row => {
+                            const label = row && (row.level_name || row.name);
+                            if (label) {
+                                const opt = new Option(label, label);
+                                selectEl.add(opt);
+                            }
+                        });
+
+                        // Initialize custom UI after data ready
+                        initSimpleMultiSelect('trlStages', 'TRL Stage');
+                    } catch (e) {
+                        console.warn('Could not load TRL from Supabase yet:', e);
+                        // Fallback to existing static UI
+                        initSimpleMultiSelect('trlStages', 'TRL Stage');
+                    }
+                }
+                loadTRLFromSupabase();
+
+                // Also load TRL into Startup
+                (async function loadStartupTRL() {
+                    try {
+                        const SUPABASE_URL = window.SUPABASE_URL || 'YOUR_SUPABASE_URL';
+                        const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+                        const selectEl = document.querySelector('#startup-fields select[name="trlStages"]');
+                        if (!selectEl || !SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('YOUR_')) return;
+                        const client = window.pvcSupabase || (window.pvcSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
+                        const { data } = await client.from('technology_readiness_levels').select('level_name, sort_rank').order('sort_rank', { ascending: true });
+                        if (Array.isArray(data) && data.length) {
+                            selectEl.innerHTML = '';
+                            data.forEach(row => {
+                                const label = row.level_name || row.name; if (!label) return;
+                                selectEl.add(new Option(label, label));
+                            });
+                            initSimpleMultiSelect('trlStages', 'TRL Stage', '#startup-fields');
+                        }
+                    } catch {}
+                })();
+
+                // Load Company Stage from Supabase
+                async function loadCompanyStageFromSupabase() {
+                    try {
+                        const SUPABASE_URL = window.SUPABASE_URL || 'YOUR_SUPABASE_URL';
+                        const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+                        const selectEl = document.querySelector('#vc-fields select[name="investmentStages"]');
+                        if (!selectEl) return;
+                        if (!SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('YOUR_')) {
+                            initSimpleMultiSelect('investmentStages', 'Company Stage');
+                            return;
+                        }
+
+                        const client = window.pvcSupabase || (window.pvcSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
+                        // Adjust table/columns after you confirm names
+                        const { data, error } = await client
+                            .from('fundraising_stages')
+                            .select('stage_name, sort_rank')
+                            .order('sort_rank', { ascending: true });
+                        if (error) throw error;
+
+                        selectEl.innerHTML = '';
+                        data.forEach(row => {
+                            const label = row && (row.stage_name || row.name);
+                            if (label) selectEl.add(new Option(label, label));
+                        });
+
+                        initSimpleMultiSelect('investmentStages', 'Company Stage');
+                    } catch (e) {
+                        console.warn('Could not load Company Stage yet:', e);
+                        initSimpleMultiSelect('investmentStages', 'Company Stage');
+                    }
+                }
+                loadCompanyStageFromSupabase();
+                // Also populate Startup Company Stage with same data
+                (async function loadStartupCompanyStage() {
+                    try {
+                        const SUPABASE_URL = window.SUPABASE_URL || 'YOUR_SUPABASE_URL';
+                        const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+                        const selectEl = document.querySelector('#startup-fields select[name="investmentStages"]');
+                        if (!selectEl || !SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('YOUR_')) return;
+                        const client = window.pvcSupabase || (window.pvcSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
+                        const { data } = await client.from('fundraising_stages').select('stage_name, sort_rank').order('sort_rank', { ascending: true });
+                        if (Array.isArray(data) && data.length) {
+                            selectEl.innerHTML = '';
+                            data.forEach(row => { const label = row.stage_name || row.name; if (label) selectEl.add(new Option(label, label)); });
+                            initSimpleMultiSelect('investmentStages', 'Company Stage', '#startup-fields');
+                        }
+                    } catch {}
+                })();
+
+                // Load Investment Locations from Supabase
+                async function loadLocationsFromSupabase() {
+                    try {
+                        const SUPABASE_URL = window.SUPABASE_URL || 'YOUR_SUPABASE_URL';
+                        const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+                        const selectEl = document.querySelector('#vc-fields select[name="investmentLocations"]');
+                        if (!selectEl) return;
+                        if (!SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('YOUR_')) {
+                            initSimpleMultiSelect('investmentLocations', 'Geographic Location');
+                            return;
+                        }
+
+                        const client = window.pvcSupabase || (window.pvcSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
+                        // locations table: select name, order alphabetically
+                        const { data, error } = await client
+                            .from('locations')
+                            .select('name')
+                            .order('name', { ascending: true });
+                        if (error) throw error;
+
+                        selectEl.innerHTML = '';
+                        data.forEach(row => {
+                            const label = row && (row.name);
+                            if (label) selectEl.add(new Option(label, label));
+                        });
+
+                        initSimpleMultiSelect('investmentLocations', 'Geographic Location');
+                    } catch (e) {
+                        console.warn('Could not load Locations yet:', e);
+                        initSimpleMultiSelect('investmentLocations', 'Geographic Location');
+                    }
+                }
+                loadLocationsFromSupabase();
+                // Also populate Startup Locations with same data
+                (async function loadStartupLocations() {
+                    try {
+                        const SUPABASE_URL = window.SUPABASE_URL || 'YOUR_SUPABASE_URL';
+                        const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+                        const selectEl = document.querySelector('#startup-fields select[name="investmentLocations"]');
+                        if (!selectEl || !SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('YOUR_')) return;
+                        const client = window.pvcSupabase || (window.pvcSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
+                        const { data } = await client.from('locations').select('name').order('name', { ascending: true });
+                        if (Array.isArray(data) && data.length) {
+                            selectEl.innerHTML = '';
+                            data.forEach(row => { const label = row.name; if (label) selectEl.add(new Option(label, label)); });
+                            initSimpleMultiSelect('investmentLocations', 'Geographic Location', '#startup-fields');
+                        }
+                    } catch {}
+                })();
+
+                // Load Technology Type & Subsectors (hierarchical) from Supabase — single-table schema
+                async function loadTechSubsectorsFromSupabase() {
+                    try {
+                        const SUPABASE_URL = window.SUPABASE_URL || 'YOUR_SUPABASE_URL';
+                        const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+                        const selectEl = document.querySelector('#vc-fields select[name="technologyTypes"]');
+                        if (!selectEl) return;
+                        if (!SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('YOUR_')) {
+                            initHierarchicalTechSelect('technologyTypes', 'Technology Type');
+                            return;
+                        }
+
+                        const client = window.pvcSupabase || (window.pvcSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
+
+                        console.log('[TechDropdown] Fetching deeptech_subsectors…');
+                        const { data, error } = await client
+                            .from('deeptech_subsectors')
+                            .select('sector, subsector')
+                            .order('sector', { ascending: true })
+                            .order('subsector', { ascending: true });
+                        if (error) {
+                            console.warn('[TechDropdown] Supabase error:', error);
+                            throw error;
+                        }
+
+                        if (!Array.isArray(data) || data.length === 0) {
+                            console.warn('[TechDropdown] deeptech_subsectors returned 0 rows');
+                            initHierarchicalTechSelect('technologyTypes', 'Technology Type');
+                            return;
+                        }
+                        console.log('[TechDropdown] rows:', data.length, 'example:', data[0]);
+
+                        // Build optgroups
+                        selectEl.innerHTML = '';
+                        const groups = new Map();
+                        data.forEach(r => {
+                            if (!r.sector || !r.subsector) return;
+                            if (!groups.has(r.sector)) groups.set(r.sector, []);
+                            groups.get(r.sector).push(r.subsector);
+                        });
+
+                        Array.from(groups.entries()).forEach(([sectorName, subs]) => {
+                            const og = document.createElement('optgroup');
+                            og.label = sectorName;
+                            subs.sort((a, b) => a.localeCompare(b)).forEach(name => og.appendChild(new Option(name, `${sectorName}: ${name}`)));
+                            selectEl.appendChild(og);
+                        });
+
+                        console.log('[TechDropdown] Built optgroups:', selectEl.querySelectorAll('optgroup').length);
+                        initHierarchicalTechSelect('technologyTypes', 'Technology Type');
+                    } catch (e) {
+                        console.warn('[TechDropdown] Could not load Technology Types/Subsectors yet:', e);
+                        initHierarchicalTechSelect('technologyTypes', 'Technology Type');
+                    }
+                }
+                loadTechSubsectorsFromSupabase();
+                // Also build Startup Technology Types with the same data
+                (async function loadStartupTech() {
+                    try {
+                        const SUPABASE_URL = window.SUPABASE_URL || 'YOUR_SUPABASE_URL';
+                        const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+                        const selectEl = document.querySelector('#startup-fields select[name="technologyTypes"]');
+                        if (!selectEl || !SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('YOUR_')) return;
+                        const client = window.pvcSupabase || (window.pvcSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
+                        const { data, error } = await client.from('deeptech_subsectors').select('sector, subsector').order('sector', { ascending: true }).order('subsector', { ascending: true });
+                        if (error || !Array.isArray(data) || !data.length) return;
+                        selectEl.innerHTML = '';
+                        const groups = new Map();
+                        data.forEach(r => { if (!groups.has(r.sector)) groups.set(r.sector, []); groups.get(r.sector).push(r.subsector); });
+                        Array.from(groups.entries()).forEach(([sectorName, subs]) => {
+                            const og = document.createElement('optgroup'); og.label = sectorName;
+                            subs.sort((a,b)=>a.localeCompare(b)).forEach(n => og.appendChild(new Option(n, `${sectorName}: ${n}`)));
+                            selectEl.appendChild(og);
+                        });
+                        initHierarchicalTechSelect('technologyTypes', 'Technology Type', '#startup-fields');
+                    } catch {}
+                })();
+            })();
+
+            function showSimpleSuggestDialog(labelText, placeholderText, onAdd) {
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 z-[9999] flex items-center justify-center p-4';
+                modal.innerHTML = `
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="relative bg-white rounded-xl shadow-xl w-full max-w-md p-5">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900">Suggest</h3>
+                            <button type="button" class="text-gray-500 hover:text-gray-700" data-role="close">✕</button>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">${labelText}</label>
+                            <input type="text" data-role="value" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-900 focus:border-transparent placeholder-gray-400" placeholder="${placeholderText}" />
+                        </div>
+                        <div class="flex justify-end gap-2">
+                            <button type="button" data-role="close" class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700">Cancel</button>
+                            <button type="button" data-role="add" class="px-4 py-2 rounded-lg bg-blue-900 text-white">Add</button>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+                const close = () => { document.body.removeChild(modal); };
+                modal.querySelectorAll('[data-role="close"]').forEach(b => b.addEventListener('click', close));
+                modal.firstElementChild.addEventListener('click', close);
+                modal.querySelector('[data-role="add"]').addEventListener('click', () => {
+                    const val = modal.querySelector('[data-role="value"]').value.trim();
+                    if (!val) return;
+                    onAdd(val);
+                    close();
+                });
+            }
+
+            // Initialize Startup simple multi-selects using the same UI
+            (function initStartupDropdowns() {
+                // Location (uses icon input but we can still wrap the select)
+                const startupLocation = document.querySelector('#startup-fields select[name="location"]');
+                if (startupLocation && !startupLocation.getAttribute('data-pvc-init')) {
+                    // For startup location we use the same placeholder text
+                    initSimpleMultiSelect.bind(null)('location', 'Location');
+                }
+                const startupIndustry = document.querySelector('#startup-fields select[name="industry"]');
+                if (startupIndustry && !startupIndustry.getAttribute('data-pvc-init')) {
+                    initSimpleMultiSelect.bind(null)('industry', 'Industry');
+                }
+                const startupStage = document.querySelector('#startup-fields select[name="stage"]');
+                if (startupStage && !startupStage.getAttribute('data-pvc-init')) {
+                    initSimpleMultiSelect.bind(null)('stage', 'Company Stage');
+                }
+                const startupFunding = document.querySelector('#startup-fields select[name="fundingAmount"]');
+                if (startupFunding && !startupFunding.getAttribute('data-pvc-init')) {
+                    initSimpleMultiSelect.bind(null)('fundingAmount', 'Funding Stage');
+                }
+            })();
+        </script>
+    </body>
+    </html>
