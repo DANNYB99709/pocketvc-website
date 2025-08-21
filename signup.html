@@ -71,9 +71,10 @@
             font-family: 'Inter', sans-serif;
         }
         
-        .hero-gradient {
-            background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
-        }
+                 .hero-gradient {
+             background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+             min-height: 100vh;
+         }
         
         .user-type-card {
             transition: all 0.3s ease;
@@ -276,10 +277,12 @@
     <nav class="absolute top-0 left-0 right-0 z-50 pt-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
-                <!-- Logo -->
-                <div class="flex items-center space-x-3">
-                    <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
-                </div>
+                                 <!-- Logo -->
+                 <div class="flex items-center space-x-3">
+                     <a href="landing.html">
+                         <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
+                     </a>
+                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="desktop-nav hidden md:flex items-center space-x-8">
@@ -299,7 +302,6 @@
                 
                                  <!-- CTA Buttons -->
                  <div class="hidden md:flex items-center space-x-4">
-                     <a href="landing.html" class="cta-button-secondary-transparent">Back to Home</a>
                  </div>
                 
                 <!-- Mobile Menu Button -->
@@ -330,7 +332,6 @@
                     
                                          <!-- Mobile CTA Buttons -->
                      <div class="flex flex-col space-y-2 pt-4">
-                         <a href="landing.html" class="cta-button-secondary-transparent text-center" style="color: #004b87;">Back to Home</a>
                      </div>
                 </div>
             </div>
@@ -346,11 +347,10 @@
                      <div class="relative">
                          <div class="bg-white rounded-2xl p-4 shadow-lg">
                              <img 
-                                 src="sign.cover" 
+                                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                                  alt="PocketVC Signup Cover" 
                                  class="w-full h-96 object-cover rounded-xl"
                                  style="max-height: 400px;"
-                                 onerror="this.style.display='none'"
                              >
                          </div>
                      </div>
@@ -435,8 +435,8 @@
     </section>
 
          <!-- Registration Form (Hidden initially) -->
-     <section id="registration-form" class="form-section py-20 pb-32 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+     <section id="registration-form" class="form-section py-20 pb-40 bg-white">
+                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Message Display -->
             <div id="message" class="hidden mb-6 p-4 rounded-lg"></div>
 
@@ -446,7 +446,9 @@
                 <input type="text" name="website" tabindex="-1" autocomplete="off" />
             </div>
 
-            <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
+                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                 <!-- Left Side - Form -->
+                 <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
                 <h2 id="form-title" class="text-3xl font-bold text-gray-900 mb-6 text-center">
                     Join Startup Waiting List
                 </h2>
@@ -781,9 +783,22 @@
                             We'll only contact you about PocketVC updates and launch notifications. 
                             You can unsubscribe at any time.
                         </p>
-                    </div>
-                </form>
-            </div>
+                                         </div>
+                 </form>
+                 </div>
+                 
+                 <!-- Right Side - Cover Image -->
+                 <div class="hidden lg:block">
+                     <div class="bg-white rounded-2xl p-4 shadow-lg">
+                         <img 
+                             src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80" 
+                             alt="PocketVC Form Cover" 
+                             class="w-full h-full object-cover rounded-xl"
+                             style="min-height: 600px;"
+                         >
+                     </div>
+                 </div>
+             </div>
         </div>
     </section>
 
@@ -793,10 +808,12 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Company Info -->
                 <div class="col-span-2">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
-                        <span class="text-xl font-bold text-blue-200">PocketVC</span>
-                    </div>
+                                         <div class="flex items-center space-x-3 mb-4">
+                         <a href="landing.html">
+                             <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
+                         </a>
+                         <span class="text-xl font-bold text-blue-200">PocketVC</span>
+                     </div>
                     <p class="text-blue-200 mb-4 max-w-md">
                         Connecting venture capital firms with innovative startups through smart matching and AI-powered insights.
                     </p>
