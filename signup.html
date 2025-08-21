@@ -134,43 +134,189 @@
             transform: none;
             box-shadow: none;
         }
+        
+        /* Ensure navigation stays transparent */
+        nav,
+        nav *,
+        .mobile-menu,
+        .mobile-menu * {
+            background: transparent !important;
+        }
+        
+        /* Override any potential browser defaults */
+        nav {
+            background: transparent !important;
+            background-color: transparent !important;
+        }
+        
+        /* Ensure footer stays white */
+        footer {
+            background: white !important;
+        }
+        
+        .cta-button-transparent {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .cta-button-transparent:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .cta-button-secondary-transparent {
+            background: transparent;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-button-secondary-transparent:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .search-input::placeholder {
+            color: rgba(191, 219, 254, 0.7);
+        }
+        
+        .search-input:focus::placeholder {
+            color: rgba(191, 219, 254, 0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            /* Force complete transparency on mobile navigation */
+            nav,
+            nav *,
+            .mobile-menu,
+            .mobile-menu *,
+            .mobile-menu-dropdown,
+            nav div,
+            nav div * {
+                background: transparent !important;
+                background-color: transparent !important;
+                background-image: none !important;
+            }
+            
+            /* Specifically target the nav container */
+            nav.absolute {
+                background: transparent !important;
+                background-color: transparent !important;
+                background-image: none !important;
+            }
+            
+            /* Target the inner nav divs */
+            nav .max-w-7xl,
+            nav .flex,
+            nav .flex * {
+                background: transparent !important;
+                background-color: transparent !important;
+                background-image: none !important;
+            }
+            
+            footer {
+                background: white !important;
+            }
+        }
+        
+        /* Mobile Menu Dropdown Styles */
+        .mobile-menu-dropdown {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            margin-top: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .mobile-menu-dropdown a {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin: 0 0.5rem;
+        }
+        
+        .mobile-menu-dropdown a:hover {
+            background: rgba(0, 75, 135, 0.1);
+        }
     </style>
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' https: 'unsafe-inline'; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://rchawyidafvsttcoxmle.supabase.co https:; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://rchawyidafvsttcoxmle.supabase.co;">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm border-b border-gray-100">
+    <nav class="absolute top-0 left-0 right-0 z-50 pt-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <a href="index.html">
-                            <img src="logo.png" alt="PocketVC Logo" class="h-10 w-auto" width="160" height="40">
-                        </a>
+                <div class="flex items-center space-x-3">
+                    <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav hidden md:flex items-center space-x-8">
+                    <a href="#features" class="transition-colors" style="color: #004b87;">Features</a>
+                    <a href="#how-it-works" class="transition-colors" style="color: #004b87;">How it Works</a>
+                    <a href="#solutions" class="transition-colors" style="color: #004b87;">Solutions</a>
+                    <a href="about.html" class="transition-colors" style="color: #004b87;">About</a>
+                    
+                    <!-- Search Bar -->
+                    <div class="relative">
+                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border rounded-lg px-4 py-2 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 w-48" style="border-color: #004b87; color: #004b87; border-opacity: 0.3;">
+                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
                     </div>
                 </div>
                 
-                <!-- Navigation -->
-                <div class="flex items-baseline space-x-8">
-                    <a href="signup.html" class="bg-blue-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-800 transition-colors">Sign Up</a>
+                                 <!-- CTA Buttons -->
+                 <div class="hidden md:flex items-center space-x-4">
+                     <a href="landing.html" class="cta-button-secondary-transparent">Back to Home</a>
+                 </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu md:hidden">
+                    <button id="mobile-menu-button" style="color: #004b87;">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu-dropdown" class="mobile-menu-dropdown hidden md:hidden">
+                <div class="py-4 space-y-4">
+                    <a href="#features" class="block transition-colors" style="color: #004b87;">Features</a>
+                    <a href="#how-it-works" class="block transition-colors" style="color: #004b87;">How it Works</a>
+                    <a href="#solutions" class="block transition-colors" style="color: #004b87;">Solutions</a>
+                    <a href="about.html" class="block transition-colors" style="color: #004b87;">About</a>
                     
-                    <!-- Dropdown Menu -->
+                    <!-- Mobile Search Bar -->
                     <div class="relative">
-                        <button id="dropdown-btn" class="text-gray-600 hover:text-blue-900 transition-colors flex items-center">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                            </svg>
-                        </button>
-                        
-                        <!-- Dropdown Content -->
-                        <div id="dropdown-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-900 transition-colors">About Us</a>
-                            <a href="signup.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-900 transition-colors">Sign Up</a>
-                            <a href="privacy.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-900 transition-colors">Privacy Policy</a>
-                            <a href="terms.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-900 transition-colors">Terms of Service</a>
-                        </div>
+                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border rounded-lg px-4 py-2 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 w-full" style="border-color: #004b87; color: #004b87; border-opacity: 0.3;">
+                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
                     </div>
+                    
+                                         <!-- Mobile CTA Buttons -->
+                     <div class="flex flex-col space-y-2 pt-4">
+                         <a href="landing.html" class="cta-button-secondary-transparent text-center" style="color: #004b87;">Back to Home</a>
+                     </div>
                 </div>
             </div>
         </div>
@@ -180,28 +326,22 @@
     <section class="hero-gradient min-h-screen flex items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Side - Image -->
-                <div class="text-center lg:text-left">
-                    <div class="relative">
-                        <div class="bg-white rounded-2xl p-4 shadow-lg">
-                            <img 
-                                src="signup cover photo" 
-                                alt="PocketVC Signup Cover" 
-                                class="w-full h-96 object-cover rounded-xl"
-                                style="max-height: 400px;"
-                            >
-                        </div>
-                    </div>
-                </div>
+                                 <!-- Left Side - Image -->
+                 <div class="text-center lg:text-left hidden lg:block">
+                     <div class="relative">
+                         <div class="bg-white rounded-2xl p-4 shadow-lg">
+                             <img 
+                                 src="sign.cover" 
+                                 alt="PocketVC Signup Cover" 
+                                 class="w-full h-96 object-cover rounded-xl"
+                                 style="max-height: 400px;"
+                             >
+                         </div>
+                     </div>
+                 </div>
                 
-                <!-- Right Side - Content and Selection -->
-                <div class="text-center lg:text-left">
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Join the <span style="color: #004b87;">PocketVC</span> Waiting List
-                    </h1>
-                    <p class="text-xl text-gray-600 mb-8">
-                        Be among the first to connect with the right partners for your success. Choose your account type to get started.
-                    </p>
+                                 <!-- Right Side - Content and Selection -->
+                 <div class="text-center lg:text-left">
                     
                     <!-- User Type Selection -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -682,16 +822,16 @@
     <script>
         let currentUserType = 'startup';
 
-        // Dropdown menu toggle
-        document.getElementById('dropdown-btn').addEventListener('click', function() {
-            const dropdown = document.getElementById('dropdown-menu');
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const dropdown = document.getElementById('mobile-menu-dropdown');
             dropdown.classList.toggle('hidden');
         });
         
-        // Close dropdown when clicking outside
+        // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
-            const dropdown = document.getElementById('dropdown-menu');
-            const dropdownBtn = document.getElementById('dropdown-btn');
+            const dropdown = document.getElementById('mobile-menu-dropdown');
+            const dropdownBtn = document.getElementById('mobile-menu-button');
             
             if (!dropdownBtn.contains(event.target) && !dropdown.contains(event.target)) {
                 dropdown.classList.add('hidden');
