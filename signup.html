@@ -104,18 +104,16 @@
              overflow: visible;
          }
          
-         /* Make form scrollable on mobile */
-         @media (max-width: 768px) {
-             #registration-form {
-                 overflow-y: auto;
-                 max-height: 100vh;
-                 padding-bottom: 2rem !important;
-             }
-             
-             #submit-btn {
-                 margin-bottom: 1rem !important;
-             }
-         }
+                   /* Remove scroll functionality - use proper padding instead */
+          @media (max-width: 768px) {
+              #registration-form {
+                  padding-bottom: 4rem !important;
+              }
+              
+              #submit-btn {
+                  margin-bottom: 2rem !important;
+              }
+          }
         
         .form-input {
             transition: all 0.3s ease;
