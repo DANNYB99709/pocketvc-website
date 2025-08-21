@@ -138,7 +138,8 @@
         
         /* Mobile Menu Dropdown Styles */
         .mobile-menu-dropdown {
-            background: white;
+            background: white !important;
+            background-color: white !important;
             border-radius: 12px;
             margin-top: 1rem;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -157,6 +158,9 @@
         .search-input:focus::placeholder {
             color: rgba(0, 75, 135, 0.5);
         }
+        
+        .mobile-menu-dropdown a {
+            padding: 1rem 1.5rem;
             border-radius: 8px;
             margin: 0 0.5rem;
         }
@@ -191,23 +195,14 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="desktop-nav hidden md:flex items-center space-x-8">
-                    <a href="index.html#features" class="transition-colors" style="color: #004b87;">Features</a>
-                    <a href="index.html#how-it-works" class="transition-colors" style="color: #004b87;">How it Works</a>
-                    <a href="index.html#solutions" class="transition-colors" style="color: #004b87;">Solutions</a>
                     <a href="about.html" class="transition-colors" style="color: #004b87;">About</a>
-                    
-                    <!-- Search Bar -->
-                    <div class="relative">
-                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border rounded-lg px-4 py-2 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 w-48" style="border-color: #004b87; color: #004b87; border-opacity: 0.3;">
-                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                    </div>
+                    <a href="signup.html" class="transition-colors" style="color: #004b87;">Sign Up</a>
+                    <a href="faq.html" class="transition-colors" style="color: #004b87;">FAQ</a>
+                    <a href="contact.html" class="transition-colors" style="color: #004b87;">Contact Us</a>
                 </div>
                 
                 <!-- CTA Buttons -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="signup.html" class="cta-button-transparent" style="color: #004b87;">Get Started</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
@@ -223,23 +218,10 @@
             <!-- Mobile Menu Dropdown -->
             <div id="mobile-menu-dropdown" class="mobile-menu-dropdown hidden md:hidden">
                 <div class="py-4 space-y-4">
-                    <a href="index.html#features" class="block transition-colors" style="color: #004b87;">Features</a>
-                    <a href="index.html#how-it-works" class="block transition-colors" style="color: #004b87;">How it Works</a>
-                    <a href="index.html#solutions" class="block transition-colors" style="color: #004b87;">Solutions</a>
                     <a href="about.html" class="block transition-colors" style="color: #004b87;">About</a>
-                    
-                    <!-- Mobile Search Bar -->
-                    <div class="relative">
-                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border rounded-lg px-4 py-2 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 w-full" style="border-color: #004b87; color: #004b87; border-opacity: 0.3;">
-                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                    </div>
-                    
-                    <!-- Mobile CTA Buttons -->
-                    <div class="flex flex-col space-y-2 pt-4">
-                        <a href="signup.html" class="cta-button-transparent text-center" style="color: #004b87;">Get Started</a>
-                    </div>
+                    <a href="signup.html" class="block transition-colors" style="color: #004b87;">Sign Up</a>
+                    <a href="faq.html" class="block transition-colors" style="color: #004b87;">FAQ</a>
+                    <a href="contact.html" class="block transition-colors" style="color: #004b87;">Contact Us</a>
                 </div>
             </div>
         </div>
