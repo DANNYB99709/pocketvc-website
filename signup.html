@@ -1194,6 +1194,12 @@
          // Adjust carousel height on window resize
          window.addEventListener('resize', adjustCarouselHeight);
          
+         // Initialize carousel height after page load
+         document.addEventListener('DOMContentLoaded', function() {
+             // Small delay to ensure form is rendered
+             setTimeout(adjustCarouselHeight, 100);
+         });
+         
          // Adjust carousel height when user type changes (form becomes visible)
          const originalSelectUserType = selectUserType;
          selectUserType = function(userType) {
