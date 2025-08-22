@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>PocketVC Terms of Service | Terms and Conditions for Using Our Platform</title>
     <meta name="description" content="PocketVC Terms of Service: user accounts, acceptable use, content, disclaimers, limitations of liability and contact information.">
     <link rel="canonical" href="https://pocketvc.co/terms.html" />
@@ -18,13 +19,18 @@
     <meta name="twitter:description" content="Read PocketVC's terms and conditions for using our platform." />
     <meta name="twitter:image" content="https://pocketvc.co/logo.png" />
     <meta property="og:site_name" content="PocketVC" />
-    <meta name="theme-color" content="#003366" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
     <meta name="google-site-verification" content="VzCoa_xbrKU9iDETmjvtn5wIvGJEAcstpQ0aG1rCmms" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/apple-touch-icon-167x167.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512x512.png" />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,355 +70,490 @@
         .hero-gradient {
             background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
         }
+
+        .cta-button-transparent {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .cta-button-transparent:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .cta-button-secondary-transparent {
+            background: transparent;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-button-secondary-transparent:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile Menu Dropdown Styles */
+        .mobile-menu-dropdown {
+            background: white !important;
+            background-color: white !important;
+            border-radius: 12px;
+            margin-top: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-menu-dropdown a {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 0 0.5rem;
+        }
+        
+        .mobile-menu-dropdown a:hover {
+            background: rgba(0, 75, 135, 0.1);
+        }
+        
+        /* Search Input Styles */
+        .search-input::placeholder {
+            color: rgba(0, 75, 135, 0.7);
+        }
+        
+        .search-input:focus::placeholder {
+            color: rgba(0, 75, 135, 0.5);
+        }
+        
+        /* Mobile-specific padding adjustments */
+        @media (max-width: 768px) {
+            nav {
+                padding-top: 1.5rem;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm border-b border-gray-100">
+    <nav class="absolute top-0 left-0 right-0 z-50 pt-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <a href="index.html">
-                            <img src="logo.png" alt="PocketVC Logo" class="h-10 w-auto" width="160" height="40">
-                        </a>
+                <div class="flex items-center space-x-3">
+                    <a href="index.html">
+                        <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav hidden md:flex items-center space-x-8">
+                    <a href="about.html" class="transition-colors" style="color: #004b87;">About</a>
+                    <a href="signup.html" class="transition-colors" style="color: #004b87;">Sign Up</a>
+                    <a href="faq.html" class="transition-colors" style="color: #004b87;">FAQ</a>
+                    <a href="contact.html" class="transition-colors" style="color: #004b87;">Contact Us</a>
+                    
+                    <!-- Search Bar -->
+                    <div class="relative">
+                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border rounded-lg px-4 py-2 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 w-48" style="border-color: #004b87; color: #004b87; border-opacity: 0.3;">
+                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
                     </div>
                 </div>
                 
-                <!-- Navigation -->
-                <div class="flex items-baseline space-x-8">
-                    <a href="signup.html" class="bg-primary-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-800 transition-colors">Sign Up</a>
-                    <!-- Founder/Company social links removed from header per request -->
-                    
-                    <!-- Dropdown Menu -->
-                    <div class="relative">
-                        <button id="dropdown-btn" aria-label="Open menu" class="text-gray-600 hover:text-primary-900 transition-colors flex items-center">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                            </svg>
-                        </button>
-                        
-                        <!-- Dropdown Content -->
-                        <div id="dropdown-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">About Us</a>
-                            <a href="faq.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">FAQ</a>
-                            <a href="signup.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">Sign Up</a>
-                            <a href="privacy.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">Privacy Policy</a>
-                            <a href="terms.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">Terms of Service</a>
-                        </div>
-                    </div>
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu md:hidden">
+                    <button id="mobile-menu-button" style="color: #004b87;">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu-dropdown" class="mobile-menu-dropdown hidden md:hidden">
+                <div class="py-4 space-y-4">
+                    <a href="about.html" class="block transition-colors" style="color: #004b87;">About</a>
+                    <a href="signup.html" class="block transition-colors" style="color: #004b87;">Sign Up</a>
+                    <a href="faq.html" class="block transition-colors" style="color: #004b87;">FAQ</a>
+                    <a href="contact.html" class="block transition-colors" style="color: #004b87;">Contact Us</a>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="waves.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Content -->
+        <div class="relative z-20 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl md:text-7xl font-bold mb-8" style="color: #004b87; margin-top: -2rem;">
+                Terms of <span style="color: #004b87;">Service</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style="color: #004b87; margin-top: 2rem;">
+                These terms and conditions govern your use of PocketVC's platform and services. Please read them carefully before using our platform.
+            </p>
+        </div>
+    </section>
+
     <!-- Terms of Service Content -->
-    <div class="min-h-screen bg-gray-50 py-12">
+    <section class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-xl shadow-sm p-8">
-                <div class="text-center mb-12">
-                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
-                    </div>
-                    <h1 class="text-4xl font-bold text-gray-900 mb-4">
-                        Terms of Service
-                    </h1>
-                    <p class="text-lg text-gray-600">
-                        Last updated: January 15, 2025
+            <div class="prose prose-lg max-w-none">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Terms of Service</h2>
+                
+                <p class="text-gray-600 mb-6">
+                    <strong>Last updated:</strong> December 2024
+                </p>
+
+                <p class="text-gray-600 mb-8">
+                    These Terms of Service ("Terms") govern your use of PocketVC's website, platform, and services (collectively, the "Service"). By accessing or using our Service, you agree to be bound by these Terms. If you disagree with any part of these terms, you may not access the Service.
+                </p>
+
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">1. Acceptance of Terms</h3>
+                <p class="text-gray-600 mb-6">
+                    By accessing and using PocketVC's platform, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+                </p>
+
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">2. Description of Service</h3>
+                <p class="text-gray-600 mb-4">
+                    PocketVC provides a platform that connects venture capital firms with innovative startups through smart matching technology. Our services include:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                    <li>Platform access for investors and startups</li>
+                    <li>Matching algorithms and recommendations</li>
+                    <li>Communication tools and messaging</li>
+                    <li>Analytics and reporting features</li>
+                    <li>Support and customer service</li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">3. User Accounts and Registration</h3>
+                <p class="text-gray-600 mb-4">
+                    To access certain features of our Service, you must create an account. You agree to:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                    <li>Provide accurate, current, and complete information during registration</li>
+                    <li>Maintain and update your account information to keep it accurate and current</li>
+                    <li>Maintain the security of your account credentials</li>
+                    <li>Accept responsibility for all activities that occur under your account</li>
+                    <li>Notify us immediately of any unauthorized use of your account</li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">4. Acceptable Use Policy</h3>
+                <p class="text-gray-600 mb-4">
+                    You agree not to use the Service to:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                    <li>Violate any applicable laws or regulations</li>
+                    <li>Infringe upon the rights of others</li>
+                    <li>Upload or transmit malicious code, viruses, or harmful content</li>
+                    <li>Attempt to gain unauthorized access to our systems</li>
+                    <li>Interfere with or disrupt the Service</li>
+                    <li>Use the Service for any fraudulent or deceptive purposes</li>
+                    <li>Harass, abuse, or harm other users</li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">5. User Content and Responsibilities</h3>
+                <p class="text-gray-600 mb-4">
+                    You retain ownership of content you submit to our platform. By submitting content, you:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                    <li>Grant us a license to use, display, and distribute your content</li>
+                    <li>Represent that you have the right to share such content</li>
+                    <li>Agree that your content complies with our Acceptable Use Policy</li>
+                    <li>Understand that we may remove content that violates our policies</li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">6. Privacy and Data Protection</h3>
+                <p class="text-gray-600 mb-6">
+                    Your privacy is important to us. Our collection and use of personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference. By using our Service, you consent to the collection and use of information as outlined in our Privacy Policy.
+                </p>
+
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">7. Intellectual Property Rights</h3>
+                <p class="text-gray-600 mb-4">
+                    The Service and its original content, features, and functionality are owned by PocketVC and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws. You may not:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                    <li>Copy, modify, or distribute our proprietary content</li>
+                    <li>Reverse engineer or attempt to extract source code</li>
+                    <li>Use our trademarks or branding without permission</li>
+                    <li>Remove or alter any copyright or proprietary notices</li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">8. Payment Terms</h3>
+                <p class="text-gray-600 mb-4">
+                    Some features of our Service may require payment. By purchasing a subscription or service:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                    <li>You agree to pay all fees associated with your chosen plan</li>
+                    <li>Fees are billed in advance and are non-refundable</li>
+                    <li>We may change our pricing with 30 days' notice</li>
+                    <li>You are responsible for all applicable taxes</li>
+                    <li>Failure to pay may result in service suspension or termination</li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">9. Disclaimers and Limitations</h3>
+                <p class="text-gray-600 mb-4">
+                    <strong>Service Availability:</strong> We strive to maintain high availability but do not guarantee uninterrupted access to our Service.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    <strong>Investment Advice:</strong> PocketVC does not provide investment advice. All investment decisions are your responsibility.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    <strong>Third-Party Content:</strong> We are not responsible for content provided by other users or third parties.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    <strong>No Warranties:</strong> The Service is provided "as is" without warranties of any kind, either express or implied.
+                </p>
+
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">10. Limitation of Liability</h3>
+                <p class="text-gray-600 mb-6">
+                    To the maximum extent permitted by law, PocketVC shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Service.
+                </p>
+
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">11. Indemnification</h3>
+                <p class="text-gray-600 mb-6">
+                    You agree to defend, indemnify, and hold harmless PocketVC and its officers, directors, employees, and agents from and against any claims, damages, obligations, losses, liabilities, costs, or debt arising from your use of the Service or violation of these Terms.
+                </p>
+
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">12. Termination</h3>
+                <p class="text-gray-600 mb-4">
+                    We may terminate or suspend your account and access to the Service immediately, without prior notice, for any reason, including breach of these Terms. Upon termination:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                    <li>Your right to use the Service will cease immediately</li>
+                    <li>We may delete your account and associated data</li>
+                    <li>Provisions of these Terms that should survive termination will remain in effect</li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">13. Governing Law and Dispute Resolution</h3>
+                <p class="text-gray-600 mb-6">
+                    These Terms shall be governed by and construed in accordance with the laws of the United Kingdom. Any disputes arising from these Terms or your use of the Service shall be resolved through binding arbitration in accordance with the rules of the relevant arbitration body.
+                </p>
+
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">14. Changes to Terms</h3>
+                <p class="text-gray-600 mb-6">
+                    We reserve the right to modify these Terms at any time. We will notify users of any material changes by posting the new Terms on this page and updating the "Last updated" date. Your continued use of the Service after changes become effective constitutes acceptance of the new Terms.
+                </p>
+
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">15. Contact Information</h3>
+                <p class="text-gray-600 mb-6">
+                    If you have any questions about these Terms of Service, please contact us at:
+                </p>
+                <div class="bg-gray-50 p-6 rounded-lg mb-8">
+                    <p class="text-gray-600 mb-2">
+                        <strong>Email:</strong> legal@pocketvc.co
+                    </p>
+                    <p class="text-gray-600 mb-2">
+                        <strong>Address:</strong> PocketVC, 16 Haig Avenue, Kent
                     </p>
                 </div>
 
-                <div class="prose prose-lg max-w-none">
-                    <p class="text-gray-700 mb-8">
-                        These Terms of Service ("Terms") govern your use of PocketVC's platform and services. By using our platform, you agree to be bound by these Terms.
-                    </p>
-
-                    <div class="space-y-8">
-                        <section>
-                            <div class="flex items-center space-x-3 mb-4">
-                                <svg class="w-6 h-6 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path>
-                                </svg>
-                                <h2 class="text-2xl font-bold text-gray-900">Acceptance of Terms</h2>
-                            </div>
-                            <p class="text-gray-700">
-                                By accessing or using PocketVC's platform, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you may not use our services.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Description of Service</h2>
-                            <p class="text-gray-700 mb-4">
-                                PocketVC is a platform that connects venture capital firms with startups seeking investment. Our services include:
-                            </p>
-                            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                                <li>User profile creation and management</li>
-                                <li>Matching algorithms to connect VCs with suitable startups</li>
-                                <li>Communication tools for users to interact</li>
-                                <li>Investment opportunity listings and presentations</li>
-                                <li>Due diligence and documentation support</li>
-                            </ul>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">User Accounts</h2>
-                            <div class="space-y-4">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Account Creation</h3>
-                                    <p class="text-gray-700">
-                                        To use our platform, you must create an account and provide accurate, complete information. You are responsible for maintaining the security of your account credentials.
-                                    </p>
-                                </div>
-                                
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Eligibility</h3>
-                                    <p class="text-gray-700">
-                                        You must be at least 18 years old and have the legal capacity to enter into binding agreements. By using our platform, you represent and warrant that you meet these requirements.
-                                    </p>
-                                </div>
-                                
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Account Verification</h3>
-                                    <p class="text-gray-700">
-                                        We may require verification of your identity and business information. Failure to provide accurate information may result in account suspension or termination.
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section>
-                            <div class="flex items-center space-x-3 mb-4">
-                                <svg class="w-6 h-6 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-                                </svg>
-                                <h2 class="text-2xl font-bold text-gray-900">User Responsibilities</h2>
-                            </div>
-                            <p class="text-gray-700 mb-4">
-                                As a user of our platform, you agree to:
-                            </p>
-                            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                                <li>Provide accurate and truthful information</li>
-                                <li>Maintain the confidentiality of your account</li>
-                                <li>Use the platform only for legitimate business purposes</li>
-                                <li>Respect the intellectual property rights of others</li>
-                                <li>Comply with all applicable laws and regulations</li>
-                                <li>Not engage in fraudulent or deceptive practices</li>
-                                <li>Not spam or harass other users</li>
-                                <li>Not attempt to gain unauthorized access to our systems</li>
-                            </ul>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Prohibited Activities</h2>
-                            <p class="text-gray-700 mb-4">
-                                You may not use our platform to:
-                            </p>
-                            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                                <li>Violate any applicable laws or regulations</li>
-                                <li>Infringe on intellectual property rights</li>
-                                <li>Transmit malicious software or code</li>
-                                <li>Collect user information without consent</li>
-                                <li>Impersonate another person or entity</li>
-                                <li>Engage in market manipulation or fraud</li>
-                                <li>Circumvent our security measures</li>
-                                <li>Use automated systems to scrape content</li>
-                            </ul>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Investment Disclaimers</h2>
-                            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
-                                <p class="text-yellow-800 font-semibold">Important Investment Notice</p>
-                            </div>
-                            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                                <li>PocketVC is not a financial advisor, broker, or investment service</li>
-                                <li>We do not provide investment advice or recommendations</li>
-                                <li>All investment decisions are made at your own risk</li>
-                                <li>Past performance does not guarantee future results</li>
-                                <li>You should consult with professional advisors before making investments</li>
-                                <li>We are not responsible for investment losses or disputes</li>
-                            </ul>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Content and Intellectual Property</h2>
-                            <div class="space-y-4">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-2">User Content</h3>
-                                    <p class="text-gray-700">
-                                        You retain ownership of content you submit to our platform. By submitting content, you grant us a non-exclusive, royalty-free license to use, display, and distribute your content in connection with our services.
-                                    </p>
-                                </div>
-                                
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Platform Content</h3>
-                                    <p class="text-gray-700">
-                                        All content on our platform, including text, graphics, logos, and software, is owned by PocketVC or our licensors and is protected by copyright and other intellectual property laws.
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section>
-                            <div class="flex items-center space-x-3 mb-4">
-                                <svg class="w-6 h-6 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                                </svg>
-                                <h2 class="text-2xl font-bold text-gray-900">Privacy and Data Protection</h2>
-                            </div>
-                            <p class="text-gray-700">
-                                Your privacy is important to us. Our collection and use of your information is governed by our Privacy Policy, which is incorporated into these Terms by reference. By using our platform, you consent to our data practices as described in the Privacy Policy.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Limitation of Liability</h2>
-                            <p class="text-gray-700 mb-4">
-                                To the fullest extent permitted by law:
-                            </p>
-                            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                                <li>PocketVC is not liable for any indirect, incidental, or consequential damages</li>
-                                <li>Our total liability is limited to the amount you paid for our services</li>
-                                <li>We do not warrant that our platform will be error-free or uninterrupted</li>
-                                <li>We are not responsible for third-party content or services</li>
-                                <li>Users assume all risks associated with investment decisions</li>
-                            </ul>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Indemnification</h2>
-                            <p class="text-gray-700">
-                                You agree to indemnify and hold PocketVC harmless from any claims, damages, or expenses arising from your use of our platform, violation of these Terms, or infringement of any third-party rights.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Termination</h2>
-                            <p class="text-gray-700 mb-4">
-                                We may terminate or suspend your account at any time for:
-                            </p>
-                            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                                <li>Violation of these Terms</li>
-                                <li>Fraudulent or illegal activity</li>
-                                <li>Extended periods of inactivity</li>
-                                <li>Any other reason at our discretion</li>
-                            </ul>
-                            <p class="text-gray-700 mt-4">
-                                You may terminate your account at any time by contacting us or using the account deletion feature.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Governing Law</h2>
-                            <p class="text-gray-700">
-                                These Terms are governed by the laws of England and Wales, without regard to conflict of law principles. Any disputes will be resolved in the courts of England and Wales.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Changes to Terms</h2>
-                            <p class="text-gray-700">
-                                We reserve the right to modify these Terms at any time. We will notify users of material changes by posting the updated Terms on our platform. Your continued use after changes become effective constitutes acceptance of the new Terms.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Contact Information</h2>
-                            <p class="text-gray-700 mb-4">
-                                If you have questions about these Terms, please contact us:
-                            </p>
-                            <div class="bg-gray-50 rounded-lg p-4">
-                                <p class="text-gray-700"><strong>Email:</strong> legal@pocketvc.co</p>
-                                <p class="text-gray-700"><strong>Address:</strong> 16 Haig Avenue, Kent, ME1 2RZ</p>
-                                <p class="text-gray-700"><strong>Phone:</strong> +447939843571</p>
-                            </div>
-                        </section>
-                    </div>
-                </div>
+                <p class="text-gray-600">
+                    Thank you for using PocketVC. We appreciate your business and look forward to helping you connect with the right partners.
+                </p>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-blue-900">
+    <section class="py-20" style="background-color: #003366;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to Join PocketVC?
+                Ready to Get Started?
             </h2>
             <p class="text-xl text-blue-100 mb-8">
-                Agree to our terms and start connecting with the right partners.
+                Join the waiting list and be first to access PocketVC when we launch.
             </p>
-            <a href="signup.html" class="bg-white text-blue-900 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors inline-block">
+            <a href="signup.html" class="cta-button-transparent text-lg px-8 py-4 text-white">
                 Join Waiting List
             </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-primary-50 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer class="bg-white text-blue-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
                 <div class="col-span-2">
-                    <div class="flex items-center mb-4">
+                    <div class="flex items-center space-x-3 mb-4">
                         <a href="index.html">
-                            <img src="logo.png" alt="PocketVC Logo" class="h-8 w-auto" width="128" height="32">
+                            <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
                         </a>
+                        <span class="text-xl font-bold text-blue-200">PocketVC</span>
                     </div>
-                    <p class="text-gray-600 mb-4">
-                        Connecting venture capital firms with promising startups to accelerate innovation and growth.
+                    <p class="text-blue-200 mb-4 max-w-md">
+                        Connecting venture capital firms with innovative startups through smart matching and AI-powered insights.
                     </p>
-                    <a href="https://www.linkedin.com/company/pocketvc-connect" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-700 hover:text-blue-800" aria-label="Follow PocketVC on LinkedIn">
-                        <span class="text-gray-700">Follow us on LinkedIn</span>
+                    <a href="https://www.linkedin.com/company/pocketvc-connect" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-200 hover:text-blue-300" aria-label="Follow PocketVC on LinkedIn">
+                        <span class="text-blue-200">Follow us on LinkedIn</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
                             <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.2 2.3-2.46 4.73-2.46 5.06 0 5.99 3.33 5.99 7.66V24h-5v-7.5c0-1.79-.03-4.09-2.49-4.09-2.49 0-2.88 1.94-2.88 3.96V24h-5V8z"/>
                         </svg>
                     </a>
                 </div>
                 
+                <!-- Company Links -->
                 <div>
-                    <h3 class="font-semibold text-primary-900 mb-4">Company</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-200">Company</h3>
+                                         <ul class="space-y-2">
+                         <li><a href="about.html" class="text-blue-200 hover:text-blue-300 transition-colors">About</a></li>
+                         <li><a href="signup.html" class="text-blue-200 hover:text-blue-300 transition-colors">Sign Up</a></li>
+                         <li><a href="faq.html" class="text-blue-200 hover:text-blue-300 transition-colors">FAQ</a></li>
+                         <li><a href="contact.html" class="text-blue-200 hover:text-blue-300 transition-colors">Contact Us</a></li>
+                     </ul>
+                </div>
+                
+                <!-- Legal Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-200">Legal</h3>
                     <ul class="space-y-2">
-                        <li><a href="about.html" class="text-gray-600 hover:text-primary-900 transition-colors">About Us</a></li>
-                        <li><a href="signup.html" class="text-gray-600 hover:text-primary-900 transition-colors">Sign Up</a></li>
+                        <li><a href="privacy.html" class="text-blue-200 hover:text-blue-300 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-blue-200 hover:text-blue-300 transition-colors">Terms & Conditions</a></li>
                     </ul>
                 </div>
                 
+                <!-- Search -->
                 <div>
-                    <h3 class="font-semibold text-primary-900 mb-4">Legal</h3>
-                    <ul class="space-y-2">
-                        <li><a href="privacy.html" class="text-gray-600 hover:text-primary-900 transition-colors">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="text-gray-600 hover:text-primary-900 transition-colors">Terms of Service</a></li>
-                    </ul>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-200">Search</h3>
+                    <div class="relative">
+                        <input type="text" placeholder="Search..." class="search-input w-full px-4 py-2 bg-white bg-opacity-10 border border-blue-200 border-opacity-30 rounded-lg text-blue-200 placeholder-blue-200 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition-all duration-200">
+                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-blue-200 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
                 </div>
             </div>
             
-            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
-                <p class="text-gray-500">
-                    © 2025 PocketVC. All rights reserved.
-                </p>
+            <div class="border-t border-blue-200 mt-8 pt-8 text-center">
+                <p class="text-blue-200">&copy; 2024 PocketVC. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JavaScript for Mobile Menu -->
     <script>
-        // Dropdown menu toggle
-        document.getElementById('dropdown-btn').addEventListener('click', function() {
-            const dropdown = document.getElementById('dropdown-menu');
-            dropdown.classList.toggle('hidden');
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
-            const dropdown = document.getElementById('dropdown-menu');
-            const dropdownBtn = document.getElementById('dropdown-btn');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenuDropdown = document.getElementById('mobile-menu-dropdown');
             
-            if (!dropdownBtn.contains(event.target) && !dropdown.contains(event.target)) {
-                dropdown.classList.add('hidden');
+            if (mobileMenuButton && mobileMenuDropdown) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenuDropdown.classList.toggle('hidden');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuButton.contains(event.target) && !mobileMenuDropdown.contains(event.target)) {
+                        mobileMenuDropdown.classList.add('hidden');
+                    }
+                });
             }
+
+            // Search Functionality
+            function setupSearch(searchInput) {
+                if (!searchInput) return;
+                
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        const query = this.value.trim().toLowerCase();
+                        if (query) {
+                            performSearch(query);
+                        }
+                    }
+                });
+
+                // Also handle search icon click
+                const searchIcon = searchInput.parentElement.querySelector('svg');
+                if (searchIcon) {
+                    searchIcon.addEventListener('click', function() {
+                        const query = searchInput.value.trim().toLowerCase();
+                        if (query) {
+                            performSearch(query);
+                        }
+                    });
+                }
+            }
+
+            function performSearch(query) {
+                // Define search terms and their corresponding pages
+                const searchMap = {
+                    'about': 'about.html',
+                    'team': 'about.html',
+                    'mission': 'about.html',
+                    'values': 'about.html',
+                    'daniel': 'about.html',
+                    'signup': 'signup.html',
+                    'join': 'signup.html',
+                    'waitlist': 'signup.html',
+                    'register': 'signup.html',
+                    'faq': 'faq.html',
+                    'questions': 'faq.html',
+                    'help': 'faq.html',
+                    'contact': 'contact.html',
+                    'email': 'contact.html',
+                    'message': 'contact.html',
+                    'privacy': 'privacy.html',
+                    'data': 'privacy.html',
+                    'terms': 'terms.html',
+                    'conditions': 'terms.html',
+                    'legal': 'terms.html',
+                    'venture': 'index.html',
+                    'capital': 'index.html',
+                    'startup': 'index.html',
+                    'investment': 'index.html',
+                    'funding': 'index.html',
+                    'vc': 'index.html',
+                    'pocketvc': 'index.html'
+                };
+
+                // Find the best match
+                let bestMatch = null;
+                let bestScore = 0;
+
+                for (const [term, page] of Object.entries(searchMap)) {
+                    if (query.includes(term) && term.length > bestScore) {
+                        bestMatch = page;
+                        bestScore = term.length;
+                    }
+                }
+
+                // If no specific match found, default to index
+                if (!bestMatch) {
+                    bestMatch = 'index.html';
+                }
+
+                // Redirect to the best matching page
+                window.location.href = bestMatch;
+            }
+
+            // Setup all search inputs on the page
+            const searchInputs = document.querySelectorAll('.search-input');
+            searchInputs.forEach(setupSearch);
         });
     </script>
 </body>

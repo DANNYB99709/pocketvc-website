@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Contact Us | PocketVC - Get in Touch with Our Team</title>
+    <meta name="description" content="Contact the PocketVC team for support, partnerships, or general inquiries. We're here to help connect venture capital with innovative startups.">
+    <link rel="canonical" href="https://pocketvc.co/contact.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:title" content="Contact Us - PocketVC" />
+    <meta property="og:description" content="Get in touch with the PocketVC team for support, partnerships, or general inquiries." />
+    <meta property="og:url" content="https://pocketvc.co/contact.html" />
+    <meta property="og:image" content="https://pocketvc.co/logo.png" />
+    <meta property="og:image:alt" content="PocketVC logo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact Us - PocketVC" />
+    <meta name="twitter:description" content="Get in touch with the PocketVC team for support, partnerships, or general inquiries." />
+    <meta name="twitter:image" content="https://pocketvc.co/logo.png" />
+    <meta property="og:site_name" content="PocketVC" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <meta name="google-site-verification" content="VzCoa_xbrKU9iDETmjvtn5wIvGJEAcstpQ0aG1rCmms" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/apple-touch-icon-167x167.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512x512.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FM5YRS2ZFT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+      gtag('config', 'G-FM5YRS2ZFT');
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-50: #f0f4f8;
+            --primary-100: #d9e6f2;
+            --primary-200: #b3cce5;
+            --primary-300: #8db3d8;
+            --primary-400: #6699cb;
+            --primary-500: #4080be;
+            --primary-600: #336699;
+            --primary-700: #264d73;
+            --primary-800: #1a334d;
+            --primary-900: #003366;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+        }
+
+        .cta-button-transparent {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .cta-button-transparent:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .cta-button-secondary-transparent {
+            background: transparent;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-button-secondary-transparent:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile Menu Dropdown Styles */
+        .mobile-menu-dropdown {
+            background: white !important;
+            background-color: white !important;
+            border-radius: 12px;
+            margin-top: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-menu-dropdown a {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 0 0.5rem;
+        }
+        
+        .mobile-menu-dropdown a:hover {
+            background: rgba(0, 75, 135, 0.1);
+        }
+        
+        /* Search Input Styles */
+        .search-input::placeholder {
+            color: rgba(0, 75, 135, 0.7);
+        }
+        
+        .search-input:focus::placeholder {
+            color: rgba(0, 75, 135, 0.5);
+        }
+        
+        /* Mobile-specific padding adjustments */
+        @media (max-width: 768px) {
+            nav {
+                padding-top: 1.5rem;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="absolute top-0 left-0 right-0 z-50 pt-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="index.html">
+                        <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav hidden md:flex items-center space-x-8">
+                    <a href="about.html" class="transition-colors" style="color: #004b87;">About</a>
+                    <a href="signup.html" class="transition-colors" style="color: #004b87;">Sign Up</a>
+                    <a href="faq.html" class="transition-colors" style="color: #004b87;">FAQ</a>
+                    <a href="contact.html" class="transition-colors" style="color: #004b87;">Contact Us</a>
+                    
+                    <!-- Search Bar -->
+                    <div class="relative">
+                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border rounded-lg px-4 py-2 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 w-48" style="border-color: #004b87; color: #004b87; border-opacity: 0.3;">
+                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu md:hidden">
+                    <button id="mobile-menu-button" style="color: #004b87;">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu-dropdown" class="mobile-menu-dropdown hidden md:hidden">
+                <div class="py-4 space-y-4">
+                    <a href="about.html" class="block transition-colors" style="color: #004b87;">About</a>
+                    <a href="signup.html" class="block transition-colors" style="color: #004b87;">Sign Up</a>
+                    <a href="faq.html" class="block transition-colors" style="color: #004b87;">FAQ</a>
+                    <a href="contact.html" class="block transition-colors" style="color: #004b87;">Contact Us</a>
+                    
+                    <!-- Mobile Search Bar -->
+                    <div class="relative">
+                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border rounded-lg px-4 py-2 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 w-full" style="border-color: #004b87; color: #004b87; border-opacity: 0.3;">
+                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="waves.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Content -->
+        <div class="relative z-20 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl md:text-7xl font-bold mb-8" style="color: #004b87; margin-top: -2rem;">
+                Contact <span style="color: #004b87;">Us</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style="color: #004b87; margin-top: 2rem;">
+                Get in touch with our team. We're here to help connect venture capital with innovative startups and answer any questions you may have.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="lg:col-span-1">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8">Send us a Message</h2>
+                    
+                    <form class="space-y-6" action="mailto:daniel@pocketvc.co" method="post" enctype="text/plain">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">
+                        </div>
+                        
+                        <div>
+                            <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                            <input type="text" id="company" name="company" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
+                            <select id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="support">Technical Support</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="press">Press & Media</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                            <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"></textarea>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <input type="checkbox" id="privacy" name="privacy" required class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="privacy" class="text-sm text-gray-600">
+                                I agree to the <a href="privacy.html" class="text-blue-600 hover:text-blue-700 underline">Privacy Policy</a> and consent to being contacted regarding my inquiry.
+                            </label>
+                        </div>
+                        
+                                                 <button type="submit" class="w-full text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200" style="background-color: #003366;">
+                             Send Message
+                         </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="lg:col-span-1">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8">Get in Touch</h2>
+                    
+                    <div class="space-y-8">
+                        <!-- General Contact -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">General Inquiries</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3">
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <span class="text-gray-700">hello@pocketvc.co</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span class="text-gray-700">16 Haig Avenue, Kent, UK</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Support -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Technical Support</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3">
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <span class="text-gray-700">support@pocketvc.co</span>
+                                </div>
+                                <p class="text-sm text-gray-600">For technical issues and platform support</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Partnerships -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Partnerships</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3">
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <span class="text-gray-700">partnerships@pocketvc.co</span>
+                                </div>
+                                <p class="text-sm text-gray-600">For business partnerships and collaborations</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Office Hours -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Office Hours</h3>
+                            <div class="space-y-2 text-gray-700">
+                                <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM GMT</p>
+                                <p><strong>Saturday:</strong> 10:00 AM - 2:00 PM GMT</p>
+                                <p><strong>Sunday:</strong> Closed</p>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-3">We typically respond within 24 hours during business days.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20" style="background-color: #003366;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Get Started?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Join the waiting list and be first to access PocketVC when we launch.
+            </p>
+            <a href="signup.html" class="cta-button-transparent text-lg px-8 py-4 text-white">
+                Join Waiting List
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white text-blue-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <a href="index.html">
+                            <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
+                        </a>
+                        <span class="text-xl font-bold text-blue-200">PocketVC</span>
+                    </div>
+                    <p class="text-blue-200 mb-4 max-w-md">
+                        Connecting venture capital firms with innovative startups through smart matching and AI-powered insights.
+                    </p>
+                    <a href="https://www.linkedin.com/company/pocketvc-connect" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-200 hover:text-blue-300" aria-label="Follow PocketVC on LinkedIn">
+                        <span class="text-blue-200">Follow us on LinkedIn</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.2 2.3-2.46 4.73-2.46 5.06 0 5.99 3.33 5.99 7.66V24h-5v-7.5c0-1.79-.03-4.09-2.49-4.09-2.49 0-2.88 1.94-2.88 3.96V24h-5V8z"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Company Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-200">Company</h3>
+                                         <ul class="space-y-2">
+                         <li><a href="about.html" class="text-blue-200 hover:text-blue-300 transition-colors">About</a></li>
+                         <li><a href="signup.html" class="text-blue-200 hover:text-blue-300 transition-colors">Sign Up</a></li>
+                         <li><a href="faq.html" class="text-blue-200 hover:text-blue-300 transition-colors">FAQ</a></li>
+                         <li><a href="contact.html" class="text-blue-200 hover:text-blue-300 transition-colors">Contact Us</a></li>
+                     </ul>
+                </div>
+                
+                <!-- Legal Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-200">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="privacy.html" class="text-blue-200 hover:text-blue-300 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-blue-200 hover:text-blue-300 transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Search -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-200">Search</h3>
+                    <div class="relative">
+                        <input type="text" placeholder="Search..." class="search-input w-full px-4 py-2 bg-white bg-opacity-10 border border-blue-200 border-opacity-30 rounded-lg text-blue-200 placeholder-blue-200 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition-all duration-200">
+                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-blue-200 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-200 mt-8 pt-8 text-center">
+                <p class="text-blue-200">&copy; 2024 PocketVC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenuDropdown = document.getElementById('mobile-menu-dropdown');
+            
+            if (mobileMenuButton && mobileMenuDropdown) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenuDropdown.classList.toggle('hidden');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuButton.contains(event.target) && !mobileMenuDropdown.contains(event.target)) {
+                        mobileMenuDropdown.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Search Functionality
+            function setupSearch(searchInput) {
+                if (!searchInput) return;
+                
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        const query = this.value.trim().toLowerCase();
+                        if (query) {
+                            performSearch(query);
+                        }
+                    }
+                });
+
+                // Also handle search icon click
+                const searchIcon = searchInput.parentElement.querySelector('svg');
+                if (searchIcon) {
+                    searchIcon.addEventListener('click', function() {
+                        const query = searchInput.value.trim().toLowerCase();
+                        if (query) {
+                            performSearch(query);
+                        }
+                    });
+                }
+            }
+
+            function performSearch(query) {
+                // Define search terms and their corresponding pages
+                const searchMap = {
+                    'about': 'about.html',
+                    'team': 'about.html',
+                    'mission': 'about.html',
+                    'values': 'about.html',
+                    'daniel': 'about.html',
+                    'signup': 'signup.html',
+                    'join': 'signup.html',
+                    'waitlist': 'signup.html',
+                    'register': 'signup.html',
+                    'faq': 'faq.html',
+                    'questions': 'faq.html',
+                    'help': 'faq.html',
+                    'contact': 'contact.html',
+                    'email': 'contact.html',
+                    'message': 'contact.html',
+                    'privacy': 'privacy.html',
+                    'data': 'privacy.html',
+                    'terms': 'terms.html',
+                    'conditions': 'terms.html',
+                    'legal': 'terms.html',
+                    'venture': 'index.html',
+                    'capital': 'index.html',
+                    'startup': 'index.html',
+                    'investment': 'index.html',
+                    'funding': 'index.html',
+                    'vc': 'index.html',
+                    'pocketvc': 'index.html'
+                };
+
+                // Find the best match
+                let bestMatch = null;
+                let bestScore = 0;
+
+                for (const [term, page] of Object.entries(searchMap)) {
+                    if (query.includes(term) && term.length > bestScore) {
+                        bestMatch = page;
+                        bestScore = term.length;
+                    }
+                }
+
+                // If no specific match found, default to index
+                if (!bestMatch) {
+                    bestMatch = 'index.html';
+                }
+
+                // Redirect to the best matching page
+                window.location.href = bestMatch;
+            }
+
+            // Setup all search inputs on the page
+            const searchInputs = document.querySelectorAll('.search-input');
+            searchInputs.forEach(setupSearch);
+        });
+    </script>
+</body>
+</html>

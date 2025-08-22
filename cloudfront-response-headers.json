@@ -1,0 +1,22 @@
+{
+  "Name": "PocketVC-SecurityHeaders-v1",
+  "Comment": "Baseline security headers for pocketvc.co",
+  "SecurityHeadersConfig": {
+    "StrictTransportSecurity": {
+      "Override": true,
+      "AccessControlMaxAgeSec": 31536000,
+      "IncludeSubdomains": true,
+      "Preload": true
+    },
+    "ContentSecurityPolicy": {
+      "Override": true,
+      "ContentSecurityPolicy": "default-src 'self' https:; script-src 'self' https: 'unsafe-inline'; style-src 'self' https: 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https: https://rchawyidafvsttcoxmle.supabase.co; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://rchawyidafvsttcoxmle.supabase.co; upgrade-insecure-requests"
+    },
+    "ReferrerPolicy": {
+      "Override": true,
+      "ReferrerPolicy": "strict-origin-when-cross-origin"
+    },
+    "XContentTypeOptions": { "Override": true },
+    "FrameOptions": { "Override": true, "FrameOption": "SAMEORIGIN" }
+  }
+}

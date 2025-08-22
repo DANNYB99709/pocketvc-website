@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>PocketVC FAQ | Answers for Startups and VCs</title>
     <meta name="description" content="PocketVC FAQ for startups and VCs: how it works, who it's for, joining the waiting list, privacy and launch details.">
     <link rel="canonical" href="https://pocketvc.co/faq.html" />
@@ -16,13 +17,18 @@
     <meta property="og:site_name" content="PocketVC" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://pocketvc.co/logo.png" />
-    <meta name="theme-color" content="#003366" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
     <meta name="google-site-verification" content="VzCoa_xbrKU9iDETmjvtn5wIvGJEAcstpQ0aG1rCmms" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/apple-touch-icon-167x167.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512x512.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -50,167 +56,704 @@
       ]
     }
     </script>
+
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-50: #f0f4f8;
+            --primary-100: #d9e6f2;
+            --primary-200: #b3cce5;
+            --primary-300: #8db3d8;
+            --primary-400: #6699cb;
+            --primary-500: #4080be;
+            --primary-600: #336699;
+            --primary-700: #264d73;
+            --primary-800: #1a334d;
+            --primary-900: #003366;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+        }
+        
+        .faq-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--primary-100);
+            cursor: pointer;
+        }
+        
+        .faq-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .cta-button-transparent {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .cta-button-transparent:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .cta-button-secondary-transparent {
+            background: transparent;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-button-secondary-transparent:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile Menu Dropdown Styles */
+        .mobile-menu-dropdown {
+            background: white !important;
+            background-color: white !important;
+            border-radius: 12px;
+            margin-top: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-menu-dropdown a {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 0 0.5rem;
+        }
+        
+        .mobile-menu-dropdown a:hover {
+            background: rgba(0, 75, 135, 0.1);
+        }
+        
+        /* Search Input Styles */
+        .search-input::placeholder {
+            color: rgba(0, 75, 135, 0.7);
+        }
+        
+        .search-input:focus::placeholder {
+            color: rgba(0, 75, 135, 0.5);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+        
+        /* Mobile-specific padding adjustments */
+        @media (max-width: 768px) {
+            nav {
+                padding-top: 1.5rem;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm border-b border-gray-100">
+    <nav class="absolute top-0 left-0 right-0 z-50 pt-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <a href="index.html">
-                            <img src="logo.png" alt="PocketVC Logo" class="h-10 w-auto" width="160" height="40">
-                        </a>
+                <div class="flex items-center space-x-3">
+                    <a href="index.html">
+                        <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav hidden md:flex items-center space-x-8">
+                    <a href="about.html" class="transition-colors" style="color: #004b87;">About</a>
+                    <a href="signup.html" class="transition-colors" style="color: #004b87;">Sign Up</a>
+                    <a href="faq.html" class="transition-colors" style="color: #004b87;">FAQ</a>
+                    <a href="contact.html" class="transition-colors" style="color: #004b87;">Contact Us</a>
+                    
+                    <!-- Search Bar -->
+                    <div class="relative">
+                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border rounded-lg px-4 py-2 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 w-48" style="border-color: #004b87; color: #004b87; border-opacity: 0.3;">
+                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
                     </div>
                 </div>
                 
-                <!-- Navigation -->
-                <div class="flex items-baseline space-x-8">
-                    <a href="signup.html" class="bg-primary-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-800 transition-colors">Sign Up</a>
-                    <!-- Founder/Company social links removed from header per request -->
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu md:hidden">
+                    <button id="mobile-menu-button" style="color: #004b87;">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu-dropdown" class="mobile-menu-dropdown hidden md:hidden">
+                <div class="py-4 space-y-4">
+                    <a href="about.html" class="block transition-colors" style="color: #004b87;">About</a>
+                    <a href="signup.html" class="block transition-colors" style="color: #004b87;">Sign Up</a>
+                    <a href="faq.html" class="block transition-colors" style="color: #004b87;">FAQ</a>
+                    <a href="contact.html" class="block transition-colors" style="color: #004b87;">Contact Us</a>
                     
-                    <!-- Dropdown Menu -->
+                    <!-- Mobile Search Bar -->
                     <div class="relative">
-                        <button id="dropdown-btn" aria-label="Open menu" class="text-gray-600 hover:text-primary-900 transition-colors flex items-center">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                            </svg>
-                        </button>
-                        
-                        <!-- Dropdown Content -->
-                        <div id="dropdown-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">About Us</a>
-                            <a href="faq.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">FAQ</a>
-                            <a href="signup.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">Sign Up</a>
-                            <a href="privacy.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">Privacy Policy</a>
-                            <a href="terms.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-900 transition-colors">Terms of Service</a>
-                        </div>
+                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border rounded-lg px-4 py-2 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 w-full" style="border-color: #004b87; color: #004b87; border-opacity: 0.3;">
+                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- FAQ Content -->
-    <div class="min-h-screen bg-gray-50 py-12">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-xl shadow-sm p-8">
-                <div class="text-center mb-10">
-                    <h1 class="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h1>
-                    <p class="text-lg text-gray-600">Find quick answers about PocketVC. Still have questions? <a href="signup.html" class="text-primary-900 hover:underline">Join the waiting list</a> and we’ll keep you posted.</p>
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="waves.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Content -->
+        <div class="relative z-20 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl md:text-7xl font-bold mb-8" style="color: #004b87; margin-top: -2rem;">
+                Frequently Asked <span style="color: #004b87;">Questions</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style="color: #004b87; margin-top: 2rem;">
+                Find quick answers about PocketVC. Click on any question to learn more.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Grid Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- FAQ Card 1 -->
+                <div class="faq-card p-6" onclick="openModal('what-is-pocketvc')">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">What is PocketVC?</h3>
+                    <p class="text-gray-600 text-sm">Learn about our platform and mission...</p>
                 </div>
 
-                <div class="divide-y divide-gray-200">
-                    <details class="py-5 group" open>
-                        <summary class="flex cursor-pointer items-center justify-between text-left text-lg font-medium text-gray-900">
-                            <span>What is PocketVC?</span>
-                            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </summary>
-                        <div class="mt-3 text-gray-600">PocketVC connects venture capital firms with innovative startups using smart matching. We begin with deeptech sectors and will expand over time.</div>
-                    </details>
-
-                    <details class="py-5 group">
-                        <summary class="flex cursor-pointer items-center justify-between text-left text-lg font-medium text-gray-900">
-                            <span>Who is PocketVC for?</span>
-                            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </summary>
-                        <div class="mt-3 text-gray-600">Investors seeking better discovery and deal flow, and founders looking for the right investor match to fund and scale their companies.</div>
-                    </details>
-
-                    <details class="py-5 group">
-                        <summary class="flex cursor-pointer items-center justify-between text-left text-lg font-medium text-gray-900">
-                            <span>How do I join the waiting list?</span>
-                            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </summary>
-                        <div class="mt-3 text-gray-600">Click <a href="signup.html" class="text-primary-900 hover:underline">Join Waiting List</a> and complete the short form as a Startup or as a VC/Investor.</div>
-                    </details>
-
-                    <details class="py-5 group">
-                        <summary class="flex cursor-pointer items-center justify-between text-left text-lg font-medium text-gray-900">
-                            <span>Is PocketVC free to join?</span>
-                            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </summary>
-                        <div class="mt-3 text-gray-600">Joining the waiting list is free. We’ll share pricing for premium features as we approach launch.</div>
-                    </details>
-
-                    <details class="py-5 group">
-                        <summary class="flex cursor-pointer items-center justify-between text-left text-lg font-medium text-gray-900">
-                            <span>How do you handle data and privacy?</span>
-                            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </summary>
-                        <div class="mt-3 text-gray-600">We follow best practices for security and privacy. See our <a href="privacy.html" class="text-primary-900 hover:underline">Privacy Policy</a> for details.</div>
-                    </details>
-
-                    <details class="py-5 group">
-                        <summary class="flex cursor-pointer items-center justify-between text-left text-lg font-medium text-gray-900">
-                            <span>When will PocketVC launch?</span>
-                            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </summary>
-                        <div class="mt-3 text-gray-600">We’re preparing for launch. Join the waiting list to be notified when we go live.</div>
-                    </details>
+                <!-- FAQ Card 2 -->
+                <div class="faq-card p-6" onclick="openModal('who-is-pocketvc-for')">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Who is PocketVC for?</h3>
+                    <p class="text-gray-600 text-sm">Discover if PocketVC is right for you...</p>
                 </div>
 
-                <div class="text-center mt-10">
-                    <a href="signup.html" class="bg-blue-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-800 transition-colors inline-block">Join Waiting List</a>
+                <!-- FAQ Card 3 -->
+                <div class="faq-card p-6" onclick="openModal('how-to-join')">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">How do I join?</h3>
+                    <p class="text-gray-600 text-sm">Simple steps to get started...</p>
+                </div>
+
+                <!-- FAQ Card 4 -->
+                <div class="faq-card p-6" onclick="openModal('is-it-free')">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Is it free to join?</h3>
+                    <p class="text-gray-600 text-sm">Learn about our pricing model...</p>
+                </div>
+
+                <!-- FAQ Card 5 -->
+                <div class="faq-card p-6" onclick="openModal('privacy-security')">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Privacy & Security</h3>
+                    <p class="text-gray-600 text-sm">How we protect your data...</p>
+                </div>
+
+                <!-- FAQ Card 6 -->
+                <div class="faq-card p-6" onclick="openModal('when-launch')">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">When will you launch?</h3>
+                    <p class="text-gray-600 text-sm">Get the latest updates...</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20" style="background-color: #003366;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Get Started?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Join the waiting list and be first to access PocketVC when we launch.
+            </p>
+            <a href="signup.html" class="cta-button-transparent text-lg px-8 py-4 text-white">
+                Join Waiting List
+            </a>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-primary-50 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer class="bg-white text-blue-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
                 <div class="col-span-2">
-                    <div class="flex items-center mb-4">
+                    <div class="flex items-center space-x-3 mb-4">
                         <a href="index.html">
-                            <img src="logo.png" alt="PocketVC Logo" class="h-8 w-auto" width="128" height="32">
+                            <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
                         </a>
+                        <span class="text-xl font-bold text-blue-200">PocketVC</span>
                     </div>
-                    <p class="text-gray-600 mb-4">Connecting venture capital firms with promising startups to accelerate innovation and growth.</p>
-                    <a href="https://www.linkedin.com/company/pocketvc-connect" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-700 hover:text-blue-800" aria-label="Follow PocketVC on LinkedIn">
-                        <span class="text-gray-700">Follow us on LinkedIn</span>
+                    <p class="text-blue-200 mb-4 max-w-md">
+                        Connecting venture capital firms with innovative startups through smart matching and AI-powered insights.
+                    </p>
+                    <a href="https://www.linkedin.com/company/pocketvc-connect" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-200 hover:text-blue-300" aria-label="Follow PocketVC on LinkedIn">
+                        <span class="text-blue-200">Follow us on LinkedIn</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
                             <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.2 2.3-2.46 4.73-2.46 5.06 0 5.99 3.33 5.99 7.66V24h-5v-7.5c0-1.79-.03-4.09-2.49-4.09-2.49 0-2.88 1.94-2.88 3.96V24h-5V8z"/>
                         </svg>
                     </a>
                 </div>
+                
+                <!-- Company Links -->
                 <div>
-                    <h3 class="font-semibold text-primary-900 mb-4">Company</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-200">Company</h3>
+                                         <ul class="space-y-2">
+                         <li><a href="about.html" class="text-blue-200 hover:text-blue-300 transition-colors">About</a></li>
+                         <li><a href="signup.html" class="text-blue-200 hover:text-blue-300 transition-colors">Sign Up</a></li>
+                         <li><a href="faq.html" class="text-blue-200 hover:text-blue-300 transition-colors">FAQ</a></li>
+                         <li><a href="contact.html" class="text-blue-200 hover:text-blue-300 transition-colors">Contact Us</a></li>
+                     </ul>
+                </div>
+                
+                <!-- Legal Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-200">Legal</h3>
                     <ul class="space-y-2">
-                        <li><a href="about.html" class="text-gray-600 hover:text-primary-900 transition-colors">About Us</a></li>
-                        <li><a href="faq.html" class="text-gray-600 hover:text-primary-900 transition-colors">FAQ</a></li>
-                        <li><a href="signup.html" class="text-gray-600 hover:text-primary-900 transition-colors">Sign Up</a></li>
+                        <li><a href="privacy.html" class="text-blue-200 hover:text-blue-300 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-blue-200 hover:text-blue-300 transition-colors">Terms & Conditions</a></li>
                     </ul>
                 </div>
+                
+                <!-- Search -->
                 <div>
-                    <h3 class="font-semibold text-primary-900 mb-4">Legal</h3>
-                    <ul class="space-y-2">
-                        <li><a href="privacy.html" class="text-gray-600 hover:text-primary-900 transition-colors">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="text-gray-600 hover:text-primary-900 transition-colors">Terms of Service</a></li>
-                    </ul>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-200">Search</h3>
+                    <div class="relative">
+                        <input type="text" placeholder="Search..." class="search-input w-full px-4 py-2 bg-white bg-opacity-10 border border-blue-200 border-opacity-30 rounded-lg text-blue-200 placeholder-blue-200 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition-all duration-200">
+                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-blue-200 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
-                <p class="text-gray-500">© 2025 PocketVC. All rights reserved.</p>
+            
+            <div class="border-t border-blue-200 mt-8 pt-8 text-center">
+                <p class="text-blue-200">&copy; 2024 PocketVC. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- FAQ Modal -->
+    <div id="faqModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalContent">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
     <script>
         // Dropdown menu toggle
         document.getElementById('dropdown-btn').addEventListener('click', function() {
             const dropdown = document.getElementById('dropdown-menu');
             dropdown.classList.toggle('hidden');
         });
+        
         // Close dropdown when clicking outside
         document.addEventListener('click', function(event) {
             const dropdown = document.getElementById('dropdown-menu');
             const dropdownBtn = document.getElementById('dropdown-btn');
+            
             if (!dropdownBtn.contains(event.target) && !dropdown.contains(event.target)) {
                 dropdown.classList.add('hidden');
             }
+        });
+
+        // FAQ Modal functionality
+        const faqData = {
+            'what-is-pocketvc': {
+                title: 'What is PocketVC?',
+                content: `
+                    <p class="text-lg text-gray-600 mb-4">
+                        PocketVC connects venture capital firms with innovative startups using smart matching technology. We begin with deeptech sectors and will expand over time to cover all industries.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        Our platform uses advanced algorithms to match investors with startups based on investment criteria, sector focus, and strategic alignment, making the funding process more efficient and effective.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        By leveraging technology, we're democratizing access to venture capital and creating a more transparent investment ecosystem that benefits both investors and founders.
+                    </p>
+                `
+            },
+            'who-is-pocketvc-for': {
+                title: 'Who is PocketVC for?',
+                content: `
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>For Investors:</strong> Venture capital firms, angel investors, and investment professionals who want to discover and evaluate promising startups more efficiently. Our platform provides better deal flow and helps you find companies that match your investment thesis.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>For Founders:</strong> Startup founders and entrepreneurs looking for the right investors to fund and scale their companies. We help you connect with investors who understand your sector and can provide not just capital, but strategic value.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        Whether you're an early-stage startup seeking seed funding or a growth-stage company looking for Series A+ investment, PocketVC helps you find the right match.
+                    </p>
+                `
+            },
+            'how-to-join': {
+                title: 'How do I join the waiting list?',
+                content: `
+                    <p class="text-lg text-gray-600 mb-4">
+                        Joining the PocketVC waiting list is simple and takes just a few minutes:
+                    </p>
+                    <ol class="list-decimal list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Click the "Join Waiting List" button on any page</li>
+                        <li>Choose whether you're a Startup or VC/Investor</li>
+                        <li>Complete the short form with your details</li>
+                        <li>Submit and you're all set!</li>
+                    </ol>
+                    <p class="text-lg text-gray-600 mb-4">
+                        We'll keep you updated on our progress and notify you as soon as we launch. Early joiners will get priority access when we go live.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        <a href="signup.html" class="text-blue-600 hover:underline font-medium">Ready to join? Click here to get started.</a>
+                    </p>
+                `
+            },
+            'is-it-free': {
+                title: 'Is PocketVC free to join?',
+                content: `
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>Yes, joining the waiting list is completely free!</strong> We want to make it easy for everyone to get involved with PocketVC from the beginning.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        When we launch, we'll offer different tiers of service:
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li><strong>Basic tier:</strong> Free access with limited features</li>
+                        <li><strong>Premium tier:</strong> Advanced features and priority matching</li>
+                        <li><strong>Enterprise tier:</strong> Custom solutions for larger firms</li>
+                    </ul>
+                    <p class="text-lg text-gray-600">
+                        We'll share detailed pricing information as we approach launch. Join the waiting list to be the first to know about our pricing and get early access offers.
+                    </p>
+                `
+            },
+            'privacy-security': {
+                title: 'How do you handle data and privacy?',
+                content: `
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>Your privacy and data security are our top priorities.</strong> We follow industry best practices and comply with all relevant data protection regulations.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>Data Protection:</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>All data is encrypted in transit and at rest</li>
+                        <li>We use secure cloud infrastructure with enterprise-grade security</li>
+                        <li>Regular security audits and penetration testing</li>
+                        <li>GDPR and CCPA compliant</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>Data Usage:</strong> We only use your data to provide our matching service and improve our platform. We never sell your personal information to third parties.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        For complete details, please read our <a href="privacy.html" class="text-blue-600 hover:underline">Privacy Policy</a>. If you have any questions about data handling, please contact us.
+                    </p>
+                `
+            },
+            'when-launch': {
+                title: 'When will PocketVC launch?',
+                content: `
+                    <p class="text-lg text-gray-600 mb-4">
+                        We're currently in the final stages of development and preparing for launch. While we can't share an exact date yet, we're working hard to bring PocketVC to market as soon as possible.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>What we're working on:</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Finalizing our matching algorithms</li>
+                        <li>Completing security and privacy audits</li>
+                        <li>Testing with beta users</li>
+                        <li>Preparing our launch infrastructure</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>Stay Updated:</strong> Join our waiting list to receive launch notifications and early access opportunities. We'll keep you informed of our progress and give you priority access when we go live.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        We're committed to launching a high-quality platform that truly serves the needs of both investors and startups. Thank you for your patience and interest in PocketVC!
+                    </p>
+                `
+            }
+        };
+
+        function openModal(faqId) {
+            console.log('Opening modal for:', faqId);
+            const modal = document.getElementById('faqModal');
+            const modalContent = document.getElementById('modalContent');
+            const faq = faqData[faqId];
+            
+            if (faq && modal && modalContent) {
+                modalContent.innerHTML = `
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">${faq.title}</h2>
+                    ${faq.content}
+                `;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                console.log('Modal opened successfully');
+            } else {
+                console.error('Modal elements not found or faq data missing:', { faqId, modal, modalContent, faq });
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('faqModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('faqModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+        
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenuDropdown = document.getElementById('mobile-menu-dropdown');
+            
+            if (mobileMenuButton && mobileMenuDropdown) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenuDropdown.classList.toggle('hidden');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuButton.contains(event.target) && !mobileMenuDropdown.contains(event.target)) {
+                        mobileMenuDropdown.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenuDropdown = document.getElementById('mobile-menu-dropdown');
+            
+            if (mobileMenuButton && mobileMenuDropdown) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenuDropdown.classList.toggle('hidden');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuButton.contains(event.target) && !mobileMenuDropdown.contains(event.target)) {
+                        mobileMenuDropdown.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Search Functionality
+            function setupSearch(searchInput) {
+                if (!searchInput) return;
+                
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        const query = this.value.trim().toLowerCase();
+                        if (query) {
+                            performSearch(query);
+                        }
+                    }
+                });
+
+                // Also handle search icon click
+                const searchIcon = searchInput.parentElement.querySelector('svg');
+                if (searchIcon) {
+                    searchIcon.addEventListener('click', function() {
+                        const query = searchInput.value.trim().toLowerCase();
+                        if (query) {
+                            performSearch(query);
+                        }
+                    });
+                }
+            }
+
+            function performSearch(query) {
+                // Define search terms and their corresponding pages
+                const searchMap = {
+                    'about': 'about.html',
+                    'team': 'about.html',
+                    'mission': 'about.html',
+                    'values': 'about.html',
+                    'daniel': 'about.html',
+                    'signup': 'signup.html',
+                    'join': 'signup.html',
+                    'waitlist': 'signup.html',
+                    'register': 'signup.html',
+                    'faq': 'faq.html',
+                    'questions': 'faq.html',
+                    'help': 'faq.html',
+                    'contact': 'contact.html',
+                    'email': 'contact.html',
+                    'message': 'contact.html',
+                    'privacy': 'privacy.html',
+                    'data': 'privacy.html',
+                    'terms': 'terms.html',
+                    'conditions': 'terms.html',
+                    'legal': 'terms.html',
+                    'venture': 'index.html',
+                    'capital': 'index.html',
+                    'startup': 'index.html',
+                    'investment': 'index.html',
+                    'funding': 'index.html',
+                    'vc': 'index.html',
+                    'pocketvc': 'index.html'
+                };
+
+                // Find the best match
+                let bestMatch = null;
+                let bestScore = 0;
+
+                for (const [term, page] of Object.entries(searchMap)) {
+                    if (query.includes(term) && term.length > bestScore) {
+                        bestMatch = page;
+                        bestScore = term.length;
+                    }
+                }
+
+                // If no specific match found, default to index
+                if (!bestMatch) {
+                    bestMatch = 'index.html';
+                }
+
+                // Redirect to the best matching page
+                window.location.href = bestMatch;
+            }
+
+            // Setup all search inputs on the page
+            const searchInputs = document.querySelectorAll('.search-input');
+            searchInputs.forEach(setupSearch);
         });
     </script>
 </body>
