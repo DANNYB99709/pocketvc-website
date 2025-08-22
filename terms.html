@@ -414,11 +414,12 @@
                 <!-- Company Links -->
                 <div>
                     <h3 class="text-lg font-semibold mb-4 text-blue-200">Company</h3>
-                    <ul class="space-y-2">
-                        <li><a href="about.html" class="text-blue-200 hover:text-blue-300 transition-colors">About</a></li>
-                        <li><a href="faq.html" class="text-blue-200 hover:text-blue-300 transition-colors">FAQ</a></li>
-                        <li><a href="signup.html" class="text-blue-200 hover:text-blue-300 transition-colors">Sign Up</a></li>
-                    </ul>
+                                         <ul class="space-y-2">
+                         <li><a href="about.html" class="text-blue-200 hover:text-blue-300 transition-colors">About</a></li>
+                         <li><a href="signup.html" class="text-blue-200 hover:text-blue-300 transition-colors">Sign Up</a></li>
+                         <li><a href="faq.html" class="text-blue-200 hover:text-blue-300 transition-colors">FAQ</a></li>
+                         <li><a href="contact.html" class="text-blue-200 hover:text-blue-300 transition-colors">Contact Us</a></li>
+                     </ul>
                 </div>
                 
                 <!-- Legal Links -->
@@ -428,6 +429,17 @@
                         <li><a href="privacy.html" class="text-blue-200 hover:text-blue-300 transition-colors">Privacy Policy</a></li>
                         <li><a href="terms.html" class="text-blue-200 hover:text-blue-300 transition-colors">Terms & Conditions</a></li>
                     </ul>
+                </div>
+                
+                <!-- Search -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-200">Search</h3>
+                    <div class="relative">
+                        <input type="text" placeholder="Search..." class="search-input w-full px-4 py-2 bg-white bg-opacity-10 border border-blue-200 border-opacity-30 rounded-lg text-blue-200 placeholder-blue-200 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition-all duration-200">
+                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-blue-200 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
                 </div>
             </div>
             
@@ -456,6 +468,87 @@
                     }
                 });
             }
+
+            // Search Functionality
+            function setupSearch(searchInput) {
+                if (!searchInput) return;
+                
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        const query = this.value.trim().toLowerCase();
+                        if (query) {
+                            performSearch(query);
+                        }
+                    }
+                });
+
+                // Also handle search icon click
+                const searchIcon = searchInput.parentElement.querySelector('svg');
+                if (searchIcon) {
+                    searchIcon.addEventListener('click', function() {
+                        const query = searchInput.value.trim().toLowerCase();
+                        if (query) {
+                            performSearch(query);
+                        }
+                    });
+                }
+            }
+
+            function performSearch(query) {
+                // Define search terms and their corresponding pages
+                const searchMap = {
+                    'about': 'about.html',
+                    'team': 'about.html',
+                    'mission': 'about.html',
+                    'values': 'about.html',
+                    'daniel': 'about.html',
+                    'signup': 'signup.html',
+                    'join': 'signup.html',
+                    'waitlist': 'signup.html',
+                    'register': 'signup.html',
+                    'faq': 'faq.html',
+                    'questions': 'faq.html',
+                    'help': 'faq.html',
+                    'contact': 'contact.html',
+                    'email': 'contact.html',
+                    'message': 'contact.html',
+                    'privacy': 'privacy.html',
+                    'data': 'privacy.html',
+                    'terms': 'terms.html',
+                    'conditions': 'terms.html',
+                    'legal': 'terms.html',
+                    'venture': 'index.html',
+                    'capital': 'index.html',
+                    'startup': 'index.html',
+                    'investment': 'index.html',
+                    'funding': 'index.html',
+                    'vc': 'index.html',
+                    'pocketvc': 'index.html'
+                };
+
+                // Find the best match
+                let bestMatch = null;
+                let bestScore = 0;
+
+                for (const [term, page] of Object.entries(searchMap)) {
+                    if (query.includes(term) && term.length > bestScore) {
+                        bestMatch = page;
+                        bestScore = term.length;
+                    }
+                }
+
+                // If no specific match found, default to index
+                if (!bestMatch) {
+                    bestMatch = 'index.html';
+                }
+
+                // Redirect to the best matching page
+                window.location.href = bestMatch;
+            }
+
+            // Setup all search inputs on the page
+            const searchInputs = document.querySelectorAll('.search-input');
+            searchInputs.forEach(setupSearch);
         });
     </script>
 </body>
