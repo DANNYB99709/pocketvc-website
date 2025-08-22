@@ -280,7 +280,7 @@
         }
         
                  .animate-scroll {
-             animation: scroll 15s linear infinite;
+             animation: scroll 7s linear infinite;
          }
         
         @keyframes scroll {
@@ -689,41 +689,55 @@
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Steps Content -->
                 <div class="space-y-8">
-                                         <!-- Step 1 -->
-                     <div class="step-item flex items-start space-x-4">
-                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-gray-900 font-bold text-lg flex-shrink-0">1</div>
-                         <div>
-                             <h3 class="text-xl font-semibold text-gray-900 mb-2">Create Profile</h3>
-                             <p class="text-gray-600">Sign up as a VC or startup and complete your profile with investment thesis, sector focus, and growth stage.</p>
-                         </div>
-                     </div>
-                     
-                     <!-- Step 2 -->
-                     <div class="step-item flex items-start space-x-4">
-                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-gray-900 font-bold text-lg flex-shrink-0">2</div>
-                         <div>
-                             <h3 class="text-xl font-semibold text-gray-900 mb-2">Discover Matches</h3>
-                             <p class="text-gray-600">Our AI algorithm presents you with curated matches based on your preferences and investment criteria.</p>
-                         </div>
-                     </div>
-                     
-                     <!-- Step 3 -->
-                     <div class="step-item flex items-start space-x-4">
-                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-gray-900 font-bold text-lg flex-shrink-0">3</div>
-                         <div>
-                             <h3 class="text-xl font-semibold text-gray-900 mb-2">Connect & Evaluate</h3>
-                             <p class="text-gray-600">Initiate conversations, review detailed startup information, and schedule meetings through our platform.</p>
-                         </div>
-                     </div>
-                     
-                     <!-- Step 4 -->
-                     <div class="step-item flex items-start space-x-4">
-                         <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-gray-900 font-bold text-lg flex-shrink-0">4</div>
-                         <div>
-                             <h3 class="text-xl font-semibold text-gray-900 mb-2">Close Deals</h3>
-                             <p class="text-gray-600">Move forward with due diligence, term sheet negotiations, and investment execution with confidence.</p>
-                         </div>
-                     </div>
+                    <!-- Desktop: Show all steps -->
+                    <div class="hidden lg:block">
+                        <!-- Step 1 -->
+                        <div class="step-item flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-gray-900 font-bold text-lg flex-shrink-0">1</div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Create Profile</h3>
+                                <p class="text-gray-600">Sign up as a VC or startup and complete your profile with investment thesis, sector focus, and growth stage.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="step-item flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-gray-900 font-bold text-lg flex-shrink-0">2</div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Discover Matches</h3>
+                                <p class="text-gray-600">Our AI algorithm presents you with curated matches based on your preferences and investment criteria.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="step-item flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-gray-900 font-bold text-lg flex-shrink-0">3</div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Connect & Evaluate</h3>
+                                <p class="text-gray-600">Initiate conversations, review detailed startup information, and schedule meetings through our platform.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 4 -->
+                        <div class="step-item flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-gray-900 font-bold text-lg flex-shrink-0">4</div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Close Deals</h3>
+                                <p class="text-gray-600">Move forward with due diligence, term sheet negotiations, and investment execution with confidence.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile: Show only current step -->
+                    <div class="lg:hidden">
+                        <div id="mobile-step-content" class="step-item flex items-start space-x-4">
+                            <div id="mobile-step-number" class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-gray-900 font-bold text-lg flex-shrink-0">1</div>
+                            <div>
+                                <h3 id="mobile-step-title" class="text-xl font-semibold text-gray-900 mb-2">Create Profile</h3>
+                                <p id="mobile-step-description" class="text-gray-600">Sign up as a VC or startup and complete your profile with investment thesis, sector focus, and growth stage.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                                  <!-- iPhone Carousel -->
@@ -910,6 +924,31 @@
              const carouselImage = document.getElementById('carousel-image');
              const dots = document.querySelectorAll('.carousel-dot');
              const images = ['create.JPG', 'discover.JPG', 'connect.JPG', 'close.JPG'];
+             
+             // Mobile step content data
+             const stepData = [
+                 {
+                     number: '1',
+                     title: 'Create Profile',
+                     description: 'Sign up as a VC or startup and complete your profile with investment thesis, sector focus, and growth stage.'
+                 },
+                 {
+                     number: '2',
+                     title: 'Discover Matches',
+                     description: 'Our AI algorithm presents you with curated matches based on your preferences and investment criteria.'
+                 },
+                 {
+                     number: '3',
+                     title: 'Connect & Evaluate',
+                     description: 'Initiate conversations, review detailed startup information, and schedule meetings through our platform.'
+                 },
+                 {
+                     number: '4',
+                     title: 'Close Deals',
+                     description: 'Move forward with due diligence, term sheet negotiations, and investment execution with confidence.'
+                 }
+             ];
+             
              let currentSlide = 0;
              
              function updateCarousel() {
@@ -919,6 +958,18 @@
                  dots.forEach((dot, index) => {
                      dot.classList.toggle('active', index === currentSlide);
                  });
+                 
+                 // Update mobile step content
+                 const mobileStepNumber = document.getElementById('mobile-step-number');
+                 const mobileStepTitle = document.getElementById('mobile-step-title');
+                 const mobileStepDescription = document.getElementById('mobile-step-description');
+                 
+                 if (mobileStepNumber && mobileStepTitle && mobileStepDescription) {
+                     const currentStep = stepData[currentSlide];
+                     mobileStepNumber.textContent = currentStep.number;
+                     mobileStepTitle.textContent = currentStep.title;
+                     mobileStepDescription.textContent = currentStep.description;
+                 }
              }
              
              // Dot navigation
