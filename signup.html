@@ -394,9 +394,9 @@
                     <a href="contact.html" class="block transition-colors" style="color: #004b87;">Contact Us</a>
                     
                     <!-- Mobile Search Bar -->
-                    <div class="relative">
+                    <div class="relative px-4">
                         <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border rounded-lg px-4 py-2 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 w-full" style="border-color: #004b87; color: #004b87; border-opacity: 0.3;">
-                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
+                        <svg class="absolute right-7 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
                     </div>
@@ -944,21 +944,7 @@
     <script>
         let currentUserType = 'startup';
 
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const dropdown = document.getElementById('mobile-menu-dropdown');
-            dropdown.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const dropdown = document.getElementById('mobile-menu-dropdown');
-            const dropdownBtn = document.getElementById('mobile-menu-button');
-            
-            if (!dropdownBtn.contains(event.target) && !dropdown.contains(event.target)) {
-                dropdown.classList.add('hidden');
-            }
-        });
+
 
         // User type selection
         function selectUserType(userType) {
@@ -2016,10 +2002,12 @@
                         'mission': 'about.html',
                         'values': 'about.html',
                         'daniel': 'about.html',
-                        'signup': 'signup.html',
-                        'join': 'signup.html',
-                        'waitlist': 'signup.html',
-                        'register': 'signup.html',
+                                            'signup': 'signup.html',
+                    'sign up': 'signup.html',
+                    'sign': 'signup.html',
+                    'join': 'signup.html',
+                    'waitlist': 'signup.html',
+                    'register': 'signup.html',
                         'faq': 'faq.html',
                         'questions': 'faq.html',
                         'help': 'faq.html',
