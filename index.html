@@ -296,16 +296,16 @@
             animation-play-state: paused;
         }
         
-                 /* iPhone Frame Styles */
-         .phone-frame {
-             width: 280px;
-             height: 560px;
-             background: #1a1a1a;
-             border-radius: 40px;
-             padding: 8px;
-             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-             position: relative;
-         }
+                         /* iPhone Frame Styles - iPhone 6.7" */
+        .phone-frame {
+            width: 320px;
+            height: 665px;
+            background: #1a1a1a;
+            border-radius: 45px;
+            padding: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
          
          .phone-frame::before {
              content: '';
@@ -319,12 +319,12 @@
              border-radius: 2px;
          }
          
-         .phone-screen {
-             width: 100%;
-             height: 100%;
-             border-radius: 32px;
-             overflow: hidden;
-         }
+                 .phone-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 35px;
+            overflow: hidden;
+        }
          
          .carousel-dot.active {
              background-color: var(--primary-600);
@@ -379,6 +379,18 @@
             
             .hero-content p {
                 margin-top: 4rem !important;
+            }
+            
+            /* Mobile phone frame optimization */
+            .phone-frame {
+                width: 280px;
+                height: 580px;
+                border-radius: 35px;
+                padding: 8px;
+            }
+            
+            .phone-screen {
+                border-radius: 27px;
             }
             
             footer {
