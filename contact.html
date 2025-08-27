@@ -48,6 +48,14 @@
       gtag('config', 'G-FM5YRS2ZFT');
     </script>
     
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("3vFiXs7YATm8SKJij"); // EmailJS public key
+        })();
+    </script>
+    
     <!-- Custom Styles -->
     <style>
         :root {
@@ -234,7 +242,7 @@
                 <div class="lg:col-span-1">
                     <h2 class="text-3xl font-bold text-gray-900 mb-8">Send us a Message</h2>
                     
-                    <form class="space-y-6" action="mailto:daniel@pocketvc.co" method="post" enctype="text/plain">
+                    <form class="space-y-6" id="contact-form">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
@@ -427,7 +435,7 @@
             </div>
             
             <div class="border-t border-blue-200 mt-8 pt-8 text-center">
-                <p class="text-blue-200">&copy; 2024 PocketVC. All rights reserved.</p>
+                <p class="text-blue-200">&copy; 2025 PocketVC. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -534,6 +542,83 @@
             // Setup all search inputs on the page
             const searchInputs = document.querySelectorAll('.search-input');
             searchInputs.forEach(setupSearch);
+
+            // Contact Form Handling
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    const firstName = formData.get('firstName');
+                    const lastName = formData.get('lastName');
+                    const email = formData.get('email');
+                    const company = formData.get('company');
+                    const subject = formData.get('subject');
+                    const message = formData.get('message');
+                    
+                    // Show loading state
+                    const submitButton = contactForm.querySelector('button[type="submit"]');
+                    const originalText = submitButton.textContent;
+                    submitButton.textContent = 'Sending...';
+                    submitButton.disabled = true;
+                    
+                    try {
+                        // Send email using EmailJS (free service)
+                        // You'll need to sign up at https://www.emailjs.com/ and add their script
+                        if (typeof emailjs !== 'undefined') {
+                            await emailjs.send('service_787jz9c', 'template_rdv3m3i', {
+                                to_email: 'daniel@pocketvc.co',
+                                from_name: `${firstName} ${lastName}`,
+                                from_email: email,
+                                company: company || 'Not provided',
+                                subject: subject,
+                                message: message
+                            });
+                        } else {
+                            // Fallback: Use a simple form submission to your server
+                            // This requires a backend endpoint to handle the email sending
+                            const response = await fetch('/api/contact', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    firstName,
+                                    lastName,
+                                    email,
+                                    company,
+                                    subject,
+                                    message
+                                })
+                            });
+                            
+                            if (!response.ok) {
+                                throw new Error('Failed to send message');
+                            }
+                        }
+                        
+                        // Success
+                        submitButton.textContent = 'Message Sent!';
+                        submitButton.style.backgroundColor = '#059669'; // Green color
+                        contactForm.reset();
+                        
+                    } catch (error) {
+                        // Error
+                        submitButton.textContent = 'Error - Try Again';
+                        submitButton.style.backgroundColor = '#dc2626'; // Red color
+                        console.error('Error sending message:', error);
+                    }
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitButton.textContent = originalText;
+                        submitButton.style.backgroundColor = '#003366';
+                        submitButton.disabled = false;
+                    }, 3000);
+                });
+            }
         });
     </script>
 </body>
