@@ -21,12 +21,12 @@ Deno.serve(async (req) => {
     if (!firstName || !lastName || !email || !subject || !message) {
       return new Response(
         JSON.stringify({ error: 'Missing required fields' }),
-        { 
-          status: 400, 
-          headers: { 
-            'Content-Type': 'application/json', 
-            'Access-Control-Allow-Origin': '*' 
-          } 
+        {
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
         }
       )
     }
@@ -35,12 +35,12 @@ Deno.serve(async (req) => {
     if (!RESEND_API_KEY) {
       return new Response(
         JSON.stringify({ error: 'Email service not configured' }),
-        { 
-          status: 500, 
-          headers: { 
-            'Content-Type': 'application/json', 
-            'Access-Control-Allow-Origin': '*' 
-          } 
+        {
+          status: 500,
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
         }
       )
     }
@@ -77,43 +77,43 @@ Deno.serve(async (req) => {
     if (!response.ok) {
       const errorText = await response.text()
       return new Response(
-        JSON.stringify({ 
+        JSON.stringify({
           error: `Email service error: ${response.status} - ${errorText}`,
           status: response.status
         }),
-        { 
-          status: 500, 
-          headers: { 
-            'Content-Type': 'application/json', 
-            'Access-Control-Allow-Origin': '*' 
-          } 
+        {
+          status: 500,
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
         }
       )
     }
 
     return new Response(
       JSON.stringify({ success: true, message: 'Email sent successfully' }),
-      { 
-        status: 200, 
-        headers: { 
-          'Content-Type': 'application/json', 
-          'Access-Control-Allow-Origin': '*' 
-        } 
+      {
+        status: 200,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
       }
     )
 
   } catch (error) {
     return new Response(
-      JSON.stringify({ 
+      JSON.stringify({
         error: error.message,
         type: 'catch_error'
       }),
-      { 
-        status: 500, 
-        headers: { 
-          'Content-Type': 'application/json', 
-          'Access-Control-Allow-Origin': '*' 
-        } 
+      {
+        status: 500,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
       }
     )
   }
