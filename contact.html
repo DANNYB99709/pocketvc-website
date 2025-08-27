@@ -581,7 +581,8 @@
                         
                         if (!response.ok) {
                             const errorData = await response.json();
-                            throw new Error(`Backend error: ${errorData.message || response.statusText}`);
+                            console.error('Backend error details:', errorData);
+                            throw new Error(`Backend error: ${errorData.error || errorData.message || response.statusText}`);
                         }
                         
                         console.log('Email sent successfully via backend');
