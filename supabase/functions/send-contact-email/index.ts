@@ -36,23 +36,24 @@ Deno.serve(async (req) => {
       )
     }
 
-    // Prepare email data
-    const emailData = {
-      from: 'PocketVC Contact Form <noreply@pocketvc.co>',
-      to: 'daniel@pocketvc.co',
-      subject: `Contact Form: ${subject}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Company:</strong> ${company || 'Not provided'}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-        <hr>
-        <p><em>This message was sent from the PocketVC contact form.</em></p>
-      `
-    }
+               // Prepare email data
+           const emailData = {
+             from: 'PocketVC Contact Form <noreply@pocketvc.co>',
+             to: 'daniel@pocketvc.co',
+             replyTo: email, // This makes replies go to the person who submitted the form
+             subject: `Contact Form: ${subject}`,
+             html: `
+               <h2>New Contact Form Submission</h2>
+               <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+               <p><strong>Email:</strong> ${email}</p>
+               <p><strong>Company:</strong> ${company || 'Not provided'}</p>
+               <p><strong>Subject:</strong> ${subject}</p>
+               <p><strong>Message:</strong></p>
+               <p>${message.replace(/\n/g, '<br>')}</p>
+               <hr>
+               <p><em>This message was sent from the PocketVC contact form.</em></p>
+             `
+           }
 
     // Send email via Resend
     const response = await fetch('https://api.resend.com/emails', {
