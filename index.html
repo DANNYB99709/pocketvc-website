@@ -25,15 +25,18 @@
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
     <!-- Search engine verification: replace tokens after claiming in Search Console/Bing Webmaster Tools -->
     <meta name="google-site-verification" content="VzCoa_xbrKU9iDETmjvtn5wIvGJEAcstpQ0aG1rCmms" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="167x167" href="/apple-touch-icon-167x167.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512x512.png" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="PocketVC" />
     <link rel="preload" as="image" href="logo.png" />
     
     <!-- Fonts -->
@@ -296,16 +299,16 @@
             animation-play-state: paused;
         }
         
-                 /* iPhone Frame Styles */
-         .phone-frame {
-             width: 280px;
-             height: 560px;
-             background: #1a1a1a;
-             border-radius: 40px;
-             padding: 8px;
-             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-             position: relative;
-         }
+                         /* iPhone Frame Styles - iPhone 6.7" */
+        .phone-frame {
+            width: 320px;
+            height: 665px;
+            background: #1a1a1a;
+            border-radius: 45px;
+            padding: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
          
          .phone-frame::before {
              content: '';
@@ -319,12 +322,12 @@
              border-radius: 2px;
          }
          
-         .phone-screen {
-             width: 100%;
-             height: 100%;
-             border-radius: 32px;
-             overflow: hidden;
-         }
+                 .phone-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 35px;
+            overflow: hidden;
+        }
          
          .carousel-dot.active {
              background-color: var(--primary-600);
@@ -379,6 +382,18 @@
             
             .hero-content p {
                 margin-top: 4rem !important;
+            }
+            
+            /* Mobile phone frame optimization */
+            .phone-frame {
+                width: 280px;
+                height: 580px;
+                border-radius: 35px;
+                padding: 8px;
+            }
+            
+            .phone-screen {
+                border-radius: 27px;
             }
             
             footer {
@@ -534,9 +549,9 @@
                     <a href="contact.html" class="block transition-colors" style="color: #004b87;">Contact Us</a>
                     
                     <!-- Mobile Search Bar -->
-                    <div class="relative">
+                    <div class="relative px-4">
                         <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border rounded-lg px-4 py-2 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 w-full" style="border-color: #004b87; color: #004b87; border-opacity: 0.3;">
-                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
+                        <svg class="absolute right-7 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
                     </div>
@@ -549,18 +564,18 @@
     <section id="main-content" class="relative h-screen flex items-center justify-center overflow-hidden">
         <!-- Video Background -->
         <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-            <source src="hero2.mp4" type="video/mp4">
+            <source src="hero.MP4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         
-                          <!-- Content -->
-          <div class="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 hero-content">
-                             <h1 class="text-5xl md:text-7xl font-bold mb-8" style="color: #004b87; margin-top: -2rem;">
-                    Connect VCs with <span style="color: #004b87;">Innovative Startups</span>
-                </h1>
-                          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style="color: #004b87; margin-top: 4rem;">
-                  PocketVC is changing the way startups and investors connect. Don't miss your chance to get early access - Beta spots are limited.
-              </p>
+        <!-- Content -->
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 hero-content">
+            <h1 class="text-5xl md:text-7xl font-bold mb-8" style="color: #004b87; margin-top: -2rem;">
+                Pocket <img src="logo.png" alt="PocketVC Logo" class="inline-block h-16 md:h-20 w-auto mx-2" style="vertical-align: middle;"> VC
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style="color: #004b87; margin-top: 4rem;">
+                PocketVC is changing the way startups and investors connect. Don't miss your chance to get early access - Beta spots are limited.
+            </p>
             
                                                                              <!-- CTA Buttons -->
               <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -744,7 +759,7 @@
                  <div class="relative max-w-sm mx-auto">
                      <div class="phone-frame mx-auto mb-6">
                          <div class="phone-screen">
-                             <img id="carousel-image" src="create.JPG" alt="Step 1" class="w-full h-full object-cover">
+                             <img id="carousel-image" src="create.png" alt="Step 1" class="w-full h-full object-cover">
                          </div>
                      </div>
                      
@@ -923,7 +938,7 @@
                          // iPhone Carousel functionality
              const carouselImage = document.getElementById('carousel-image');
              const dots = document.querySelectorAll('.carousel-dot');
-             const images = ['create.JPG', 'discover.JPG', 'connect.JPG', 'close.JPG'];
+                             const images = ['create.png', 'discover.png', 'connect.png', 'close.png'];
              
              // Mobile step content data
              const stepData = [
@@ -1040,7 +1055,10 @@
                     'values': 'about.html',
                     'daniel': 'about.html',
                     'signup': 'signup.html',
+                    'sign up': 'signup.html',
+                    'sign': 'signup.html',
                     'join': 'signup.html',
+                    'sign in': 'signup.html',
                     'waitlist': 'signup.html',
                     'register': 'signup.html',
                     'faq': 'faq.html',
