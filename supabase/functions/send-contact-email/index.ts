@@ -38,7 +38,7 @@ Deno.serve(async (req) => {
 
                // Prepare email data
            const emailData = {
-             from: 'PocketVC Contact Form <noreply@pocketvc.co>',
+             from: 'PocketVC Contact Form <hello@pocketvc.co>',
              to: 'daniel@pocketvc.co',
              replyTo: email, // This makes replies go to the person who submitted the form
              subject: `Contact Form: ${subject}`,
@@ -55,20 +55,31 @@ Deno.serve(async (req) => {
              `
            }
 
-    // Send email via Resend
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(emailData)
-    })
+               // Send email via Resend
+           const response = await fetch('https://api.resend.com/emails', {
+             method: 'POST',
+             headers: {
+               'Authorization': `Bearer ${RESEND_API_KEY}`,
+               'Content-Type': 'application/json',
+             },
+             body: JSON.stringify(emailData)
+           })
 
-    if (!response.ok) {
-      const errorData = await response.json()
-      throw new Error(`Resend API error: ${errorData.message || response.statusText}`)
-    }
+           if (!response.ok) {
+             const errorText = await response.text()
+             console.error('Resend API error response:', errorText)
+             
+             let errorMessage = `Resend API error: ${response.status} ${response.statusText}`
+             try {
+               const errorData = JSON.parse(errorText)
+               errorMessage = `Resend API error: ${errorData.message || errorData.error || response.statusText}`
+             } catch (e) {
+               // If JSON parsing fails, use the raw text
+               errorMessage = `Resend API error: ${errorText || response.statusText}`
+             }
+             
+             throw new Error(errorMessage)
+           }
 
     return new Response(
       JSON.stringify({ success: true, message: 'Email sent successfully' }),
