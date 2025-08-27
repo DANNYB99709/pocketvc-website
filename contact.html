@@ -48,14 +48,6 @@
       gtag('config', 'G-FM5YRS2ZFT');
     </script>
     
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("3vFiXs7YATm8SKJij"); // EmailJS public key
-        })();
-    </script>
-    
     <!-- Custom Styles -->
     <style>
         :root {
@@ -569,43 +561,30 @@
                     submitButton.disabled = true;
                     
                     try {
-                        // Check if EmailJS is available
-                        console.log('EmailJS available:', typeof emailjs !== 'undefined');
+                        // Send email via secure backend
+                        console.log('Sending email via secure backend...');
                         
-                        // Send email using EmailJS (free service)
-                        if (typeof emailjs !== 'undefined') {
-                            console.log('Sending email via EmailJS...');
-                            await emailjs.send('service_787jz9c', 'template_rdv3m3i', {
-                                to_email: 'daniel@pocketvc.co',
-                                from_name: `${firstName} ${lastName}`,
-                                from_email: email,
-                                company: company || 'Not provided',
-                                subject: subject,
-                                message: message
-                            });
-                            console.log('Email sent successfully via EmailJS');
-                        } else {
-                            console.log('EmailJS not available, trying fallback...');
-                            // Fallback: Use a simple form submission to your server
-                            const response = await fetch('/api/contact', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                },
-                                body: JSON.stringify({
-                                    firstName,
-                                    lastName,
-                                    email,
-                                    company,
-                                    subject,
-                                    message
-                                })
-                            });
-                            
-                            if (!response.ok) {
-                                throw new Error('Failed to send message');
-                            }
+                        const response = await fetch('https://rchawyidafvsttcoxmle.supabase.co/functions/v1/send-contact-email', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                firstName,
+                                lastName,
+                                email,
+                                company,
+                                subject,
+                                message
+                            })
+                        });
+                        
+                        if (!response.ok) {
+                            const errorData = await response.json();
+                            throw new Error(`Backend error: ${errorData.message || response.statusText}`);
                         }
+                        
+                        console.log('Email sent successfully via backend');
                         
                         // Success
                         submitButton.textContent = 'Message Sent!';
