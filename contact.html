@@ -546,8 +546,10 @@
             // Contact Form Handling
             const contactForm = document.getElementById('contact-form');
             if (contactForm) {
+                console.log('Contact form found and event listener added');
                 contactForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
+                    console.log('Form submitted');
                     
                     // Get form data
                     const formData = new FormData(contactForm);
@@ -558,6 +560,8 @@
                     const subject = formData.get('subject');
                     const message = formData.get('message');
                     
+                    console.log('Form data:', { firstName, lastName, email, company, subject, message });
+                    
                     // Show loading state
                     const submitButton = contactForm.querySelector('button[type="submit"]');
                     const originalText = submitButton.textContent;
@@ -565,9 +569,12 @@
                     submitButton.disabled = true;
                     
                     try {
+                        // Check if EmailJS is available
+                        console.log('EmailJS available:', typeof emailjs !== 'undefined');
+                        
                         // Send email using EmailJS (free service)
-                        // You'll need to sign up at https://www.emailjs.com/ and add their script
                         if (typeof emailjs !== 'undefined') {
+                            console.log('Sending email via EmailJS...');
                             await emailjs.send('service_787jz9c', 'template_rdv3m3i', {
                                 to_email: 'daniel@pocketvc.co',
                                 from_name: `${firstName} ${lastName}`,
@@ -576,9 +583,10 @@
                                 subject: subject,
                                 message: message
                             });
+                            console.log('Email sent successfully via EmailJS');
                         } else {
+                            console.log('EmailJS not available, trying fallback...');
                             // Fallback: Use a simple form submission to your server
-                            // This requires a backend endpoint to handle the email sending
                             const response = await fetch('/api/contact', {
                                 method: 'POST',
                                 headers: {
@@ -603,6 +611,7 @@
                         submitButton.textContent = 'Message Sent!';
                         submitButton.style.backgroundColor = '#059669'; // Green color
                         contactForm.reset();
+                        console.log('Form submitted successfully');
                         
                     } catch (error) {
                         // Error
@@ -618,6 +627,8 @@
                         submitButton.disabled = false;
                     }, 3000);
                 });
+            } else {
+                console.error('Contact form not found');
             }
         });
     </script>
