@@ -166,9 +166,6 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(5px);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
 
         .modal-content {
@@ -610,8 +607,6 @@
                     ${faq.content}
                 `;
                 modal.style.display = 'block';
-                modal.style.opacity = '1';
-                modal.style.visibility = 'visible';
                 document.body.style.overflow = 'hidden';
                 console.log('Modal opened successfully');
             } else {
@@ -622,8 +617,6 @@
         function closeModal() {
             const modal = document.getElementById('faqModal');
             modal.style.display = 'none';
-            modal.style.opacity = '0';
-            modal.style.visibility = 'hidden';
             document.body.style.overflow = 'auto';
         }
 
