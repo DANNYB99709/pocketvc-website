@@ -20,15 +20,15 @@
     <meta name="theme-color" content="#ffffff" />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
     <meta name="google-site-verification" content="VzCoa_xbrKU9iDETmjvtn5wIvGJEAcstpQ0aG1rCmms" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="167x167" href="/apple-touch-icon-167x167.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512x512.png" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -179,6 +179,7 @@
             overflow-y: auto;
             position: relative;
             animation: modalSlideIn 0.3s ease-out;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         @keyframes modalSlideIn {
@@ -291,7 +292,7 @@
         
         <!-- Content -->
         <div class="relative z-20 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-5xl md:text-7xl font-bold mb-8" style="color: #004b87; margin-top: -2rem;">
+            <h1 class="text-5xl md:text-7xl font-bold mb-8" style="color: #004b87; margin-top: -8rem;">
                 Frequently Asked <span style="color: #004b87;">Questions</span>
             </h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style="color: #004b87; margin-top: 2rem;">
@@ -444,7 +445,7 @@
             </div>
             
             <div class="border-t border-blue-200 mt-8 pt-8 text-center">
-                <p class="text-blue-200">&copy; 2024 PocketVC. All rights reserved.</p>
+                <p class="text-blue-200">&copy; 2025 PocketVC. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -461,22 +462,6 @@
 
     <!-- JavaScript -->
     <script>
-        // Dropdown menu toggle
-        document.getElementById('dropdown-btn').addEventListener('click', function() {
-            const dropdown = document.getElementById('dropdown-menu');
-            dropdown.classList.toggle('hidden');
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
-            const dropdown = document.getElementById('dropdown-menu');
-            const dropdownBtn = document.getElementById('dropdown-btn');
-            
-            if (!dropdownBtn.contains(event.target) && !dropdown.contains(event.target)) {
-                dropdown.classList.add('hidden');
-            }
-        });
-
         // FAQ Modal functionality
         const faqData = {
             'what-is-pocketvc': {
@@ -594,6 +579,7 @@
             }
         };
 
+        // Define modal functions after faqData
         function openModal(faqId) {
             console.log('Opening modal for:', faqId);
             const modal = document.getElementById('faqModal');
@@ -632,6 +618,21 @@
             if (event.key === 'Escape') {
                 closeModal();
             }
+        });
+
+        // Debug function to test modal
+        function testModal() {
+            console.log('Testing modal functionality...');
+            const modal = document.getElementById('faqModal');
+            const modalContent = document.getElementById('modalContent');
+            console.log('Modal element:', modal);
+            console.log('Modal content element:', modalContent);
+            console.log('FAQ data available:', Object.keys(faqData));
+        }
+
+        // Test modal on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            testModal();
         });
         
         // Mobile Menu Toggle
