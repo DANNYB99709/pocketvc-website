@@ -462,22 +462,6 @@
 
     <!-- JavaScript -->
     <script>
-        // Dropdown menu toggle
-        document.getElementById('dropdown-btn').addEventListener('click', function() {
-            const dropdown = document.getElementById('dropdown-menu');
-            dropdown.classList.toggle('hidden');
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
-            const dropdown = document.getElementById('dropdown-menu');
-            const dropdownBtn = document.getElementById('dropdown-btn');
-            
-            if (!dropdownBtn.contains(event.target) && !dropdown.contains(event.target)) {
-                dropdown.classList.add('hidden');
-            }
-        });
-
         // FAQ Modal functionality
         const faqData = {
             'what-is-pocketvc': {
@@ -595,6 +579,7 @@
             }
         };
 
+        // Define modal functions after faqData
         function openModal(faqId) {
             console.log('Opening modal for:', faqId);
             const modal = document.getElementById('faqModal');
