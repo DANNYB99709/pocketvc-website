@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>PocketVC Blog | Venture Capital News, Startup Insights & Investment Trends</title>
+    <meta name="description" content="Stay updated with the latest venture capital news, startup insights, and investment trends. Expert analysis on deeptech funding, startup growth strategies, and VC industry developments.">
+    <link rel="canonical" href="https://pocketvc.co/blog.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:title" content="PocketVC Blog | Venture Capital News & Startup Insights" />
+    <meta property="og:description" content="Expert insights on venture capital, startup funding, and investment trends. Stay ahead with PocketVC's thought leadership content." />
+    <meta property="og:url" content="https://pocketvc.co/blog.html" />
+    <meta property="og:image" content="https://pocketvc.co/logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PocketVC Blog - Venture Capital News and Startup Insights" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PocketVC Blog | Venture Capital News & Startup Insights" />
+    <meta name="twitter:description" content="Expert insights on venture capital, startup funding, and investment trends. Stay ahead with PocketVC's thought leadership content." />
+    <meta name="twitter:image" content="https://pocketvc.co/logo.png" />
+    <meta property="og:site_name" content="PocketVC" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="msapplication-navbutton-color" content="#ffffff">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <meta name="google-site-verification" content="VzCoa_xbrKU9iDETmjvtn5wIvGJEAcstpQ0aG1rCmms" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="PocketVC" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Mailchimp CSS -->
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-50: #f0f4f8;
+            --primary-100: #d9e6f2;
+            --primary-200: #b3cce5;
+            --primary-300: #8db3d8;
+            --primary-400: #6699cb;
+            --primary-500: #4080be;
+            --primary-600: #336699;
+            --primary-700: #264d73;
+            --primary-800: #1a334d;
+            --primary-900: #003366;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--primary-100);
+            overflow: hidden;
+        }
+        
+        .blog-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+        
+        .blog-category {
+            background: var(--primary-100);
+            color: var(--primary-700);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .cta-button-transparent {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .cta-button-transparent:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile Menu Dropdown Styles */
+        .mobile-menu-dropdown {
+            background: white !important;
+            background-color: white !important;
+            border-radius: 12px;
+            margin-top: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-menu-dropdown a {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 0 0.5rem;
+        }
+        
+        .mobile-menu-dropdown a:hover {
+            background: rgba(0, 75, 135, 0.1);
+        }
+        
+        /* Search Input Styles */
+        .search-input::placeholder {
+            color: rgba(0, 75, 135, 0.7);
+        }
+        
+        .search-input:focus::placeholder {
+            color: rgba(0, 75, 135, 0.5);
+        }
+        
+        /* Mobile-specific padding adjustments */
+        @media (max-width: 768px) {
+            nav {
+                padding-top: 1.5rem;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 95%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow: hidden;
+            position: relative;
+            animation: modalSlideIn 0.4s ease-out;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 75, 135, 0.1);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close {
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .close:hover {
+            color: #f0f0f0;
+            transform: scale(1.1);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+        }
+        
+        /* Modal Header */
+        .modal-header {
+            background: linear-gradient(135deg, #004b87 0%, #003366 100%);
+            padding: 2rem 2.5rem 1.5rem;
+            color: white;
+            position: relative;
+        }
+        
+        .modal-header h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.3;
+        }
+        
+        .modal-header .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0.75rem;
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+        
+        .modal-header .article-category {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .modal-header .article-date {
+            opacity: 0.8;
+        }
+        
+        /* Modal Body */
+        .modal-body {
+            padding: 2.5rem;
+            max-height: 60vh;
+            overflow-y: auto;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .modal-body p {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-body ul {
+            font-size: 0.9rem;
+        }
+        
+        .modal-body li {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .modal-body::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .modal-body::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 3px;
+        }
+        
+        .modal-body::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        /* Modal Footer */
+        .modal-footer {
+            padding: 2rem 2.5rem 2.5rem;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-footer .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .modal-footer .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+            min-width: fit-content;
+        }
+        
+        .modal-footer .btn-primary {
+            background: #004b87;
+            color: white;
+        }
+        
+        .modal-footer .btn-primary:hover {
+            background: #003366;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 75, 135, 0.3);
+        }
+        
+        .modal-footer .btn-secondary {
+            background: white;
+            color: #004b87;
+            border: 2px solid #004b87;
+        }
+        
+        .modal-footer .btn-secondary:hover {
+            background: #004b87;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive Modal */
+        @media (max-width: 768px) {
+            .modal-content {
+                margin: 3% auto;
+                width: 98%;
+                max-height: 95vh;
+            }
+            
+            .modal-header {
+                padding: 1.5rem 1.5rem 1rem;
+            }
+            
+            .modal-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .modal-body {
+                padding: 1.5rem;
+                font-size: 0.85rem;
+            }
+            
+            .modal-footer {
+                padding: 1.5rem 1.5rem 2rem;
+                flex-direction: column;
+            }
+            
+            .modal-footer .cta-buttons {
+                flex-direction: column;
+                gap: 0.75rem;
+                width: 100%;
+            }
+            
+            .modal-footer .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            /* Make close button more prominent on mobile */
+            .close {
+                width: 50px;
+                height: 50px;
+                font-size: 2.2rem;
+                top: 1rem;
+                right: 1rem;
+                background: none;
+                color: white;
+                text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            }
+        }
+        
+        /* Minimal Mailchimp Styling - Just hide branding and style button */
+        #mc_embed_signup .optionalParent p {
+            display: none !important; /* Hide the Mailchimp logo/branding */
+        }
+        
+        #mc_embed_signup .optionalParent a {
+            display: none !important; /* Hide the Mailchimp logo link */
+        }
+        
+        /* Style the subscribe button with our brand color */
+        #mc_embed_signup input[type="submit"],
+        #mc-embedded-subscribe {
+            background-color: #004b87 !important; /* Our darker blue brand color */
+            color: white !important;
+            border: none !important;
+            border-radius: 0.5rem !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            transition: background-color 0.3s ease !important;
+        }
+        
+        #mc_embed_signup input[type="submit"]:hover,
+        #mc-embedded-subscribe:hover {
+            background-color: #003366 !important; /* Darker on hover */
+        }
+        
+        /* Add gap between email input and subscribe button */
+        #mc_embed_signup .optionalParent {
+            margin-top: 1rem !important; /* Gap between input and button */
+        }
+    </style>
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PocketVC",
+      "url": "https://pocketvc.co/",
+      "logo": "https://pocketvc.co/logo.png",
+      "description": "PocketVC connects venture capital firms with innovative startups using smart matching technology across deeptech sectors.",
+      "foundingDate": "2024",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "16 Haig Avenue",
+        "addressLocality": "Kent",
+        "addressCountry": "GB"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/danielbarnard1/",
+        "https://www.linkedin.com/company/pocketvc-connect"
+      ],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "info@pocketvc.co"
+      }],
+      "offers": {
+        "@type": "Offer",
+        "description": "Venture capital platform connecting investors with startups",
+        "category": "Financial Services"
+      }
+    }
+    </script>
+
+    <!-- Structured Data: Blog -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "PocketVC Blog",
+      "description": "Venture capital news, startup insights, and investment trends",
+      "url": "https://pocketvc.co/blog.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "PocketVC",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://pocketvc.co/logo.png"
+        }
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "The Future of Venture Capital: AI-Powered Startup Matching",
+          "description": "How artificial intelligence is revolutionizing the way VCs discover and evaluate startups",
+          "datePublished": "2025-01-27",
+          "author": {
+            "@type": "Person",
+            "name": "Daniel Barnard"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Deeptech Investment Trends: What VCs Are Looking For in 2025",
+          "description": "Key trends and opportunities in deeptech sectors that are attracting venture capital attention",
+          "datePublished": "2025-01-20",
+          "author": {
+            "@type": "Person",
+            "name": "Daniel Barnard"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FM5YRS2ZFT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+      gtag('config', 'G-FM5YRS2ZFT');
+    </script>
+
+</head>
+<body class="bg-gray-50">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white text-blue-900 px-3 py-2 rounded">Skip to content</a>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="sr-only">
+        <ol class="flex items-center space-x-2 text-sm">
+            <li><a href="https://pocketvc.co/" class="text-blue-600 hover:text-blue-800">Home</a></li>
+            <li class="text-gray-500">/</li>
+            <li class="text-gray-900">Blog</li>
+        </ol>
+    </nav>
+    
+    <!-- Navigation -->
+    <nav class="absolute top-0 left-0 right-0 z-50 pt-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="index.html">
+                        <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav hidden md:flex items-center space-x-8">
+                    <a href="about.html" class="transition-colors" style="color: #004b87;">About</a>
+                    <a href="signup.html" class="transition-colors" style="color: #004b87;">Sign Up</a>
+                    <a href="faq.html" class="transition-colors" style="color: #004b87;">FAQ</a>
+                    <a href="contact.html" class="transition-colors" style="color: #004b87;">Contact Us</a>
+                    <a href="blog.html" class="transition-colors font-semibold" style="color: #004b87;">Blog</a>
+                    
+                    <!-- Search Bar -->
+                    <div class="relative">
+                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border rounded-lg px-4 py-2 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 w-48" style="border-color: #004b87; color: #004b87; border-opacity: 0.3;">
+                        <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu md:hidden">
+                    <button id="mobile-menu-button" style="color: #004b87;">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu-dropdown" class="mobile-menu-dropdown hidden md:hidden">
+                <div class="py-4 space-y-4">
+                    <a href="about.html" class="block transition-colors" style="color: #004b87;">About</a>
+                    <a href="signup.html" class="block transition-colors" style="color: #004b87;">Sign Up</a>
+                    <a href="faq.html" class="block transition-colors" style="color: #004b87;">FAQ</a>
+                    <a href="contact.html" class="block transition-colors" style="color: #004b87;">Contact Us</a>
+                    <a href="blog.html" class="block transition-colors font-semibold" style="color: #004b87;">Blog</a>
+                    
+                    <!-- Mobile Search Bar -->
+                    <div class="relative px-4">
+                        <input type="text" placeholder="Search..." class="search-input bg-white bg-opacity-10 border rounded-lg px-4 py-2 placeholder-opacity-70 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 w-full" style="border-color: #004b87; color: #004b87; border-opacity: 0.3;">
+                        <svg class="absolute right-7 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #004b87;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="waves.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Content -->
+        <div class="relative z-20 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl md:text-7xl font-bold mb-8" style="color: #004b87; margin-top: -8rem;">
+                PocketVC <span style="color: #004b87;">Blog</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style="color: #004b87; margin-top: 2rem;">
+                Stay updated with the latest venture capital news, startup insights, and investment trends from industry experts.
+            </p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section id="main-content" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Featured Article -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Featured Article</h2>
+                <div class="blog-card">
+                    <div class="md:flex">
+                        <div class="md:w-1/2">
+                            <div class="h-64 md:h-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                                <div class="text-center">
+                                    <img src="logo.png" alt="PocketVC Logo" class="w-24 h-24 mx-auto mb-4">
+                                    <p class="text-blue-600 font-semibold">Featured Article</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 p-8">
+                            <div class="blog-category mb-4">Company Announcement</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Not Another Platform "Helping to Connect VCs and Startups" 🙄</h3>
+                            <p class="text-gray-600 mb-6">I started PocketVC after years sifting through events and decks. Most were irrelevant. Too many great startups never found the right funding. So we need your help! 💡</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                            <span class="text-blue-600 font-semibold text-sm">DB</span>
+                                        </div>
+                                        <span class="text-sm text-gray-600">Daniel Barnard</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500">September 23, 2025</span>
+                                </div>
+                                <button onclick="openModal('featured-article')" class="text-blue-600 hover:text-blue-700 font-semibold cursor-pointer">Read More →</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article Grid -->
+            <div class="mt-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Latest Articles</h2>
+                <div class="grid md:grid-cols-1 lg:grid-cols-1 gap-6 max-w-md mx-auto">
+                    <!-- Article 1 -->
+                    <div class="blog-card cursor-pointer" onclick="openModal('featured-article')">
+                        <!-- Article Image -->
+                        <div class="h-48 bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
+                            <div class="text-center">
+                                <svg class="w-16 h-16 text-purple-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                                <p class="text-purple-600 font-semibold text-sm">Guide</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Article Content -->
+                        <div class="p-6">
+                            <div class="text-xs font-semibold text-purple-600 uppercase tracking-wide mb-2">Company Announcement</div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-3">Not Another Platform "Helping to Connect VCs and Startups" 🙄</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                I started PocketVC after years sifting through events and decks. Most were irrelevant. Too many great startups never found the right funding. So we need your help! 💡
+                            </p>
+                            <div class="text-sm text-blue-600 font-semibold">Read more →</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="mt-16 bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-8 pb-12 text-center">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Stay Updated with PocketVC</h3>
+                <p class="text-gray-600 mb-6">Get the latest venture capital insights, startup trends, and investment opportunities delivered to your inbox.</p>
+                
+                <!-- Mailchimp Embedded Form -->
+                <div class="max-w-md mx-auto">
+                    <div id="mc_embed_signup">
+                        <form id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate">
+                            <div id="mc_embed_signup_scroll">
+                                <div class="mc-field-group">
+                                    <input type="email" name="EMAIL" class="required email w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" id="mce-EMAIL" required="" value="" placeholder="Enter your email address">
+                                </div>
+                                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                    <input type="text" name="b_5534dd7d0e31329ad23b2a0e3_c0af4f958c" tabindex="-1" value="">
+                                </div>
+                                <div class="optionalParent">
+                                    <div class="clear foot">
+                                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold cursor-pointer" value="Subscribe">
+                                    </div>
+                                </div>
+                                <div id="mce-responses" class="clear foot">
+                                    <div class="response" id="mce-error-response" style="display: none;"></div>
+                                    <div class="response" id="mce-success-response" style="display: none;"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20" style="background-color: #003366;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Connect with Investors?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Join the PocketVC platform and discover how our AI-powered matching can help you find the right investors for your startup.
+            </p>
+            <a href="signup.html" class="cta-button-transparent text-lg px-8 py-4 text-white">
+                Join Waiting List
+            </a>
+        </div>
+    </section>
+
+    <!-- Blog Modal -->
+    <div id="blogModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-header" id="modalHeader">
+                <!-- Header content will be populated by JavaScript -->
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Body content will be populated by JavaScript -->
+            </div>
+            <div class="modal-footer" id="modalFooter">
+                <!-- Footer content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Success Modal -->
+    <div id="newsletterModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🎉 Successfully Subscribed!</h2>
+                <span class="close" onclick="closeNewsletterModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for subscribing to PocketVC! You'll receive the latest venture capital insights, startup trends, and investment opportunities delivered to your inbox.</p>
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeNewsletterModal()" class="btn btn-primary">Got it!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white text-blue-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <a href="index.html">
+                            <img src="logo.png" alt="PocketVC Logo" class="h-16 w-auto">
+                        </a>
+                        <span class="text-xl font-bold text-blue-200">PocketVC</span>
+                    </div>
+                    <p class="text-blue-200 mb-4 max-w-md">
+                        Connecting venture capital firms with innovative startups through smart matching and AI-powered insights.
+                    </p>
+                    <a href="https://www.linkedin.com/company/pocketvc-connect" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-200 hover:text-blue-300" aria-label="Follow PocketVC on LinkedIn">
+                        <span class="text-blue-200">Follow us on LinkedIn</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.2 2.3-2.46 4.73-2.46 5.06 0 5.99 3.33 5.99 7.66V24h-5v-7.5c0-1.79-.03-4.09-2.49-4.09-2.49 0-2.88 1.94-2.88 3.96V24h-5V8z"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Company Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-200">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-blue-200 hover:text-blue-300 transition-colors">About</a></li>
+                        <li><a href="signup.html" class="text-blue-200 hover:text-blue-300 transition-colors">Sign Up</a></li>
+                        <li><a href="faq.html" class="text-blue-200 hover:text-blue-300 transition-colors">FAQ</a></li>
+                        <li><a href="contact.html" class="text-blue-200 hover:text-blue-300 transition-colors">Contact Us</a></li>
+                        <li><a href="blog.html" class="text-blue-200 hover:text-blue-300 transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-200">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="privacy.html" class="text-blue-200 hover:text-blue-300 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-blue-200 hover:text-blue-300 transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-200 mt-8 pt-8 text-center">
+                <p class="text-blue-200">&copy; 2025 PocketVC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Blog Modal and Mobile Menu -->
+    <script>
+        // Blog Modal functionality
+        const blogData = {
+            'featured-article': {
+                title: 'Not Another Platform "Helping to Connect VCs and Startups" 🙄',
+                content: `
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>Not another platform "Helping to connect VCs and startups" 🙄</strong>
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        I started PocketVC after years sifting through events and decks. Most were irrelevant. Too many great startups never found the right funding. So we need your help! 💡
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>Share, get involved, and give unfiltered feedback (the harsher, the better!).</strong> You can do this by signing up for the waitlist at PocketVC.co.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        It's not just a platform with a list of investors. We understand what startups actually do generating curated, relevant deal flow for VCs and saving founders countless hours. We also have a tonne of ideas to make sourcing easier, so stay tuned!
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>With your help we can help keep PocketVC free, forever.</strong>
+                    </p>
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <p class="text-sm text-blue-800">
+                            <strong>📱 Read the full post on LinkedIn:</strong> <a href="#" class="underline hover:text-blue-600" target="_blank">[LinkedIn URL will be added here]</a>
+                        </p>
+                    </div>
+                    <div class="mt-4 p-4 bg-green-50 rounded-lg">
+                        <p class="text-sm text-green-800">
+                            <strong>🚀 Ready to join the waitlist?</strong> <a href="signup.html" class="underline hover:text-green-600">Sign up at PocketVC.co</a>
+                        </p>
+                    </div>
+                `
+            },
+            'linkedin-post': {
+                title: 'Not Another Platform "Helping to Connect VCs and Startups" 🙄',
+                content: `
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>Not another platform "Helping to connect VCs and startups" 🙄</strong>
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        I started PocketVC after years sifting through events and decks. Most were irrelevant. Too many great startups never found the right funding. So we need your help! 💡
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>Share, get involved, and give unfiltered feedback (the harsher, the better!).</strong> You can do this by signing up for the waitlist at PocketVC.co.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        It's not just a platform with a list of investors. We understand what startups actually do generating curated, relevant deal flow for VCs and saving founders countless hours. We also have a tonne of ideas to make sourcing easier, so stay tuned!
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>With your help we can help keep PocketVC free, forever.</strong>
+                    </p>
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <p class="text-sm text-blue-800">
+                            <strong>📱 Read the full post on LinkedIn:</strong> <a href="#" class="underline hover:text-blue-600" target="_blank">[LinkedIn URL will be added here]</a>
+                        </p>
+                    </div>
+                    <div class="mt-4 p-4 bg-green-50 rounded-lg">
+                        <p class="text-sm text-green-800">
+                            <strong>🚀 Ready to join the waitlist?</strong> <a href="signup.html" class="underline hover:text-green-600">Sign up at PocketVC.co</a>
+                        </p>
+                    </div>
+                `
+            },
+            'pitch-guide': {
+                title: 'How to Pitch Your Startup to VCs: A Complete Guide',
+                content: `
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>Pitching to venture capitalists is both an art and a science.</strong> Here's your comprehensive guide to creating a compelling pitch that gets VCs excited about your startup.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>1. The Problem & Solution (2-3 minutes)</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Start with a compelling problem statement that resonates with your audience</li>
+                        <li>Clearly articulate your unique solution and why it's better than alternatives</li>
+                        <li>Use data and examples to make the problem tangible</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>2. Market Opportunity (1-2 minutes)</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Define your Total Addressable Market (TAM)</li>
+                        <li>Explain your go-to-market strategy</li>
+                        <li>Show market validation through early customers or partnerships</li>
+                        </ul>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>3. Business Model & Traction (2-3 minutes)</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Explain how you make money and unit economics</li>
+                        <li>Show key metrics: revenue, growth rate, customer acquisition cost</li>
+                        <li>Highlight major milestones and achievements</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-6">
+                        <strong>Pro Tips:</strong> Practice your pitch until it's natural, prepare for tough questions, and always end with a clear ask for the amount you're raising and how you'll use the funds.
+                    </p>
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <p class="text-sm text-blue-800">
+                            <strong>📚 Source:</strong> Based on insights from leading VCs and successful startup founders
+                        </p>
+                    </div>
+                    <div class="mt-4 p-4 bg-green-50 rounded-lg">
+                        <p class="text-sm text-green-800">
+                            <strong>🚀 Ready to connect with VCs?</strong> <a href="signup.html" class="underline hover:text-green-600">Join the PocketVC waitlist</a>
+                        </p>
+                    </div>
+                `
+            },
+            'uk-vc-market': {
+                title: 'UK Venture Capital Market: 2024 Review & 2025 Outlook',
+                content: `
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>The UK venture capital market showed resilience in 2024</strong> despite global economic headwinds, with total VC investment reaching £15.2 billion across 1,847 deals.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>2024 Key Highlights:</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Fintech led with £4.1B in funding, followed by AI/ML at £2.8B</li>
+                        <li>London remained the dominant hub with 65% of all deals</li>
+                        <li>Series A rounds averaged £8.5M, up 12% from 2023</li>
+                        <li>International investors participated in 40% of deals</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>2025 Outlook:</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Continued focus on deeptech and climate tech investments</li>
+                        <li>Increased interest in AI infrastructure and applications</li>
+                        <li>Growing importance of ESG criteria in investment decisions</li>
+                        <li>Expected recovery in late-stage funding rounds</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-6">
+                        <strong>Opportunities:</strong> The UK's strong talent pool, supportive government policies, and access to European markets position it well for continued VC growth in 2025.
+                    </p>
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <p class="text-sm text-blue-800">
+                            <strong>📊 Source:</strong> Data compiled from BVCA, PitchBook, and industry reports
+                        </p>
+                    </div>
+                    <div class="mt-4 p-4 bg-green-50 rounded-lg">
+                        <p class="text-sm text-green-800">
+                            <strong>🚀 Ready to connect with UK VCs?</strong> <a href="signup.html" class="underline hover:text-green-600">Join the PocketVC waitlist</a>
+                        </p>
+                    </div>
+                `
+            },
+            'vc-due-diligence': {
+                title: 'The VC Due Diligence Process: What Startups Need to Know',
+                content: `
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>Understanding the VC due diligence process is crucial for startup founders.</strong> Here's what to expect and how to prepare for a thorough evaluation.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>1. Business Due Diligence</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Market size and competitive landscape analysis</li>
+                        <li>Business model validation and unit economics review</li>
+                        <li>Customer interviews and market feedback</li>
+                        <li>Financial projections and assumptions testing</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>2. Technical Due Diligence</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Technology stack and architecture review</li>
+                        <li>IP portfolio and patent analysis</li>
+                        <li>Security and compliance assessment</li>
+                        <li>Scalability and technical roadmap evaluation</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>3. Legal & Financial Due Diligence</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Corporate structure and cap table review</li>
+                        <li>Contract and agreement analysis</li>
+                        <li>Regulatory compliance verification</li>
+                        <li>Financial statements and audit review</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-6">
+                        <strong>Preparation Tips:</strong> Organize all documents in advance, be transparent about challenges, prepare your team for interviews, and maintain detailed records of all business activities.
+                    </p>
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <p class="text-sm text-blue-800">
+                            <strong>📋 Source:</strong> Compiled from VC firm due diligence checklists and founder experiences
+                        </p>
+                    </div>
+                    <div class="mt-4 p-4 bg-green-50 rounded-lg">
+                        <p class="text-sm text-green-800">
+                            <strong>🚀 Ready to prepare for VC meetings?</strong> <a href="signup.html" class="underline hover:text-green-600">Join the PocketVC waitlist</a>
+                        </p>
+                    </div>
+                `
+            },
+            'emerging-tech': {
+                title: 'Emerging Technologies: The Next Big Investment Opportunities',
+                content: `
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>Several emerging technologies are capturing significant investor attention</strong> as they approach commercialization and market adoption.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>1. Quantum Computing</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Quantum algorithms for optimization and cryptography</li>
+                        <li>Quantum hardware development and error correction</li>
+                        <li>Applications in drug discovery and financial modeling</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>2. Synthetic Biology</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Engineered organisms for sustainable manufacturing</li>
+                        <li>Lab-grown proteins and alternative food sources</li>
+                        <li>Biomedical applications and personalized medicine</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>3. Advanced Robotics & Automation</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Collaborative robots for manufacturing and healthcare</li>
+                        <li>Autonomous systems for logistics and delivery</li>
+                        <li>AI-powered robotic process automation</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>4. Clean Energy Technologies</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Advanced battery technologies and energy storage</li>
+                        <li>Green hydrogen production and utilization</li>
+                        <li>Carbon capture and utilization systems</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-6">
+                        <strong>Investment Focus:</strong> VCs are looking for technologies with clear paths to market, strong IP protection, and teams capable of navigating regulatory and technical challenges.
+                    </p>
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <p class="text-sm text-blue-800">
+                            <strong>🔬 Source:</strong> Based on recent VC investment trends and technology market analysis
+                        </p>
+                    </div>
+                    <div class="mt-4 p-4 bg-green-50 rounded-lg">
+                        <p class="text-sm text-green-800">
+                            <strong>🚀 Ready to connect with deeptech VCs?</strong> <a href="signup.html" class="underline hover:text-green-600">Join the PocketVC waitlist</a>
+                        </p>
+                    </div>
+                `
+            },
+            'investor-network': {
+                title: 'Building a Strong Investor Network: Tips for Founders',
+                content: `
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>Building meaningful relationships with investors is crucial for startup success.</strong> Here's how to develop and maintain a strong investor network.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>1. Start Early and Build Relationships</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Begin networking before you need funding</li>
+                        <li>Attend industry events, conferences, and meetups</li>
+                        <li>Engage with investors on social media and through content</li>
+                        <li>Seek advice and feedback, not just money</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>2. Provide Value and Stay Connected</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Share industry insights and market updates</li>
+                        <li>Introduce them to other promising startups</li>
+                        <li>Keep them updated on your progress regularly</li>
+                        <li>Be responsive and professional in all communications</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>3. Leverage Warm Introductions</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Ask existing investors for introductions to their network</li>
+                        <li>Use mutual connections on LinkedIn</li>
+                        <li>Leverage accelerator and incubator networks</li>
+                        <li>Build relationships with other founders who can make introductions</li>
+                    </ul>
+                    <p class="text-lg text-gray-600">
+                        <strong>Long-term Strategy:</strong> Focus on building genuine relationships based on mutual respect and value creation. A strong investor network can provide not just funding, but also strategic guidance, industry connections, and ongoing support.
+                    </p>
+                `
+            },
+            'ai-in-vc': {
+                title: 'AI Revolution in Venture Capital: How Technology is Transforming Investment Decisions',
+                content: `
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>Artificial Intelligence is revolutionizing the venture capital industry,</strong> transforming how investors discover, evaluate, and make decisions about startup investments.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>1. AI-Powered Deal Sourcing</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Machine learning algorithms analyze startup databases and news sources</li>
+                        <li>Natural language processing identifies emerging trends and opportunities</li>
+                        <li>Predictive analytics forecast startup success probability</li>
+                        <li>Automated screening reduces manual research time by 70%</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>2. Enhanced Due Diligence</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>AI analyzes financial statements and business metrics</li>
+                        <li>Sentiment analysis of customer reviews and social media</li>
+                        <li>Competitive landscape mapping and market analysis</li>
+                        <li>Risk assessment and fraud detection</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>3. Portfolio Management</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>Real-time performance monitoring and alerts</li>
+                        <li>Predictive modeling for portfolio optimization</li>
+                        <li>Automated reporting and investor updates</li>
+                        <li>Exit timing recommendations based on market conditions</li>
+                    </ul>
+                    <p class="text-lg text-gray-600">
+                        <strong>The Future:</strong> As AI technology continues to advance, VCs who embrace these tools will gain significant competitive advantages in deal flow, decision-making speed, and portfolio performance. The key is finding the right balance between AI insights and human judgment.
+                    </p>
+                `
+            }
+        };
+
+        // Define modal functions
+        function openModal(blogId) {
+            console.log('Opening modal for:', blogId);
+            const modal = document.getElementById('blogModal');
+            const modalHeader = document.getElementById('modalHeader');
+            const modalBody = document.getElementById('modalBody');
+            const modalFooter = document.getElementById('modalFooter');
+            const blog = blogData[blogId];
+            
+            if (blog && modal && modalHeader && modalBody && modalFooter) {
+                // Set header content
+                modalHeader.innerHTML = `
+                    <h2>${blog.title}</h2>
+                    <div class="article-meta">
+                        <span class="article-category">${getCategoryForArticle(blogId)}</span>
+                        <span class="article-date">${getDateForArticle(blogId)}</span>
+                    </div>
+                `;
+                
+                // Set body content
+                modalBody.innerHTML = blog.content;
+                
+                // Hide footer content
+                modalFooter.innerHTML = ``;
+                modalFooter.style.display = 'none';
+                
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                console.log('Modal opened successfully');
+            } else {
+                console.error('Modal elements not found or blog data missing:', { blogId, modal, modalHeader, modalBody, modalFooter, blog });
+            }
+        }
+        
+        // Helper functions for modal content
+        function getCategoryForArticle(blogId) {
+            const categories = {
+                'featured-article': 'Company Announcement',
+                'pitch-guide': 'Research',
+                'uk-vc-market': 'News',
+                'vc-due-diligence': 'Research',
+                'emerging-tech': 'News'
+            };
+            return categories[blogId] || 'Article';
+        }
+
+        // Newsletter subscription handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsletterForm = document.getElementById('mc-embedded-subscribe-form');
+            
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Prevent default form submission
+                    
+                    const emailInput = document.getElementById('mce-EMAIL');
+                    const email = emailInput.value;
+                    
+                    if (email && email.includes('@')) {
+                        // Simulate successful subscription
+                        showNewsletterSuccess();
+                        
+                        // Clear the form
+                        emailInput.value = '';
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                });
+            }
+        });
+
+        function showNewsletterSuccess() {
+            const modal = document.getElementById('newsletterModal');
+            if (modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeNewsletterModal() {
+            const modal = document.getElementById('newsletterModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const newsletterModal = document.getElementById('newsletterModal');
+            if (event.target === newsletterModal) {
+                closeNewsletterModal();
+            }
+        }
+        
+        function getDateForArticle(blogId) {
+            const dates = {
+                'featured-article': 'September 23, 2025',
+                'pitch-guide': 'September 20, 2025',
+                'uk-vc-market': 'September 18, 2025',
+                'vc-due-diligence': 'September 15, 2025',
+                'emerging-tech': 'September 12, 2025'
+            };
+            return dates[blogId] || 'Recent';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('blogModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('blogModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenuDropdown = document.getElementById('mobile-menu-dropdown');
+            
+            if (mobileMenuButton && mobileMenuDropdown) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenuDropdown.classList.toggle('hidden');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuButton.contains(event.target) && !mobileMenuDropdown.contains(event.target)) {
+                        mobileMenuDropdown.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Search Functionality
+            function setupSearch(searchInput) {
+                if (!searchInput) return;
+                
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        const query = this.value.trim().toLowerCase();
+                        if (query) {
+                            performSearch(query);
+                        }
+                    }
+                });
+
+                // Also handle search icon click
+                const searchIcon = searchInput.parentElement.querySelector('svg');
+                if (searchIcon) {
+                    searchIcon.addEventListener('click', function() {
+                        const query = searchInput.value.trim().toLowerCase();
+                        if (query) {
+                            performSearch(query);
+                        }
+                    });
+                }
+            }
+
+            function performSearch(query) {
+                // Define search terms and their corresponding pages
+                const searchMap = {
+                    'about': 'about.html',
+                    'team': 'about.html',
+                    'mission': 'about.html',
+                    'values': 'about.html',
+                    'daniel': 'about.html',
+                    'blog': 'blog.html',
+                    'news': 'blog.html',
+                    'articles': 'blog.html',
+                    'insights': 'blog.html',
+                    'signup': 'signup.html',
+                    'sign up': 'signup.html',
+                    'sign': 'signup.html',
+                    'join': 'signup.html',
+                    'waitlist': 'signup.html',
+                    'register': 'signup.html',
+                    'faq': 'faq.html',
+                    'questions': 'faq.html',
+                    'help': 'faq.html',
+                    'contact': 'contact.html',
+                    'email': 'contact.html',
+                    'message': 'contact.html',
+                    'privacy': 'privacy.html',
+                    'data': 'privacy.html',
+                    'terms': 'terms.html',
+                    'conditions': 'terms.html',
+                    'legal': 'terms.html',
+                    'venture': 'index.html',
+                    'capital': 'index.html',
+                    'startup': 'index.html',
+                    'investment': 'index.html',
+                    'funding': 'index.html',
+                    'vc': 'index.html',
+                    'pocketvc': 'index.html'
+                };
+
+                // Find the best match
+                let bestMatch = null;
+                let bestScore = 0;
+
+                for (const [term, page] of Object.entries(searchMap)) {
+                    if (query.includes(term) && term.length > bestScore) {
+                        bestMatch = page;
+                        bestScore = term.length;
+                    }
+                }
+
+                // If no specific match found, default to index
+                if (!bestMatch) {
+                    bestMatch = 'index.html';
+                }
+
+                // Redirect to the best matching page
+                window.location.href = bestMatch;
+            }
+
+            // Setup all search inputs on the page
+            const searchInputs = document.querySelectorAll('.search-input');
+            searchInputs.forEach(setupSearch);
+
+            // Mailchimp form is now handled by their built-in JavaScript
+            // No additional JavaScript needed for the newsletter subscription
+        });
+    </script>
+    
+    <!-- Mailchimp JavaScript -->
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">
+        (function($) {
+            window.fnames = new Array(); 
+            window.ftypes = new Array();
+            fnames[0]='EMAIL';
+            ftypes[0]='email';
+            fnames[1]='FNAME';
+            ftypes[1]='text';
+            fnames[2]='LNAME';
+            ftypes[2]='text';
+            fnames[3]='ADDRESS';
+            ftypes[3]='address';
+            fnames[4]='PHONE';
+            ftypes[4]='phone';
+            fnames[5]='BIRTHDAY';
+            ftypes[5]='birthday';
+            fnames[6]='COMPANY';
+            ftypes[6]='text';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
+    </script>
+</body>
+</html>
