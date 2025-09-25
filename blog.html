@@ -486,6 +486,16 @@
       "blogPost": [
         {
           "@type": "BlogPosting",
+          "headline": "Why It Takes Longer Than Ever to Close a VC Round",
+          "description": "Analysis of why VC funding rounds are taking longer in 2025 and how smarter matching can solve the problem",
+          "datePublished": "2025-09-25",
+          "author": {
+            "@type": "Person",
+            "name": "Daniel Barnard"
+          }
+        },
+        {
+          "@type": "BlogPosting",
           "headline": "The Future of Venture Capital: AI-Powered Startup Matching",
           "description": "How artificial intelligence is revolutionizing the way VCs discover and evaluate startups",
           "datePublished": "2025-01-27",
@@ -651,8 +661,31 @@
             <!-- Article Grid -->
             <div class="mt-16">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Latest Articles</h2>
-                <div class="grid md:grid-cols-1 lg:grid-cols-1 gap-6 max-w-md mx-auto">
-                    <!-- Article 1 -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                    <!-- Article 1 (Featured Article) -->
+                    <div class="blog-card cursor-pointer" onclick="openModal('vc-funding-timeline')">
+                        <!-- Article Image -->
+                        <div class="h-48 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
+                            <div class="text-center">
+                                <svg class="w-16 h-16 text-orange-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <p class="text-orange-600 font-semibold text-sm">Analysis</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Article Content -->
+                        <div class="p-6">
+                            <div class="text-xs font-semibold text-orange-600 uppercase tracking-wide mb-2">Industry Analysis</div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-3">Why It Takes Longer Than Ever to Close a VC Round</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                The startup world is supposed to move fast. Yet in 2025, raising a VC round feels slower than ever. Here's why it's happening and how we can fix it.
+                            </p>
+                            <div class="text-sm text-blue-600 font-semibold">Read more →</div>
+                        </div>
+                    </div>
+
+                    <!-- Article 2 -->
                     <div class="blog-card cursor-pointer" onclick="openModal('featured-article')">
                         <!-- Article Image -->
                         <div class="h-48 bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
@@ -833,7 +866,7 @@
                     </p>
                     <div class="mt-6 p-4 bg-blue-50 rounded-lg">
                         <p class="text-sm text-blue-800">
-                            <strong>📱 Read the full post on LinkedIn:</strong> <a href="#" class="underline hover:text-blue-600" target="_blank">[LinkedIn URL will be added here]</a>
+                            <strong>📱 Read the full post on LinkedIn:</strong> <a href="https://www.linkedin.com/feed/update/urn:li:activity:7376522034731819010/" class="underline hover:text-blue-600" target="_blank">Not Another Platform "Helping to Connect VCs and Startups" 🙄</a>
                         </p>
                     </div>
                     <div class="mt-4 p-4 bg-green-50 rounded-lg">
@@ -863,7 +896,7 @@
                     </p>
                     <div class="mt-6 p-4 bg-blue-50 rounded-lg">
                         <p class="text-sm text-blue-800">
-                            <strong>📱 Read the full post on LinkedIn:</strong> <a href="#" class="underline hover:text-blue-600" target="_blank">[LinkedIn URL will be added here]</a>
+                            <strong>📱 Read the full post on LinkedIn:</strong> <a href="https://www.linkedin.com/feed/update/urn:li:activity:7376522034731819010/" class="underline hover:text-blue-600" target="_blank">Not Another Platform "Helping to Connect VCs and Startups" 🙄</a>
                         </p>
                     </div>
                     <div class="mt-4 p-4 bg-green-50 rounded-lg">
@@ -1133,6 +1166,68 @@
                         <strong>The Future:</strong> As AI technology continues to advance, VCs who embrace these tools will gain significant competitive advantages in deal flow, decision-making speed, and portfolio performance. The key is finding the right balance between AI insights and human judgment.
                     </p>
                 `
+            },
+            'vc-funding-timeline': {
+                title: 'Why It Takes Longer Than Ever to Close a VC Round',
+                content: `
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>The startup world is supposed to move fast.</strong> Yet in 2025, raising a VC round feels slower than ever. Even with AI tools, pitch platforms, and instant connectivity, deals are dragging out.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        Here's why it's happening, what's at stake, and how we can fix it.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>⏳ 1. The Timeline Is Expanding</strong>
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li>In Q2 2025, the median time between funding rounds across all stages hit 696 days (~23 months) — up from 21 months just one quarter earlier (Carta)</li>
+                        <li>Meanwhile, nearly 80% of all new VC funding in 2025 is flowing into companies with an AI component (Crunchbase News)</li>
+                        <li>For everyone else, capital feels even further out of reach</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>🔍 2. The Causes Behind the Slowdown</strong>
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>a) Noise Overload & Poor Matching</strong><br>
+                        Startups blast out hundreds of cold decks. VCs sift through misaligned pitches. Many never even reach the right decision-makers. A study of 17,500 pitch decks showed most lacked clarity, structure, or relevant metrics (Crunchbase News). Even in curated settings, investors report 50–80% of their time is wasted on misaligned pitches.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>b) Capital Caution & Harsher Due Diligence</strong><br>
+                        Investors are more selective, demanding proof on unit economics, defensibility, margins, and retention. That means more back-and-forth, more data requests, and slower closes.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>c) LPs Are Pulling Back</strong><br>
+                        Many limited partners (LPs) are moving money into safer bets like private credit and infrastructure, leaving fewer dollars to flow into new VC funds. That trickles down — fewer active funds means tighter purse strings for startups.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        <strong>🚀 3. What Needs to Change — And How PocketVC Fits In</strong>
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        We don't need more noise. We need smarter matching, filtering, and friction reduction.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        At PocketVC, we're building around that:
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 mb-4">
+                        <li><strong>Deeper AI understanding</strong> — we won't give away the full secret sauce, but it goes far beyond keyword matching or pitch parsing. Think of it as modeling the DNA of a startup</li>
+                        <li><strong>Curated deals, not mass lists</strong> — smaller, higher-quality matches for investors</li>
+                        <li><strong>Less waste, more time</strong> — founders spend less time chasing; VCs spend less time rejecting</li>
+                        <li><strong>Iterative learning</strong> — every match, rejection, and conversation tightens our engine</li>
+                    </ul>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Because if innovation demands speed, the fundraising infrastructure has to catch up.
+                    </p>
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <p class="text-sm text-blue-800">
+                            <strong>📱 Read the full post on LinkedIn:</strong> <a href="https://www.linkedin.com/pulse/why-takes-longer-than-ever-close-vc-round-daniel-barnard-ku0he/" class="underline hover:text-blue-600" target="_blank">Why It Takes Longer Than Ever to Close a VC Round</a>
+                        </p>
+                    </div>
+                    <div class="mt-4 p-4 bg-green-50 rounded-lg">
+                        <p class="text-sm text-green-800">
+                            <strong>🚀 Ready to experience faster VC matching?</strong> <a href="signup.html" class="underline hover:text-green-600">Join the PocketVC waitlist</a>
+                        </p>
+                    </div>
+                `
             }
         };
 
@@ -1174,6 +1269,7 @@
         function getCategoryForArticle(blogId) {
             const categories = {
                 'featured-article': 'Company Announcement',
+                'vc-funding-timeline': 'Industry Analysis',
                 'pitch-guide': 'Research',
                 'uk-vc-market': 'News',
                 'vc-due-diligence': 'Research',
@@ -1233,6 +1329,7 @@
         function getDateForArticle(blogId) {
             const dates = {
                 'featured-article': 'September 23, 2025',
+                'vc-funding-timeline': 'September 25, 2025',
                 'pitch-guide': 'September 20, 2025',
                 'uk-vc-market': 'September 18, 2025',
                 'vc-due-diligence': 'September 15, 2025',
