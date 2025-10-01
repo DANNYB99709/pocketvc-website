@@ -52,42 +52,47 @@ function initializeCommon() {
     }
 
     function performSearch(query) {
+        // Detect if we're in pages folder or root
+        const isInPages = window.location.pathname.includes('/pages/');
+        const pagePrefix = isInPages ? '' : 'pages/';
+        const rootPath = isInPages ? '../' : '';
+        
         // Define search terms and their corresponding pages
         const searchMap = {
-            'about': '/pages/about.html',
-            'team': '/pages/about.html',
-            'mission': '/pages/about.html',
-            'values': '/pages/about.html',
-            'daniel': '/pages/about.html',
-            'blog': '/pages/blog.html',
-            'news': '/pages/blog.html',
-            'articles': '/pages/blog.html',
-            'insights': '/pages/blog.html',
-            'signup': '/pages/signup.html',
-            'sign up': '/pages/signup.html',
-            'sign': '/pages/signup.html',
-            'join': '/pages/signup.html',
-            'sign in': '/pages/signup.html',
-            'waitlist': '/pages/signup.html',
-            'register': '/pages/signup.html',
-            'faq': '/pages/faq.html',
-            'questions': '/pages/faq.html',
-            'help': '/pages/faq.html',
-            'contact': '/pages/contact.html',
-            'email': '/pages/contact.html',
-            'message': '/pages/contact.html',
-            'privacy': '/pages/privacy.html',
-            'data': '/pages/privacy.html',
-            'terms': '/pages/terms.html',
-            'conditions': '/pages/terms.html',
-            'legal': '/pages/terms.html',
-            'venture': '/index.html',
-            'capital': '/index.html',
-            'startup': '/index.html',
-            'investment': '/index.html',
-            'funding': '/index.html',
-            'vc': '/index.html',
-            'pocketvc': '/index.html'
+            'about': pagePrefix + 'about.html',
+            'team': pagePrefix + 'about.html',
+            'mission': pagePrefix + 'about.html',
+            'values': pagePrefix + 'about.html',
+            'daniel': pagePrefix + 'about.html',
+            'blog': pagePrefix + 'blog.html',
+            'news': pagePrefix + 'blog.html',
+            'articles': pagePrefix + 'blog.html',
+            'insights': pagePrefix + 'blog.html',
+            'signup': pagePrefix + 'signup.html',
+            'sign up': pagePrefix + 'signup.html',
+            'sign': pagePrefix + 'signup.html',
+            'join': pagePrefix + 'signup.html',
+            'sign in': pagePrefix + 'signup.html',
+            'waitlist': pagePrefix + 'signup.html',
+            'register': pagePrefix + 'signup.html',
+            'faq': pagePrefix + 'faq.html',
+            'questions': pagePrefix + 'faq.html',
+            'help': pagePrefix + 'faq.html',
+            'contact': pagePrefix + 'contact.html',
+            'email': pagePrefix + 'contact.html',
+            'message': pagePrefix + 'contact.html',
+            'privacy': pagePrefix + 'privacy.html',
+            'data': pagePrefix + 'privacy.html',
+            'terms': pagePrefix + 'terms.html',
+            'conditions': pagePrefix + 'terms.html',
+            'legal': pagePrefix + 'terms.html',
+            'venture': rootPath + 'index.html',
+            'capital': rootPath + 'index.html',
+            'startup': rootPath + 'index.html',
+            'investment': rootPath + 'index.html',
+            'funding': rootPath + 'index.html',
+            'vc': rootPath + 'index.html',
+            'pocketvc': rootPath + 'index.html'
         };
 
         // Find the best match
@@ -103,7 +108,7 @@ function initializeCommon() {
 
         // If no specific match found, default to index
         if (!bestMatch) {
-            bestMatch = '/index.html';
+            bestMatch = rootPath + 'index.html';
         }
 
         // Redirect to the best matching page

@@ -7,7 +7,8 @@
    Note: .hero-gradient moved to main.css
    ============= */
 .hero-gradient {
-    min-height: 100vh; /* Page-specific override */
+    background: #d9e6f2 !important; /* Solid color instead of gradient for seamless iPhone blend */
+    min-height: 100vh;
 }
 
 /* ===================
