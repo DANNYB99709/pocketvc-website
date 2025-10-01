@@ -245,7 +245,7 @@
     <div id="nav-placeholder"></div>
 
     <!-- Hero Section with Video Background -->
-    <section id="main-content" class="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="main-content" class="relative h-screen flex justify-center overflow-hidden">
         <!-- Video Background -->
         <video autoplay muted loop playsinline preload="metadata" class="absolute inset-0 w-full h-full object-cover z-0" aria-label="PocketVC hero background animation">
             <source src="media/hero.MP4" type="video/mp4">
@@ -253,26 +253,19 @@
         </video>
         
         <!-- Content -->
-        <div class="relative z-20 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
-            <!-- Title (Top) -->
-            <h1 class="text-5xl md:text-7xl font-bold mb-2" style="color: #004b87;">
+        <div class="relative z-20 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Title (Top) - Start at 100px to clear header -->
+            <h1 class="text-5xl md:text-7xl font-bold" style="color: #004b87; padding-top: 64px;">
                 Connecting VC's with Innovative Startups
             </h1>
             
-            <!-- Spacing (replaces logo) -->
-            <div class="mb-8">
-                <div class="mx-auto mb-6" style="height: 8rem;">
-                    <!-- Empty space to maintain spacing -->
-                </div>
-            </div>
-            
-            <!-- Text (Bottom) -->
-            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style="color: #004b87;">
+            <!-- Text (Middle) - Start at 200px -->
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto" style="color: #004b87; padding-top: 164px;">
                 PocketVC is changing the way startups and investors connect. Don't miss your chance to get early access - Beta spots are limited.
             </p>
             
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <!-- CTA Buttons (Bottom) - Start at 50px after text -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" style="padding-top: 50px;">
                 <a href="pages/signup.html" class="cta-button-transparent text-lg px-8 py-4" style="color: #004b87;">
                     Join the Platform
                 </a>
