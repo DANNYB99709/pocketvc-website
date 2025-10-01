@@ -17,9 +17,9 @@
     <meta name="twitter:title" content="Join PocketVC Waiting List | Connect VCs and Startups" />
     <meta name="twitter:description" content="Join the PocketVC waitlist and be first to connect with the right investors or startups." />
     <meta name="twitter:image" content="https://pocketvc.co/media/logo.png" />
-    <meta name="theme-color" content="#f0f4f8" />
+    <meta name="theme-color" content="#d9e6f2" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="msapplication-navbutton-color" content="#f0f4f8">
+    <meta name="msapplication-navbutton-color" content="#d9e6f2">
     <link rel="icon" type="image/x-icon" href="../media/favicon.ico" />
     <link rel="icon" type="image/png" sizes="48x48" href="../media/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="../media/favicon-32x32.png" />
@@ -71,7 +71,7 @@
 
               <!-- Hero Section with Image and Selection -->
      <section class="hero-gradient min-h-screen flex items-center">
-                   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 pb-6">
+                   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-32 pb-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                                    <!-- Left Side - Image -->
                 <div class="text-center lg:text-left hidden lg:block h-full lg:h-[506px]" style="background: #d9e6f2;">
@@ -702,7 +702,35 @@
                 e.target.reset();
             } catch (err) {
                 console.error('Submission error:', err);
-                showMessage('error', 'Sorry, something went wrong. Please try again in a moment.');
+                
+                // Detailed error handling
+                if (err.code === '23505') {
+                    // Unique constraint violation
+                    if (err.message.includes('unique_company_name')) {
+                        showMessage('error', 'This company is already on our waiting list! If you need to update your information or add another team member, please contact us at hello@pocketvc.co');
+                    } else if (err.message.includes('unique_email')) {
+                        showMessage('error', 'This email address is already registered! Please use a different email or contact us at hello@pocketvc.co if you need help.');
+                    } else {
+                        showMessage('error', 'This entry already exists in our system. Please contact us at hello@pocketvc.co to update your information.');
+                    }
+                } else if (err.code === '42501') {
+                    // Permission denied (RLS policy)
+                    showMessage('error', 'Permission error: Unable to submit. Please contact us at hello@pocketvc.co');
+                } else if (err.code === 'PGRST116') {
+                    // Invalid request format
+                    showMessage('error', 'Invalid form data. Please check all required fields are filled correctly.');
+                } else if (err.message && err.message.includes('fetch')) {
+                    // Network error
+                    showMessage('error', 'Network error: Please check your internet connection and try again.');
+                } else if (err.message && err.message.includes('CORS')) {
+                    // CORS error
+                    showMessage('error', 'Connection blocked. Please ensure you\'re accessing the site from the correct URL.');
+                } else if (err.message) {
+                    // Show specific error message
+                    showMessage('error', `Error: ${err.message}`);
+                } else {
+                    showMessage('error', 'Sorry, something went wrong. Please try again or contact us at hello@pocketvc.co');
+                }
             } finally {
                 if (submitLabel && submitSpinner) {
                     submitLabel.textContent = 'Join Waiting List';
@@ -1504,110 +1532,8 @@
                 }
             })();
         </script>
-
-        <!-- JavaScript for Mobile Menu -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Mobile Menu Toggle
-                const mobileMenuButton = document.getElementById('mobile-menu-button');
-                const mobileMenuDropdown = document.getElementById('mobile-menu-dropdown');
-                
-                if (mobileMenuButton && mobileMenuDropdown) {
-                    mobileMenuButton.addEventListener('click', function() {
-                        mobileMenuDropdown.classList.toggle('hidden');
-                    });
-                    
-                    // Close menu when clicking outside
-                    document.addEventListener('click', function(event) {
-                        if (!mobileMenuButton.contains(event.target) && !mobileMenuDropdown.contains(event.target)) {
-                            mobileMenuDropdown.classList.add('hidden');
-                        }
-                    });
-                }
-
-                // Search Functionality
-                function setupSearch(searchInput) {
-                    if (!searchInput) return;
-                    
-                    searchInput.addEventListener('keypress', function(e) {
-                        if (e.key === 'Enter') {
-                            const query = this.value.trim().toLowerCase();
-                            if (query) {
-                                performSearch(query);
-                            }
-                        }
-                    });
-
-                    // Also handle search icon click
-                    const searchIcon = searchInput.parentElement.querySelector('svg');
-                    if (searchIcon) {
-                        searchIcon.addEventListener('click', function() {
-                            const query = searchInput.value.trim().toLowerCase();
-                            if (query) {
-                                performSearch(query);
-                            }
-                        });
-                    }
-                }
-
-                function performSearch(query) {
-                    // Define search terms and their corresponding pages
-                    const searchMap = {
-                        'about': 'about.html',
-                        'team': 'about.html',
-                        'mission': 'about.html',
-                        'values': 'about.html',
-                        'daniel': 'about.html',
-                                            'signup': 'signup.html',
-                    'sign up': 'signup.html',
-                    'sign': 'signup.html',
-                    'join': 'signup.html',
-                    'waitlist': 'signup.html',
-                    'register': 'signup.html',
-                        'faq': 'faq.html',
-                        'questions': 'faq.html',
-                        'help': 'faq.html',
-                        'contact': 'contact.html',
-                        'email': 'contact.html',
-                        'message': 'contact.html',
-                        'privacy': 'privacy.html',
-                        'data': 'privacy.html',
-                        'terms': 'terms.html',
-                        'conditions': 'terms.html',
-                        'legal': 'terms.html',
-                        'venture': 'index.html',
-                        'capital': 'index.html',
-                        'startup': 'index.html',
-                        'investment': 'index.html',
-                        'funding': 'index.html',
-                        'vc': 'index.html',
-                        'pocketvc': 'index.html'
-                    };
-
-                    // Find the best match
-                    let bestMatch = null;
-                    let bestScore = 0;
-
-                    for (const [term, page] of Object.entries(searchMap)) {
-                        if (query.includes(term) && term.length > bestScore) {
-                            bestMatch = page;
-                            bestScore = term.length;
-                        }
-                    }
-
-                    // If no specific match found, default to index
-                    if (!bestMatch) {
-                        bestMatch = 'index.html';
-                    }
-
-                    // Redirect to the best matching page
-                    window.location.href = bestMatch;
-                }
-
-                // Setup all search inputs on the page
-                const searchInputs = document.querySelectorAll('.search-input');
-                searchInputs.forEach(setupSearch);
-            });
-        </script>
-    </body>
-    </html>
+    
+    <!-- Page-Specific JavaScript -->
+    <script src="../scripts/signup.js"></script>
+</body>
+</html>
