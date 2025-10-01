@@ -1,0 +1,117 @@
+/* ===================================
+   Signup Page Specific Styles
+   =================================== */
+
+/* =============
+   Hero Styles
+   Note: .hero-gradient moved to main.css
+   ============= */
+.hero-gradient {
+    min-height: 100vh; /* Page-specific override */
+}
+
+/* ===================
+   User Type Card Styles
+   =================== */
+.user-type-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.user-type-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.user-type-card.selected {
+    border-color: #004b87;
+    background-color: #f0f4f8;
+    box-shadow: 0 8px 25px rgba(0, 75, 135, 0.15);
+}
+
+/* =============
+   Form Styles
+   ============= */
+.form-section {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.form-section.active {
+    max-height: none;
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-input {
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #004b87;
+    box-shadow: 0 0 0 3px rgba(0, 75, 135, 0.1);
+}
+
+/* ==============
+   Button Styles
+   Note: Base button styles in main.css
+   ============== */
+.cta-button:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ==================
+   Responsive Styles
+   ================== */
+@media (max-width: 768px) {
+    /* Remove scroll functionality - use proper padding instead */
+    #registration-form {
+        padding-bottom: 4rem !important;
+    }
+    
+    #submit-btn {
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Add extra padding for mobile browser UI elements */
+    body {
+        padding-bottom: env(safe-area-inset-bottom, 20px);
+    }
+    
+    /* Ensure the page has enough height for mobile browsers */
+    html, body {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+    
+    /* Handle mobile viewport issues */
+    @supports (-webkit-touch-callout: none) {
+        body {
+            min-height: -webkit-fill-available;
+        }
+    }
+    
+    /* Ensure form has enough bottom spacing on mobile */
+    #registration-form {
+        padding-bottom: 8rem !important;
+    }
+    
+    /* Add extra margin to the submit button on mobile */
+    #submit-btn {
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Ensure the form container itself has proper spacing */
+    .form-section {
+        margin-bottom: 4rem !important;
+    }
+}
+

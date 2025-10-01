@@ -1,0 +1,277 @@
+/* ===================================
+   Blog Page Specific Styles
+   =================================== */
+
+/* Note: .hero-gradient moved to main.css */
+
+/* =============
+   Card Styles
+   Note: Base card styles in main.css (.card)
+   ============= */
+.blog-card {
+    overflow: hidden; /* Only unique property for blog cards */
+}
+
+.blog-category {
+    background: var(--primary-100);
+    color: var(--primary-700);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* =============
+   Modal Styles
+   Note: Base modal styles in main.css
+   ============= */
+/* Blog modal customizations */
+.modal-content {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    margin: 2% auto;
+    padding: 0;
+    border-radius: 20px;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow: hidden;
+    border: 1px solid rgba(0, 75, 135, 0.1);
+}
+
+.close {
+    right: 1.5rem;
+    top: 1.5rem;
+    width: 40px;
+    height: 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.close:hover {
+    color: #f0f0f0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Modal Header */
+.modal-header {
+    background: linear-gradient(135deg, #004b87 0%, #003366 100%);
+    padding: 2rem 2.5rem 1.5rem;
+    color: white;
+    position: relative;
+}
+
+.modal-header h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.modal-header .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+.modal-header .article-category {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.modal-header .article-date {
+    opacity: 0.8;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 2.5rem;
+    max-height: 60vh;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.modal-body p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.modal-body ul {
+    font-size: 0.9rem;
+}
+
+.modal-body li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 2rem 2.5rem 2.5rem;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-footer .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.modal-footer .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    min-width: fit-content;
+}
+
+.modal-footer .btn-primary {
+    background: #004b87;
+    color: white;
+}
+
+.modal-footer .btn-primary:hover {
+    background: #003366;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 75, 135, 0.3);
+}
+
+.modal-footer .btn-secondary {
+    background: white;
+    color: #004b87;
+    border: 2px solid #004b87;
+}
+
+.modal-footer .btn-secondary:hover {
+    background: #004b87;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ====================
+   Mailchimp Styles
+   ==================== */
+/* Minimal Mailchimp Styling - Just hide branding and style button */
+#mc_embed_signup .optionalParent p {
+    display: none !important; /* Hide the Mailchimp logo/branding */
+}
+
+#mc_embed_signup .optionalParent a {
+    display: none !important; /* Hide the Mailchimp logo link */
+}
+
+/* Style the subscribe button with our brand color */
+#mc_embed_signup input[type="submit"],
+#mc-embedded-subscribe {
+    background-color: #004b87 !important; /* Our darker blue brand color */
+    color: white !important;
+    border: none !important;
+    border-radius: 0.5rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
+}
+
+#mc_embed_signup input[type="submit"]:hover,
+#mc-embedded-subscribe:hover {
+    background-color: #003366 !important; /* Darker on hover */
+}
+
+/* Add gap between email input and subscribe button */
+#mc_embed_signup .optionalParent {
+    margin-top: 1rem !important; /* Gap between input and button */
+}
+
+/* ==================
+   Responsive Styles
+   ================== */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 3% auto;
+        width: 98%;
+        max-height: 95vh;
+    }
+    
+    .modal-header {
+        padding: 1.5rem 1.5rem 1rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-body {
+        padding: 1.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .modal-footer {
+        padding: 1.5rem 1.5rem 2rem;
+        flex-direction: column;
+    }
+    
+    .modal-footer .cta-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+    }
+    
+    .modal-footer .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Make close button more prominent on mobile */
+    .close {
+        width: 50px;
+        height: 50px;
+        font-size: 2.2rem;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        color: white;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    }
+}
+
