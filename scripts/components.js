@@ -1,6 +1,6 @@
 /* ===================================
    Component Loader
-   Loads reusable components (nav, footer)
+   Loads reusable components (nav, footer, CTA)
    =================================== */
 
 (function() {
@@ -45,9 +45,10 @@
         const isInPages = window.location.pathname.includes('/pages/');
         const componentsPath = isInPages ? '../components/' : 'components/';
         
-        // Load navigation and footer components
+        // Load navigation, CTA, and footer components
         await Promise.all([
             loadComponent('nav-placeholder', componentsPath + 'nav.html', isInPages),
+            loadComponent('cta-placeholder', componentsPath + 'cta.html', isInPages),
             loadComponent('footer-placeholder', componentsPath + 'footer.html', isInPages)
         ]);
         

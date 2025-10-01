@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>PocketVC Privacy Policy | How We Collect, Use and Protect Your Data</title>
+    <title>Privacy Policy | PocketVC Data Protection & Privacy</title>
     <meta name="description" content="Read the PocketVC Privacy Policy covering data collection, use, retention, security measures, your rights, cookies and contact information.">
     <link rel="canonical" href="https://pocketvc.co/pages/privacy.html" />
     <meta property="og:type" content="website" />
@@ -37,14 +37,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Additional Resource Hints -->
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Main Styles -->
     <link rel="stylesheet" href="../styles/main.css">
     
-    <!-- Page-Specific Styles -->
-    <link rel="stylesheet" >    <!-- Google tag (gtag.js) -->
+    <!-- Structured Data: WebPage (Privacy Policy) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Privacy Policy",
+      "description": "PocketVC Privacy Policy - How we collect, use, and protect your data",
+      "url": "https://pocketvc.co/pages/privacy.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "PocketVC"
+      }
+    }
+    </script>
+    
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FM5YRS2ZFT"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -59,7 +77,7 @@
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
         <!-- Video Background -->
-        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0" aria-label="Animated wave background">
             <source src="../media/waves.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -70,7 +88,7 @@
                 Privacy <span style="color: #004b87;">Policy</span>
             </h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style="color: #004b87;">
-                We are committed to protecting your privacy and ensuring the security of your personal information. This policy explains how we collect, use, and safeguard your data.
+                We are committed to protecting your privacy and ensuring the security of your personal information. This policy explains how we collect, use, and safeguard your data. See also our <a href="terms.html" class="underline hover:opacity-80">Terms of Service</a> or <a href="contact.html" class="underline hover:opacity-80">contact us</a>.
             </p>
         </div>
     </section>
@@ -219,20 +237,8 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20" style="background-color: #003366;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to Get Started?
-            </h2>
-            <p class="text-xl text-blue-100 mb-8">
-                Join the waiting list and be first to access PocketVC when we launch.
-            </p>
-            <a href="signup.html" class="cta-button-transparent text-lg px-8 py-4 text-white">
-                Join Waiting List
-            </a>
-        </div>
-    </section>
+    <!-- CTA Component (loaded dynamically) -->
+    <div id="cta-placeholder"></div>
 
     <!-- Footer Component (loaded dynamically) -->
     <div id="footer-placeholder"></div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>PocketVC Blog | Venture Capital News, Startup Insights & Investment Trends</title>
+    <title>PocketVC Blog | VC News & Startup Insights</title>
     <meta name="description" content="Stay updated with the latest venture capital news, startup insights, and investment trends. Expert analysis on deeptech funding, startup growth strategies, and VC industry developments.">
     <link rel="canonical" href="https://pocketvc.co/pages/blog.html" />
     <meta property="og:type" content="website" />
@@ -43,6 +43,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Additional Resource Hints -->
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://cdn-images.mailchimp.com">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -108,41 +113,47 @@
           "@type": "BlogPosting",
           "headline": "Europe's Deep Tech Moment: Why the World Should Pay Attention",
           "description": "Analysis of Europe's deep tech ecosystem and why it's becoming the continent's hedge against hype in 2025",
+          "url": "https://pocketvc.co/pages/blog.html#europe-deeptech",
           "datePublished": "2025-09-30",
+          "dateModified": "2025-10-01",
           "author": {
             "@type": "Person",
-            "name": "Daniel Barnard"
-          }
+            "name": "Daniel Barnard",
+            "url": "https://www.linkedin.com/in/danielbarnard1/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "PocketVC",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://pocketvc.co/media/logo.png"
+            }
+          },
+          "image": "https://pocketvc.co/media/logo.png",
+          "mainEntityOfPage": "https://pocketvc.co/pages/blog.html"
         },
         {
           "@type": "BlogPosting",
           "headline": "Why It Takes Longer Than Ever to Close a VC Round",
           "description": "Analysis of why VC funding rounds are taking longer in 2025 and how smarter matching can solve the problem",
+          "url": "https://pocketvc.co/pages/blog.html#vc-round-timing",
           "datePublished": "2025-09-25",
+          "dateModified": "2025-10-01",
           "author": {
             "@type": "Person",
-            "name": "Daniel Barnard"
-          }
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "The Future of Venture Capital: AI-Powered Startup Matching",
-          "description": "How artificial intelligence is revolutionizing the way VCs discover and evaluate startups",
-          "datePublished": "2025-01-27",
-          "author": {
-            "@type": "Person",
-            "name": "Daniel Barnard"
-          }
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Deeptech Investment Trends: What VCs Are Looking For in 2025",
-          "description": "Key trends and opportunities in deeptech sectors that are attracting venture capital attention",
-          "datePublished": "2025-01-20",
-          "author": {
-            "@type": "Person",
-            "name": "Daniel Barnard"
-          }
+            "name": "Daniel Barnard",
+            "url": "https://www.linkedin.com/in/danielbarnard1/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "PocketVC",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://pocketvc.co/media/logo.png"
+            }
+          },
+          "image": "https://pocketvc.co/media/logo.png",
+          "mainEntityOfPage": "https://pocketvc.co/pages/blog.html"
         }
       ]
     }
@@ -175,7 +186,7 @@
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
         <!-- Video Background -->
-        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0" aria-label="Animated wave background">
             <source src="../media/waves.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -202,7 +213,7 @@
                         <div class="md:w-1/2">
                             <div class="h-64 md:h-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
                                 <div class="text-center">
-                                    <img src="../media/logo.png" alt="PocketVC Logo" class="w-24 h-24 mx-auto mb-4">
+                                    <img src="../media/logo.png" alt="PocketVC Logo" class="w-24 h-24 mx-auto mb-4" loading="lazy">
                                     <p class="text-blue-600 font-semibold">Featured Article</p>
                                 </div>
                             </div>
@@ -337,20 +348,8 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20" style="background-color: #003366;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to Connect with Investors?
-            </h2>
-            <p class="text-xl text-blue-100 mb-8">
-                Join the PocketVC platform and discover how our AI-powered matching can help you find the right investors for your startup.
-            </p>
-            <a href="signup.html" class="cta-button-transparent text-lg px-8 py-4 text-white">
-                Join Waiting List
-            </a>
-        </div>
-    </section>
+    <!-- CTA Component (loaded dynamically) -->
+    <div id="cta-placeholder"></div>
 
     <!-- Blog Modal -->
     <div id="blogModal" class="modal">
