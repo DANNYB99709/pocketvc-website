@@ -47,6 +47,8 @@
     overflow: visible;
     opacity: 1;
     visibility: visible;
+    padding: 5rem 0 1.5rem 0;
+    background-color: white;
 }
 
 .form-input {
