@@ -1,0 +1,14 @@
+{
+  "name": "pocketvc-website",
+  "version": "1.0.0",
+  "description": "PocketVC website with template-based content generation",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "build:blog": "node -e \"require('./build.js').buildBlogPosts()\"",
+    "build:faq": "node -e \"require('./build.js').buildFaqPosts()\""
+  },
+  "keywords": ["website", "blog", "faq", "template"],
+  "author": "PocketVC",
+  "license": "MIT"
+}

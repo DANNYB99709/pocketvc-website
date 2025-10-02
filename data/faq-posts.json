@@ -1,0 +1,64 @@
+{
+  "faqs": [
+    {
+      "slug": "what-is-pocketvc",
+      "title": "What is PocketVC?",
+      "description": "PocketVC is a curated platform connecting European deep tech startups with the right investors. We focus on quality over quantity, ensuring meaningful connections.",
+      "category": "General",
+      "icon": "<svg class=\"w-6 h-6 text-blue-600\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg>",
+      "breadcrumbTitle": "What is PocketVC",
+      "content": "<p>PocketVC is a curated platform connecting European deep tech startups with the right investors. We focus on quality over quantity, ensuring meaningful connections.</p><p>Unlike other platforms that flood investors with irrelevant opportunities, PocketVC uses intelligent matching to connect startups with investors who are genuinely interested in their sector, stage, and geography.</p><p>Our platform is designed specifically for the European deep tech ecosystem, understanding the unique challenges and opportunities in this space.</p>",
+      "relatedQuestions": "<div class=\"mt-12 p-6 bg-gray-50 rounded-lg\"><h3 class=\"text-lg font-semibold text-gray-900 mb-4\">Related Questions</h3><div class=\"grid md:grid-cols-2 gap-4\"><a href=\"who-is-pocketvc-for.html\" class=\"block p-4 bg-white rounded-lg hover:shadow-md transition-shadow\"><h4 class=\"font-semibold text-gray-900 mb-2\">Who is PocketVC for?</h4><p class=\"text-sm text-gray-600\">Learn about our target audience</p></a><a href=\"how-to-join.html\" class=\"block p-4 bg-white rounded-lg hover:shadow-md transition-shadow\"><h4 class=\"font-semibold text-gray-900 mb-2\">How do I join?</h4><p class=\"text-sm text-gray-600\">Get started with PocketVC</p></a></div></div>"
+    },
+    {
+      "slug": "who-is-pocketvc-for",
+      "title": "Who is PocketVC for?",
+      "description": "PocketVC is designed for European deep tech startups seeking funding and investors looking for high-quality opportunities in the deep tech space.",
+      "category": "General",
+      "icon": "<svg class=\"w-6 h-6 text-blue-600\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z\"></path></svg>",
+      "breadcrumbTitle": "Who is PocketVC for",
+      "content": "<p>PocketVC is designed for European deep tech startups seeking funding and investors looking for high-quality opportunities in the deep tech space.</p><h3>For Startups:</h3><ul><li>European deep tech companies</li><li>Pre-seed to Series A stage</li><li>Companies with strong IP or technical differentiation</li><li>Teams with deep technical expertise</li></ul><h3>For Investors:</h3><ul><li>VCs focused on deep tech</li><li>Corporate venture arms</li><li>Angel investors with technical backgrounds</li><li>Family offices interested in deep tech</li></ul>",
+      "relatedQuestions": "<div class=\"mt-12 p-6 bg-gray-50 rounded-lg\"><h3 class=\"text-lg font-semibold text-gray-900 mb-4\">Related Questions</h3><div class=\"grid md:grid-cols-2 gap-4\"><a href=\"what-is-pocketvc.html\" class=\"block p-4 bg-white rounded-lg hover:shadow-md transition-shadow\"><h4 class=\"font-semibold text-gray-900 mb-2\">What is PocketVC?</h4><p class=\"text-sm text-gray-600\">Learn about our platform</p></a><a href=\"how-to-join.html\" class=\"block p-4 bg-white rounded-lg hover:shadow-md transition-shadow\"><h4 class=\"font-semibold text-gray-900 mb-2\">How do I join?</h4><p class=\"text-sm text-gray-600\">Get started with PocketVC</p></a></div></div>"
+    },
+    {
+      "slug": "how-to-join",
+      "title": "How do I join PocketVC?",
+      "description": "Joining PocketVC is simple. Startups can apply through our website, while investors can request access. We review all applications to maintain quality.",
+      "category": "Getting Started",
+      "icon": "<svg class=\"w-6 h-6 text-blue-600\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 6v6m0 0v6m0-6h6m-6 0H6\"></path></svg>",
+      "breadcrumbTitle": "How to Join",
+      "content": "<p>Joining PocketVC is simple. Startups can apply through our website, while investors can request access. We review all applications to maintain quality.</p><h3>For Startups:</h3><ol><li>Visit our <a href=\"../signup.html\" class=\"text-blue-600 hover:text-blue-700\">signup page</a></li><li>Complete the application form</li><li>Upload your pitch deck and key documents</li><li>Wait for our review (typically 1-2 weeks)</li><li>Get matched with relevant investors</li></ol><h3>For Investors:</h3><ol><li>Contact us through our <a href=\"../contact.html\" class=\"text-blue-600 hover:text-blue-700\">contact page</a></li><li>Provide your investment criteria</li><li>Complete our verification process</li><li>Start receiving curated opportunities</li></ol>",
+      "relatedQuestions": "<div class=\"mt-12 p-6 bg-gray-50 rounded-lg\"><h3 class=\"text-lg font-semibold text-gray-900 mb-4\">Related Questions</h3><div class=\"grid md:grid-cols-2 gap-4\"><a href=\"is-it-free.html\" class=\"block p-4 bg-white rounded-lg hover:shadow-md transition-shadow\"><h4 class=\"font-semibold text-gray-900 mb-2\">Is it free?</h4><p class=\"text-sm text-gray-600\">Learn about our pricing</p></a><a href=\"who-is-pocketvc-for.html\" class=\"block p-4 bg-white rounded-lg hover:shadow-md transition-shadow\"><h4 class=\"font-semibold text-gray-900 mb-2\">Who is PocketVC for?</h4><p class=\"text-sm text-gray-600\">Check if you're eligible</p></a></div></div>"
+    },
+    {
+      "slug": "is-it-free",
+      "title": "Is PocketVC free to use?",
+      "description": "PocketVC offers free access for startups and investors. We believe in removing barriers to funding and making quality connections accessible to everyone.",
+      "category": "Pricing",
+      "icon": "<svg class=\"w-6 h-6 text-blue-600\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1\"></path></svg>",
+      "breadcrumbTitle": "Is it Free",
+      "content": "<p>PocketVC offers free access for startups and investors. We believe in removing barriers to funding and making quality connections accessible to everyone.</p><p>Our platform is currently free to use for both startups and investors. We're focused on building the best possible matching system and growing our community.</p><p>In the future, we may introduce premium features for advanced matching and analytics, but the core platform will always remain free for basic usage.</p>",
+      "relatedQuestions": "<div class=\"mt-12 p-6 bg-gray-50 rounded-lg\"><h3 class=\"text-lg font-semibold text-gray-900 mb-4\">Related Questions</h3><div class=\"grid md:grid-cols-2 gap-4\"><a href=\"how-to-join.html\" class=\"block p-4 bg-white rounded-lg hover:shadow-md transition-shadow\"><h4 class=\"font-semibold text-gray-900 mb-2\">How do I join?</h4><p class=\"text-sm text-gray-600\">Get started with PocketVC</p></a><a href=\"privacy-security.html\" class=\"block p-4 bg-white rounded-lg hover:shadow-md transition-shadow\"><h4 class=\"font-semibold text-gray-900 mb-2\">Privacy & Security</h4><p class=\"text-sm text-gray-600\">Learn about data protection</p></a></div></div>"
+    },
+    {
+      "slug": "privacy-security",
+      "title": "How do you protect my data and privacy?",
+      "description": "We take data protection seriously. All data is encrypted, we comply with GDPR, and we never share your information without consent. Learn more about our privacy practices.",
+      "category": "Privacy",
+      "icon": "<svg class=\"w-6 h-6 text-blue-600\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z\"></path></svg>",
+      "breadcrumbTitle": "Privacy & Security",
+      "content": "<p>We take data protection seriously. All data is encrypted, we comply with GDPR, and we never share your information without consent. Learn more about our privacy practices.</p><h3>Data Protection:</h3><ul><li>All data is encrypted in transit and at rest</li><li>We comply with GDPR and other privacy regulations</li><li>Regular security audits and penetration testing</li><li>Limited access to personal data</li></ul><h3>Privacy Controls:</h3><ul><li>You control what information is shared</li><li>Easy data export and deletion</li><li>Transparent privacy policy</li><li>No selling of personal data</li></ul><p>For more details, please read our <a href=\"../privacy.html\" class=\"text-blue-600 hover:text-blue-700\">privacy policy</a>.</p>",
+      "relatedQuestions": "<div class=\"mt-12 p-6 bg-gray-50 rounded-lg\"><h3 class=\"text-lg font-semibold text-gray-900 mb-4\">Related Questions</h3><div class=\"grid md:grid-cols-2 gap-4\"><a href=\"is-it-free.html\" class=\"block p-4 bg-white rounded-lg hover:shadow-md transition-shadow\"><h4 class=\"font-semibold text-gray-900 mb-2\">Is it free?</h4><p class=\"text-sm text-gray-600\">Learn about our pricing</p></a><a href=\"when-launch.html\" class=\"block p-4 bg-white rounded-lg hover:shadow-md transition-shadow\"><h4 class=\"font-semibold text-gray-900 mb-2\">When will you launch?</h4><p class=\"text-sm text-gray-600\">Get updates on our launch timeline</p></a></div></div>"
+    },
+    {
+      "slug": "when-launch",
+      "title": "When will PocketVC launch?",
+      "description": "PocketVC is currently in development. We're working hard to launch a beta version soon. Sign up for updates to be among the first to know when we go live.",
+      "category": "Launch",
+      "icon": "<svg class=\"w-6 h-6 text-blue-600\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg>",
+      "breadcrumbTitle": "When Launch",
+      "content": "<p>PocketVC is currently in development. We're working hard to launch a beta version soon. Sign up for updates to be among the first to know when we go live.</p><p>We're building something special and want to make sure it's perfect before we launch. Our beta will include:</p><ul><li>Intelligent matching algorithm</li><li>Curated startup profiles</li><li>Investor dashboard</li><li>Secure communication tools</li></ul><p>To stay updated on our progress and be notified when we launch, please <a href=\"../signup.html\" class=\"text-blue-600 hover:text-blue-700\">sign up for our newsletter</a>.</p>",
+      "relatedQuestions": "<div class=\"mt-12 p-6 bg-gray-50 rounded-lg\"><h3 class=\"text-lg font-semibold text-gray-900 mb-4\">Related Questions</h3><div class=\"grid md:grid-cols-2 gap-4\"><a href=\"how-to-join.html\" class=\"block p-4 bg-white rounded-lg hover:shadow-md transition-shadow\"><h4 class=\"font-semibold text-gray-900 mb-2\">How do I join?</h4><p class=\"text-sm text-gray-600\">Get started with PocketVC</p></a><a href=\"privacy-security.html\" class=\"block p-4 bg-white rounded-lg hover:shadow-md transition-shadow\"><h4 class=\"font-semibold text-gray-900 mb-2\">Privacy & Security</h4><p class=\"text-sm text-gray-600\">Learn about data protection</p></a></div></div>"
+    }
+  ]
+}
