@@ -7,49 +7,49 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://pocketvc.co/about.html</loc>
+    <loc>https://pocketvc.co/about</loc>
     <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pocketvc.co/blog.html</loc>
+    <loc>https://pocketvc.co/blog</loc>
     <lastmod>2025-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pocketvc.co/signup.html</loc>
+    <loc>https://pocketvc.co/signup</loc>
     <lastmod>2025-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pocketvc.co/faq.html</loc>
+    <loc>https://pocketvc.co/faq</loc>
     <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://pocketvc.co/contact.html</loc>
+    <loc>https://pocketvc.co/contact</loc>
     <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://pocketvc.co/privacy.html</loc>
+    <loc>https://pocketvc.co/privacy</loc>
     <lastmod>2025-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://pocketvc.co/terms.html</loc>
+    <loc>https://pocketvc.co/terms</loc>
     <lastmod>2025-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://pocketvc.co/cookie-policy.html</loc>
+    <loc>https://pocketvc.co/cookie-policy</loc>
     <lastmod>2025-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

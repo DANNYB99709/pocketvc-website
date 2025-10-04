@@ -78,7 +78,7 @@
                             <p class="text-sm text-gray-600">
                                 We use cookies to enhance your experience, analyze site usage, and assist in our marketing efforts. 
                                 By clicking "Accept All", you consent to our use of cookies. 
-                                <a href="/privacy.html" class="text-blue-600 hover:text-blue-800 underline">Learn more</a>
+                                <a href="/privacy" class="text-blue-600 hover:text-blue-800 underline">Learn more</a>
                             </p>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-2">
@@ -208,7 +208,7 @@
                         <strong>Legal Basis:</strong> Consent (Article 6(1)(a) GDPR)<br>
                         <strong>Data Retention:</strong> Until you withdraw consent or 3 years of inactivity<br>
                         <strong>Your Rights:</strong> Access, rectification, erasure, portability, objection<br>
-                        <a href="/privacy.html" class="underline">Full Privacy Policy</a>
+                        <a href="/privacy" class="underline">Full Privacy Policy</a>
                     </p>
                 `;
                 

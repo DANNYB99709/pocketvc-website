@@ -51,7 +51,7 @@ To democratize access to venture capital by providing free, intelligent matching
 
 ## Contact Information
 - **Website:** https://pocketvc.co
-- **Join Waitlist:** https://pocketvc.co/signup.html
+- **Join Waitlist:** https://pocketvc.co/signup
 - **LinkedIn:** https://www.linkedin.com/company/pocketvc-connect
 - **Founder LinkedIn:** https://www.linkedin.com/in/danielbarnard1/
 
