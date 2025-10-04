@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>{{TITLE}} | PocketVC Blog</title>
+    <meta name="description" content="{{EXCERPT}}">
+    <link rel="canonical" href="https://pocketvc.co/blog/{{ID}}.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:title" content="{{TITLE}} | PocketVC Blog" />
+    <meta property="og:description" content="{{EXCERPT}}" />
+    <meta property="og:url" content="https://pocketvc.co/blog/{{ID}}.html" />
+    <meta property="og:image" content="https://pocketvc.co/media/logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PocketVC Blog - {{TITLE}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{TITLE}} | PocketVC Blog" />
+    <meta name="twitter:description" content="{{EXCERPT}}" />
+    <meta name="twitter:image" content="https://pocketvc.co/media/logo.png" />
+    <meta property="og:site_name" content="PocketVC" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <meta name="google-site-verification" content="VzCoa_xbrKU9iDETmjvtn5wIvGJEAcstpQ0aG1rCmms" />
+    <link rel="icon" type="image/x-icon" href="../media/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="../media/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../media/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../media/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../media/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../media/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="../media/apple-touch-icon-167x167.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../media/icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../media/icon-512x512.png" />
+    <link rel="manifest" href="../manifest.json" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/blog.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "{{TITLE}}",
+      "description": "{{EXCERPT}}",
+      "image": "https://pocketvc.co/media/logo.png",
+      "author": {
+        "@type": "Person",
+        "name": "{{AUTHOR}}",
+        "url": "https://www.linkedin.com/in/danielbarnard1/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PocketVC",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://pocketvc.co/media/logo.png"
+        }
+      },
+      "datePublished": "{{DATE_PUBLISHED}}",
+      "dateModified": "{{DATE_MODIFIED}}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://pocketvc.co/blog/{{ID}}.html"
+      },
+      "articleSection": "{{CATEGORY}}",
+      "wordCount": "{{WORD_COUNT}}",
+      "timeRequired": "{{READ_TIME}}"
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FM5YRS2ZFT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FM5YRS2ZFT');
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Placeholder -->
+    <div id="nav-placeholder"></div>
+    
+    
+    <!-- Hero Section with Blog Image -->
+    <section class="relative h-96 flex items-end">
+        <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative h-96 bg-cover bg-center bg-no-repeat rounded-lg flex items-end" style="background-image: url('../media/Blog.png');">
+                <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+                <div class="relative z-10 w-full px-6 pb-8">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white">{{TITLE}}</h1>
+                    <div class="flex items-center space-x-4 text-white">
+                        <span>{{AUTHOR}}</span>
+                        <span>•</span>
+                        <span>{{DATE_PUBLISHED}}</span>
+                        <span>•</span>
+                        <span>{{READ_TIME}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <article class="prose prose-lg max-w-none">
+            <div class="bg-white rounded-lg shadow-sm p-8">
+                <div class="whitespace-pre-line text-gray-700 leading-relaxed">
+                    {{CONTENT}}
+                </div>
+            </div>
+        </article>
+        
+        <!-- Related Articles -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Related Articles</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Article 1 -->
+                <a href="../blog/europes-deep-tech-moment.html" class="group">
+                    <div class="bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-200 overflow-hidden">
+                        <div class="h-32 bg-cover bg-center bg-no-repeat" style="background-image: url('../media/Blog.png');">
+                            <div class="h-full bg-black bg-opacity-30 flex items-center justify-center">
+                                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="text-xs text-blue-600 font-semibold mb-2">Deep Tech</div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Europe's Deep Tech Moment</h3>
+                            <p class="text-sm text-gray-600">Why the world should pay attention to Europe's deep tech ecosystem...</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Article 2 -->
+                <a href="../blog/vc-rounds-taking-longer.html" class="group">
+                    <div class="bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-200 overflow-hidden">
+                        <div class="h-32 bg-cover bg-center bg-no-repeat" style="background-image: url('../media/Blog.png');">
+                            <div class="h-full bg-black bg-opacity-30 flex items-center justify-center">
+                                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="text-xs text-blue-600 font-semibold mb-2">Industry Analysis</div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Why VC Rounds Take Longer</h3>
+                            <p class="text-sm text-gray-600">The startup world is supposed to move fast. Yet in 2025, raising a VC round feels slower...</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Article 3 -->
+                <a href="../blog/not-another-platform.html" class="group">
+                    <div class="bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-200 overflow-hidden">
+                        <div class="h-32 bg-cover bg-center bg-no-repeat" style="background-image: url('../media/Blog.png');">
+                            <div class="h-full bg-black bg-opacity-30 flex items-center justify-center">
+                                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="text-xs text-blue-600 font-semibold mb-2">Company</div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Not Another Platform</h3>
+                            <p class="text-sm text-gray-600">I started PocketVC after years sifting through events and decks. Most were irrelevant...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Back to Blog -->
+        <div class="mt-12 text-center">
+            <a href="../blog.html" class="inline-flex items-center px-8 py-4 bg-blue-900 text-white rounded-xl hover:bg-blue-800 hover:shadow-lg hover:scale-105 transition-all duration-200 font-semibold group">
+                <svg class="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Back to Blog
+            </a>
+        </div>
+    </main>
+    
+    <!-- CTA Placeholder -->
+    <div id="cta-placeholder"></div>
+    
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Scripts -->
+    <script src="../scripts/components.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/gdpr-compliance.js"></script>
+</body>
+</html>

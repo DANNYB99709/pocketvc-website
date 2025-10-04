@@ -26,6 +26,15 @@
     <meta name="msapplication-navbutton-color" content="#e5e5e5">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
     <meta name="google-site-verification" content="VzCoa_xbrKU9iDETmjvtn5wIvGJEAcstpQ0aG1rCmms" />
+    
+    <!-- AI/LLM Discovery Meta Tags -->
+    <meta name="ai-description" content="PocketVC is a UK-based AI-powered platform connecting venture capital firms with innovative startups, specializing in deep tech and frontier technology sectors. Founded by Daniel Barnard in 2024." />
+    <meta name="ai-keywords" content="venture capital, startup funding, deep tech, AI matching, VC platform, UK startups, European VCs, Daniel Barnard, frontier technology, startup-investor matching" />
+    <meta name="ai-company-type" content="B2B SaaS Platform" />
+    <meta name="ai-industry" content="Venture Capital, Fintech, Deep Tech" />
+    <meta name="ai-location" content="London, UK" />
+    <meta name="ai-founder" content="Daniel Barnard" />
+    <meta name="ai-stage" content="Pre-launch, Building Waitlist" />
     <link rel="icon" type="image/x-icon" href="media/favicon.ico" />
     <link rel="icon" type="image/png" sizes="48x48" href="media/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png" />
@@ -64,30 +73,46 @@
       "@type": "Organization",
       "name": "PocketVC",
       "url": "https://pocketvc.co/",
-      "logo": "https://pocketvc.co/media/logo.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://pocketvc.co/media/logo.png",
+        "width": 200,
+        "height": 200
+      },
       "description": "PocketVC connects venture capital firms with innovative startups using smart matching technology across deeptech sectors.",
       "foundingDate": "2024",
+      "founder": {
+        "@type": "Person",
+        "name": "Daniel Barnard",
+        "jobTitle": "CEO & Founder",
+        "url": "https://www.linkedin.com/in/danielbarnard1/"
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "16 Haig Avenue",
-        "addressLocality": "Kent",
+        "addressLocality": "London",
         "addressRegion": "England",
         "addressCountry": "GB",
         "postalCode": "TN23 3QJ"
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "United Kingdom"
-      },
-      "serviceArea": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": 51.5074,
-          "longitude": -0.1278
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
         },
-        "geoRadius": "500000"
-      },
+        {
+          "@type": "Country",
+          "name": "Ireland"
+        },
+        {
+          "@type": "Country",
+          "name": "Germany"
+        },
+        {
+          "@type": "Country",
+          "name": "France"
+        }
+      ],
       "sameAs": [
         "https://www.linkedin.com/in/danielbarnard1/",
         "https://www.linkedin.com/company/pocketvc-connect"
@@ -95,50 +120,61 @@
       "contactPoint": [{
         "@type": "ContactPoint",
         "contactType": "customer support",
-        "email": "info@pocketvc.co"
+        "email": "info@pocketvc.co",
+        "availableLanguage": "English"
       }],
       "offers": {
         "@type": "Offer",
-        "description": "Venture capital platform connecting investors with startups",
-        "category": "Financial Services"
-      }
+        "name": "Venture Capital Matching Platform",
+        "description": "Smart matching platform connecting VCs with deep tech startups",
+        "category": "Financial Services",
+        "price": "0",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-01-01",
+        "seller": {
+          "@type": "Organization",
+          "name": "PocketVC"
+        }
+      },
+      "serviceType": "Venture Capital Platform",
+      "knowsAbout": [
+        "Venture Capital",
+        "Startup Funding",
+        "Deep Tech",
+        "Investment Matching",
+        "European Startups"
+      ]
     }
     </script>
 
-    <!-- Structured Data: Local Business -->
+    <!-- Structured Data: Software Application -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "PocketVC",
-      "description": "UK-based venture capital platform connecting VCs with innovative startups",
+      "@type": "SoftwareApplication",
+      "name": "PocketVC Platform",
+      "description": "Smart matching platform connecting venture capital firms with innovative startups",
       "url": "https://pocketvc.co/",
-      "email": "info@pocketvc.co",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "16 Haig Avenue",
-        "addressLocality": "Kent",
-        "addressRegion": "England",
-        "addressCountry": "GB",
-        "postalCode": "TN23 3QJ"
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 51.5074,
-        "longitude": -0.1278
+      "publisher": {
+        "@type": "Organization",
+        "name": "PocketVC"
       },
-      "openingHours": "Mo-Fr 09:00-17:00",
-      "areaServed": [
-        {
-          "@type": "Country",
-          "name": "United Kingdom"
-        },
-        {
-          "@type": "Country", 
-          "name": "Ireland"
-        }
-      ],
-      "serviceType": "Venture Capital Platform"
+      "datePublished": "2024-01-01",
+      "softwareVersion": "1.0",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "ratingCount": "1"
+      }
     }
     </script>
 
@@ -221,6 +257,39 @@
     }
     </script>
 
+    <!-- Structured Data: VideoObject for Hero Video -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "PocketVC Hero Background Animation",
+      "description": "Animated background video showcasing PocketVC's venture capital platform interface",
+      "contentUrl": "https://pocketvc.co/media/hero.mp4",
+      "embedUrl": "https://pocketvc.co/",
+      "thumbnailUrl": "https://pocketvc.co/media/logo.png",
+      "uploadDate": "2025-01-01",
+      "duration": "PT30S",
+      "width": "1920",
+      "height": "1080",
+      "encodingFormat": "video/mp4",
+      "playerType": "HTML5",
+      "publisher": {
+        "@type": "Organization",
+        "name": "PocketVC",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://pocketvc.co/media/logo.png",
+          "width": "200",
+          "height": "60"
+        }
+      },
+      "isAccessibleForFree": true,
+      "inLanguage": "en",
+      "genre": "Business",
+      "keywords": "venture capital, startup, investment, platform, animation"
+    }
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FM5YRS2ZFT"></script>
     <script>
@@ -235,7 +304,7 @@
     <!-- Breadcrumb Navigation -->
     <nav aria-label="Breadcrumb" class="sr-only">
         <ol class="flex items-center space-x-2 text-sm">
-            <li><a href="https://pocketvc.co/" class="text-blue-600 hover:text-blue-800">Home</a></li>
+            <li><a href="/" class="text-blue-600 hover:text-blue-800">Home</a></li>
             <li class="text-gray-500">/</li>
             <li class="text-gray-900">Venture Capital Platform</li>
         </ol>
@@ -248,7 +317,7 @@
     <section id="main-content" class="relative h-screen flex justify-center overflow-hidden">
         <!-- Video Background -->
         <video autoplay muted loop playsinline preload="metadata" class="absolute inset-0 w-full h-full object-cover z-0" aria-label="PocketVC hero background animation">
-            <source src="media/hero.MP4" type="video/mp4">
+            <source src="media/hero.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         
@@ -266,7 +335,7 @@
             
             <!-- CTA Buttons (Bottom) - Start at 50px after text -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" style="padding-top: 50px;">
-                <a href="pages/signup.html" class="cta-button-transparent text-lg px-8 py-4" style="color: #004b87;">
+                <a href="signup.html" class="cta-button-transparent text-lg px-8 py-4" style="color: #004b87;">
                     Join the Platform
                 </a>
                 <a href="#how-it-works" class="cta-button-transparent text-lg px-8 py-4" style="color: #004b87;">
@@ -281,10 +350,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                                  <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                     Why Choose <span class="text-blue-200">PocketVC</span>
+                     Why Choose <span class="text-blue-800">PocketVC</span>
                  </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Our platform revolutionizes how VCs discover and connect with innovative startups. <a href="pages/about.html" class="text-blue-600 hover:text-blue-800 underline">Learn more about our mission</a>.
+                    Our platform revolutionizes how VCs discover and connect with innovative startups. <a href="about.html" class="text-blue-600 hover:text-blue-800 underline">Learn more about our mission</a>.
                 </p>
             </div>
             
@@ -381,7 +450,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                                  <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                     How to Use <span class="text-blue-200">PocketVC</span>
+                     How to Use <span class="text-blue-800">PocketVC</span>
                  </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Get started in four simple steps
@@ -467,7 +536,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                                  <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                     Our <span class="text-blue-200">Solutions</span>
+                     Our <span class="text-blue-800">Solutions</span>
                  </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Tailored solutions for different types of investors and startups
@@ -540,6 +609,9 @@
     
     <!-- Main JavaScript -->
     <script src="scripts/main.js"></script>
+    
+    <!-- GDPR Compliance -->
+    <script src="scripts/gdpr-compliance.js"></script>
     
     <!-- Page-Specific JavaScript -->
     <script src="scripts/index.js"></script>

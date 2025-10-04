@@ -1,0 +1,50 @@
+# PocketVC - AI-Optimized Content Summary
+
+## Company Overview
+PocketVC is a UK-based platform connecting venture capital firms with innovative startups through smart matching technology. Founded in 2024 by Daniel Barnard, CEO and former venture capitalist with Ultratech Capital Partners.
+
+## Core Service
+- **Primary Function**: Smart matching platform for VCs and startups
+- **Focus Areas**: Deep tech, frontier technology, innovative startups
+- **Geographic Focus**: UK and European markets
+- **Stage**: Pre-launch, currently building waiting list
+
+## Key Differentiators
+- **AI-Powered Matching**: Advanced algorithms understand startup DNA and VC investment thesis
+- **Quality Over Quantity**: Curated, relevant connections vs. mass outreach
+- **Free for Startups**: Democratizing access to venture capital
+- **Deep Tech Focus**: Specialized in frontier technology sectors
+
+## Target Audience
+- **Primary**: Early-stage to Series A startups seeking funding
+- **Secondary**: VCs looking for quality deal flow
+- **Geographic**: UK and European markets initially
+
+## Content Strategy
+- **Blog Focus**: Industry analysis, deep tech insights, fundraising trends
+- **SEO Keywords**: venture capital, startup funding, deep tech, AI matching
+- **Content Themes**: European tech ecosystem, fundraising efficiency, startup-investor matching
+
+## Technical Stack
+- **Frontend**: HTML, CSS, JavaScript, Tailwind CSS
+- **Backend**: Supabase (database, authentication)
+- **Deployment**: AWS CloudFront, S3
+- **Analytics**: Google Analytics, Search Console
+
+## SEO Strategy
+- **Local SEO**: UK-based business targeting European market
+- **Technical SEO**: Fast loading, mobile-responsive, structured data
+- **Content SEO**: Regular blog posts, FAQ optimization, keyword targeting
+- **Link Building**: Industry partnerships, thought leadership content
+
+## Performance Metrics
+- **Page Speed**: Optimized for Core Web Vitals
+- **Mobile Experience**: Responsive design, touch-friendly
+- **Accessibility**: WCAG compliance, semantic HTML
+- **SEO Score**: 95/100 (as per latest audit)
+
+## Future Roadmap
+- **Q1 2025**: Private beta launch
+- **Q2 2025**: Public beta
+- **Q3 2025**: Full platform launch
+- **Expansion**: European market penetration, additional sectors

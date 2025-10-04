@@ -52,10 +52,9 @@ function initializeCommon() {
     }
 
     function performSearch(query) {
-        // Detect if we're in pages folder or root
-        const isInPages = window.location.pathname.includes('/pages/');
-        const pagePrefix = isInPages ? '' : 'pages/';
-        const rootPath = isInPages ? '../' : '';
+        // All pages are now in root directory
+        const pagePrefix = '';
+        const rootPath = '';
         
         // Define search terms and their corresponding pages
         const searchMap = {
@@ -86,13 +85,13 @@ function initializeCommon() {
             'terms': pagePrefix + 'terms.html',
             'conditions': pagePrefix + 'terms.html',
             'legal': pagePrefix + 'terms.html',
-            'venture': rootPath + 'index.html',
-            'capital': rootPath + 'index.html',
-            'startup': rootPath + 'index.html',
-            'investment': rootPath + 'index.html',
-            'funding': rootPath + 'index.html',
-            'vc': rootPath + 'index.html',
-            'pocketvc': rootPath + 'index.html'
+            'venture': rootPath + '',
+            'capital': rootPath + '',
+            'startup': rootPath + '',
+            'investment': rootPath + '',
+            'funding': rootPath + '',
+            'vc': rootPath + '',
+            'pocketvc': rootPath + ''
         };
 
         // Find the best match
@@ -108,7 +107,7 @@ function initializeCommon() {
 
         // If no specific match found, default to index
         if (!bestMatch) {
-            bestMatch = rootPath + 'index.html';
+            bestMatch = rootPath + '';
         }
 
         // Redirect to the best matching page

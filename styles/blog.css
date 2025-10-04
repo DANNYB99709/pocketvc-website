@@ -223,6 +223,36 @@
     margin-top: 1rem !important; /* Gap between input and button */
 }
 
+/* Force Mailchimp button to match input width */
+#mc-embedded-subscribe {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.mc-field-group input[type="email"] {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Ensure form container takes full width */
+#mc_embed_signup_scroll {
+    width: 100% !important;
+}
+
+.mc-field-group {
+    width: 100% !important;
+}
+
+.optionalParent {
+    width: 100% !important;
+}
+
+.clear.foot {
+    width: 100% !important;
+}
+
 /* ==================
    Responsive Styles
    ================== */

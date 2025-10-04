@@ -13,12 +13,12 @@ const urlsToCache = [
   '/signup.html',
   '/privacy.html',
   '/terms.html',
-  '/logo.png',
-  '/hero.MP4',
-  '/create.png',
-  '/discover.png',
-  '/connect.png',
-  '/close.png',
+  '/media/logo.png',
+  '/media/hero.mp4',
+  '/media/create.png',
+  '/media/discover.png',
+  '/media/connect.png',
+  '/media/close.png',
   '/manifest.json',
   '/sitemap.xml',
   '/robots.txt'
@@ -26,8 +26,8 @@ const urlsToCache = [
 
 // Cache strategies
 const CACHE_STRATEGIES = {
-  static: ['/logo.png', '/create.png', '/discover.png', '/connect.png', '/close.png'],
-  dynamic: ['/hero.MP4'],
+  static: ['/media/logo.png', '/media/create.png', '/media/discover.png', '/media/connect.png', '/media/close.png'],
+  dynamic: ['/media/hero.mp4'],
   networkFirst: ['/index.html', '/about.html', '/blog.html', '/contact.html', '/faq.html', '/signup.html']
 };
 

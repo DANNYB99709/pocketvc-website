@@ -1,0 +1,66 @@
+{
+  "company": {
+    "name": "PocketVC",
+    "tagline": "Connecting VCs with Innovative Startups",
+    "description": "PocketVC is a UK-based platform that uses AI-powered matching technology to connect venture capital firms with innovative startups, specializing in deep tech and frontier technology sectors.",
+    "founded": "2024",
+    "founder": "Daniel Barnard",
+    "location": "London, UK",
+    "website": "https://pocketvc.co",
+    "stage": "Pre-launch, building waiting list"
+  },
+  "services": {
+    "primary": "AI-powered VC-startup matching platform",
+    "features": [
+      "Smart matching algorithms that understand startup DNA",
+      "Curated, high-quality deal flow for VCs",
+      "Free access for startups",
+      "Deep tech and frontier technology focus",
+      "European market specialization"
+    ],
+    "target_audience": {
+      "startups": "Early-stage to Series A startups seeking funding",
+      "vcs": "Venture capital firms looking for quality deal flow",
+      "geographic": "UK and European markets"
+    }
+  },
+  "differentiators": [
+    "Quality over quantity approach",
+    "AI-powered matching beyond keyword matching",
+    "Free for startups (democratizing VC access)",
+    "Deep tech specialization",
+    "European market focus",
+    "Curated, relevant connections vs mass outreach"
+  ],
+  "keywords": [
+    "venture capital",
+    "startup funding",
+    "deep tech",
+    "AI matching",
+    "VC platform",
+    "startup-investor matching",
+    "European tech ecosystem",
+    "frontier technology",
+    "fundraising efficiency",
+    "UK startups",
+    "European VCs"
+  ],
+  "content_themes": [
+    "European deep tech ecosystem",
+    "Fundraising trends and analysis",
+    "Startup-investor matching efficiency",
+    "AI in venture capital",
+    "Deep tech investment opportunities"
+  ],
+  "contact": {
+    "website": "https://pocketvc.co",
+    "waitlist": "https://pocketvc.co/signup.html",
+    "linkedin": "https://www.linkedin.com/company/pocketvc-connect",
+    "founder_linkedin": "https://www.linkedin.com/in/danielbarnard1/"
+  },
+  "launch_timeline": {
+    "q1_2025": "Private beta launch",
+    "q2_2025": "Public beta",
+    "q3_2025": "Full platform launch"
+  }
+}
