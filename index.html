@@ -46,25 +46,60 @@
     <link rel="icon" type="image/png" sizes="512x512" href="media/icon-512x512.png" />
     <link rel="manifest" href="manifest.json" />
     
-    <!-- Preload critical images -->
+    <!-- Preload critical resources -->
     <link rel="preload" as="image" href="media/logo.png" />
-    <link rel="preload" as="image" href="media/connect.png" />
-    <link rel="preload" as="image" href="media/discover.png" />
+    <link rel="preload" as="style" href="styles/main.css" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="PocketVC" />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Additional Resource Hints -->
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script>
+        // Load Tailwind CSS asynchronously without blocking render
+        (function() {
+            var script = document.createElement('script');
+            script.src = 'https://cdn.tailwindcss.com';
+            script.async = true;
+            document.head.appendChild(script);
+        })();
+    </script>
+    
+    <!-- Critical CSS inline to prevent FOUC -->
+    <style>
+        /* Critical above-the-fold styles */
+        body { margin: 0; font-family: Inter, sans-serif; }
+        .bg-gray-50 { background-color: #f9fafb; }
+        .min-h-screen { min-height: 100vh; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+        .w-full { width: 100%; }
+        .h-full { height: 100%; }
+        .h-screen { height: 100vh; }
+        .object-cover { object-fit: cover; }
+        .z-0 { z-index: 0; }
+        .overflow-hidden { overflow: hidden; }
+        /* Loading state */
+        .loading { opacity: 0; transition: opacity 0.3s ease; }
+        .loaded { opacity: 1; }
+    </style>
     
     <!-- Main Styles -->
     <link rel="stylesheet" href="styles/main.css" media="print" onload="this.media='all'">
@@ -323,7 +358,7 @@
     <!-- Hero Section with Video Background -->
     <section id="main-content" class="relative h-screen flex justify-center overflow-hidden">
         <!-- Video Background -->
-        <video autoplay muted loop playsinline preload="none" class="absolute inset-0 w-full h-full object-cover z-0" aria-label="PocketVC hero background animation">
+        <video autoplay muted loop playsinline preload="none" class="absolute inset-0 w-full h-full object-cover z-0" aria-label="PocketVC hero background animation" loading="lazy">
             <source src="media/hero.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -522,7 +557,7 @@
                  <div class="relative max-w-sm mx-auto">
                      <div class="phone-frame mx-auto mb-6">
                          <div class="phone-screen">
-                             <img id="carousel-image" src="media/create.png" alt="Step 1" class="w-full h-full object-cover" loading="eager" width="300" height="600">
+                             <img id="carousel-image" src="media/create.png" alt="Step 1" class="w-full h-full object-cover" loading="eager" width="300" height="600" fetchpriority="high">
                          </div>
                      </div>
                      
@@ -617,10 +652,23 @@
     <!-- Main JavaScript -->
     <script src="scripts/main.js"></script>
     
-    <!-- GDPR Compliance -->
-    <script src="scripts/gdpr-compliance.js"></script>
+    <!-- GDPR Compliance - Load asynchronously -->
+    <script src="scripts/gdpr-compliance.js" async></script>
     
-    <!-- Page-Specific JavaScript -->
-    <script src="scripts/index.js"></script>
+    <!-- Page-Specific JavaScript - Load asynchronously -->
+    <script src="scripts/index.js" async></script>
+    
+    <!-- Loading optimization script -->
+    <script>
+        // Add loaded class when page is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loaded');
+        });
+        
+        // Fallback for slow connections
+        setTimeout(function() {
+            document.body.classList.add('loaded');
+        }, 1000);
+    </script>
 </body>
 </html>
