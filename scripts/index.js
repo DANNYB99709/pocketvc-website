@@ -75,13 +75,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Dot navigation
+    // Auto-advance carousel continuously (no user interaction)
     if (carouselImage && dots.length > 0) {
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentSlide = index;
-                updateCarousel();
-            });
+        // Remove click event listeners from dots to prevent user interaction
+        dots.forEach((dot) => {
+            dot.style.pointerEvents = 'none'; // Disable clicking
+            dot.style.cursor = 'default'; // Remove pointer cursor
         });
         
         // Auto-advance carousel every 3 seconds
