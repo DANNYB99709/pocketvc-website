@@ -45,23 +45,30 @@
     <link rel="icon" type="image/png" sizes="192x192" href="media/icon-192x192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="media/icon-512x512.png" />
     <link rel="manifest" href="manifest.json" />
+    
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="media/logo.png" />
+    <link rel="preload" as="image" href="media/connect.png" />
+    <link rel="preload" as="image" href="media/discover.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="PocketVC" />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
     
     <!-- Additional Resource Hints -->
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     
     <!-- Main Styles -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles/main.css"></noscript>
     
     <!-- Page-Specific Styles -->
     <link rel="stylesheet" href="styles/index.css">
@@ -316,7 +323,7 @@
     <!-- Hero Section with Video Background -->
     <section id="main-content" class="relative h-screen flex justify-center overflow-hidden">
         <!-- Video Background -->
-        <video autoplay muted loop playsinline preload="metadata" class="absolute inset-0 w-full h-full object-cover z-0" aria-label="PocketVC hero background animation">
+        <video autoplay muted loop playsinline preload="none" class="absolute inset-0 w-full h-full object-cover z-0" aria-label="PocketVC hero background animation">
             <source src="media/hero.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -515,16 +522,16 @@
                  <div class="relative max-w-sm mx-auto">
                      <div class="phone-frame mx-auto mb-6">
                          <div class="phone-screen">
-                             <img id="carousel-image" src="media/create.png" alt="Step 1" class="w-full h-full object-cover">
+                             <img id="carousel-image" src="media/create.png" alt="Step 1" class="w-full h-full object-cover" loading="eager" width="300" height="600">
                          </div>
                      </div>
                      
                      <!-- Carousel Navigation -->
                      <div class="flex justify-center space-x-2">
-                         <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="0"></button>
-                         <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="1"></button>
-                         <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="2"></button>
-                         <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="3"></button>
+                         <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="0" aria-label="Go to slide 1"></button>
+                         <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="1" aria-label="Go to slide 2"></button>
+                         <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="2" aria-label="Go to slide 3"></button>
+                         <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-colors" data-slide="3" aria-label="Go to slide 4"></button>
                      </div>
                  </div>
             </div>

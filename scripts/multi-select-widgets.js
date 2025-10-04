@@ -59,10 +59,10 @@
         const controls = document.createElement('div');
         controls.className = 'flex items-center justify-between mb-2';
         controls.innerHTML = `
-            <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"select-all\">Select All</button>
+            <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"select-all\" aria-label=\"Select all options\">Select All</button>
             <div class=\"flex items-center gap-2\">
-                <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"clear\">Clear All</button>
-                <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"suggest\">Suggest</button>
+                <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"clear\" aria-label=\"Clear all selections\">Clear All</button>
+                <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"suggest\" aria-label=\"Get suggestions for selections\">Suggest</button>
             </div>`;
         panel.appendChild(controls);
 
@@ -168,7 +168,7 @@
             </div>
             <div class="flex items-center gap-2">
                 <button type="button" class="text-sm text-blue-900 hover:underline" data-action=\"clear\">Clear All</button>
-                <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"suggest\">Suggest</button>
+                <button type=\"button\" class=\"text-sm text-blue-900 hover:underline\" data-action=\"suggest\" aria-label=\"Get suggestions for selections\">Suggest</button>
             </div>`;
         panel.appendChild(controls);
 
