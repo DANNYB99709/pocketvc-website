@@ -1,0 +1,13 @@
+{
+  "name": "pocketvc-blog-builder",
+  "version": "1.0.0",
+  "description": "Build script for PocketVC blog posts",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "build:watch": "node build.js && echo 'Watching for changes...' && node -e \"require('fs').watch('data/blog-posts.json', () => { console.log('Rebuilding...'); require('./build.js'); })\""
+  },
+  "keywords": ["blog", "static-site", "pocketvc"],
+  "author": "PocketVC",
+  "license": "MIT"
+}

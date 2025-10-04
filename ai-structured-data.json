@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PocketVC",
+  "url": "https://pocketvc.co",
+  "logo": "https://pocketvc.co/media/logo.png",
+  "description": "PocketVC connects venture capital firms with innovative startups through smart matching technology, focusing on deep tech and frontier technology sectors in Europe.",
+  "foundingDate": "2024",
+  "founder": {
+    "@type": "Person",
+    "name": "Daniel Barnard",
+    "jobTitle": "CEO & Founder",
+    "url": "https://www.linkedin.com/in/danielbarnard1/"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "London",
+    "addressCountry": "GB"
+  },
+  "areaServed": "Europe",
+  "availableLanguage": "English",
+  "offers": {
+    "@type": "Offer",
+    "name": "VC-Startup Matching Platform",
+    "description": "Free platform connecting VCs with relevant startups through AI-powered matching",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/pocketvc"
+  ]
+}
