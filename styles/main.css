@@ -27,6 +27,33 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+/* ==============
+   Mobile Performance Optimizations
+   ============== */
+@media (max-width: 768px) {
+    /* Reduce motion on mobile for better performance */
+    .category-carousel {
+        animation-duration: 20s; /* Slower animation on mobile */
+    }
+    
+    /* Optimize video loading on mobile */
+    video {
+        preload: metadata;
+    }
+    
+    /* Reduce complex shadows and effects on mobile */
+    .card, .benefit-card, .solution-card {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Optimize text rendering on mobile */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeSpeed;
+    }
+}
+
 /* =============
    Hero Styles (used across multiple pages)
    ============= */

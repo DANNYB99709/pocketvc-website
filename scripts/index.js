@@ -5,6 +5,32 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // ========================
+    // Mobile-Optimized Video Handling
+    // ========================
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo) {
+        // Check if device is mobile or has reduced motion preference
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        // Only autoplay on desktop and if user doesn't prefer reduced motion
+        if (!isMobile && !prefersReducedMotion) {
+            heroVideo.autoplay = true;
+            heroVideo.play().catch(e => {
+                console.log('Video autoplay failed:', e);
+                // Fallback: show static background or image
+            });
+        }
+        
+        // Add touch interaction for mobile users
+        if (isMobile) {
+            heroVideo.addEventListener('touchstart', function() {
+                this.play().catch(e => console.log('Video play failed:', e));
+            });
+        }
+    }
+    
+    // ========================
     // Category Carousel
     // ========================
     const carousel = document.querySelector('.category-carousel');
@@ -83,11 +109,15 @@ document.addEventListener('DOMContentLoaded', function() {
             dot.style.cursor = 'default'; // Remove pointer cursor
         });
         
-        // Auto-advance carousel every 3 seconds
+        // Mobile-optimized carousel timing
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        const carouselInterval = isMobile ? 4000 : 3000; // Slower on mobile for better performance
+        
+        // Auto-advance carousel with mobile-optimized timing
         setInterval(() => {
             currentSlide = (currentSlide + 1) % 4;
             updateCarousel();
-        }, 3000);
+        }, carouselInterval);
         
         // Initialize first dot as active
         updateCarousel();

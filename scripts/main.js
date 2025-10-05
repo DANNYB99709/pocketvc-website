@@ -3,6 +3,11 @@
    Organized and Optimized
    =================================== */
 
+// Mobile performance detection
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 // Initialize common functionality
 function initializeCommon() {
     // ========================
